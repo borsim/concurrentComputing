@@ -1,0 +1,12 @@
+16:01:41 **** Incremental Build of configuration Default for project fourAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing fourAnts.xc
+Creating dependencies for fourAnts.xc
+Compiling fourAnts.xc
+Creating fourAnts.xe
+Build Complete
+
+16:01:42 Build Finished (took 791ms)
+

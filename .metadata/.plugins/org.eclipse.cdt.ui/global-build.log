@@ -1,0 +1,1248 @@
+15:24:45 **** Build of configuration Default for project fourAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing fourAnts.xc
+../src/fourAnts.xc:63:35: error: use of undeclared identifer `queen'
+    ant antList[3] = {ant0, ant1, queen};
+                                  ^
+../src/fourAnts.xc:63:23: warning: missing braces around initializer [-Wmissing-braces]
+    ant antList[3] = {ant0, ant1, queen};
+                      ^~~~
+../src/fourAnts.xc:63:23: error: invalid initializer
+    ant antList[3] = {ant0, ant1, queen};
+                      ^~~~
+../src/fourAnts.xc:63:29: error: invalid initializer
+    ant antList[3] = {ant0, ant1, queen};
+                            ^~~~
+../src/fourAnts.xc:63:9: warning: unused variable `antList' [-Wunused-variable]
+    ant antList[3] = {ant0, ant1, queen};
+        ^~~~~~~~~~
+../src/fourAnts.xc:74:5: error: use of undeclared identifer `serving'
+    serving = 10;
+    ^
+../src/fourAnts.xc:78:7: error: output to a variable that is neither a channel nor port
+      a1food <: a1;
+      ^~~~~~
+../src/fourAnts.xc:79:7: error: output to a variable that is neither a channel nor port
+      a0food <: a0;
+      ^~~~~~
+../src/fourAnts.xc:80:14: error: invalid operands to binary >
+      if (a0 > a1) {
+          ~~~^~~~
+../src/fourAnts.xc:81:11: error: unknown function identifier `moveAnt' (possibly missing prototype?)
+          moveAnt(ants[1]);
+          ^
+../src/fourAnts.xc:82:11: error: indirection requires a pointer argument
+          ants[0] -> food += a0food;
+          ^~~~~~~~~~~~~~~
+../src/fourAnts.xc:85:11: error: indirection requires a pointer argument
+          ants[1] -> food += a1food;
+          ^~~~~~~~~~~~~~~
+../src/fourAnts.xc:125:29: error: too few arguments to function `initAnts'
+    initAnts(&ant0, &ant1, &queen);
+                            ^
+../src/fourAnts.xc:126:10: warning: unused variable `a1' [-Wunused-variable]
+    chan a1;
+         ^~
+../src/fourAnts.xc:127:10: warning: unused variable `a0' [-Wunused-variable]
+    chan a0;
+         ^~
+xmake[1]: *** [.build/src/fourAnts.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:26:19 **** Incremental Build of configuration Default for project fourAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing fourAnts.xc
+../src/fourAnts.xc:63:9: error: 'ant0' redeclared as different kind of symbol
+    ant ant0, ant1, queen;
+        ^~~~
+../src/fourAnts.xc:21:15: note: previous definition of 'ant0' was here
+void initAnts(ant *ant0, ant *ant1, ant *ant2, ant *ant3) {
+              ^~~~~~~~~
+../src/fourAnts.xc:63:15: error: 'ant1' redeclared as different kind of symbol
+    ant ant0, ant1, queen;
+              ^~~~
+../src/fourAnts.xc:21:26: note: previous definition of 'ant1' was here
+void initAnts(ant *ant0, ant *ant1, ant *ant2, ant *ant3) {
+                         ^~~~~~~~~
+../src/fourAnts.xc:64:23: warning: missing braces around initializer [-Wmissing-braces]
+    ant antList[3] = {&ant0, &ant1, &queen};
+                      ^~~~~
+../src/fourAnts.xc:64:23: error: invalid initializer
+    ant antList[3] = {&ant0, &ant1, &queen};
+                      ^~~~~
+../src/fourAnts.xc:64:30: error: invalid initializer
+    ant antList[3] = {&ant0, &ant1, &queen};
+                             ^~~~~
+../src/fourAnts.xc:64:37: error: invalid initializer
+    ant antList[3] = {&ant0, &ant1, &queen};
+                                    ^~~~~~
+../src/fourAnts.xc:65:5: error: indirection requires a pointer argument
+    ant0 -> x = 0;
+    ^~~~~~~~~
+../src/fourAnts.xc:66:5: error: indirection requires a pointer argument
+    ant1 -> x = 1;
+    ^~~~~~~~~
+../src/fourAnts.xc:67:5: error: indirection requires a pointer argument
+    ant0 -> y = 1;
+    ^~~~~~~~~
+../src/fourAnts.xc:68:5: error: indirection requires a pointer argument
+    ant1 -> y = 0;
+    ^~~~~~~~~
+../src/fourAnts.xc:69:5: error: indirection requires a pointer argument
+    queen -> x = 1;
+    ^~~~~~~~~~
+../src/fourAnts.xc:70:5: error: indirection requires a pointer argument
+    queen -> y = 1;
+    ^~~~~~~~~~
+../src/fourAnts.xc:64:9: warning: unused variable `antList' [-Wunused-variable]
+    ant antList[3] = {&ant0, &ant1, &queen};
+        ^~~~~~~~~~
+../src/fourAnts.xc:79:7: error: output to a variable that is neither a channel nor port
+      a1food <: a1;
+      ^~~~~~
+../src/fourAnts.xc:80:7: error: output to a variable that is neither a channel nor port
+      a0food <: a0;
+      ^~~~~~
+../src/fourAnts.xc:81:14: error: invalid operands to binary >
+      if (a0 > a1) {
+          ~~~^~~~
+../src/fourAnts.xc:82:11: error: unknown function identifier `moveAnt' (possibly missing prototype?)
+          moveAnt(ants[1]);
+          ^
+../src/fourAnts.xc:83:11: error: indirection requires a pointer argument
+          ants[0] -> food += a0food;
+          ^~~~~~~~~~~~~~~
+../src/fourAnts.xc:86:11: error: indirection requires a pointer argument
+          ants[1] -> food += a1food;
+          ^~~~~~~~~~~~~~~
+../src/fourAnts.xc:126:29: error: too few arguments to function `initAnts'
+    initAnts(&ant0, &ant1, &queen);
+                            ^
+../src/fourAnts.xc:127:10: warning: unused variable `a1' [-Wunused-variable]
+    chan a1;
+         ^~
+../src/fourAnts.xc:128:10: warning: unused variable `a0' [-Wunused-variable]
+    chan a0;
+         ^~
+xmake[1]: *** [.build/src/fourAnts.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:27:07 **** Incremental Build of configuration Default for project fourAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing fourAnts.xc
+../src/fourAnts.xc:63:9: error: 'ant0' redeclared as different kind of symbol
+    ant ant0, ant1, queen;
+        ^~~~
+../src/fourAnts.xc:21:15: note: previous definition of 'ant0' was here
+void initAnts(ant *ant0, ant *ant1, ant *ant2, ant *ant3) {
+              ^~~~~~~~~
+../src/fourAnts.xc:63:15: error: 'ant1' redeclared as different kind of symbol
+    ant ant0, ant1, queen;
+              ^~~~
+../src/fourAnts.xc:21:26: note: previous definition of 'ant1' was here
+void initAnts(ant *ant0, ant *ant1, ant *ant2, ant *ant3) {
+                         ^~~~~~~~~
+../src/fourAnts.xc:64:23: warning: missing braces around initializer [-Wmissing-braces]
+    ant antList[3] = {&ant0, &ant1, &queen};
+                      ^~~~~
+../src/fourAnts.xc:64:23: error: invalid initializer
+    ant antList[3] = {&ant0, &ant1, &queen};
+                      ^~~~~
+../src/fourAnts.xc:64:30: error: invalid initializer
+    ant antList[3] = {&ant0, &ant1, &queen};
+                             ^~~~~
+../src/fourAnts.xc:64:37: error: invalid initializer
+    ant antList[3] = {&ant0, &ant1, &queen};
+                                    ^~~~~~
+../src/fourAnts.xc:65:5: error: use of undeclared identifer `ants'
+    ants[0] -> x = 0;
+    ^
+../src/fourAnts.xc:64:9: warning: unused variable `antList' [-Wunused-variable]
+    ant antList[3] = {&ant0, &ant1, &queen};
+        ^~~~~~~~~~
+../src/fourAnts.xc:79:7: error: output to a variable that is neither a channel nor port
+      a1food <: a1;
+      ^~~~~~
+../src/fourAnts.xc:80:7: error: output to a variable that is neither a channel nor port
+      a0food <: a0;
+      ^~~~~~
+../src/fourAnts.xc:81:14: error: invalid operands to binary >
+      if (a0 > a1) {
+          ~~~^~~~
+../src/fourAnts.xc:82:11: error: unknown function identifier `moveAnt' (possibly missing prototype?)
+          moveAnt(ants[1]);
+          ^
+../src/fourAnts.xc:83:11: error: indirection requires a pointer argument
+          ants[0] -> food += a0food;
+          ^~~~~~~~~~~~~~~
+../src/fourAnts.xc:86:11: error: indirection requires a pointer argument
+          ants[1] -> food += a1food;
+          ^~~~~~~~~~~~~~~
+../src/fourAnts.xc:126:29: error: too few arguments to function `initAnts'
+    initAnts(&ant0, &ant1, &queen);
+                            ^
+../src/fourAnts.xc:127:10: warning: unused variable `a1' [-Wunused-variable]
+    chan a1;
+         ^~
+../src/fourAnts.xc:128:10: warning: unused variable `a0' [-Wunused-variable]
+    chan a0;
+         ^~
+xmake[1]: *** [.build/src/fourAnts.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:27:45 **** Incremental Build of configuration Default for project fourAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing fourAnts.xc
+../src/fourAnts.xc:63:9: error: 'ant0' redeclared as different kind of symbol
+    ant ant0;
+        ^~~~
+../src/fourAnts.xc:21:15: note: previous definition of 'ant0' was here
+void initAnts(ant *ant0, ant *ant1, ant *ant2, ant *ant3) {
+              ^~~~~~~~~
+../src/fourAnts.xc:64:9: error: 'ant1' redeclared as different kind of symbol
+    ant ant1;
+        ^~~~
+../src/fourAnts.xc:21:26: note: previous definition of 'ant1' was here
+void initAnts(ant *ant0, ant *ant1, ant *ant2, ant *ant3) {
+                         ^~~~~~~~~
+../src/fourAnts.xc:66:20: warning: missing braces around initializer [-Wmissing-braces]
+    ant ants[3] = {&ant0, &ant1, &queen};
+                   ^~~~~
+../src/fourAnts.xc:66:20: error: invalid initializer
+    ant ants[3] = {&ant0, &ant1, &queen};
+                   ^~~~~
+../src/fourAnts.xc:66:27: error: invalid initializer
+    ant ants[3] = {&ant0, &ant1, &queen};
+                          ^~~~~
+../src/fourAnts.xc:66:34: error: invalid initializer
+    ant ants[3] = {&ant0, &ant1, &queen};
+                                 ^~~~~~
+../src/fourAnts.xc:67:5: error: indirection requires a pointer argument
+    ants[0] -> x = 0;
+    ^~~~~~~~~~~~
+../src/fourAnts.xc:68:5: error: indirection requires a pointer argument
+    ants[1] -> x = 1;
+    ^~~~~~~~~~~~
+../src/fourAnts.xc:69:5: error: indirection requires a pointer argument
+    ants[0] -> y = 1;
+    ^~~~~~~~~~~~
+../src/fourAnts.xc:70:5: error: indirection requires a pointer argument
+    ants[1] -> y = 0;
+    ^~~~~~~~~~~~
+../src/fourAnts.xc:71:5: error: indirection requires a pointer argument
+    ants[2] -> x = 1;
+    ^~~~~~~~~~~~
+../src/fourAnts.xc:72:5: error: indirection requires a pointer argument
+    ants[2] -> y = 1;
+    ^~~~~~~~~~~~
+../src/fourAnts.xc:81:7: error: output to a variable that is neither a channel nor port
+      a1food <: a1;
+      ^~~~~~
+../src/fourAnts.xc:82:7: error: output to a variable that is neither a channel nor port
+      a0food <: a0;
+      ^~~~~~
+../src/fourAnts.xc:83:14: error: invalid operands to binary >
+      if (a0 > a1) {
+          ~~~^~~~
+../src/fourAnts.xc:84:11: error: unknown function identifier `moveAnt' (possibly missing prototype?)
+          moveAnt(ants[1]);
+          ^
+../src/fourAnts.xc:85:11: error: indirection requires a pointer argument
+          ants[0] -> food += a0food;
+          ^~~~~~~~~~~~~~~
+../src/fourAnts.xc:88:11: error: indirection requires a pointer argument
+          ants[1] -> food += a1food;
+          ^~~~~~~~~~~~~~~
+../src/fourAnts.xc:128:29: error: too few arguments to function `initAnts'
+    initAnts(&ant0, &ant1, &queen);
+                            ^
+../src/fourAnts.xc:129:10: warning: unused variable `a1' [-Wunused-variable]
+    chan a1;
+         ^~
+../src/fourAnts.xc:130:10: warning: unused variable `a0' [-Wunused-variable]
+    chan a0;
+         ^~
+xmake[1]: *** [.build/src/fourAnts.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:28:24 **** Incremental Build of configuration Default for project fourAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing fourAnts.xc
+../src/fourAnts.xc:63:9: error: 'ant0' redeclared as different kind of symbol
+    ant ant0;
+        ^~~~
+../src/fourAnts.xc:21:15: note: previous definition of 'ant0' was here
+void initAnts(ant *ant0, ant *ant1, ant *ant2, ant *ant3) {
+              ^~~~~~~~~
+../src/fourAnts.xc:64:9: error: 'ant1' redeclared as different kind of symbol
+    ant ant1;
+        ^~~~
+../src/fourAnts.xc:21:26: note: previous definition of 'ant1' was here
+void initAnts(ant *ant0, ant *ant1, ant *ant2, ant *ant3) {
+                         ^~~~~~~~~
+../src/fourAnts.xc:70:5: error: indirection requires a pointer argument
+    ants[0] -> x = 0;
+    ^~~~~~~~~~~~
+../src/fourAnts.xc:71:5: error: indirection requires a pointer argument
+    ants[1] -> x = 1;
+    ^~~~~~~~~~~~
+../src/fourAnts.xc:72:5: error: indirection requires a pointer argument
+    ants[0] -> y = 1;
+    ^~~~~~~~~~~~
+../src/fourAnts.xc:73:5: error: indirection requires a pointer argument
+    ants[1] -> y = 0;
+    ^~~~~~~~~~~~
+../src/fourAnts.xc:74:5: error: indirection requires a pointer argument
+    ants[2] -> x = 1;
+    ^~~~~~~~~~~~
+../src/fourAnts.xc:75:5: error: indirection requires a pointer argument
+    ants[2] -> y = 1;
+    ^~~~~~~~~~~~
+../src/fourAnts.xc:84:7: error: output to a variable that is neither a channel nor port
+      a1food <: a1;
+      ^~~~~~
+../src/fourAnts.xc:85:7: error: output to a variable that is neither a channel nor port
+      a0food <: a0;
+      ^~~~~~
+../src/fourAnts.xc:86:14: error: invalid operands to binary >
+      if (a0 > a1) {
+          ~~~^~~~
+../src/fourAnts.xc:87:11: error: unknown function identifier `moveAnt' (possibly missing prototype?)
+          moveAnt(ants[1]);
+          ^
+../src/fourAnts.xc:88:11: error: indirection requires a pointer argument
+          ants[0] -> food += a0food;
+          ^~~~~~~~~~~~~~~
+../src/fourAnts.xc:91:11: error: indirection requires a pointer argument
+          ants[1] -> food += a1food;
+          ^~~~~~~~~~~~~~~
+../src/fourAnts.xc:131:29: error: too few arguments to function `initAnts'
+    initAnts(&ant0, &ant1, &queen);
+                            ^
+../src/fourAnts.xc:132:10: warning: unused variable `a1' [-Wunused-variable]
+    chan a1;
+         ^~
+../src/fourAnts.xc:133:10: warning: unused variable `a0' [-Wunused-variable]
+    chan a0;
+         ^~
+xmake[1]: *** [.build/src/fourAnts.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:29:41 **** Incremental Build of configuration Default for project fourAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing fourAnts.xc
+../src/fourAnts.xc:63:17: error: invalid initializer
+    ant ants = {&ant0, &ant1, &ant2};
+                ^~~~~
+../src/fourAnts.xc:63:24: error: invalid initializer
+    ant ants = {&ant0, &ant1, &ant2};
+                       ^~~~~
+../src/fourAnts.xc:63:31: error: invalid initializer
+    ant ants = {&ant0, &ant1, &ant2};
+                              ^~~~~
+../src/fourAnts.xc:64:5: error: subscripted value is not an array or pointer
+    ants[0] -> x = 0;
+    ^~~~
+../src/fourAnts.xc:65:5: error: subscripted value is not an array or pointer
+    ants[1] -> x = 1;
+    ^~~~
+../src/fourAnts.xc:66:5: error: subscripted value is not an array or pointer
+    ants[0] -> y = 1;
+    ^~~~
+../src/fourAnts.xc:67:5: error: subscripted value is not an array or pointer
+    ants[1] -> y = 0;
+    ^~~~
+../src/fourAnts.xc:68:5: error: subscripted value is not an array or pointer
+    ants[2] -> x = 1;
+    ^~~~
+../src/fourAnts.xc:69:5: error: subscripted value is not an array or pointer
+    ants[2] -> y = 1;
+    ^~~~
+../src/fourAnts.xc:78:7: error: output to a variable that is neither a channel nor port
+      a1food <: a1;
+      ^~~~~~
+../src/fourAnts.xc:79:7: error: output to a variable that is neither a channel nor port
+      a0food <: a0;
+      ^~~~~~
+../src/fourAnts.xc:80:14: error: invalid operands to binary >
+      if (a0 > a1) {
+          ~~~^~~~
+../src/fourAnts.xc:81:11: error: unknown function identifier `moveAnt' (possibly missing prototype?)
+          moveAnt(ants[1]);
+          ^
+../src/fourAnts.xc:82:11: error: indirection requires a pointer argument
+          ants[0] -> food += a0food;
+          ^~~~~~~~~~~~~~~
+../src/fourAnts.xc:85:11: error: indirection requires a pointer argument
+          ants[1] -> food += a1food;
+          ^~~~~~~~~~~~~~~
+../src/fourAnts.xc:126:10: warning: unused variable `a1' [-Wunused-variable]
+    chan a1;
+         ^~
+../src/fourAnts.xc:127:10: warning: unused variable `a0' [-Wunused-variable]
+    chan a0;
+         ^~
+xmake[1]: *** [.build/src/fourAnts.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:29:50 **** Incremental Build of configuration Default for project fourAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing fourAnts.xc
+../src/fourAnts.xc:63:17: error: invalid initializer
+    ant ants = {ant0, ant1, ant2};
+                ^~~~
+../src/fourAnts.xc:63:23: error: invalid initializer
+    ant ants = {ant0, ant1, ant2};
+                      ^~~~
+../src/fourAnts.xc:63:29: error: invalid initializer
+    ant ants = {ant0, ant1, ant2};
+                            ^~~~
+../src/fourAnts.xc:64:5: error: subscripted value is not an array or pointer
+    ants[0] -> x = 0;
+    ^~~~
+../src/fourAnts.xc:65:5: error: subscripted value is not an array or pointer
+    ants[1] -> x = 1;
+    ^~~~
+../src/fourAnts.xc:66:5: error: subscripted value is not an array or pointer
+    ants[0] -> y = 1;
+    ^~~~
+../src/fourAnts.xc:67:5: error: subscripted value is not an array or pointer
+    ants[1] -> y = 0;
+    ^~~~
+../src/fourAnts.xc:68:5: error: subscripted value is not an array or pointer
+    ants[2] -> x = 1;
+    ^~~~
+../src/fourAnts.xc:69:5: error: subscripted value is not an array or pointer
+    ants[2] -> y = 1;
+    ^~~~
+../src/fourAnts.xc:78:7: error: output to a variable that is neither a channel nor port
+      a1food <: a1;
+      ^~~~~~
+../src/fourAnts.xc:79:7: error: output to a variable that is neither a channel nor port
+      a0food <: a0;
+      ^~~~~~
+../src/fourAnts.xc:80:14: error: invalid operands to binary >
+      if (a0 > a1) {
+          ~~~^~~~
+../src/fourAnts.xc:81:11: error: unknown function identifier `moveAnt' (possibly missing prototype?)
+          moveAnt(ants[1]);
+          ^
+../src/fourAnts.xc:82:11: error: indirection requires a pointer argument
+          ants[0] -> food += a0food;
+          ^~~~~~~~~~~~~~~
+../src/fourAnts.xc:85:11: error: indirection requires a pointer argument
+          ants[1] -> food += a1food;
+          ^~~~~~~~~~~~~~~
+../src/fourAnts.xc:126:10: warning: unused variable `a1' [-Wunused-variable]
+    chan a1;
+         ^~
+../src/fourAnts.xc:127:10: warning: unused variable `a0' [-Wunused-variable]
+    chan a0;
+         ^~
+xmake[1]: *** [.build/src/fourAnts.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:30:01 **** Incremental Build of configuration Default for project fourAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing fourAnts.xc
+../src/fourAnts.xc:63:20: warning: missing braces around initializer [-Wmissing-braces]
+    ant ants[3] = {ant0, ant1, ant2};
+                   ^~~~
+../src/fourAnts.xc:63:20: error: invalid initializer
+    ant ants[3] = {ant0, ant1, ant2};
+                   ^~~~
+../src/fourAnts.xc:63:26: error: invalid initializer
+    ant ants[3] = {ant0, ant1, ant2};
+                         ^~~~
+../src/fourAnts.xc:63:32: error: invalid initializer
+    ant ants[3] = {ant0, ant1, ant2};
+                               ^~~~
+../src/fourAnts.xc:64:5: error: indirection requires a pointer argument
+    ants[0] -> x = 0;
+    ^~~~~~~~~~~~
+../src/fourAnts.xc:65:5: error: indirection requires a pointer argument
+    ants[1] -> x = 1;
+    ^~~~~~~~~~~~
+../src/fourAnts.xc:66:5: error: indirection requires a pointer argument
+    ants[0] -> y = 1;
+    ^~~~~~~~~~~~
+../src/fourAnts.xc:67:5: error: indirection requires a pointer argument
+    ants[1] -> y = 0;
+    ^~~~~~~~~~~~
+../src/fourAnts.xc:68:5: error: indirection requires a pointer argument
+    ants[2] -> x = 1;
+    ^~~~~~~~~~~~
+../src/fourAnts.xc:69:5: error: indirection requires a pointer argument
+    ants[2] -> y = 1;
+    ^~~~~~~~~~~~
+../src/fourAnts.xc:78:7: error: output to a variable that is neither a channel nor port
+      a1food <: a1;
+      ^~~~~~
+../src/fourAnts.xc:79:7: error: output to a variable that is neither a channel nor port
+      a0food <: a0;
+      ^~~~~~
+../src/fourAnts.xc:80:14: error: invalid operands to binary >
+      if (a0 > a1) {
+          ~~~^~~~
+../src/fourAnts.xc:81:11: error: unknown function identifier `moveAnt' (possibly missing prototype?)
+          moveAnt(ants[1]);
+          ^
+../src/fourAnts.xc:82:11: error: indirection requires a pointer argument
+          ants[0] -> food += a0food;
+          ^~~~~~~~~~~~~~~
+../src/fourAnts.xc:85:11: error: indirection requires a pointer argument
+          ants[1] -> food += a1food;
+          ^~~~~~~~~~~~~~~
+../src/fourAnts.xc:126:10: warning: unused variable `a1' [-Wunused-variable]
+    chan a1;
+         ^~
+../src/fourAnts.xc:127:10: warning: unused variable `a0' [-Wunused-variable]
+    chan a0;
+         ^~
+xmake[1]: *** [.build/src/fourAnts.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:35:56 **** Incremental Build of configuration Default for project fourAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing fourAnts.xc
+../src/fourAnts.xc:21:14: error: invalid operands to binary >
+      if (a0 > a1) {
+          ~~~^~~~
+../src/fourAnts.xc:34:10: warning: unused variable `x' [-Wunused-variable]
+    char x = startX;
+         ^
+../src/fourAnts.xc:35:10: warning: unused variable `y' [-Wunused-variable]
+    char y = startY;
+         ^
+../src/fourAnts.xc:36:10: warning: unused variable `food' [-Wunused-variable]
+    char food = 0;
+         ^~~~
+../src/fourAnts.xc:40:14: error: parse error before "ant"
+void moveAnt(ant *myAnt) {
+             ^
+../src/fourAnts.xc:42:22: error: use of undeclared identifer `myAnt'
+ char east  = field[(myAnt->x+1) % 3][(myAnt->y) % 4];
+                     ^
+../src/fourAnts.xc:57:25: error: parse error before "ant"
+void moveAntRepedatedly(ant *myAnt, int times) {
+                        ^
+../src/fourAnts.xc:58:25: error: use of undeclared identifer `times'
+    for (int i = 0; i < times; i++) {
+                        ^
+../src/fourAnts.xc:59:17: error: use of undeclared identifer `myAnt'
+        moveAnt(myAnt);
+                ^
+../src/fourAnts.xc:59:17: error: too many arguments to function `moveAnt'
+        moveAnt(myAnt);
+                ^~~~~
+../src/fourAnts.xc:66:5: error: use of undeclared identifer `ant'
+    ant ant0;
+    ^
+../src/fourAnts.xc:66:9: error: parse error before "ant0"
+    ant ant0;
+        ^
+../src/fourAnts.xc:67:5: warning: type defaults to `int' in declaration of `ant' [-Wimplicit-int]
+    ant ant1;
+    ^~~
+../src/fourAnts.xc:67:5: warning: data definition has no type or storage class [-Wunusual-code]
+    ant ant1;
+    ^~~
+../src/fourAnts.xc:67:9: error: parse error before "ant1"
+    ant ant1;
+        ^
+../src/fourAnts.xc:67:9: warning: type defaults to `int' in declaration of `ant1' [-Wimplicit-int]
+    ant ant1;
+        ^~~~
+../src/fourAnts.xc:67:9: warning: data definition has no type or storage class [-Wunusual-code]
+    ant ant1;
+        ^~~~
+../src/fourAnts.xc:68:5: warning: type defaults to `int' in declaration of `ant' [-Wimplicit-int]
+    ant queen;
+    ^~~
+../src/fourAnts.xc:68:5: warning: data definition has no type or storage class [-Wunusual-code]
+    ant queen;
+    ^~~
+../src/fourAnts.xc:68:5: error: redefinition of 'ant'
+    ant queen;
+    ^~~
+../src/fourAnts.xc:67:5: note: previous definition of 'ant' was here
+    ant ant1;
+    ^~~
+../src/fourAnts.xc:68:9: error: parse error before "queen"
+    ant queen;
+        ^
+../src/fourAnts.xc:68:9: warning: type defaults to `int' in declaration of `queen' [-Wimplicit-int]
+    ant queen;
+        ^~~~~
+../src/fourAnts.xc:68:9: warning: data definition has no type or storage class [-Wunusual-code]
+    ant queen;
+        ^~~~~
+../src/fourAnts.xc:69:14: error: parse error before '&' token
+    initAnts(&ant0, &ant1, &queen);
+             ^
+../src/fourAnts.xc:69:5: error: cannot declare a function in local scope.
+    initAnts(&ant0, &ant1, &queen);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/fourAnts.xc:69:5: warning: return type defaults to `int' [-Wreturn-type]
+    initAnts(&ant0, &ant1, &queen);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/fourAnts.xc:73:5: error: parse error before "return"
+    return 0;
+    ^
+../src/fourAnts.xc:74:1: error: parse error before '}' token
+}
+^
+../src/fourAnts.xc:67:5: warning: unused variable `ant' [-Wunused-variable]
+    ant ant1;
+    ^~~
+../src/fourAnts.xc:67:9: warning: unused variable `ant1' [-Wunused-variable]
+    ant ant1;
+        ^~~~
+../src/fourAnts.xc:68:5: warning: unused variable `ant' [-Wunused-variable]
+    ant queen;
+    ^~~
+../src/fourAnts.xc:68:9: warning: unused variable `queen' [-Wunused-variable]
+    ant queen;
+        ^~~~~
+../src/fourAnts.xc:70:10: warning: unused variable `a1' [-Wunused-variable]
+    chan a1;
+         ^~
+../src/fourAnts.xc:71:10: warning: unused variable `a0' [-Wunused-variable]
+    chan a0;
+         ^~
+xmake[1]: *** [.build/src/fourAnts.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:36:11 **** Incremental Build of configuration Default for project fourAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing fourAnts.xc
+../src/fourAnts.xc:34:10: warning: unused variable `x' [-Wunused-variable]
+    char x = startX;
+         ^
+../src/fourAnts.xc:35:10: warning: unused variable `y' [-Wunused-variable]
+    char y = startY;
+         ^
+../src/fourAnts.xc:36:10: warning: unused variable `food' [-Wunused-variable]
+    char food = 0;
+         ^~~~
+../src/fourAnts.xc:40:14: error: parse error before "ant"
+void moveAnt(ant *myAnt) {
+             ^
+../src/fourAnts.xc:42:22: error: use of undeclared identifer `myAnt'
+ char east  = field[(myAnt->x+1) % 3][(myAnt->y) % 4];
+                     ^
+../src/fourAnts.xc:57:25: error: parse error before "ant"
+void moveAntRepedatedly(ant *myAnt, int times) {
+                        ^
+../src/fourAnts.xc:58:25: error: use of undeclared identifer `times'
+    for (int i = 0; i < times; i++) {
+                        ^
+../src/fourAnts.xc:59:17: error: use of undeclared identifer `myAnt'
+        moveAnt(myAnt);
+                ^
+../src/fourAnts.xc:59:17: error: too many arguments to function `moveAnt'
+        moveAnt(myAnt);
+                ^~~~~
+../src/fourAnts.xc:66:5: error: use of undeclared identifer `ant'
+    ant ant0;
+    ^
+../src/fourAnts.xc:66:9: error: parse error before "ant0"
+    ant ant0;
+        ^
+../src/fourAnts.xc:67:5: warning: type defaults to `int' in declaration of `ant' [-Wimplicit-int]
+    ant ant1;
+    ^~~
+../src/fourAnts.xc:67:5: warning: data definition has no type or storage class [-Wunusual-code]
+    ant ant1;
+    ^~~
+../src/fourAnts.xc:67:9: error: parse error before "ant1"
+    ant ant1;
+        ^
+../src/fourAnts.xc:67:9: warning: type defaults to `int' in declaration of `ant1' [-Wimplicit-int]
+    ant ant1;
+        ^~~~
+../src/fourAnts.xc:67:9: warning: data definition has no type or storage class [-Wunusual-code]
+    ant ant1;
+        ^~~~
+../src/fourAnts.xc:68:5: warning: type defaults to `int' in declaration of `ant' [-Wimplicit-int]
+    ant queen;
+    ^~~
+../src/fourAnts.xc:68:5: warning: data definition has no type or storage class [-Wunusual-code]
+    ant queen;
+    ^~~
+../src/fourAnts.xc:68:5: error: redefinition of 'ant'
+    ant queen;
+    ^~~
+../src/fourAnts.xc:67:5: note: previous definition of 'ant' was here
+    ant ant1;
+    ^~~
+../src/fourAnts.xc:68:9: error: parse error before "queen"
+    ant queen;
+        ^
+../src/fourAnts.xc:68:9: warning: type defaults to `int' in declaration of `queen' [-Wimplicit-int]
+    ant queen;
+        ^~~~~
+../src/fourAnts.xc:68:9: warning: data definition has no type or storage class [-Wunusual-code]
+    ant queen;
+        ^~~~~
+../src/fourAnts.xc:69:14: error: parse error before '&' token
+    initAnts(&ant0, &ant1, &queen);
+             ^
+../src/fourAnts.xc:69:5: error: cannot declare a function in local scope.
+    initAnts(&ant0, &ant1, &queen);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/fourAnts.xc:69:5: warning: return type defaults to `int' [-Wreturn-type]
+    initAnts(&ant0, &ant1, &queen);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/fourAnts.xc:73:5: error: parse error before "return"
+    return 0;
+    ^
+../src/fourAnts.xc:74:1: error: parse error before '}' token
+}
+^
+../src/fourAnts.xc:67:5: warning: unused variable `ant' [-Wunused-variable]
+    ant ant1;
+    ^~~
+../src/fourAnts.xc:67:9: warning: unused variable `ant1' [-Wunused-variable]
+    ant ant1;
+        ^~~~
+../src/fourAnts.xc:68:5: warning: unused variable `ant' [-Wunused-variable]
+    ant queen;
+    ^~~
+../src/fourAnts.xc:68:9: warning: unused variable `queen' [-Wunused-variable]
+    ant queen;
+        ^~~~~
+../src/fourAnts.xc:70:10: warning: unused variable `a1' [-Wunused-variable]
+    chan a1;
+         ^~
+../src/fourAnts.xc:71:10: warning: unused variable `a0' [-Wunused-variable]
+    chan a0;
+         ^~
+xmake[1]: *** [.build/src/fourAnts.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:43:56 **** Incremental Build of configuration Default for project fourAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing fourAnts.xc
+../src/fourAnts.xc:39:28: error: parse error before "field"
+void antClient (char[3][4] field, char startX, char startY, chanend c) {
+                           ^
+../src/fourAnts.xc:40:14: error: use of undeclared identifer `startX'
+    char x = startX;
+             ^
+../src/fourAnts.xc:41:14: error: use of undeclared identifer `startY'
+    char y = startY;
+             ^
+../src/fourAnts.xc:46:5: error: use of undeclared identifer `c'
+    c <: field[x][y];
+    ^
+../src/fourAnts.xc:69:9: warning: unused variable `ant0' [-Wunused-variable]
+    ant ant0;
+        ^~~~
+../src/fourAnts.xc:70:9: warning: unused variable `ant1' [-Wunused-variable]
+    ant ant1;
+        ^~~~
+../src/fourAnts.xc:71:9: warning: unused variable `queen' [-Wunused-variable]
+    ant queen;
+        ^~~~~
+../src/fourAnts.xc:72:10: warning: unused variable `a1' [-Wunused-variable]
+    chan a1;
+         ^~
+../src/fourAnts.xc:73:10: warning: unused variable `a0' [-Wunused-variable]
+    chan a0;
+         ^~
+xmake[1]: *** [.build/src/fourAnts.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:46:07 **** Incremental Build of configuration Default for project fourAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing fourAnts.xc
+../src/fourAnts.xc:39:28: error: parse error before "field"
+void antClient (char[3][4] field, ant *thisAnt, chanend c) {
+                           ^
+../src/fourAnts.xc:40:14: error: use of undeclared identifer `thisAnt'
+    char x = thisAnt -> x;
+             ^
+../src/fourAnts.xc:46:5: error: use of undeclared identifer `c'
+    c <: field[x][y];
+    ^
+../src/fourAnts.xc:71:9: warning: unused variable `ant0' [-Wunused-variable]
+    ant ant0;
+        ^~~~
+../src/fourAnts.xc:72:9: warning: unused variable `ant1' [-Wunused-variable]
+    ant ant1;
+        ^~~~
+../src/fourAnts.xc:73:9: warning: unused variable `queen' [-Wunused-variable]
+    ant queen;
+        ^~~~~
+../src/fourAnts.xc:74:10: warning: unused variable `a1' [-Wunused-variable]
+    chan a1;
+         ^~
+../src/fourAnts.xc:75:10: warning: unused variable `a0' [-Wunused-variable]
+    chan a0;
+         ^~
+xmake[1]: *** [.build/src/fourAnts.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:46:33 **** Incremental Build of configuration Default for project fourAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing fourAnts.xc
+../src/fourAnts.xc:71:9: warning: unused variable `ant0' [-Wunused-variable]
+    ant ant0;
+        ^~~~
+../src/fourAnts.xc:72:9: warning: unused variable `ant1' [-Wunused-variable]
+    ant ant1;
+        ^~~~
+../src/fourAnts.xc:73:9: warning: unused variable `queen' [-Wunused-variable]
+    ant queen;
+        ^~~~~
+../src/fourAnts.xc:74:10: warning: unused variable `a1' [-Wunused-variable]
+    chan a1;
+         ^~
+../src/fourAnts.xc:75:10: warning: unused variable `a0' [-Wunused-variable]
+    chan a0;
+         ^~
+Propagating analysis
+Creating dependencies for fourAnts.xc
+Compiling fourAnts.xc
+../src/fourAnts.xc:71:9: warning: unused variable `ant0' [-Wunused-variable]
+    ant ant0;
+        ^~~~
+../src/fourAnts.xc:72:9: warning: unused variable `ant1' [-Wunused-variable]
+    ant ant1;
+        ^~~~
+../src/fourAnts.xc:73:9: warning: unused variable `queen' [-Wunused-variable]
+    ant queen;
+        ^~~~~
+../src/fourAnts.xc:74:10: warning: unused variable `a1' [-Wunused-variable]
+    chan a1;
+         ^~
+../src/fourAnts.xc:75:10: warning: unused variable `a0' [-Wunused-variable]
+    chan a0;
+         ^~
+Creating fourAnts.xe
+Build Complete
+15:47:07 **** Incremental Build of configuration Default for project fourAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//fourAnts.xe' is up to date.
+Build Complete
+15:47:33 **** Incremental Build of configuration Default for project fourAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing fourAnts.xc
+../src/fourAnts.xc:71:9: warning: unused variable `ant0' [-Wunused-variable]
+    ant ant0;
+        ^~~~
+../src/fourAnts.xc:72:9: warning: unused variable `ant1' [-Wunused-variable]
+    ant ant1;
+        ^~~~
+../src/fourAnts.xc:73:9: warning: unused variable `queen' [-Wunused-variable]
+    ant queen;
+        ^~~~~
+../src/fourAnts.xc:74:10: warning: unused variable `a1' [-Wunused-variable]
+    chan a1;
+         ^~
+../src/fourAnts.xc:75:10: warning: unused variable `a0' [-Wunused-variable]
+    chan a0;
+         ^~
+Propagating analysis
+Creating dependencies for fourAnts.xc
+Compiling fourAnts.xc
+../src/fourAnts.xc:71:9: warning: unused variable `ant0' [-Wunused-variable]
+    ant ant0;
+        ^~~~
+../src/fourAnts.xc:72:9: warning: unused variable `ant1' [-Wunused-variable]
+    ant ant1;
+        ^~~~
+../src/fourAnts.xc:73:9: warning: unused variable `queen' [-Wunused-variable]
+    ant queen;
+        ^~~~~
+../src/fourAnts.xc:74:10: warning: unused variable `a1' [-Wunused-variable]
+    chan a1;
+         ^~
+../src/fourAnts.xc:75:10: warning: unused variable `a0' [-Wunused-variable]
+    chan a0;
+         ^~
+Creating fourAnts.xe
+Build Complete
+15:50:27 **** Incremental Build of configuration Default for project fourAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing fourAnts.xc
+../src/fourAnts.xc:72:5: error: indirection requires a pointer argument
+    ant0 -> x = 1;
+    ^~~~~~~~~
+../src/fourAnts.xc:73:5: error: indirection requires a pointer argument
+    ant0 -> y = 0;
+    ^~~~~~~~~
+../src/fourAnts.xc:74:5: error: indirection requires a pointer argument
+    ant0 -> food = 0;
+    ^~~~~~~~~~~~
+../src/fourAnts.xc:76:5: error: indirection requires a pointer argument
+    ant1 -> x = 0;
+    ^~~~~~~~~
+../src/fourAnts.xc:77:5: error: indirection requires a pointer argument
+    ant1 -> y = 1;
+    ^~~~~~~~~
+../src/fourAnts.xc:78:5: error: indirection requires a pointer argument
+    ant1 -> food = 0;
+    ^~~~~~~~~~~~
+../src/fourAnts.xc:80:5: error: indirection requires a pointer argument
+    queen -> x = 1;
+    ^~~~~~~~~~
+../src/fourAnts.xc:81:5: error: indirection requires a pointer argument
+    queen -> y = 1;
+    ^~~~~~~~~~
+../src/fourAnts.xc:82:5: error: indirection requires a pointer argument
+    queen -> food = 0;
+    ^~~~~~~~~~~~~
+../src/fourAnts.xc:87:31: error: passing arg 1 of `antClient' discards const qualifier from reference target type
+        on tile[1]: antClient(field, ant0, a0);
+                              ^~~~~
+../src/fourAnts.xc:87:38: error: incompatible type for argument 2 of `antClient'
+        on tile[1]: antClient(field, ant0, a0);
+                                     ^~~~
+../src/fourAnts.xc:88:31: error: passing arg 1 of `antClient' discards const qualifier from reference target type
+        on tile[1]: antClient(field, ant1, a1);
+                              ^~~~~
+../src/fourAnts.xc:88:38: error: incompatible type for argument 2 of `antClient'
+        on tile[1]: antClient(field, ant1, a1);
+                                     ^~~~
+../src/fourAnts.xc:79:5: error: only local variables of type chan or interface are allowed in a multi-tile main
+    ant queen;
+    ^~~~~~~~~
+../src/fourAnts.xc:70:12: error: multi-tile main must consist of single non-empty par statement
+int main() {
+           ^
+xmake[1]: *** [.build/src/fourAnts.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:51:06 **** Incremental Build of configuration Default for project fourAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing fourAnts.xc
+../src/fourAnts.xc:87:31: error: passing arg 1 of `antClient' discards const qualifier from reference target type
+        on tile[1]: antClient(field, ant0, a0);
+                              ^~~~~
+../src/fourAnts.xc:87:38: error: incompatible type for argument 2 of `antClient'
+        on tile[1]: antClient(field, ant0, a0);
+                                     ^~~~
+../src/fourAnts.xc:88:31: error: passing arg 1 of `antClient' discards const qualifier from reference target type
+        on tile[1]: antClient(field, ant1, a1);
+                              ^~~~~
+../src/fourAnts.xc:88:38: error: incompatible type for argument 2 of `antClient'
+        on tile[1]: antClient(field, ant1, a1);
+                                     ^~~~
+../src/fourAnts.xc:79:5: error: only local variables of type chan or interface are allowed in a multi-tile main
+    ant queen;
+    ^~~~~~~~~
+../src/fourAnts.xc:70:12: error: multi-tile main must consist of single non-empty par statement
+int main() {
+           ^
+xmake[1]: *** [.build/src/fourAnts.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:51:55 **** Incremental Build of configuration Default for project fourAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing fourAnts.xc
+../src/fourAnts.xc:87:38: error: incompatible type for argument 2 of `antClient'
+        on tile[1]: antClient(field, ant0, a0);
+                                     ^~~~
+../src/fourAnts.xc:88:38: error: incompatible type for argument 2 of `antClient'
+        on tile[1]: antClient(field, ant1, a1);
+                                     ^~~~
+../src/fourAnts.xc:79:5: error: only local variables of type chan or interface are allowed in a multi-tile main
+    ant queen;
+    ^~~~~~~~~
+../src/fourAnts.xc:70:12: error: multi-tile main must consist of single non-empty par statement
+int main() {
+           ^
+xmake[1]: *** [.build/src/fourAnts.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:52:08 **** Incremental Build of configuration Default for project fourAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing fourAnts.xc
+../src/fourAnts.xc:87:38: error: indirection requires a pointer argument
+        on tile[1]: antClient(field, *ant0, a0);
+                                     ^~~~~
+../src/fourAnts.xc:88:38: error: indirection requires a pointer argument
+        on tile[1]: antClient(field, *ant1, a1);
+                                     ^~~~~
+../src/fourAnts.xc:79:5: error: only local variables of type chan or interface are allowed in a multi-tile main
+    ant queen;
+    ^~~~~~~~~
+../src/fourAnts.xc:70:12: error: multi-tile main must consist of single non-empty par statement
+int main() {
+           ^
+xmake[1]: *** [.build/src/fourAnts.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:52:20 **** Incremental Build of configuration Default for project fourAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing fourAnts.xc
+../src/fourAnts.xc:79:5: error: only local variables of type chan or interface are allowed in a multi-tile main
+    ant queen;
+    ^~~~~~~~~
+../src/fourAnts.xc:70:12: error: multi-tile main must consist of single non-empty par statement
+int main() {
+           ^
+xmake[1]: *** [.build/src/fourAnts.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:52:51 **** Incremental Build of configuration Default for project fourAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing fourAnts.xc
+../src/fourAnts.xc:71:21: error: only local variables of type chan or interface are allowed in a multi-tile main
+    ant ant0, ant1, queen;
+                    ^~~~~
+../src/fourAnts.xc:70:12: error: multi-tile main must consist of single non-empty par statement
+int main() {
+           ^
+xmake[1]: *** [.build/src/fourAnts.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:53:28 **** Incremental Build of configuration Default for project fourAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing fourAnts.xc
+Propagating analysis
+Creating dependencies for fourAnts.xc
+Compiling fourAnts.xc
+Creating fourAnts.xe
+Build Complete
+15:57:20 **** Incremental Build of configuration Default for project fourAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing fourAnts.xc
+Propagating analysis
+Creating dependencies for fourAnts.xc
+Compiling fourAnts.xc
+Creating fourAnts.xe
+Build Complete
+16:01:07 **** Incremental Build of configuration Default for project fourAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing fourAnts.xc
+Creating dependencies for fourAnts.xc
+Compiling fourAnts.xc
+Creating fourAnts.xe
+Build Complete
+16:01:41 **** Incremental Build of configuration Default for project fourAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing fourAnts.xc
+Creating dependencies for fourAnts.xc
+Compiling fourAnts.xc
+Creating fourAnts.xe
+Build Complete
+14:13:51 **** Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+../src/defenderGame.xc:113:16: warning: unused variable `attemptedAntPosition' [-Wunused-variable]
+  unsigned int attemptedAntPosition = 0;   //the next attempted defender position after considering button
+               ^~~~~~~~~~~~~~~~~~~~
+../src/defenderGame.xc:114:7: warning: unused variable `moveForbidden' [-Wunused-variable]
+  int moveForbidden;                       //the verdict of the controller if move is allowed
+      ^~~~~~~~~~~~~
+../src/defenderGame.xc:159:16: warning: unused variable `lastReportedUserAntPosition' [-Wunused-variable]
+  unsigned int lastReportedUserAntPosition = 11;      //position last reported by userAnt
+               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/defenderGame.xc:160:16: warning: unused variable `lastReportedAttackerAntPosition' [-Wunused-variable]
+  unsigned int lastReportedAttackerAntPosition = 5;   //position last reported by attackerAnt
+               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Propagating analysis
+Creating dependencies for defenderGame.xc
+Compiling defenderGame.xc
+../src/defenderGame.xc:113:16: warning: unused variable `attemptedAntPosition' [-Wunused-variable]
+  unsigned int attemptedAntPosition = 0;   //the next attempted defender position after considering button
+               ^~~~~~~~~~~~~~~~~~~~
+../src/defenderGame.xc:114:7: warning: unused variable `moveForbidden' [-Wunused-variable]
+  int moveForbidden;                       //the verdict of the controller if move is allowed
+      ^~~~~~~~~~~~~
+../src/defenderGame.xc:159:16: warning: unused variable `lastReportedUserAntPosition' [-Wunused-variable]
+  unsigned int lastReportedUserAntPosition = 11;      //position last reported by userAnt
+               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/defenderGame.xc:160:16: warning: unused variable `lastReportedAttackerAntPosition' [-Wunused-variable]
+  unsigned int lastReportedAttackerAntPosition = 5;   //position last reported by attackerAnt
+               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Creating defenderGame.xe
+Build Complete
+14:14:01 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+14:14:04 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+14:19:11 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+../src/defenderGame.xc:163:16: warning: unused variable `lastReportedUserAntPosition' [-Wunused-variable]
+  unsigned int lastReportedUserAntPosition = 11;      //position last reported by userAnt
+               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/defenderGame.xc:164:16: warning: unused variable `lastReportedAttackerAntPosition' [-Wunused-variable]
+  unsigned int lastReportedAttackerAntPosition = 5;   //position last reported by attackerAnt
+               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Creating dependencies for defenderGame.xc
+Compiling defenderGame.xc
+../src/defenderGame.xc:163:16: warning: unused variable `lastReportedUserAntPosition' [-Wunused-variable]
+  unsigned int lastReportedUserAntPosition = 11;      //position last reported by userAnt
+               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/defenderGame.xc:164:16: warning: unused variable `lastReportedAttackerAntPosition' [-Wunused-variable]
+  unsigned int lastReportedAttackerAntPosition = 5;   //position last reported by attackerAnt
+               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Creating defenderGame.xe
+Build Complete
+14:29:29 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+../src/defenderGame.xc:173:23: error: use of undeclared identifer `true'
+          gameEnded = true;
+                      ^
+../src/defenderGame.xc:175:22: error: use of undeclared identifer `lastReportedUserAntposition'
+      if (attempt == lastReportedUserAntposition){
+                     ^
+../src/defenderGame.xc:163:16: warning: unused variable `lastReportedUserAntPosition' [-Wunused-variable]
+  unsigned int lastReportedUserAntPosition = 11;      //position last reported by userAnt
+               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+xmake[1]: *** [.build/src/defenderGame.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+14:30:14 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+Creating dependencies for defenderGame.xc
+Compiling defenderGame.xc
+Creating defenderGame.xe
+Build Complete
+14:32:34 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+Creating dependencies for defenderGame.xc
+Compiling defenderGame.xc
+Creating defenderGame.xe
+Build Complete
+15:04:48 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+14:14:07 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+14:20:36 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+14:21:35 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+14:23:08 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+14:23:54 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+Creating dependencies for defenderGame.xc
+Compiling defenderGame.xc
+Creating defenderGame.xe
+Build Complete
+14:26:02 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+Creating dependencies for defenderGame.xc
+Compiling defenderGame.xc
+Creating defenderGame.xe
+Build Complete
+14:28:56 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+Creating dependencies for defenderGame.xc
+Compiling defenderGame.xc
+Creating defenderGame.xe
+Build Complete
+14:30:53 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+Creating dependencies for defenderGame.xc
+Compiling defenderGame.xc
+Creating defenderGame.xe
+Build Complete
+14:31:33 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+14:32:01 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+14:32:40 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
