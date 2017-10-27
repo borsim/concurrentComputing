@@ -56,3 +56,2706 @@ Checking build modules
 Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
 xmake[1]: `bin//game_of_life.xe' is up to date.
 Build Complete
+18:39:13 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:92:5: error: unknown function identifier `println' (possibly missing prototype?)
+    println(input);
+    ^
+../src/main.xc:98:5: error: unknown function identifier `println' (possibly missing prototype?)
+    println(input);
+    ^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+18:39:31 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:92:12: error: passing integer as unsafe pointer to argument 1 of `printf' outside of unsafe region
+    printf(input);
+           ^~~~~
+../src/main.xc:94:5: error: unknown function identifier `println' (possibly missing prototype?)
+    println(result);
+    ^
+../src/main.xc:98:12: error: passing integer as unsafe pointer to argument 1 of `printf' outside of unsafe region
+    printf(input);
+           ^~~~~
+../src/main.xc:100:5: error: unknown function identifier `println' (possibly missing prototype?)
+    println(result);
+    ^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+18:40:26 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:92:12: error: passing integer as unsafe pointer to argument 1 of `printf' outside of unsafe region
+    printf(input);
+           ^~~~~
+../src/main.xc:94:5: error: unknown function identifier `println' (possibly missing prototype?)
+    println(result);
+    ^
+../src/main.xc:100:5: error: unknown function identifier `println' (possibly missing prototype?)
+    println(result);
+    ^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+18:40:41 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:94:5: error: unknown function identifier `println' (possibly missing prototype?)
+    println("%n", result);
+    ^
+../src/main.xc:100:5: error: unknown function identifier `println' (possibly missing prototype?)
+    println("%n", result);
+    ^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+18:40:52 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+18:45:08 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:73:3: error: unknown function identifier `runTests' (possibly missing prototype?)
+  runTests();
+  ^
+../src/main.xc:109:14: error: invalid initializer
+    int tc = &testCounter;
+             ^~~~~~~~~~~~
+../src/main.xc:110:33: error: incompatible type for argument 3 of `assertEqual'
+    assertEqual(testCounter, 0, tc);
+                                ^~
+../src/main.xc:111:21: error: incompatible type for argument 3 of `assertEqual'
+    assertEqual(5,5,tc);
+                    ^~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+18:45:45 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:73:3: error: unknown function identifier `runTests' (possibly missing prototype?)
+  runTests();
+  ^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+18:46:03 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+19:16:11 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:94:22: error: size of array is not constant or based on a const static parameter
+    char newRowCount[length];
+                     ^~~~~~
+../src/main.xc:95:38: error: subscripted value is not an array or pointer
+    for (int i = 0; i < length; i++) newRow[i] = 0;
+                                     ^~~~~~
+../src/main.xc:97:27: error: unknown function identifier `circularLeftShift' (possibly missing prototype?)
+    addToRow(newRowCount, circularLeftShift(self));
+                          ^
+../src/main.xc:97:5: error: unknown function identifier `addToRow' (possibly missing prototype?)
+    addToRow(newRowCount, circularLeftShift(self));
+    ^
+../src/main.xc:99:27: error: unknown function identifier `circularRightShift' (possibly missing prototype?)
+    addToRow(newRowCount, circularRightShift(self));
+                          ^
+../src/main.xc:101:5: error: unknown function identifier `addThreeRows' (possibly missing prototype?)
+    addThreeRows(newRowCount, top, length);
+    ^
+../src/main.xc:109:23: error: unknown function identifier `determineLifeState' (possibly missing prototype?)
+        char result = determineLifeState(currentState, newRowCount[j]);
+                      ^
+../src/main.xc:115:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+../src/main.xc:92:18: warning: unused variable `selfCopy' [-Wunused-variable]
+    unsigned int selfCopy = self;
+                 ^~~~~~~~
+../src/main.xc:125:22: error: parse error before "original"
+void addToRow(char[] original, unsigned int added, int length) {
+                     ^
+../src/main.xc:126:30: error: use of undeclared identifer `added'
+    unsigned int addedCopy = added;
+                             ^
+../src/main.xc:127:26: error: use of undeclared identifer `length'
+    for (int i = 1; i <= length; i++) {
+                         ^
+../src/main.xc:129:9: error: subscripted value is not an array or pointer
+        addToRow[length - i] += addedCopy & 1;
+        ^~~~~~~~
+../src/main.xc:134:26: error: parse error before "original"
+void addThreeRows(char[] original, unsigned int added, int length) {
+                         ^
+../src/main.xc:135:14: error: use of undeclared identifer `original'
+    addToRow(original, circularLeftShift(added), length);
+             ^
+../src/main.xc:135:42: error: use of undeclared identifer `added'
+    addToRow(original, circularLeftShift(added), length);
+                                         ^
+../src/main.xc:135:50: error: use of undeclared identifer `length'
+    addToRow(original, circularLeftShift(added), length);
+                                                 ^
+../src/main.xc:135:24: error: unknown function identifier `circularLeftShift' (possibly missing prototype?)
+    addToRow(original, circularLeftShift(added), length);
+                       ^
+../src/main.xc:135:14: error: too many arguments to function `addToRow'
+    addToRow(original, circularLeftShift(added), length);
+             ^~~~~~~~
+../src/main.xc:136:14: error: too many arguments to function `addToRow'
+    addToRow(original, added, length);
+             ^~~~~~~~
+../src/main.xc:137:24: error: unknown function identifier `circularRightShift' (possibly missing prototype?)
+    addToRow(original, circularRightShift(added), length);
+                       ^
+../src/main.xc:137:14: error: too many arguments to function `addToRow'
+    addToRow(original, circularRightShift(added), length);
+             ^~~~~~~~
+../src/main.xc:158:6: error: parse error before "assert"
+void assert(bool expression, int* testCount) {
+     ^
+../src/main.xc:160:5: error: parse error before "else"
+    else printf("TEST %n : FAILED", testCount);
+    ^
+../src/main.xc:161:1: error: parse error before '}' token
+}
+^
+../src/main.xc:164:16: error: use of undeclared identifer `testCounter'
+    int* tc = &testCounter;
+               ^
+../src/main.xc:164:15: error: initializer element is not constant
+    int* tc = &testCounter;
+              ^~~~~~~~~~~~
+../src/main.xc:165:17: error: parse error before "testCounter"
+    assertEqual(testCounter, 0, tc);
+                ^
+../src/main.xc:165:5: warning: return type defaults to `int' [-Wreturn-type]
+    assertEqual(testCounter, 0, tc);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:165:5: error: conflicting types for 'assertEqual'
+    assertEqual(testCounter, 0, tc);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:154:6: note: previous definition of 'assertEqual' was here
+void assertEqual(int first, int second, int* testCount) {
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:166:17: error: parse error before numeric constant
+    assertEqual(5,5,tc);
+                ^
+../src/main.xc:166:5: warning: return type defaults to `int' [-Wreturn-type]
+    assertEqual(5,5,tc);
+    ^~~~~~~~~~~~~~~~~~~
+../src/main.xc:179:11: error: parse error before string constant
+  printf( "DataOutStream: Start...\n" );
+          ^
+../src/main.xc:179:3: warning: return type defaults to `int' [-Wreturn-type]
+  printf( "DataOutStream: Start...\n" );
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:179:3: error: conflicting types for 'printf'
+  printf( "DataOutStream: Start...\n" );
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:180:22: error: use of undeclared identifer `outfname'
+  res = _openoutpgm( outfname, IMWD, IMHT );
+                     ^
+../src/main.xc:180:3: warning: type defaults to `int' in declaration of `res' [-Wimplicit-int]
+  res = _openoutpgm( outfname, IMWD, IMHT );
+  ^~~
+../src/main.xc:180:3: warning: data definition has no type or storage class [-Wunusual-code]
+  res = _openoutpgm( outfname, IMWD, IMHT );
+  ^~~
+../src/main.xc:180:9: error: initializer element is not constant
+  res = _openoutpgm( outfname, IMWD, IMHT );
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:181:3: error: parse error before "if"
+  if( res ) {
+  ^
+../src/main.xc:183:5: error: parse error before "return"
+    return;
+    ^
+../src/main.xc:184:3: error: parse error before '}' token
+  }
+  ^
+../src/main.xc:187:19: warning: type defaults to `int' in declaration of `y' [-Wimplicit-int]
+  for( int y = 0; y < IMHT; y++ ) {
+                  ^
+../src/main.xc:187:19: warning: data definition has no type or storage class [-Wunusual-code]
+  for( int y = 0; y < IMHT; y++ ) {
+                  ^
+../src/main.xc:187:21: error: parse error before '<' token
+  for( int y = 0; y < IMHT; y++ ) {
+                    ^
+../src/main.xc:187:29: warning: type defaults to `int' in declaration of `y' [-Wimplicit-int]
+  for( int y = 0; y < IMHT; y++ ) {
+                            ^
+../src/main.xc:187:29: warning: data definition has no type or storage class [-Wunusual-code]
+  for( int y = 0; y < IMHT; y++ ) {
+                            ^
+../src/main.xc:191:20: error: parse error before "line"
+    _writeoutline( line, IMWD );
+                   ^
+../src/main.xc:191:5: warning: return type defaults to `int' [-Wreturn-type]
+    _writeoutline( line, IMWD );
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:191:5: error: conflicting types for '_writeoutline'
+    _writeoutline( line, IMWD );
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/pgmIO.h:16:1: note: previous declaration of '_writeoutline' was here
+int _writeoutline(unsigned char line[], int width);
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:192:13: error: parse error before string constant
+    printf( "DataOutStream: Line written...\n" );
+            ^
+../src/main.xc:192:5: warning: return type defaults to `int' [-Wreturn-type]
+    printf( "DataOutStream: Line written...\n" );
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:197:11: error: parse error before string constant
+  printf( "DataOutStream: Done...\n" );
+          ^
+../src/main.xc:197:3: warning: return type defaults to `int' [-Wreturn-type]
+  printf( "DataOutStream: Done...\n" );
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:199:1: error: parse error before '}' token
+}
+^
+../src/main.xc:212:12: error: use of undeclared identifer `i2c'
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+           ^
+../src/main.xc:212:3: warning: type defaults to `int' in declaration of `result' [-Wimplicit-int]
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+  ^~~~~~
+../src/main.xc:212:3: warning: data definition has no type or storage class [-Wunusual-code]
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+  ^~~~~~
+../src/main.xc:212:16: error: trying to call interface function from something that is not an interface
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+           ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:213:3: error: parse error before "if"
+  if (result != I2C_REGOP_SUCCESS) {
+  ^
+../src/main.xc:215:3: error: parse error before '}' token
+  }
+  ^
+../src/main.xc:219:3: error: parse error before "if"
+  if (result != I2C_REGOP_SUCCESS) {
+  ^
+../src/main.xc:221:3: error: parse error before '}' token
+  }
+  ^
+../src/main.xc:229:5: error: parse error before '}' token
+    } while (!status_data & 0x08);
+    ^
+../src/main.xc:232:13: error: initializer element is not constant
+    int x = read_acceleration(i2c, FXOS8700EQ_OUT_X_MSB);
+            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:235:5: error: parse error before "if"
+    if (!tilted) {
+    ^
+../src/main.xc:238:9: warning: type defaults to `int' in declaration of `toDist' [-Wimplicit-int]
+        toDist <: 1;
+        ^~~~~~
+../src/main.xc:238:9: warning: data definition has no type or storage class [-Wunusual-code]
+        toDist <: 1;
+        ^~~~~~
+../src/main.xc:238:17: error: parse error before '<:' token
+        toDist <: 1;
+                ^
+../src/main.xc:253:1: warning: return type defaults to `int' [-Wreturn-type]
+runTests();   //TESTS
+^~~~~~~~~~
+../src/main.xc:257:6: error: global variable `c_inIO' has type chan
+chan c_inIO, c_outIO, c_control;    //extend your channel definitions here
+     ^~~~~~
+../src/main.xc:257:14: error: global variable `c_outIO' has type chan
+chan c_inIO, c_outIO, c_control;    //extend your channel definitions here
+             ^~~~~~~
+../src/main.xc:257:23: error: global variable `c_control' has type chan
+chan c_inIO, c_outIO, c_control;    //extend your channel definitions here
+                      ^~~~~~~~~
+../src/main.xc:259:1: error: parse error before "par"
+par {
+^
+../src/main.xc:261:17: error: parse error before "i2c"
+    orientation(i2c[0],c_control);        //client thread reading orientation data
+                ^
+../src/main.xc:261:5: warning: return type defaults to `int' [-Wreturn-type]
+    orientation(i2c[0],c_control);        //client thread reading orientation data
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:262:18: error: parse error before "infname"
+    DataInStream(infname, c_inIO);          //thread to read in a PGM image
+                 ^
+../src/main.xc:262:5: warning: return type defaults to `int' [-Wreturn-type]
+    DataInStream(infname, c_inIO);          //thread to read in a PGM image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:262:5: error: conflicting types for 'DataInStream'
+    DataInStream(infname, c_inIO);          //thread to read in a PGM image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:34:6: note: previous definition of 'DataInStream' was here
+void DataInStream(char infname[], chanend c_out)
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:263:19: error: parse error before "outfname"
+    DataOutStream(outfname, c_outIO);       //thread to write out a PGM image
+                  ^
+../src/main.xc:263:5: warning: return type defaults to `int' [-Wreturn-type]
+    DataOutStream(outfname, c_outIO);       //thread to write out a PGM image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:264:17: error: parse error before "c_inIO"
+    distributor(c_inIO, c_outIO, c_control);//thread to coordinate work on image
+                ^
+../src/main.xc:264:5: warning: return type defaults to `int' [-Wreturn-type]
+    distributor(c_inIO, c_outIO, c_control);//thread to coordinate work on image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:264:5: error: conflicting types for 'distributor'
+    distributor(c_inIO, c_outIO, c_control);//thread to coordinate work on image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:70:6: note: previous definition of 'distributor' was here
+void distributor(chanend c_in, chanend c_out, chanend fromAcc)
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:268:1: error: parse error before '}' token
+}
+^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+19:16:45 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:99:22: error: parse error before "original"
+void addToRow(char[] original, unsigned int added, int length) {
+                     ^
+../src/main.xc:100:30: error: use of undeclared identifer `added'
+    unsigned int addedCopy = added;
+                             ^
+../src/main.xc:101:26: error: use of undeclared identifer `length'
+    for (int i = 1; i <= length; i++) {
+                         ^
+../src/main.xc:103:9: error: subscripted value is not an array or pointer
+        addToRow[length - i] += addedCopy & 1;
+        ^~~~~~~~
+../src/main.xc:108:26: error: parse error before "original"
+void addThreeRows(char[] original, unsigned int added, int length) {
+                         ^
+../src/main.xc:109:14: error: use of undeclared identifer `original'
+    addToRow(original, circularLeftShift(added), length);
+             ^
+../src/main.xc:109:42: error: use of undeclared identifer `added'
+    addToRow(original, circularLeftShift(added), length);
+                                         ^
+../src/main.xc:109:50: error: use of undeclared identifer `length'
+    addToRow(original, circularLeftShift(added), length);
+                                                 ^
+../src/main.xc:109:24: error: unknown function identifier `circularLeftShift' (possibly missing prototype?)
+    addToRow(original, circularLeftShift(added), length);
+                       ^
+../src/main.xc:109:14: error: too many arguments to function `addToRow'
+    addToRow(original, circularLeftShift(added), length);
+             ^~~~~~~~
+../src/main.xc:110:14: error: too many arguments to function `addToRow'
+    addToRow(original, added, length);
+             ^~~~~~~~
+../src/main.xc:111:24: error: unknown function identifier `circularRightShift' (possibly missing prototype?)
+    addToRow(original, circularRightShift(added), length);
+                       ^
+../src/main.xc:111:14: error: too many arguments to function `addToRow'
+    addToRow(original, circularRightShift(added), length);
+             ^~~~~~~~
+../src/main.xc:117:22: error: size of array is not constant or based on a const static parameter
+    char newRowCount[length];
+                     ^~~~~~
+../src/main.xc:118:38: error: subscripted value is not an array or pointer
+    for (int i = 0; i < length; i++) newRow[i] = 0;
+                                     ^~~~~~
+../src/main.xc:120:27: error: unknown function identifier `circularLeftShift' (possibly missing prototype?)
+    addToRow(newRowCount, circularLeftShift(self));
+                          ^
+../src/main.xc:120:14: error: too many arguments to function `addToRow'
+    addToRow(newRowCount, circularLeftShift(self));
+             ^~~~~~~~~~~
+../src/main.xc:122:27: error: unknown function identifier `circularRightShift' (possibly missing prototype?)
+    addToRow(newRowCount, circularRightShift(self));
+                          ^
+../src/main.xc:122:14: error: too many arguments to function `addToRow'
+    addToRow(newRowCount, circularRightShift(self));
+             ^~~~~~~~~~~
+../src/main.xc:124:18: error: too many arguments to function `addThreeRows'
+    addThreeRows(newRowCount, top, length);
+                 ^~~~~~~~~~~
+../src/main.xc:126:18: error: too many arguments to function `addThreeRows'
+    addThreeRows(newRowCount, bottom, length);
+                 ^~~~~~~~~~~
+../src/main.xc:138:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+../src/main.xc:115:18: warning: unused variable `selfCopy' [-Wunused-variable]
+    unsigned int selfCopy = self;
+                 ^~~~~~~~
+../src/main.xc:158:6: error: parse error before "assert"
+void assert(bool expression, int* testCount) {
+     ^
+../src/main.xc:160:5: error: parse error before "else"
+    else printf("TEST %n : FAILED", testCount);
+    ^
+../src/main.xc:161:1: error: parse error before '}' token
+}
+^
+../src/main.xc:164:16: error: use of undeclared identifer `testCounter'
+    int* tc = &testCounter;
+               ^
+../src/main.xc:164:15: error: initializer element is not constant
+    int* tc = &testCounter;
+              ^~~~~~~~~~~~
+../src/main.xc:165:17: error: parse error before "testCounter"
+    assertEqual(testCounter, 0, tc);
+                ^
+../src/main.xc:165:5: warning: return type defaults to `int' [-Wreturn-type]
+    assertEqual(testCounter, 0, tc);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:165:5: error: conflicting types for 'assertEqual'
+    assertEqual(testCounter, 0, tc);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:154:6: note: previous definition of 'assertEqual' was here
+void assertEqual(int first, int second, int* testCount) {
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:166:17: error: parse error before numeric constant
+    assertEqual(5,5,tc);
+                ^
+../src/main.xc:166:5: warning: return type defaults to `int' [-Wreturn-type]
+    assertEqual(5,5,tc);
+    ^~~~~~~~~~~~~~~~~~~
+../src/main.xc:179:11: error: parse error before string constant
+  printf( "DataOutStream: Start...\n" );
+          ^
+../src/main.xc:179:3: warning: return type defaults to `int' [-Wreturn-type]
+  printf( "DataOutStream: Start...\n" );
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:179:3: error: conflicting types for 'printf'
+  printf( "DataOutStream: Start...\n" );
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:180:22: error: use of undeclared identifer `outfname'
+  res = _openoutpgm( outfname, IMWD, IMHT );
+                     ^
+../src/main.xc:180:3: warning: type defaults to `int' in declaration of `res' [-Wimplicit-int]
+  res = _openoutpgm( outfname, IMWD, IMHT );
+  ^~~
+../src/main.xc:180:3: warning: data definition has no type or storage class [-Wunusual-code]
+  res = _openoutpgm( outfname, IMWD, IMHT );
+  ^~~
+../src/main.xc:180:9: error: initializer element is not constant
+  res = _openoutpgm( outfname, IMWD, IMHT );
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:181:3: error: parse error before "if"
+  if( res ) {
+  ^
+../src/main.xc:183:5: error: parse error before "return"
+    return;
+    ^
+../src/main.xc:184:3: error: parse error before '}' token
+  }
+  ^
+../src/main.xc:187:19: warning: type defaults to `int' in declaration of `y' [-Wimplicit-int]
+  for( int y = 0; y < IMHT; y++ ) {
+                  ^
+../src/main.xc:187:19: warning: data definition has no type or storage class [-Wunusual-code]
+  for( int y = 0; y < IMHT; y++ ) {
+                  ^
+../src/main.xc:187:21: error: parse error before '<' token
+  for( int y = 0; y < IMHT; y++ ) {
+                    ^
+../src/main.xc:187:29: warning: type defaults to `int' in declaration of `y' [-Wimplicit-int]
+  for( int y = 0; y < IMHT; y++ ) {
+                            ^
+../src/main.xc:187:29: warning: data definition has no type or storage class [-Wunusual-code]
+  for( int y = 0; y < IMHT; y++ ) {
+                            ^
+../src/main.xc:191:20: error: parse error before "line"
+    _writeoutline( line, IMWD );
+                   ^
+../src/main.xc:191:5: warning: return type defaults to `int' [-Wreturn-type]
+    _writeoutline( line, IMWD );
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:191:5: error: conflicting types for '_writeoutline'
+    _writeoutline( line, IMWD );
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/pgmIO.h:16:1: note: previous declaration of '_writeoutline' was here
+int _writeoutline(unsigned char line[], int width);
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:192:13: error: parse error before string constant
+    printf( "DataOutStream: Line written...\n" );
+            ^
+../src/main.xc:192:5: warning: return type defaults to `int' [-Wreturn-type]
+    printf( "DataOutStream: Line written...\n" );
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:197:11: error: parse error before string constant
+  printf( "DataOutStream: Done...\n" );
+          ^
+../src/main.xc:197:3: warning: return type defaults to `int' [-Wreturn-type]
+  printf( "DataOutStream: Done...\n" );
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:199:1: error: parse error before '}' token
+}
+^
+../src/main.xc:212:12: error: use of undeclared identifer `i2c'
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+           ^
+../src/main.xc:212:3: warning: type defaults to `int' in declaration of `result' [-Wimplicit-int]
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+  ^~~~~~
+../src/main.xc:212:3: warning: data definition has no type or storage class [-Wunusual-code]
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+  ^~~~~~
+../src/main.xc:212:16: error: trying to call interface function from something that is not an interface
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+           ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:213:3: error: parse error before "if"
+  if (result != I2C_REGOP_SUCCESS) {
+  ^
+../src/main.xc:215:3: error: parse error before '}' token
+  }
+  ^
+../src/main.xc:219:3: error: parse error before "if"
+  if (result != I2C_REGOP_SUCCESS) {
+  ^
+../src/main.xc:221:3: error: parse error before '}' token
+  }
+  ^
+../src/main.xc:229:5: error: parse error before '}' token
+    } while (!status_data & 0x08);
+    ^
+../src/main.xc:232:13: error: initializer element is not constant
+    int x = read_acceleration(i2c, FXOS8700EQ_OUT_X_MSB);
+            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:235:5: error: parse error before "if"
+    if (!tilted) {
+    ^
+../src/main.xc:238:9: warning: type defaults to `int' in declaration of `toDist' [-Wimplicit-int]
+        toDist <: 1;
+        ^~~~~~
+../src/main.xc:238:9: warning: data definition has no type or storage class [-Wunusual-code]
+        toDist <: 1;
+        ^~~~~~
+../src/main.xc:238:17: error: parse error before '<:' token
+        toDist <: 1;
+                ^
+../src/main.xc:253:1: warning: return type defaults to `int' [-Wreturn-type]
+runTests();   //TESTS
+^~~~~~~~~~
+../src/main.xc:257:6: error: global variable `c_inIO' has type chan
+chan c_inIO, c_outIO, c_control;    //extend your channel definitions here
+     ^~~~~~
+../src/main.xc:257:14: error: global variable `c_outIO' has type chan
+chan c_inIO, c_outIO, c_control;    //extend your channel definitions here
+             ^~~~~~~
+../src/main.xc:257:23: error: global variable `c_control' has type chan
+chan c_inIO, c_outIO, c_control;    //extend your channel definitions here
+                      ^~~~~~~~~
+../src/main.xc:259:1: error: parse error before "par"
+par {
+^
+../src/main.xc:261:17: error: parse error before "i2c"
+    orientation(i2c[0],c_control);        //client thread reading orientation data
+                ^
+../src/main.xc:261:5: warning: return type defaults to `int' [-Wreturn-type]
+    orientation(i2c[0],c_control);        //client thread reading orientation data
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:262:18: error: parse error before "infname"
+    DataInStream(infname, c_inIO);          //thread to read in a PGM image
+                 ^
+../src/main.xc:262:5: warning: return type defaults to `int' [-Wreturn-type]
+    DataInStream(infname, c_inIO);          //thread to read in a PGM image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:262:5: error: conflicting types for 'DataInStream'
+    DataInStream(infname, c_inIO);          //thread to read in a PGM image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:34:6: note: previous definition of 'DataInStream' was here
+void DataInStream(char infname[], chanend c_out)
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:263:19: error: parse error before "outfname"
+    DataOutStream(outfname, c_outIO);       //thread to write out a PGM image
+                  ^
+../src/main.xc:263:5: warning: return type defaults to `int' [-Wreturn-type]
+    DataOutStream(outfname, c_outIO);       //thread to write out a PGM image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:264:17: error: parse error before "c_inIO"
+    distributor(c_inIO, c_outIO, c_control);//thread to coordinate work on image
+                ^
+../src/main.xc:264:5: warning: return type defaults to `int' [-Wreturn-type]
+    distributor(c_inIO, c_outIO, c_control);//thread to coordinate work on image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:264:5: error: conflicting types for 'distributor'
+    distributor(c_inIO, c_outIO, c_control);//thread to coordinate work on image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:70:6: note: previous definition of 'distributor' was here
+void distributor(chanend c_in, chanend c_out, chanend fromAcc)
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:268:1: error: parse error before '}' token
+}
+^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+19:18:16 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:99:22: error: parse error before "original"
+void addToRow(char[] original, unsigned int added, int length) {
+                     ^
+../src/main.xc:100:30: error: use of undeclared identifer `added'
+    unsigned int addedCopy = added;
+                             ^
+../src/main.xc:101:26: error: use of undeclared identifer `length'
+    for (int i = 1; i <= length; i++) {
+                         ^
+../src/main.xc:103:9: error: subscripted value is not an array or pointer
+        addToRow[length - i] += addedCopy & 1;
+        ^~~~~~~~
+../src/main.xc:108:26: error: parse error before "original"
+void addThreeRows(char[] original, unsigned int added, int length) {
+                         ^
+../src/main.xc:109:14: error: use of undeclared identifer `original'
+    addToRow(original, circularLeftShift(added), length);
+             ^
+../src/main.xc:109:42: error: use of undeclared identifer `added'
+    addToRow(original, circularLeftShift(added), length);
+                                         ^
+../src/main.xc:109:50: error: use of undeclared identifer `length'
+    addToRow(original, circularLeftShift(added), length);
+                                                 ^
+../src/main.xc:109:24: error: unknown function identifier `circularLeftShift' (possibly missing prototype?)
+    addToRow(original, circularLeftShift(added), length);
+                       ^
+../src/main.xc:109:14: error: too many arguments to function `addToRow'
+    addToRow(original, circularLeftShift(added), length);
+             ^~~~~~~~
+../src/main.xc:110:14: error: too many arguments to function `addToRow'
+    addToRow(original, added, length);
+             ^~~~~~~~
+../src/main.xc:111:24: error: unknown function identifier `circularRightShift' (possibly missing prototype?)
+    addToRow(original, circularRightShift(added), length);
+                       ^
+../src/main.xc:111:14: error: too many arguments to function `addToRow'
+    addToRow(original, circularRightShift(added), length);
+             ^~~~~~~~
+../src/main.xc:118:38: error: subscripted value is not an array or pointer
+    for (int i = 0; i < length; i++) newRow[i] = 0;
+                                     ^~~~~~
+../src/main.xc:120:27: error: unknown function identifier `circularLeftShift' (possibly missing prototype?)
+    addToRow(newRowCount, circularLeftShift(self));
+                          ^
+../src/main.xc:120:14: error: too many arguments to function `addToRow'
+    addToRow(newRowCount, circularLeftShift(self));
+             ^~~~~~~~~~~
+../src/main.xc:122:27: error: unknown function identifier `circularRightShift' (possibly missing prototype?)
+    addToRow(newRowCount, circularRightShift(self));
+                          ^
+../src/main.xc:122:14: error: too many arguments to function `addToRow'
+    addToRow(newRowCount, circularRightShift(self));
+             ^~~~~~~~~~~
+../src/main.xc:124:18: error: too many arguments to function `addThreeRows'
+    addThreeRows(newRowCount, top, length);
+                 ^~~~~~~~~~~
+../src/main.xc:126:18: error: too many arguments to function `addThreeRows'
+    addThreeRows(newRowCount, bottom, length);
+                 ^~~~~~~~~~~
+../src/main.xc:138:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+../src/main.xc:115:18: warning: unused variable `selfCopy' [-Wunused-variable]
+    unsigned int selfCopy = self;
+                 ^~~~~~~~
+../src/main.xc:158:6: error: parse error before "assert"
+void assert(bool expression, int* testCount) {
+     ^
+../src/main.xc:160:5: error: parse error before "else"
+    else printf("TEST %n : FAILED", testCount);
+    ^
+../src/main.xc:161:1: error: parse error before '}' token
+}
+^
+../src/main.xc:164:16: error: use of undeclared identifer `testCounter'
+    int* tc = &testCounter;
+               ^
+../src/main.xc:164:15: error: initializer element is not constant
+    int* tc = &testCounter;
+              ^~~~~~~~~~~~
+../src/main.xc:165:17: error: parse error before "testCounter"
+    assertEqual(testCounter, 0, tc);
+                ^
+../src/main.xc:165:5: warning: return type defaults to `int' [-Wreturn-type]
+    assertEqual(testCounter, 0, tc);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:165:5: error: conflicting types for 'assertEqual'
+    assertEqual(testCounter, 0, tc);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:154:6: note: previous definition of 'assertEqual' was here
+void assertEqual(int first, int second, int* testCount) {
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:166:17: error: parse error before numeric constant
+    assertEqual(5,5,tc);
+                ^
+../src/main.xc:166:5: warning: return type defaults to `int' [-Wreturn-type]
+    assertEqual(5,5,tc);
+    ^~~~~~~~~~~~~~~~~~~
+../src/main.xc:179:11: error: parse error before string constant
+  printf( "DataOutStream: Start...\n" );
+          ^
+../src/main.xc:179:3: warning: return type defaults to `int' [-Wreturn-type]
+  printf( "DataOutStream: Start...\n" );
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:179:3: error: conflicting types for 'printf'
+  printf( "DataOutStream: Start...\n" );
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:180:22: error: use of undeclared identifer `outfname'
+  res = _openoutpgm( outfname, IMWD, IMHT );
+                     ^
+../src/main.xc:180:3: warning: type defaults to `int' in declaration of `res' [-Wimplicit-int]
+  res = _openoutpgm( outfname, IMWD, IMHT );
+  ^~~
+../src/main.xc:180:3: warning: data definition has no type or storage class [-Wunusual-code]
+  res = _openoutpgm( outfname, IMWD, IMHT );
+  ^~~
+../src/main.xc:180:9: error: initializer element is not constant
+  res = _openoutpgm( outfname, IMWD, IMHT );
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:181:3: error: parse error before "if"
+  if( res ) {
+  ^
+../src/main.xc:183:5: error: parse error before "return"
+    return;
+    ^
+../src/main.xc:184:3: error: parse error before '}' token
+  }
+  ^
+../src/main.xc:187:19: warning: type defaults to `int' in declaration of `y' [-Wimplicit-int]
+  for( int y = 0; y < IMHT; y++ ) {
+                  ^
+../src/main.xc:187:19: warning: data definition has no type or storage class [-Wunusual-code]
+  for( int y = 0; y < IMHT; y++ ) {
+                  ^
+../src/main.xc:187:21: error: parse error before '<' token
+  for( int y = 0; y < IMHT; y++ ) {
+                    ^
+../src/main.xc:187:29: warning: type defaults to `int' in declaration of `y' [-Wimplicit-int]
+  for( int y = 0; y < IMHT; y++ ) {
+                            ^
+../src/main.xc:187:29: warning: data definition has no type or storage class [-Wunusual-code]
+  for( int y = 0; y < IMHT; y++ ) {
+                            ^
+../src/main.xc:191:20: error: parse error before "line"
+    _writeoutline( line, IMWD );
+                   ^
+../src/main.xc:191:5: warning: return type defaults to `int' [-Wreturn-type]
+    _writeoutline( line, IMWD );
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:191:5: error: conflicting types for '_writeoutline'
+    _writeoutline( line, IMWD );
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/pgmIO.h:16:1: note: previous declaration of '_writeoutline' was here
+int _writeoutline(unsigned char line[], int width);
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:192:13: error: parse error before string constant
+    printf( "DataOutStream: Line written...\n" );
+            ^
+../src/main.xc:192:5: warning: return type defaults to `int' [-Wreturn-type]
+    printf( "DataOutStream: Line written...\n" );
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:197:11: error: parse error before string constant
+  printf( "DataOutStream: Done...\n" );
+          ^
+../src/main.xc:197:3: warning: return type defaults to `int' [-Wreturn-type]
+  printf( "DataOutStream: Done...\n" );
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:199:1: error: parse error before '}' token
+}
+^
+../src/main.xc:212:12: error: use of undeclared identifer `i2c'
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+           ^
+../src/main.xc:212:3: warning: type defaults to `int' in declaration of `result' [-Wimplicit-int]
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+  ^~~~~~
+../src/main.xc:212:3: warning: data definition has no type or storage class [-Wunusual-code]
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+  ^~~~~~
+../src/main.xc:212:16: error: trying to call interface function from something that is not an interface
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+           ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:213:3: error: parse error before "if"
+  if (result != I2C_REGOP_SUCCESS) {
+  ^
+../src/main.xc:215:3: error: parse error before '}' token
+  }
+  ^
+../src/main.xc:219:3: error: parse error before "if"
+  if (result != I2C_REGOP_SUCCESS) {
+  ^
+../src/main.xc:221:3: error: parse error before '}' token
+  }
+  ^
+../src/main.xc:229:5: error: parse error before '}' token
+    } while (!status_data & 0x08);
+    ^
+../src/main.xc:232:13: error: initializer element is not constant
+    int x = read_acceleration(i2c, FXOS8700EQ_OUT_X_MSB);
+            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:235:5: error: parse error before "if"
+    if (!tilted) {
+    ^
+../src/main.xc:238:9: warning: type defaults to `int' in declaration of `toDist' [-Wimplicit-int]
+        toDist <: 1;
+        ^~~~~~
+../src/main.xc:238:9: warning: data definition has no type or storage class [-Wunusual-code]
+        toDist <: 1;
+        ^~~~~~
+../src/main.xc:238:17: error: parse error before '<:' token
+        toDist <: 1;
+                ^
+../src/main.xc:253:1: warning: return type defaults to `int' [-Wreturn-type]
+runTests();   //TESTS
+^~~~~~~~~~
+../src/main.xc:257:6: error: global variable `c_inIO' has type chan
+chan c_inIO, c_outIO, c_control;    //extend your channel definitions here
+     ^~~~~~
+../src/main.xc:257:14: error: global variable `c_outIO' has type chan
+chan c_inIO, c_outIO, c_control;    //extend your channel definitions here
+             ^~~~~~~
+../src/main.xc:257:23: error: global variable `c_control' has type chan
+chan c_inIO, c_outIO, c_control;    //extend your channel definitions here
+                      ^~~~~~~~~
+../src/main.xc:259:1: error: parse error before "par"
+par {
+^
+../src/main.xc:261:17: error: parse error before "i2c"
+    orientation(i2c[0],c_control);        //client thread reading orientation data
+                ^
+../src/main.xc:261:5: warning: return type defaults to `int' [-Wreturn-type]
+    orientation(i2c[0],c_control);        //client thread reading orientation data
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:262:18: error: parse error before "infname"
+    DataInStream(infname, c_inIO);          //thread to read in a PGM image
+                 ^
+../src/main.xc:262:5: warning: return type defaults to `int' [-Wreturn-type]
+    DataInStream(infname, c_inIO);          //thread to read in a PGM image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:262:5: error: conflicting types for 'DataInStream'
+    DataInStream(infname, c_inIO);          //thread to read in a PGM image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:34:6: note: previous definition of 'DataInStream' was here
+void DataInStream(char infname[], chanend c_out)
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:263:19: error: parse error before "outfname"
+    DataOutStream(outfname, c_outIO);       //thread to write out a PGM image
+                  ^
+../src/main.xc:263:5: warning: return type defaults to `int' [-Wreturn-type]
+    DataOutStream(outfname, c_outIO);       //thread to write out a PGM image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:264:17: error: parse error before "c_inIO"
+    distributor(c_inIO, c_outIO, c_control);//thread to coordinate work on image
+                ^
+../src/main.xc:264:5: warning: return type defaults to `int' [-Wreturn-type]
+    distributor(c_inIO, c_outIO, c_control);//thread to coordinate work on image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:264:5: error: conflicting types for 'distributor'
+    distributor(c_inIO, c_outIO, c_control);//thread to coordinate work on image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:70:6: note: previous definition of 'distributor' was here
+void distributor(chanend c_in, chanend c_out, chanend fromAcc)
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:268:1: error: parse error before '}' token
+}
+^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+19:18:30 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:99:22: error: parse error before "original"
+void addToRow(char[] original, unsigned int added, int length) {
+                     ^
+../src/main.xc:100:30: error: use of undeclared identifer `added'
+    unsigned int addedCopy = added;
+                             ^
+../src/main.xc:101:26: error: use of undeclared identifer `length'
+    for (int i = 1; i <= length; i++) {
+                         ^
+../src/main.xc:103:9: error: subscripted value is not an array or pointer
+        addToRow[length - i] += addedCopy & 1;
+        ^~~~~~~~
+../src/main.xc:108:26: error: parse error before "original"
+void addThreeRows(char[] original, unsigned int added, int length) {
+                         ^
+../src/main.xc:109:14: error: use of undeclared identifer `original'
+    addToRow(original, circularLeftShift(added), length);
+             ^
+../src/main.xc:109:42: error: use of undeclared identifer `added'
+    addToRow(original, circularLeftShift(added), length);
+                                         ^
+../src/main.xc:109:50: error: use of undeclared identifer `length'
+    addToRow(original, circularLeftShift(added), length);
+                                                 ^
+../src/main.xc:109:24: error: unknown function identifier `circularLeftShift' (possibly missing prototype?)
+    addToRow(original, circularLeftShift(added), length);
+                       ^
+../src/main.xc:109:14: error: too many arguments to function `addToRow'
+    addToRow(original, circularLeftShift(added), length);
+             ^~~~~~~~
+../src/main.xc:110:14: error: too many arguments to function `addToRow'
+    addToRow(original, added, length);
+             ^~~~~~~~
+../src/main.xc:111:24: error: unknown function identifier `circularRightShift' (possibly missing prototype?)
+    addToRow(original, circularRightShift(added), length);
+                       ^
+../src/main.xc:111:14: error: too many arguments to function `addToRow'
+    addToRow(original, circularRightShift(added), length);
+             ^~~~~~~~
+../src/main.xc:120:27: error: unknown function identifier `circularLeftShift' (possibly missing prototype?)
+    addToRow(newRowCount, circularLeftShift(self));
+                          ^
+../src/main.xc:120:14: error: too many arguments to function `addToRow'
+    addToRow(newRowCount, circularLeftShift(self));
+             ^~~~~~~~~~~
+../src/main.xc:122:27: error: unknown function identifier `circularRightShift' (possibly missing prototype?)
+    addToRow(newRowCount, circularRightShift(self));
+                          ^
+../src/main.xc:122:14: error: too many arguments to function `addToRow'
+    addToRow(newRowCount, circularRightShift(self));
+             ^~~~~~~~~~~
+../src/main.xc:124:18: error: too many arguments to function `addThreeRows'
+    addThreeRows(newRowCount, top, length);
+                 ^~~~~~~~~~~
+../src/main.xc:126:18: error: too many arguments to function `addThreeRows'
+    addThreeRows(newRowCount, bottom, length);
+                 ^~~~~~~~~~~
+../src/main.xc:138:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+../src/main.xc:115:18: warning: unused variable `selfCopy' [-Wunused-variable]
+    unsigned int selfCopy = self;
+                 ^~~~~~~~
+../src/main.xc:158:6: error: parse error before "assert"
+void assert(bool expression, int* testCount) {
+     ^
+../src/main.xc:160:5: error: parse error before "else"
+    else printf("TEST %n : FAILED", testCount);
+    ^
+../src/main.xc:161:1: error: parse error before '}' token
+}
+^
+../src/main.xc:164:16: error: use of undeclared identifer `testCounter'
+    int* tc = &testCounter;
+               ^
+../src/main.xc:164:15: error: initializer element is not constant
+    int* tc = &testCounter;
+              ^~~~~~~~~~~~
+../src/main.xc:165:17: error: parse error before "testCounter"
+    assertEqual(testCounter, 0, tc);
+                ^
+../src/main.xc:165:5: warning: return type defaults to `int' [-Wreturn-type]
+    assertEqual(testCounter, 0, tc);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:165:5: error: conflicting types for 'assertEqual'
+    assertEqual(testCounter, 0, tc);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:154:6: note: previous definition of 'assertEqual' was here
+void assertEqual(int first, int second, int* testCount) {
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:166:17: error: parse error before numeric constant
+    assertEqual(5,5,tc);
+                ^
+../src/main.xc:166:5: warning: return type defaults to `int' [-Wreturn-type]
+    assertEqual(5,5,tc);
+    ^~~~~~~~~~~~~~~~~~~
+../src/main.xc:179:11: error: parse error before string constant
+  printf( "DataOutStream: Start...\n" );
+          ^
+../src/main.xc:179:3: warning: return type defaults to `int' [-Wreturn-type]
+  printf( "DataOutStream: Start...\n" );
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:179:3: error: conflicting types for 'printf'
+  printf( "DataOutStream: Start...\n" );
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:180:22: error: use of undeclared identifer `outfname'
+  res = _openoutpgm( outfname, IMWD, IMHT );
+                     ^
+../src/main.xc:180:3: warning: type defaults to `int' in declaration of `res' [-Wimplicit-int]
+  res = _openoutpgm( outfname, IMWD, IMHT );
+  ^~~
+../src/main.xc:180:3: warning: data definition has no type or storage class [-Wunusual-code]
+  res = _openoutpgm( outfname, IMWD, IMHT );
+  ^~~
+../src/main.xc:180:9: error: initializer element is not constant
+  res = _openoutpgm( outfname, IMWD, IMHT );
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:181:3: error: parse error before "if"
+  if( res ) {
+  ^
+../src/main.xc:183:5: error: parse error before "return"
+    return;
+    ^
+../src/main.xc:184:3: error: parse error before '}' token
+  }
+  ^
+../src/main.xc:187:19: warning: type defaults to `int' in declaration of `y' [-Wimplicit-int]
+  for( int y = 0; y < IMHT; y++ ) {
+                  ^
+../src/main.xc:187:19: warning: data definition has no type or storage class [-Wunusual-code]
+  for( int y = 0; y < IMHT; y++ ) {
+                  ^
+../src/main.xc:187:21: error: parse error before '<' token
+  for( int y = 0; y < IMHT; y++ ) {
+                    ^
+../src/main.xc:187:29: warning: type defaults to `int' in declaration of `y' [-Wimplicit-int]
+  for( int y = 0; y < IMHT; y++ ) {
+                            ^
+../src/main.xc:187:29: warning: data definition has no type or storage class [-Wunusual-code]
+  for( int y = 0; y < IMHT; y++ ) {
+                            ^
+../src/main.xc:191:20: error: parse error before "line"
+    _writeoutline( line, IMWD );
+                   ^
+../src/main.xc:191:5: warning: return type defaults to `int' [-Wreturn-type]
+    _writeoutline( line, IMWD );
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:191:5: error: conflicting types for '_writeoutline'
+    _writeoutline( line, IMWD );
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/pgmIO.h:16:1: note: previous declaration of '_writeoutline' was here
+int _writeoutline(unsigned char line[], int width);
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:192:13: error: parse error before string constant
+    printf( "DataOutStream: Line written...\n" );
+            ^
+../src/main.xc:192:5: warning: return type defaults to `int' [-Wreturn-type]
+    printf( "DataOutStream: Line written...\n" );
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:197:11: error: parse error before string constant
+  printf( "DataOutStream: Done...\n" );
+          ^
+../src/main.xc:197:3: warning: return type defaults to `int' [-Wreturn-type]
+  printf( "DataOutStream: Done...\n" );
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:199:1: error: parse error before '}' token
+}
+^
+../src/main.xc:212:12: error: use of undeclared identifer `i2c'
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+           ^
+../src/main.xc:212:3: warning: type defaults to `int' in declaration of `result' [-Wimplicit-int]
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+  ^~~~~~
+../src/main.xc:212:3: warning: data definition has no type or storage class [-Wunusual-code]
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+  ^~~~~~
+../src/main.xc:212:16: error: trying to call interface function from something that is not an interface
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+           ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:213:3: error: parse error before "if"
+  if (result != I2C_REGOP_SUCCESS) {
+  ^
+../src/main.xc:215:3: error: parse error before '}' token
+  }
+  ^
+../src/main.xc:219:3: error: parse error before "if"
+  if (result != I2C_REGOP_SUCCESS) {
+  ^
+../src/main.xc:221:3: error: parse error before '}' token
+  }
+  ^
+../src/main.xc:229:5: error: parse error before '}' token
+    } while (!status_data & 0x08);
+    ^
+../src/main.xc:232:13: error: initializer element is not constant
+    int x = read_acceleration(i2c, FXOS8700EQ_OUT_X_MSB);
+            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:235:5: error: parse error before "if"
+    if (!tilted) {
+    ^
+../src/main.xc:238:9: warning: type defaults to `int' in declaration of `toDist' [-Wimplicit-int]
+        toDist <: 1;
+        ^~~~~~
+../src/main.xc:238:9: warning: data definition has no type or storage class [-Wunusual-code]
+        toDist <: 1;
+        ^~~~~~
+../src/main.xc:238:17: error: parse error before '<:' token
+        toDist <: 1;
+                ^
+../src/main.xc:253:1: warning: return type defaults to `int' [-Wreturn-type]
+runTests();   //TESTS
+^~~~~~~~~~
+../src/main.xc:257:6: error: global variable `c_inIO' has type chan
+chan c_inIO, c_outIO, c_control;    //extend your channel definitions here
+     ^~~~~~
+../src/main.xc:257:14: error: global variable `c_outIO' has type chan
+chan c_inIO, c_outIO, c_control;    //extend your channel definitions here
+             ^~~~~~~
+../src/main.xc:257:23: error: global variable `c_control' has type chan
+chan c_inIO, c_outIO, c_control;    //extend your channel definitions here
+                      ^~~~~~~~~
+../src/main.xc:259:1: error: parse error before "par"
+par {
+^
+../src/main.xc:261:17: error: parse error before "i2c"
+    orientation(i2c[0],c_control);        //client thread reading orientation data
+                ^
+../src/main.xc:261:5: warning: return type defaults to `int' [-Wreturn-type]
+    orientation(i2c[0],c_control);        //client thread reading orientation data
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:262:18: error: parse error before "infname"
+    DataInStream(infname, c_inIO);          //thread to read in a PGM image
+                 ^
+../src/main.xc:262:5: warning: return type defaults to `int' [-Wreturn-type]
+    DataInStream(infname, c_inIO);          //thread to read in a PGM image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:262:5: error: conflicting types for 'DataInStream'
+    DataInStream(infname, c_inIO);          //thread to read in a PGM image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:34:6: note: previous definition of 'DataInStream' was here
+void DataInStream(char infname[], chanend c_out)
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:263:19: error: parse error before "outfname"
+    DataOutStream(outfname, c_outIO);       //thread to write out a PGM image
+                  ^
+../src/main.xc:263:5: warning: return type defaults to `int' [-Wreturn-type]
+    DataOutStream(outfname, c_outIO);       //thread to write out a PGM image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:264:17: error: parse error before "c_inIO"
+    distributor(c_inIO, c_outIO, c_control);//thread to coordinate work on image
+                ^
+../src/main.xc:264:5: warning: return type defaults to `int' [-Wreturn-type]
+    distributor(c_inIO, c_outIO, c_control);//thread to coordinate work on image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:264:5: error: conflicting types for 'distributor'
+    distributor(c_inIO, c_outIO, c_control);//thread to coordinate work on image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:70:6: note: previous definition of 'distributor' was here
+void distributor(chanend c_in, chanend c_out, chanend fromAcc)
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:268:1: error: parse error before '}' token
+}
+^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+19:18:53 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:99:22: error: parse error before "original"
+void addToRow(char[] original, unsigned int added, int length) {
+                     ^
+../src/main.xc:100:30: error: use of undeclared identifer `added'
+    unsigned int addedCopy = added;
+                             ^
+../src/main.xc:101:26: error: use of undeclared identifer `length'
+    for (int i = 1; i <= length; i++) {
+                         ^
+../src/main.xc:103:9: error: subscripted value is not an array or pointer
+        addToRow[length - i] += addedCopy & 1;
+        ^~~~~~~~
+../src/main.xc:108:26: error: parse error before "original"
+void addThreeRows(char[] original, unsigned int added, int length) {
+                         ^
+../src/main.xc:109:14: error: use of undeclared identifer `original'
+    addToRow(original, circularLeftShift(added), length);
+             ^
+../src/main.xc:109:42: error: use of undeclared identifer `added'
+    addToRow(original, circularLeftShift(added), length);
+                                         ^
+../src/main.xc:109:50: error: use of undeclared identifer `length'
+    addToRow(original, circularLeftShift(added), length);
+                                                 ^
+../src/main.xc:109:24: error: unknown function identifier `circularLeftShift' (possibly missing prototype?)
+    addToRow(original, circularLeftShift(added), length);
+                       ^
+../src/main.xc:109:14: error: too many arguments to function `addToRow'
+    addToRow(original, circularLeftShift(added), length);
+             ^~~~~~~~
+../src/main.xc:110:14: error: too many arguments to function `addToRow'
+    addToRow(original, added, length);
+             ^~~~~~~~
+../src/main.xc:111:24: error: unknown function identifier `circularRightShift' (possibly missing prototype?)
+    addToRow(original, circularRightShift(added), length);
+                       ^
+../src/main.xc:111:14: error: too many arguments to function `addToRow'
+    addToRow(original, circularRightShift(added), length);
+             ^~~~~~~~
+../src/main.xc:120:27: error: unknown function identifier `circularLeftShift' (possibly missing prototype?)
+    addToRow(newRowCount, circularLeftShift(self), length);
+                          ^
+../src/main.xc:120:14: error: too many arguments to function `addToRow'
+    addToRow(newRowCount, circularLeftShift(self), length);
+             ^~~~~~~~~~~
+../src/main.xc:122:27: error: unknown function identifier `circularRightShift' (possibly missing prototype?)
+    addToRow(newRowCount, circularRightShift(self), length);
+                          ^
+../src/main.xc:122:14: error: too many arguments to function `addToRow'
+    addToRow(newRowCount, circularRightShift(self), length);
+             ^~~~~~~~~~~
+../src/main.xc:124:18: error: too many arguments to function `addThreeRows'
+    addThreeRows(newRowCount, top, length);
+                 ^~~~~~~~~~~
+../src/main.xc:126:18: error: too many arguments to function `addThreeRows'
+    addThreeRows(newRowCount, bottom, length);
+                 ^~~~~~~~~~~
+../src/main.xc:138:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+../src/main.xc:115:18: warning: unused variable `selfCopy' [-Wunused-variable]
+    unsigned int selfCopy = self;
+                 ^~~~~~~~
+../src/main.xc:158:6: error: parse error before "assert"
+void assert(bool expression, int* testCount) {
+     ^
+../src/main.xc:160:5: error: parse error before "else"
+    else printf("TEST %n : FAILED", testCount);
+    ^
+../src/main.xc:161:1: error: parse error before '}' token
+}
+^
+../src/main.xc:164:16: error: use of undeclared identifer `testCounter'
+    int* tc = &testCounter;
+               ^
+../src/main.xc:164:15: error: initializer element is not constant
+    int* tc = &testCounter;
+              ^~~~~~~~~~~~
+../src/main.xc:165:17: error: parse error before "testCounter"
+    assertEqual(testCounter, 0, tc);
+                ^
+../src/main.xc:165:5: warning: return type defaults to `int' [-Wreturn-type]
+    assertEqual(testCounter, 0, tc);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:165:5: error: conflicting types for 'assertEqual'
+    assertEqual(testCounter, 0, tc);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:154:6: note: previous definition of 'assertEqual' was here
+void assertEqual(int first, int second, int* testCount) {
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:166:17: error: parse error before numeric constant
+    assertEqual(5,5,tc);
+                ^
+../src/main.xc:166:5: warning: return type defaults to `int' [-Wreturn-type]
+    assertEqual(5,5,tc);
+    ^~~~~~~~~~~~~~~~~~~
+../src/main.xc:179:11: error: parse error before string constant
+  printf( "DataOutStream: Start...\n" );
+          ^
+../src/main.xc:179:3: warning: return type defaults to `int' [-Wreturn-type]
+  printf( "DataOutStream: Start...\n" );
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:179:3: error: conflicting types for 'printf'
+  printf( "DataOutStream: Start...\n" );
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:180:22: error: use of undeclared identifer `outfname'
+  res = _openoutpgm( outfname, IMWD, IMHT );
+                     ^
+../src/main.xc:180:3: warning: type defaults to `int' in declaration of `res' [-Wimplicit-int]
+  res = _openoutpgm( outfname, IMWD, IMHT );
+  ^~~
+../src/main.xc:180:3: warning: data definition has no type or storage class [-Wunusual-code]
+  res = _openoutpgm( outfname, IMWD, IMHT );
+  ^~~
+../src/main.xc:180:9: error: initializer element is not constant
+  res = _openoutpgm( outfname, IMWD, IMHT );
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:181:3: error: parse error before "if"
+  if( res ) {
+  ^
+../src/main.xc:183:5: error: parse error before "return"
+    return;
+    ^
+../src/main.xc:184:3: error: parse error before '}' token
+  }
+  ^
+../src/main.xc:187:19: warning: type defaults to `int' in declaration of `y' [-Wimplicit-int]
+  for( int y = 0; y < IMHT; y++ ) {
+                  ^
+../src/main.xc:187:19: warning: data definition has no type or storage class [-Wunusual-code]
+  for( int y = 0; y < IMHT; y++ ) {
+                  ^
+../src/main.xc:187:21: error: parse error before '<' token
+  for( int y = 0; y < IMHT; y++ ) {
+                    ^
+../src/main.xc:187:29: warning: type defaults to `int' in declaration of `y' [-Wimplicit-int]
+  for( int y = 0; y < IMHT; y++ ) {
+                            ^
+../src/main.xc:187:29: warning: data definition has no type or storage class [-Wunusual-code]
+  for( int y = 0; y < IMHT; y++ ) {
+                            ^
+../src/main.xc:191:20: error: parse error before "line"
+    _writeoutline( line, IMWD );
+                   ^
+../src/main.xc:191:5: warning: return type defaults to `int' [-Wreturn-type]
+    _writeoutline( line, IMWD );
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:191:5: error: conflicting types for '_writeoutline'
+    _writeoutline( line, IMWD );
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/pgmIO.h:16:1: note: previous declaration of '_writeoutline' was here
+int _writeoutline(unsigned char line[], int width);
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:192:13: error: parse error before string constant
+    printf( "DataOutStream: Line written...\n" );
+            ^
+../src/main.xc:192:5: warning: return type defaults to `int' [-Wreturn-type]
+    printf( "DataOutStream: Line written...\n" );
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:197:11: error: parse error before string constant
+  printf( "DataOutStream: Done...\n" );
+          ^
+../src/main.xc:197:3: warning: return type defaults to `int' [-Wreturn-type]
+  printf( "DataOutStream: Done...\n" );
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:199:1: error: parse error before '}' token
+}
+^
+../src/main.xc:212:12: error: use of undeclared identifer `i2c'
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+           ^
+../src/main.xc:212:3: warning: type defaults to `int' in declaration of `result' [-Wimplicit-int]
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+  ^~~~~~
+../src/main.xc:212:3: warning: data definition has no type or storage class [-Wunusual-code]
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+  ^~~~~~
+../src/main.xc:212:16: error: trying to call interface function from something that is not an interface
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+           ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:213:3: error: parse error before "if"
+  if (result != I2C_REGOP_SUCCESS) {
+  ^
+../src/main.xc:215:3: error: parse error before '}' token
+  }
+  ^
+../src/main.xc:219:3: error: parse error before "if"
+  if (result != I2C_REGOP_SUCCESS) {
+  ^
+../src/main.xc:221:3: error: parse error before '}' token
+  }
+  ^
+../src/main.xc:229:5: error: parse error before '}' token
+    } while (!status_data & 0x08);
+    ^
+../src/main.xc:232:13: error: initializer element is not constant
+    int x = read_acceleration(i2c, FXOS8700EQ_OUT_X_MSB);
+            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:235:5: error: parse error before "if"
+    if (!tilted) {
+    ^
+../src/main.xc:238:9: warning: type defaults to `int' in declaration of `toDist' [-Wimplicit-int]
+        toDist <: 1;
+        ^~~~~~
+../src/main.xc:238:9: warning: data definition has no type or storage class [-Wunusual-code]
+        toDist <: 1;
+        ^~~~~~
+../src/main.xc:238:17: error: parse error before '<:' token
+        toDist <: 1;
+                ^
+../src/main.xc:253:1: warning: return type defaults to `int' [-Wreturn-type]
+runTests();   //TESTS
+^~~~~~~~~~
+../src/main.xc:257:6: error: global variable `c_inIO' has type chan
+chan c_inIO, c_outIO, c_control;    //extend your channel definitions here
+     ^~~~~~
+../src/main.xc:257:14: error: global variable `c_outIO' has type chan
+chan c_inIO, c_outIO, c_control;    //extend your channel definitions here
+             ^~~~~~~
+../src/main.xc:257:23: error: global variable `c_control' has type chan
+chan c_inIO, c_outIO, c_control;    //extend your channel definitions here
+                      ^~~~~~~~~
+../src/main.xc:259:1: error: parse error before "par"
+par {
+^
+../src/main.xc:261:17: error: parse error before "i2c"
+    orientation(i2c[0],c_control);        //client thread reading orientation data
+                ^
+../src/main.xc:261:5: warning: return type defaults to `int' [-Wreturn-type]
+    orientation(i2c[0],c_control);        //client thread reading orientation data
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:262:18: error: parse error before "infname"
+    DataInStream(infname, c_inIO);          //thread to read in a PGM image
+                 ^
+../src/main.xc:262:5: warning: return type defaults to `int' [-Wreturn-type]
+    DataInStream(infname, c_inIO);          //thread to read in a PGM image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:262:5: error: conflicting types for 'DataInStream'
+    DataInStream(infname, c_inIO);          //thread to read in a PGM image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:34:6: note: previous definition of 'DataInStream' was here
+void DataInStream(char infname[], chanend c_out)
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:263:19: error: parse error before "outfname"
+    DataOutStream(outfname, c_outIO);       //thread to write out a PGM image
+                  ^
+../src/main.xc:263:5: warning: return type defaults to `int' [-Wreturn-type]
+    DataOutStream(outfname, c_outIO);       //thread to write out a PGM image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:264:17: error: parse error before "c_inIO"
+    distributor(c_inIO, c_outIO, c_control);//thread to coordinate work on image
+                ^
+../src/main.xc:264:5: warning: return type defaults to `int' [-Wreturn-type]
+    distributor(c_inIO, c_outIO, c_control);//thread to coordinate work on image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:264:5: error: conflicting types for 'distributor'
+    distributor(c_inIO, c_outIO, c_control);//thread to coordinate work on image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:70:6: note: previous definition of 'distributor' was here
+void distributor(chanend c_in, chanend c_out, chanend fromAcc)
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:268:1: error: parse error before '}' token
+}
+^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+19:19:12 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:103:9: error: subscripted value is not an array or pointer
+        addToRow[length - i] += addedCopy & 1;
+        ^~~~~~~~
+../src/main.xc:108:26: error: parse error before "original"
+void addThreeRows(char[] original, unsigned int added, int length) {
+                         ^
+../src/main.xc:109:14: error: use of undeclared identifer `original'
+    addToRow(original, circularLeftShift(added), length);
+             ^
+../src/main.xc:109:42: error: use of undeclared identifer `added'
+    addToRow(original, circularLeftShift(added), length);
+                                         ^
+../src/main.xc:109:50: error: use of undeclared identifer `length'
+    addToRow(original, circularLeftShift(added), length);
+                                                 ^
+../src/main.xc:109:24: error: unknown function identifier `circularLeftShift' (possibly missing prototype?)
+    addToRow(original, circularLeftShift(added), length);
+                       ^
+../src/main.xc:111:24: error: unknown function identifier `circularRightShift' (possibly missing prototype?)
+    addToRow(original, circularRightShift(added), length);
+                       ^
+../src/main.xc:120:27: error: unknown function identifier `circularLeftShift' (possibly missing prototype?)
+    addToRow(newRowCount, circularLeftShift(self), length);
+                          ^
+../src/main.xc:122:27: error: unknown function identifier `circularRightShift' (possibly missing prototype?)
+    addToRow(newRowCount, circularRightShift(self), length);
+                          ^
+../src/main.xc:124:18: error: too many arguments to function `addThreeRows'
+    addThreeRows(newRowCount, top, length);
+                 ^~~~~~~~~~~
+../src/main.xc:126:18: error: too many arguments to function `addThreeRows'
+    addThreeRows(newRowCount, bottom, length);
+                 ^~~~~~~~~~~
+../src/main.xc:138:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+../src/main.xc:115:18: warning: unused variable `selfCopy' [-Wunused-variable]
+    unsigned int selfCopy = self;
+                 ^~~~~~~~
+../src/main.xc:158:6: error: parse error before "assert"
+void assert(bool expression, int* testCount) {
+     ^
+../src/main.xc:160:5: error: parse error before "else"
+    else printf("TEST %n : FAILED", testCount);
+    ^
+../src/main.xc:161:1: error: parse error before '}' token
+}
+^
+../src/main.xc:164:16: error: use of undeclared identifer `testCounter'
+    int* tc = &testCounter;
+               ^
+../src/main.xc:164:15: error: initializer element is not constant
+    int* tc = &testCounter;
+              ^~~~~~~~~~~~
+../src/main.xc:165:17: error: parse error before "testCounter"
+    assertEqual(testCounter, 0, tc);
+                ^
+../src/main.xc:165:5: warning: return type defaults to `int' [-Wreturn-type]
+    assertEqual(testCounter, 0, tc);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:165:5: error: conflicting types for 'assertEqual'
+    assertEqual(testCounter, 0, tc);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:154:6: note: previous definition of 'assertEqual' was here
+void assertEqual(int first, int second, int* testCount) {
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:166:17: error: parse error before numeric constant
+    assertEqual(5,5,tc);
+                ^
+../src/main.xc:166:5: warning: return type defaults to `int' [-Wreturn-type]
+    assertEqual(5,5,tc);
+    ^~~~~~~~~~~~~~~~~~~
+../src/main.xc:179:11: error: parse error before string constant
+  printf( "DataOutStream: Start...\n" );
+          ^
+../src/main.xc:179:3: warning: return type defaults to `int' [-Wreturn-type]
+  printf( "DataOutStream: Start...\n" );
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:179:3: error: conflicting types for 'printf'
+  printf( "DataOutStream: Start...\n" );
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:180:22: error: use of undeclared identifer `outfname'
+  res = _openoutpgm( outfname, IMWD, IMHT );
+                     ^
+../src/main.xc:180:3: warning: type defaults to `int' in declaration of `res' [-Wimplicit-int]
+  res = _openoutpgm( outfname, IMWD, IMHT );
+  ^~~
+../src/main.xc:180:3: warning: data definition has no type or storage class [-Wunusual-code]
+  res = _openoutpgm( outfname, IMWD, IMHT );
+  ^~~
+../src/main.xc:180:9: error: initializer element is not constant
+  res = _openoutpgm( outfname, IMWD, IMHT );
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:181:3: error: parse error before "if"
+  if( res ) {
+  ^
+../src/main.xc:183:5: error: parse error before "return"
+    return;
+    ^
+../src/main.xc:184:3: error: parse error before '}' token
+  }
+  ^
+../src/main.xc:187:19: warning: type defaults to `int' in declaration of `y' [-Wimplicit-int]
+  for( int y = 0; y < IMHT; y++ ) {
+                  ^
+../src/main.xc:187:19: warning: data definition has no type or storage class [-Wunusual-code]
+  for( int y = 0; y < IMHT; y++ ) {
+                  ^
+../src/main.xc:187:21: error: parse error before '<' token
+  for( int y = 0; y < IMHT; y++ ) {
+                    ^
+../src/main.xc:187:29: warning: type defaults to `int' in declaration of `y' [-Wimplicit-int]
+  for( int y = 0; y < IMHT; y++ ) {
+                            ^
+../src/main.xc:187:29: warning: data definition has no type or storage class [-Wunusual-code]
+  for( int y = 0; y < IMHT; y++ ) {
+                            ^
+../src/main.xc:191:20: error: parse error before "line"
+    _writeoutline( line, IMWD );
+                   ^
+../src/main.xc:191:5: warning: return type defaults to `int' [-Wreturn-type]
+    _writeoutline( line, IMWD );
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:191:5: error: conflicting types for '_writeoutline'
+    _writeoutline( line, IMWD );
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/pgmIO.h:16:1: note: previous declaration of '_writeoutline' was here
+int _writeoutline(unsigned char line[], int width);
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:192:13: error: parse error before string constant
+    printf( "DataOutStream: Line written...\n" );
+            ^
+../src/main.xc:192:5: warning: return type defaults to `int' [-Wreturn-type]
+    printf( "DataOutStream: Line written...\n" );
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:197:11: error: parse error before string constant
+  printf( "DataOutStream: Done...\n" );
+          ^
+../src/main.xc:197:3: warning: return type defaults to `int' [-Wreturn-type]
+  printf( "DataOutStream: Done...\n" );
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:199:1: error: parse error before '}' token
+}
+^
+../src/main.xc:212:12: error: use of undeclared identifer `i2c'
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+           ^
+../src/main.xc:212:3: warning: type defaults to `int' in declaration of `result' [-Wimplicit-int]
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+  ^~~~~~
+../src/main.xc:212:3: warning: data definition has no type or storage class [-Wunusual-code]
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+  ^~~~~~
+../src/main.xc:212:16: error: trying to call interface function from something that is not an interface
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+           ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:213:3: error: parse error before "if"
+  if (result != I2C_REGOP_SUCCESS) {
+  ^
+../src/main.xc:215:3: error: parse error before '}' token
+  }
+  ^
+../src/main.xc:219:3: error: parse error before "if"
+  if (result != I2C_REGOP_SUCCESS) {
+  ^
+../src/main.xc:221:3: error: parse error before '}' token
+  }
+  ^
+../src/main.xc:229:5: error: parse error before '}' token
+    } while (!status_data & 0x08);
+    ^
+../src/main.xc:232:13: error: initializer element is not constant
+    int x = read_acceleration(i2c, FXOS8700EQ_OUT_X_MSB);
+            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:235:5: error: parse error before "if"
+    if (!tilted) {
+    ^
+../src/main.xc:238:9: warning: type defaults to `int' in declaration of `toDist' [-Wimplicit-int]
+        toDist <: 1;
+        ^~~~~~
+../src/main.xc:238:9: warning: data definition has no type or storage class [-Wunusual-code]
+        toDist <: 1;
+        ^~~~~~
+../src/main.xc:238:17: error: parse error before '<:' token
+        toDist <: 1;
+                ^
+../src/main.xc:253:1: warning: return type defaults to `int' [-Wreturn-type]
+runTests();   //TESTS
+^~~~~~~~~~
+../src/main.xc:257:6: error: global variable `c_inIO' has type chan
+chan c_inIO, c_outIO, c_control;    //extend your channel definitions here
+     ^~~~~~
+../src/main.xc:257:14: error: global variable `c_outIO' has type chan
+chan c_inIO, c_outIO, c_control;    //extend your channel definitions here
+             ^~~~~~~
+../src/main.xc:257:23: error: global variable `c_control' has type chan
+chan c_inIO, c_outIO, c_control;    //extend your channel definitions here
+                      ^~~~~~~~~
+../src/main.xc:259:1: error: parse error before "par"
+par {
+^
+../src/main.xc:261:17: error: parse error before "i2c"
+    orientation(i2c[0],c_control);        //client thread reading orientation data
+                ^
+../src/main.xc:261:5: warning: return type defaults to `int' [-Wreturn-type]
+    orientation(i2c[0],c_control);        //client thread reading orientation data
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:262:18: error: parse error before "infname"
+    DataInStream(infname, c_inIO);          //thread to read in a PGM image
+                 ^
+../src/main.xc:262:5: warning: return type defaults to `int' [-Wreturn-type]
+    DataInStream(infname, c_inIO);          //thread to read in a PGM image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:262:5: error: conflicting types for 'DataInStream'
+    DataInStream(infname, c_inIO);          //thread to read in a PGM image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:34:6: note: previous definition of 'DataInStream' was here
+void DataInStream(char infname[], chanend c_out)
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:263:19: error: parse error before "outfname"
+    DataOutStream(outfname, c_outIO);       //thread to write out a PGM image
+                  ^
+../src/main.xc:263:5: warning: return type defaults to `int' [-Wreturn-type]
+    DataOutStream(outfname, c_outIO);       //thread to write out a PGM image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:264:17: error: parse error before "c_inIO"
+    distributor(c_inIO, c_outIO, c_control);//thread to coordinate work on image
+                ^
+../src/main.xc:264:5: warning: return type defaults to `int' [-Wreturn-type]
+    distributor(c_inIO, c_outIO, c_control);//thread to coordinate work on image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:264:5: error: conflicting types for 'distributor'
+    distributor(c_inIO, c_outIO, c_control);//thread to coordinate work on image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:70:6: note: previous definition of 'distributor' was here
+void distributor(chanend c_in, chanend c_out, chanend fromAcc)
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:268:1: error: parse error before '}' token
+}
+^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+19:19:33 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:108:26: error: parse error before "original"
+void addThreeRows(char[] original, unsigned int added, int length) {
+                         ^
+../src/main.xc:109:14: error: use of undeclared identifer `original'
+    addToRow(original, circularLeftShift(added), length);
+             ^
+../src/main.xc:109:42: error: use of undeclared identifer `added'
+    addToRow(original, circularLeftShift(added), length);
+                                         ^
+../src/main.xc:109:50: error: use of undeclared identifer `length'
+    addToRow(original, circularLeftShift(added), length);
+                                                 ^
+../src/main.xc:109:24: error: unknown function identifier `circularLeftShift' (possibly missing prototype?)
+    addToRow(original, circularLeftShift(added), length);
+                       ^
+../src/main.xc:111:24: error: unknown function identifier `circularRightShift' (possibly missing prototype?)
+    addToRow(original, circularRightShift(added), length);
+                       ^
+../src/main.xc:120:27: error: unknown function identifier `circularLeftShift' (possibly missing prototype?)
+    addToRow(newRowCount, circularLeftShift(self), length);
+                          ^
+../src/main.xc:122:27: error: unknown function identifier `circularRightShift' (possibly missing prototype?)
+    addToRow(newRowCount, circularRightShift(self), length);
+                          ^
+../src/main.xc:124:18: error: too many arguments to function `addThreeRows'
+    addThreeRows(newRowCount, top, length);
+                 ^~~~~~~~~~~
+../src/main.xc:126:18: error: too many arguments to function `addThreeRows'
+    addThreeRows(newRowCount, bottom, length);
+                 ^~~~~~~~~~~
+../src/main.xc:138:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+../src/main.xc:115:18: warning: unused variable `selfCopy' [-Wunused-variable]
+    unsigned int selfCopy = self;
+                 ^~~~~~~~
+../src/main.xc:158:6: error: parse error before "assert"
+void assert(bool expression, int* testCount) {
+     ^
+../src/main.xc:160:5: error: parse error before "else"
+    else printf("TEST %n : FAILED", testCount);
+    ^
+../src/main.xc:161:1: error: parse error before '}' token
+}
+^
+../src/main.xc:164:16: error: use of undeclared identifer `testCounter'
+    int* tc = &testCounter;
+               ^
+../src/main.xc:164:15: error: initializer element is not constant
+    int* tc = &testCounter;
+              ^~~~~~~~~~~~
+../src/main.xc:165:17: error: parse error before "testCounter"
+    assertEqual(testCounter, 0, tc);
+                ^
+../src/main.xc:165:5: warning: return type defaults to `int' [-Wreturn-type]
+    assertEqual(testCounter, 0, tc);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:165:5: error: conflicting types for 'assertEqual'
+    assertEqual(testCounter, 0, tc);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:154:6: note: previous definition of 'assertEqual' was here
+void assertEqual(int first, int second, int* testCount) {
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:166:17: error: parse error before numeric constant
+    assertEqual(5,5,tc);
+                ^
+../src/main.xc:166:5: warning: return type defaults to `int' [-Wreturn-type]
+    assertEqual(5,5,tc);
+    ^~~~~~~~~~~~~~~~~~~
+../src/main.xc:179:11: error: parse error before string constant
+  printf( "DataOutStream: Start...\n" );
+          ^
+../src/main.xc:179:3: warning: return type defaults to `int' [-Wreturn-type]
+  printf( "DataOutStream: Start...\n" );
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:179:3: error: conflicting types for 'printf'
+  printf( "DataOutStream: Start...\n" );
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:180:22: error: use of undeclared identifer `outfname'
+  res = _openoutpgm( outfname, IMWD, IMHT );
+                     ^
+../src/main.xc:180:3: warning: type defaults to `int' in declaration of `res' [-Wimplicit-int]
+  res = _openoutpgm( outfname, IMWD, IMHT );
+  ^~~
+../src/main.xc:180:3: warning: data definition has no type or storage class [-Wunusual-code]
+  res = _openoutpgm( outfname, IMWD, IMHT );
+  ^~~
+../src/main.xc:180:9: error: initializer element is not constant
+  res = _openoutpgm( outfname, IMWD, IMHT );
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:181:3: error: parse error before "if"
+  if( res ) {
+  ^
+../src/main.xc:183:5: error: parse error before "return"
+    return;
+    ^
+../src/main.xc:184:3: error: parse error before '}' token
+  }
+  ^
+../src/main.xc:187:19: warning: type defaults to `int' in declaration of `y' [-Wimplicit-int]
+  for( int y = 0; y < IMHT; y++ ) {
+                  ^
+../src/main.xc:187:19: warning: data definition has no type or storage class [-Wunusual-code]
+  for( int y = 0; y < IMHT; y++ ) {
+                  ^
+../src/main.xc:187:21: error: parse error before '<' token
+  for( int y = 0; y < IMHT; y++ ) {
+                    ^
+../src/main.xc:187:29: warning: type defaults to `int' in declaration of `y' [-Wimplicit-int]
+  for( int y = 0; y < IMHT; y++ ) {
+                            ^
+../src/main.xc:187:29: warning: data definition has no type or storage class [-Wunusual-code]
+  for( int y = 0; y < IMHT; y++ ) {
+                            ^
+../src/main.xc:191:20: error: parse error before "line"
+    _writeoutline( line, IMWD );
+                   ^
+../src/main.xc:191:5: warning: return type defaults to `int' [-Wreturn-type]
+    _writeoutline( line, IMWD );
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:191:5: error: conflicting types for '_writeoutline'
+    _writeoutline( line, IMWD );
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/pgmIO.h:16:1: note: previous declaration of '_writeoutline' was here
+int _writeoutline(unsigned char line[], int width);
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:192:13: error: parse error before string constant
+    printf( "DataOutStream: Line written...\n" );
+            ^
+../src/main.xc:192:5: warning: return type defaults to `int' [-Wreturn-type]
+    printf( "DataOutStream: Line written...\n" );
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:197:11: error: parse error before string constant
+  printf( "DataOutStream: Done...\n" );
+          ^
+../src/main.xc:197:3: warning: return type defaults to `int' [-Wreturn-type]
+  printf( "DataOutStream: Done...\n" );
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:199:1: error: parse error before '}' token
+}
+^
+../src/main.xc:212:12: error: use of undeclared identifer `i2c'
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+           ^
+../src/main.xc:212:3: warning: type defaults to `int' in declaration of `result' [-Wimplicit-int]
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+  ^~~~~~
+../src/main.xc:212:3: warning: data definition has no type or storage class [-Wunusual-code]
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+  ^~~~~~
+../src/main.xc:212:16: error: trying to call interface function from something that is not an interface
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+           ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:213:3: error: parse error before "if"
+  if (result != I2C_REGOP_SUCCESS) {
+  ^
+../src/main.xc:215:3: error: parse error before '}' token
+  }
+  ^
+../src/main.xc:219:3: error: parse error before "if"
+  if (result != I2C_REGOP_SUCCESS) {
+  ^
+../src/main.xc:221:3: error: parse error before '}' token
+  }
+  ^
+../src/main.xc:229:5: error: parse error before '}' token
+    } while (!status_data & 0x08);
+    ^
+../src/main.xc:232:13: error: initializer element is not constant
+    int x = read_acceleration(i2c, FXOS8700EQ_OUT_X_MSB);
+            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:235:5: error: parse error before "if"
+    if (!tilted) {
+    ^
+../src/main.xc:238:9: warning: type defaults to `int' in declaration of `toDist' [-Wimplicit-int]
+        toDist <: 1;
+        ^~~~~~
+../src/main.xc:238:9: warning: data definition has no type or storage class [-Wunusual-code]
+        toDist <: 1;
+        ^~~~~~
+../src/main.xc:238:17: error: parse error before '<:' token
+        toDist <: 1;
+                ^
+../src/main.xc:253:1: warning: return type defaults to `int' [-Wreturn-type]
+runTests();   //TESTS
+^~~~~~~~~~
+../src/main.xc:257:6: error: global variable `c_inIO' has type chan
+chan c_inIO, c_outIO, c_control;    //extend your channel definitions here
+     ^~~~~~
+../src/main.xc:257:14: error: global variable `c_outIO' has type chan
+chan c_inIO, c_outIO, c_control;    //extend your channel definitions here
+             ^~~~~~~
+../src/main.xc:257:23: error: global variable `c_control' has type chan
+chan c_inIO, c_outIO, c_control;    //extend your channel definitions here
+                      ^~~~~~~~~
+../src/main.xc:259:1: error: parse error before "par"
+par {
+^
+../src/main.xc:261:17: error: parse error before "i2c"
+    orientation(i2c[0],c_control);        //client thread reading orientation data
+                ^
+../src/main.xc:261:5: warning: return type defaults to `int' [-Wreturn-type]
+    orientation(i2c[0],c_control);        //client thread reading orientation data
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:262:18: error: parse error before "infname"
+    DataInStream(infname, c_inIO);          //thread to read in a PGM image
+                 ^
+../src/main.xc:262:5: warning: return type defaults to `int' [-Wreturn-type]
+    DataInStream(infname, c_inIO);          //thread to read in a PGM image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:262:5: error: conflicting types for 'DataInStream'
+    DataInStream(infname, c_inIO);          //thread to read in a PGM image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:34:6: note: previous definition of 'DataInStream' was here
+void DataInStream(char infname[], chanend c_out)
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:263:19: error: parse error before "outfname"
+    DataOutStream(outfname, c_outIO);       //thread to write out a PGM image
+                  ^
+../src/main.xc:263:5: warning: return type defaults to `int' [-Wreturn-type]
+    DataOutStream(outfname, c_outIO);       //thread to write out a PGM image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:264:17: error: parse error before "c_inIO"
+    distributor(c_inIO, c_outIO, c_control);//thread to coordinate work on image
+                ^
+../src/main.xc:264:5: warning: return type defaults to `int' [-Wreturn-type]
+    distributor(c_inIO, c_outIO, c_control);//thread to coordinate work on image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:264:5: error: conflicting types for 'distributor'
+    distributor(c_inIO, c_outIO, c_control);//thread to coordinate work on image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:70:6: note: previous definition of 'distributor' was here
+void distributor(chanend c_in, chanend c_out, chanend fromAcc)
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:268:1: error: parse error before '}' token
+}
+^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+19:19:46 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:109:24: error: unknown function identifier `circularLeftShift' (possibly missing prototype?)
+    addToRow(original, circularLeftShift(added), length);
+                       ^
+../src/main.xc:111:24: error: unknown function identifier `circularRightShift' (possibly missing prototype?)
+    addToRow(original, circularRightShift(added), length);
+                       ^
+../src/main.xc:120:27: error: unknown function identifier `circularLeftShift' (possibly missing prototype?)
+    addToRow(newRowCount, circularLeftShift(self), length);
+                          ^
+../src/main.xc:122:27: error: unknown function identifier `circularRightShift' (possibly missing prototype?)
+    addToRow(newRowCount, circularRightShift(self), length);
+                          ^
+../src/main.xc:138:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+../src/main.xc:115:18: warning: unused variable `selfCopy' [-Wunused-variable]
+    unsigned int selfCopy = self;
+                 ^~~~~~~~
+../src/main.xc:158:6: error: parse error before "assert"
+void assert(bool expression, int* testCount) {
+     ^
+../src/main.xc:160:5: error: parse error before "else"
+    else printf("TEST %n : FAILED", testCount);
+    ^
+../src/main.xc:161:1: error: parse error before '}' token
+}
+^
+../src/main.xc:164:16: error: use of undeclared identifer `testCounter'
+    int* tc = &testCounter;
+               ^
+../src/main.xc:164:15: error: initializer element is not constant
+    int* tc = &testCounter;
+              ^~~~~~~~~~~~
+../src/main.xc:165:17: error: parse error before "testCounter"
+    assertEqual(testCounter, 0, tc);
+                ^
+../src/main.xc:165:5: warning: return type defaults to `int' [-Wreturn-type]
+    assertEqual(testCounter, 0, tc);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:165:5: error: conflicting types for 'assertEqual'
+    assertEqual(testCounter, 0, tc);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:154:6: note: previous definition of 'assertEqual' was here
+void assertEqual(int first, int second, int* testCount) {
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:166:17: error: parse error before numeric constant
+    assertEqual(5,5,tc);
+                ^
+../src/main.xc:166:5: warning: return type defaults to `int' [-Wreturn-type]
+    assertEqual(5,5,tc);
+    ^~~~~~~~~~~~~~~~~~~
+../src/main.xc:179:11: error: parse error before string constant
+  printf( "DataOutStream: Start...\n" );
+          ^
+../src/main.xc:179:3: warning: return type defaults to `int' [-Wreturn-type]
+  printf( "DataOutStream: Start...\n" );
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:179:3: error: conflicting types for 'printf'
+  printf( "DataOutStream: Start...\n" );
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:180:22: error: use of undeclared identifer `outfname'
+  res = _openoutpgm( outfname, IMWD, IMHT );
+                     ^
+../src/main.xc:180:3: warning: type defaults to `int' in declaration of `res' [-Wimplicit-int]
+  res = _openoutpgm( outfname, IMWD, IMHT );
+  ^~~
+../src/main.xc:180:3: warning: data definition has no type or storage class [-Wunusual-code]
+  res = _openoutpgm( outfname, IMWD, IMHT );
+  ^~~
+../src/main.xc:180:9: error: initializer element is not constant
+  res = _openoutpgm( outfname, IMWD, IMHT );
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:181:3: error: parse error before "if"
+  if( res ) {
+  ^
+../src/main.xc:183:5: error: parse error before "return"
+    return;
+    ^
+../src/main.xc:184:3: error: parse error before '}' token
+  }
+  ^
+../src/main.xc:187:19: warning: type defaults to `int' in declaration of `y' [-Wimplicit-int]
+  for( int y = 0; y < IMHT; y++ ) {
+                  ^
+../src/main.xc:187:19: warning: data definition has no type or storage class [-Wunusual-code]
+  for( int y = 0; y < IMHT; y++ ) {
+                  ^
+../src/main.xc:187:21: error: parse error before '<' token
+  for( int y = 0; y < IMHT; y++ ) {
+                    ^
+../src/main.xc:187:29: warning: type defaults to `int' in declaration of `y' [-Wimplicit-int]
+  for( int y = 0; y < IMHT; y++ ) {
+                            ^
+../src/main.xc:187:29: warning: data definition has no type or storage class [-Wunusual-code]
+  for( int y = 0; y < IMHT; y++ ) {
+                            ^
+../src/main.xc:191:20: error: parse error before "line"
+    _writeoutline( line, IMWD );
+                   ^
+../src/main.xc:191:5: warning: return type defaults to `int' [-Wreturn-type]
+    _writeoutline( line, IMWD );
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:191:5: error: conflicting types for '_writeoutline'
+    _writeoutline( line, IMWD );
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/pgmIO.h:16:1: note: previous declaration of '_writeoutline' was here
+int _writeoutline(unsigned char line[], int width);
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:192:13: error: parse error before string constant
+    printf( "DataOutStream: Line written...\n" );
+            ^
+../src/main.xc:192:5: warning: return type defaults to `int' [-Wreturn-type]
+    printf( "DataOutStream: Line written...\n" );
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:197:11: error: parse error before string constant
+  printf( "DataOutStream: Done...\n" );
+          ^
+../src/main.xc:197:3: warning: return type defaults to `int' [-Wreturn-type]
+  printf( "DataOutStream: Done...\n" );
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:199:1: error: parse error before '}' token
+}
+^
+../src/main.xc:212:12: error: use of undeclared identifer `i2c'
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+           ^
+../src/main.xc:212:3: warning: type defaults to `int' in declaration of `result' [-Wimplicit-int]
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+  ^~~~~~
+../src/main.xc:212:3: warning: data definition has no type or storage class [-Wunusual-code]
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+  ^~~~~~
+../src/main.xc:212:16: error: trying to call interface function from something that is not an interface
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+           ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:213:3: error: parse error before "if"
+  if (result != I2C_REGOP_SUCCESS) {
+  ^
+../src/main.xc:215:3: error: parse error before '}' token
+  }
+  ^
+../src/main.xc:219:3: error: parse error before "if"
+  if (result != I2C_REGOP_SUCCESS) {
+  ^
+../src/main.xc:221:3: error: parse error before '}' token
+  }
+  ^
+../src/main.xc:229:5: error: parse error before '}' token
+    } while (!status_data & 0x08);
+    ^
+../src/main.xc:232:13: error: initializer element is not constant
+    int x = read_acceleration(i2c, FXOS8700EQ_OUT_X_MSB);
+            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:235:5: error: parse error before "if"
+    if (!tilted) {
+    ^
+../src/main.xc:238:9: warning: type defaults to `int' in declaration of `toDist' [-Wimplicit-int]
+        toDist <: 1;
+        ^~~~~~
+../src/main.xc:238:9: warning: data definition has no type or storage class [-Wunusual-code]
+        toDist <: 1;
+        ^~~~~~
+../src/main.xc:238:17: error: parse error before '<:' token
+        toDist <: 1;
+                ^
+../src/main.xc:253:1: warning: return type defaults to `int' [-Wreturn-type]
+runTests();   //TESTS
+^~~~~~~~~~
+../src/main.xc:257:6: error: global variable `c_inIO' has type chan
+chan c_inIO, c_outIO, c_control;    //extend your channel definitions here
+     ^~~~~~
+../src/main.xc:257:14: error: global variable `c_outIO' has type chan
+chan c_inIO, c_outIO, c_control;    //extend your channel definitions here
+             ^~~~~~~
+../src/main.xc:257:23: error: global variable `c_control' has type chan
+chan c_inIO, c_outIO, c_control;    //extend your channel definitions here
+                      ^~~~~~~~~
+../src/main.xc:259:1: error: parse error before "par"
+par {
+^
+../src/main.xc:261:17: error: parse error before "i2c"
+    orientation(i2c[0],c_control);        //client thread reading orientation data
+                ^
+../src/main.xc:261:5: warning: return type defaults to `int' [-Wreturn-type]
+    orientation(i2c[0],c_control);        //client thread reading orientation data
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:262:18: error: parse error before "infname"
+    DataInStream(infname, c_inIO);          //thread to read in a PGM image
+                 ^
+../src/main.xc:262:5: warning: return type defaults to `int' [-Wreturn-type]
+    DataInStream(infname, c_inIO);          //thread to read in a PGM image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:262:5: error: conflicting types for 'DataInStream'
+    DataInStream(infname, c_inIO);          //thread to read in a PGM image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:34:6: note: previous definition of 'DataInStream' was here
+void DataInStream(char infname[], chanend c_out)
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:263:19: error: parse error before "outfname"
+    DataOutStream(outfname, c_outIO);       //thread to write out a PGM image
+                  ^
+../src/main.xc:263:5: warning: return type defaults to `int' [-Wreturn-type]
+    DataOutStream(outfname, c_outIO);       //thread to write out a PGM image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:264:17: error: parse error before "c_inIO"
+    distributor(c_inIO, c_outIO, c_control);//thread to coordinate work on image
+                ^
+../src/main.xc:264:5: warning: return type defaults to `int' [-Wreturn-type]
+    distributor(c_inIO, c_outIO, c_control);//thread to coordinate work on image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:264:5: error: conflicting types for 'distributor'
+    distributor(c_inIO, c_outIO, c_control);//thread to coordinate work on image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:70:6: note: previous definition of 'distributor' was here
+void distributor(chanend c_in, chanend c_out, chanend fromAcc)
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:268:1: error: parse error before '}' token
+}
+^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+19:20:08 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:123:42: error: too few arguments to function `circularLeftShift'
+    addToRow(original, circularLeftShift(added), length);
+                                         ^
+../src/main.xc:125:43: error: too few arguments to function `circularRightShift'
+    addToRow(original, circularRightShift(added), length);
+                                          ^
+../src/main.xc:134:45: error: too few arguments to function `circularLeftShift'
+    addToRow(newRowCount, circularLeftShift(self), length);
+                                            ^
+../src/main.xc:136:46: error: too few arguments to function `circularRightShift'
+    addToRow(newRowCount, circularRightShift(self), length);
+                                             ^
+../src/main.xc:152:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+../src/main.xc:129:18: warning: unused variable `selfCopy' [-Wunused-variable]
+    unsigned int selfCopy = self;
+                 ^~~~~~~~
+../src/main.xc:158:6: error: parse error before "assert"
+void assert(bool expression, int* testCount) {
+     ^
+../src/main.xc:160:5: error: parse error before "else"
+    else printf("TEST %n : FAILED", testCount);
+    ^
+../src/main.xc:161:1: error: parse error before '}' token
+}
+^
+../src/main.xc:164:16: error: use of undeclared identifer `testCounter'
+    int* tc = &testCounter;
+               ^
+../src/main.xc:164:15: error: initializer element is not constant
+    int* tc = &testCounter;
+              ^~~~~~~~~~~~
+../src/main.xc:165:17: error: parse error before "testCounter"
+    assertEqual(testCounter, 0, tc);
+                ^
+../src/main.xc:165:5: warning: return type defaults to `int' [-Wreturn-type]
+    assertEqual(testCounter, 0, tc);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:165:5: error: conflicting types for 'assertEqual'
+    assertEqual(testCounter, 0, tc);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:154:6: note: previous definition of 'assertEqual' was here
+void assertEqual(int first, int second, int* testCount) {
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:166:17: error: parse error before numeric constant
+    assertEqual(5,5,tc);
+                ^
+../src/main.xc:166:5: warning: return type defaults to `int' [-Wreturn-type]
+    assertEqual(5,5,tc);
+    ^~~~~~~~~~~~~~~~~~~
+../src/main.xc:179:11: error: parse error before string constant
+  printf( "DataOutStream: Start...\n" );
+          ^
+../src/main.xc:179:3: warning: return type defaults to `int' [-Wreturn-type]
+  printf( "DataOutStream: Start...\n" );
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:179:3: error: conflicting types for 'printf'
+  printf( "DataOutStream: Start...\n" );
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:180:22: error: use of undeclared identifer `outfname'
+  res = _openoutpgm( outfname, IMWD, IMHT );
+                     ^
+../src/main.xc:180:3: warning: type defaults to `int' in declaration of `res' [-Wimplicit-int]
+  res = _openoutpgm( outfname, IMWD, IMHT );
+  ^~~
+../src/main.xc:180:3: warning: data definition has no type or storage class [-Wunusual-code]
+  res = _openoutpgm( outfname, IMWD, IMHT );
+  ^~~
+../src/main.xc:180:9: error: initializer element is not constant
+  res = _openoutpgm( outfname, IMWD, IMHT );
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:181:3: error: parse error before "if"
+  if( res ) {
+  ^
+../src/main.xc:183:5: error: parse error before "return"
+    return;
+    ^
+../src/main.xc:184:3: error: parse error before '}' token
+  }
+  ^
+../src/main.xc:187:19: warning: type defaults to `int' in declaration of `y' [-Wimplicit-int]
+  for( int y = 0; y < IMHT; y++ ) {
+                  ^
+../src/main.xc:187:19: warning: data definition has no type or storage class [-Wunusual-code]
+  for( int y = 0; y < IMHT; y++ ) {
+                  ^
+../src/main.xc:187:21: error: parse error before '<' token
+  for( int y = 0; y < IMHT; y++ ) {
+                    ^
+../src/main.xc:187:29: warning: type defaults to `int' in declaration of `y' [-Wimplicit-int]
+  for( int y = 0; y < IMHT; y++ ) {
+                            ^
+../src/main.xc:187:29: warning: data definition has no type or storage class [-Wunusual-code]
+  for( int y = 0; y < IMHT; y++ ) {
+                            ^
+../src/main.xc:191:20: error: parse error before "line"
+    _writeoutline( line, IMWD );
+                   ^
+../src/main.xc:191:5: warning: return type defaults to `int' [-Wreturn-type]
+    _writeoutline( line, IMWD );
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:191:5: error: conflicting types for '_writeoutline'
+    _writeoutline( line, IMWD );
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/pgmIO.h:16:1: note: previous declaration of '_writeoutline' was here
+int _writeoutline(unsigned char line[], int width);
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:192:13: error: parse error before string constant
+    printf( "DataOutStream: Line written...\n" );
+            ^
+../src/main.xc:192:5: warning: return type defaults to `int' [-Wreturn-type]
+    printf( "DataOutStream: Line written...\n" );
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:197:11: error: parse error before string constant
+  printf( "DataOutStream: Done...\n" );
+          ^
+../src/main.xc:197:3: warning: return type defaults to `int' [-Wreturn-type]
+  printf( "DataOutStream: Done...\n" );
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:199:1: error: parse error before '}' token
+}
+^
+../src/main.xc:212:12: error: use of undeclared identifer `i2c'
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+           ^
+../src/main.xc:212:3: warning: type defaults to `int' in declaration of `result' [-Wimplicit-int]
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+  ^~~~~~
+../src/main.xc:212:3: warning: data definition has no type or storage class [-Wunusual-code]
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+  ^~~~~~
+../src/main.xc:212:16: error: trying to call interface function from something that is not an interface
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+           ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:213:3: error: parse error before "if"
+  if (result != I2C_REGOP_SUCCESS) {
+  ^
+../src/main.xc:215:3: error: parse error before '}' token
+  }
+  ^
+../src/main.xc:219:3: error: parse error before "if"
+  if (result != I2C_REGOP_SUCCESS) {
+  ^
+../src/main.xc:221:3: error: parse error before '}' token
+  }
+  ^
+../src/main.xc:229:5: error: parse error before '}' token
+    } while (!status_data & 0x08);
+    ^
+../src/main.xc:232:13: error: initializer element is not constant
+    int x = read_acceleration(i2c, FXOS8700EQ_OUT_X_MSB);
+            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:235:5: error: parse error before "if"
+    if (!tilted) {
+    ^
+../src/main.xc:238:9: warning: type defaults to `int' in declaration of `toDist' [-Wimplicit-int]
+        toDist <: 1;
+        ^~~~~~
+../src/main.xc:238:9: warning: data definition has no type or storage class [-Wunusual-code]
+        toDist <: 1;
+        ^~~~~~
+../src/main.xc:238:17: error: parse error before '<:' token
+        toDist <: 1;
+                ^
+../src/main.xc:253:1: warning: return type defaults to `int' [-Wreturn-type]
+runTests();   //TESTS
+^~~~~~~~~~
+../src/main.xc:257:6: error: global variable `c_inIO' has type chan
+chan c_inIO, c_outIO, c_control;    //extend your channel definitions here
+     ^~~~~~
+../src/main.xc:257:14: error: global variable `c_outIO' has type chan
+chan c_inIO, c_outIO, c_control;    //extend your channel definitions here
+             ^~~~~~~
+../src/main.xc:257:23: error: global variable `c_control' has type chan
+chan c_inIO, c_outIO, c_control;    //extend your channel definitions here
+                      ^~~~~~~~~
+../src/main.xc:259:1: error: parse error before "par"
+par {
+^
+../src/main.xc:261:17: error: parse error before "i2c"
+    orientation(i2c[0],c_control);        //client thread reading orientation data
+                ^
+../src/main.xc:261:5: warning: return type defaults to `int' [-Wreturn-type]
+    orientation(i2c[0],c_control);        //client thread reading orientation data
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:262:18: error: parse error before "infname"
+    DataInStream(infname, c_inIO);          //thread to read in a PGM image
+                 ^
+../src/main.xc:262:5: warning: return type defaults to `int' [-Wreturn-type]
+    DataInStream(infname, c_inIO);          //thread to read in a PGM image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:262:5: error: conflicting types for 'DataInStream'
+    DataInStream(infname, c_inIO);          //thread to read in a PGM image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:34:6: note: previous definition of 'DataInStream' was here
+void DataInStream(char infname[], chanend c_out)
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:263:19: error: parse error before "outfname"
+    DataOutStream(outfname, c_outIO);       //thread to write out a PGM image
+                  ^
+../src/main.xc:263:5: warning: return type defaults to `int' [-Wreturn-type]
+    DataOutStream(outfname, c_outIO);       //thread to write out a PGM image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:264:17: error: parse error before "c_inIO"
+    distributor(c_inIO, c_outIO, c_control);//thread to coordinate work on image
+                ^
+../src/main.xc:264:5: warning: return type defaults to `int' [-Wreturn-type]
+    distributor(c_inIO, c_outIO, c_control);//thread to coordinate work on image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:264:5: error: conflicting types for 'distributor'
+    distributor(c_inIO, c_outIO, c_control);//thread to coordinate work on image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:70:6: note: previous definition of 'distributor' was here
+void distributor(chanend c_in, chanend c_out, chanend fromAcc)
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:268:1: error: parse error before '}' token
+}
+^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+19:21:24 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:152:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+../src/main.xc:129:18: warning: unused variable `selfCopy' [-Wunused-variable]
+    unsigned int selfCopy = self;
+                 ^~~~~~~~
+../src/main.xc:158:6: error: parse error before "assert"
+void assert(bool expression, int* testCount) {
+     ^
+../src/main.xc:160:5: error: parse error before "else"
+    else printf("TEST %n : FAILED", testCount);
+    ^
+../src/main.xc:161:1: error: parse error before '}' token
+}
+^
+../src/main.xc:164:16: error: use of undeclared identifer `testCounter'
+    int* tc = &testCounter;
+               ^
+../src/main.xc:164:15: error: initializer element is not constant
+    int* tc = &testCounter;
+              ^~~~~~~~~~~~
+../src/main.xc:165:17: error: parse error before "testCounter"
+    assertEqual(testCounter, 0, tc);
+                ^
+../src/main.xc:165:5: warning: return type defaults to `int' [-Wreturn-type]
+    assertEqual(testCounter, 0, tc);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:165:5: error: conflicting types for 'assertEqual'
+    assertEqual(testCounter, 0, tc);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:154:6: note: previous definition of 'assertEqual' was here
+void assertEqual(int first, int second, int* testCount) {
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:166:17: error: parse error before numeric constant
+    assertEqual(5,5,tc);
+                ^
+../src/main.xc:166:5: warning: return type defaults to `int' [-Wreturn-type]
+    assertEqual(5,5,tc);
+    ^~~~~~~~~~~~~~~~~~~
+../src/main.xc:179:11: error: parse error before string constant
+  printf( "DataOutStream: Start...\n" );
+          ^
+../src/main.xc:179:3: warning: return type defaults to `int' [-Wreturn-type]
+  printf( "DataOutStream: Start...\n" );
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:179:3: error: conflicting types for 'printf'
+  printf( "DataOutStream: Start...\n" );
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:180:22: error: use of undeclared identifer `outfname'
+  res = _openoutpgm( outfname, IMWD, IMHT );
+                     ^
+../src/main.xc:180:3: warning: type defaults to `int' in declaration of `res' [-Wimplicit-int]
+  res = _openoutpgm( outfname, IMWD, IMHT );
+  ^~~
+../src/main.xc:180:3: warning: data definition has no type or storage class [-Wunusual-code]
+  res = _openoutpgm( outfname, IMWD, IMHT );
+  ^~~
+../src/main.xc:180:9: error: initializer element is not constant
+  res = _openoutpgm( outfname, IMWD, IMHT );
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:181:3: error: parse error before "if"
+  if( res ) {
+  ^
+../src/main.xc:183:5: error: parse error before "return"
+    return;
+    ^
+../src/main.xc:184:3: error: parse error before '}' token
+  }
+  ^
+../src/main.xc:187:19: warning: type defaults to `int' in declaration of `y' [-Wimplicit-int]
+  for( int y = 0; y < IMHT; y++ ) {
+                  ^
+../src/main.xc:187:19: warning: data definition has no type or storage class [-Wunusual-code]
+  for( int y = 0; y < IMHT; y++ ) {
+                  ^
+../src/main.xc:187:21: error: parse error before '<' token
+  for( int y = 0; y < IMHT; y++ ) {
+                    ^
+../src/main.xc:187:29: warning: type defaults to `int' in declaration of `y' [-Wimplicit-int]
+  for( int y = 0; y < IMHT; y++ ) {
+                            ^
+../src/main.xc:187:29: warning: data definition has no type or storage class [-Wunusual-code]
+  for( int y = 0; y < IMHT; y++ ) {
+                            ^
+../src/main.xc:191:20: error: parse error before "line"
+    _writeoutline( line, IMWD );
+                   ^
+../src/main.xc:191:5: warning: return type defaults to `int' [-Wreturn-type]
+    _writeoutline( line, IMWD );
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:191:5: error: conflicting types for '_writeoutline'
+    _writeoutline( line, IMWD );
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/pgmIO.h:16:1: note: previous declaration of '_writeoutline' was here
+int _writeoutline(unsigned char line[], int width);
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:192:13: error: parse error before string constant
+    printf( "DataOutStream: Line written...\n" );
+            ^
+../src/main.xc:192:5: warning: return type defaults to `int' [-Wreturn-type]
+    printf( "DataOutStream: Line written...\n" );
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:197:11: error: parse error before string constant
+  printf( "DataOutStream: Done...\n" );
+          ^
+../src/main.xc:197:3: warning: return type defaults to `int' [-Wreturn-type]
+  printf( "DataOutStream: Done...\n" );
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:199:1: error: parse error before '}' token
+}
+^
+../src/main.xc:212:12: error: use of undeclared identifer `i2c'
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+           ^
+../src/main.xc:212:3: warning: type defaults to `int' in declaration of `result' [-Wimplicit-int]
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+  ^~~~~~
+../src/main.xc:212:3: warning: data definition has no type or storage class [-Wunusual-code]
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+  ^~~~~~
+../src/main.xc:212:16: error: trying to call interface function from something that is not an interface
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+           ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:213:3: error: parse error before "if"
+  if (result != I2C_REGOP_SUCCESS) {
+  ^
+../src/main.xc:215:3: error: parse error before '}' token
+  }
+  ^
+../src/main.xc:219:3: error: parse error before "if"
+  if (result != I2C_REGOP_SUCCESS) {
+  ^
+../src/main.xc:221:3: error: parse error before '}' token
+  }
+  ^
+../src/main.xc:229:5: error: parse error before '}' token
+    } while (!status_data & 0x08);
+    ^
+../src/main.xc:232:13: error: initializer element is not constant
+    int x = read_acceleration(i2c, FXOS8700EQ_OUT_X_MSB);
+            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:235:5: error: parse error before "if"
+    if (!tilted) {
+    ^
+../src/main.xc:238:9: warning: type defaults to `int' in declaration of `toDist' [-Wimplicit-int]
+        toDist <: 1;
+        ^~~~~~
+../src/main.xc:238:9: warning: data definition has no type or storage class [-Wunusual-code]
+        toDist <: 1;
+        ^~~~~~
+../src/main.xc:238:17: error: parse error before '<:' token
+        toDist <: 1;
+                ^
+../src/main.xc:253:1: warning: return type defaults to `int' [-Wreturn-type]
+runTests();   //TESTS
+^~~~~~~~~~
+../src/main.xc:257:6: error: global variable `c_inIO' has type chan
+chan c_inIO, c_outIO, c_control;    //extend your channel definitions here
+     ^~~~~~
+../src/main.xc:257:14: error: global variable `c_outIO' has type chan
+chan c_inIO, c_outIO, c_control;    //extend your channel definitions here
+             ^~~~~~~
+../src/main.xc:257:23: error: global variable `c_control' has type chan
+chan c_inIO, c_outIO, c_control;    //extend your channel definitions here
+                      ^~~~~~~~~
+../src/main.xc:259:1: error: parse error before "par"
+par {
+^
+../src/main.xc:261:17: error: parse error before "i2c"
+    orientation(i2c[0],c_control);        //client thread reading orientation data
+                ^
+../src/main.xc:261:5: warning: return type defaults to `int' [-Wreturn-type]
+    orientation(i2c[0],c_control);        //client thread reading orientation data
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:262:18: error: parse error before "infname"
+    DataInStream(infname, c_inIO);          //thread to read in a PGM image
+                 ^
+../src/main.xc:262:5: warning: return type defaults to `int' [-Wreturn-type]
+    DataInStream(infname, c_inIO);          //thread to read in a PGM image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:262:5: error: conflicting types for 'DataInStream'
+    DataInStream(infname, c_inIO);          //thread to read in a PGM image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:34:6: note: previous definition of 'DataInStream' was here
+void DataInStream(char infname[], chanend c_out)
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:263:19: error: parse error before "outfname"
+    DataOutStream(outfname, c_outIO);       //thread to write out a PGM image
+                  ^
+../src/main.xc:263:5: warning: return type defaults to `int' [-Wreturn-type]
+    DataOutStream(outfname, c_outIO);       //thread to write out a PGM image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:264:17: error: parse error before "c_inIO"
+    distributor(c_inIO, c_outIO, c_control);//thread to coordinate work on image
+                ^
+../src/main.xc:264:5: warning: return type defaults to `int' [-Wreturn-type]
+    distributor(c_inIO, c_outIO, c_control);//thread to coordinate work on image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:264:5: error: conflicting types for 'distributor'
+    distributor(c_inIO, c_outIO, c_control);//thread to coordinate work on image
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:70:6: note: previous definition of 'distributor' was here
+void distributor(chanend c_in, chanend c_out, chanend fromAcc)
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:268:1: error: parse error before '}' token
+}
+^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+19:21:38 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:152:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+../src/main.xc:129:18: warning: unused variable `selfCopy' [-Wunused-variable]
+    unsigned int selfCopy = self;
+                 ^~~~~~~~
+../src/main.xc:158:17: error: parse error before "bool"
+void assertTrue(bool expression, int* testCount) {
+                ^
+../src/main.xc:159:9: error: use of undeclared identifer `expression'
+    if (expression) printf("TEST %n : SUCCESS", testCount);
+        ^
+../src/main.xc:159:49: error: use of undeclared identifer `testCount'
+    if (expression) printf("TEST %n : SUCCESS", testCount);
+                                                ^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+19:21:50 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:152:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+../src/main.xc:129:18: warning: unused variable `selfCopy' [-Wunused-variable]
+    unsigned int selfCopy = self;
+                 ^~~~~~~~
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+../src/main.xc:152:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+../src/main.xc:129:18: warning: unused variable `selfCopy' [-Wunused-variable]
+    unsigned int selfCopy = self;
+                 ^~~~~~~~
+Creating game_of_life.xe
+Build Complete
+19:28:25 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:150:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+../src/main.xc:150:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+Creating game_of_life.xe
+Build Complete
+19:28:40 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete

@@ -6,10 +6,17 @@
 <fDef name="_safe_memset" global="true" noreturn="false" doNotSpecialize="true" numParams="3"/>
 <fDef name="ack_read_request" global="true" interface="i2c_slave_callback_if" noreturn="false" doNotSpecialize="false" numParams="0"/>
 <fDef name="ack_write_request" global="true" interface="i2c_slave_callback_if" noreturn="false" doNotSpecialize="false" numParams="0"/>
+<fDef name="addThreeRows" global="true" noreturn="false" doNotSpecialize="false" numParams="3"/>
+<fDef name="addToRow" global="true" noreturn="false" doNotSpecialize="false" numParams="3"/>
+<fDef name="assertEqual" global="true" noreturn="false" doNotSpecialize="false" numParams="3"/>
+<fDef name="circularLeftShift" global="true" noreturn="false" doNotSpecialize="false" numParams="2"/>
+<fDef name="circularRightShift" global="true" noreturn="false" doNotSpecialize="false" numParams="2"/>
 <fDef name="delay_microseconds" global="true" noreturn="false" doNotSpecialize="true" numParams="1"/>
 <fDef name="delay_milliseconds" global="true" noreturn="false" doNotSpecialize="true" numParams="1"/>
 <fDef name="delay_seconds" global="true" noreturn="false" doNotSpecialize="true" numParams="1"/>
+<fDef name="determineLifeState" global="true" noreturn="false" doNotSpecialize="false" numParams="2"/>
 <fDef name="distributor" global="true" noreturn="false" doNotSpecialize="false" numParams="3"/>
+<fDef name="generateNewRow" global="true" noreturn="false" doNotSpecialize="false" numParams="4"/>
 <fDef name="get_read_data" global="true" interface="i2c_master_async_if" noreturn="false" doNotSpecialize="false" numParams="2"/>
 <fDef name="get_write_result" global="true" interface="i2c_master_async_if" noreturn="false" doNotSpecialize="false" numParams="1"/>
 <fDef name="main" global="true" noreturn="false" doNotSpecialize="false" numParams="0"/>
@@ -23,6 +30,7 @@
 <fDef name="read_reg16" global="true" interface="i2c_master_if" noreturn="false" doNotSpecialize="true" numParams="4"/>
 <fDef name="read_reg16_addr8" global="true" interface="i2c_master_if" noreturn="false" doNotSpecialize="true" numParams="4"/>
 <fDef name="read_reg8_addr16" global="true" interface="i2c_master_if" noreturn="false" doNotSpecialize="true" numParams="4"/>
+<fDef name="runTests" global="true" noreturn="false" doNotSpecialize="false" numParams="0"/>
 <fDef name="send_stop_bit" global="true" interface="i2c_master_async_if" noreturn="false" doNotSpecialize="false" numParams="0"/>
 <fDef name="send_stop_bit" global="true" interface="i2c_master_if" noreturn="false" doNotSpecialize="false" numParams="0"/>
 <fDef name="shutdown" global="true" interface="i2c_master_async_if" noreturn="false" doNotSpecialize="false" numParams="0"/>
@@ -555,6 +563,342 @@
     </values>
   </arg>
 </fCall>
+<fCall name="addToRow" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <passThroughArg param="2" caller="addThreeRows" global="true"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="circularLeftShift" global="true" numArgs="2">
+  <arg num="0">
+    <passThroughArg param="1" caller="addThreeRows" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <passThroughArg param="2" caller="addThreeRows" global="true"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="addToRow" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <passThroughArg param="1" caller="addThreeRows" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="2">
+    <passThroughArg param="2" caller="addThreeRows" global="true"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="addToRow" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <passThroughArg param="2" caller="addThreeRows" global="true"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="circularRightShift" global="true" numArgs="2">
+  <arg num="0">
+    <passThroughArg param="1" caller="addThreeRows" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <passThroughArg param="2" caller="addThreeRows" global="true"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="addToRow" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <passThroughArg param="3" caller="generateNewRow" global="true"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="circularLeftShift" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <passThroughArg param="3" caller="generateNewRow" global="true"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="addToRow" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <passThroughArg param="3" caller="generateNewRow" global="true"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="circularRightShift" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <passThroughArg param="3" caller="generateNewRow" global="true"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="addThreeRows" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <passThroughArg param="0" caller="generateNewRow" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="2">
+    <passThroughArg param="3" caller="generateNewRow" global="true"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="addThreeRows" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <passThroughArg param="2" caller="generateNewRow" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="2">
+    <passThroughArg param="3" caller="generateNewRow" global="true"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="determineLifeState" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="printf" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="printf" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="assertEqual" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="assertEqual" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="2"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="circularLeftShift" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="32"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="assertEqual" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="circularLeftShift" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="4"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="3"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="assertEqual" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="circularRightShift" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="2"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="4"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="assertEqual" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="8"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="circularRightShift" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="4"/></value>
+    </values>
+  </arg>
+</fCall>
 <fCall name="printf" global="true" numArgs="1">
   <arg num="0">
     <values>
@@ -710,6 +1054,8 @@
       <value type="intval"><intval isSigned="true" val="1"/></value>
     </values>
   </arg>
+</fCall>
+<fCall name="runTests" global="true" numArgs="0">
 </fCall>
 <fCall name="i2c_master" global="true" numArgs="5" impId="0">
   <arg num="0">

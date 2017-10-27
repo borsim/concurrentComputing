@@ -1,9 +1,12 @@
-13:26:09 **** Incremental Build of configuration Default for project game_of_life ****
+19:28:40 **** Incremental Build of configuration Default for project game_of_life ****
 xmake all 
 Checking build modules
 Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
-xmake[1]: `bin//game_of_life.xe' is up to date.
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
 Build Complete
 
-13:26:10 Build Finished (took 878ms)
+19:28:42 Build Finished (took 1s.622ms)
 

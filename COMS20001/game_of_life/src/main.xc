@@ -70,7 +70,6 @@ void DataInStream(char infname[], chanend c_out)
 void distributor(chanend c_in, chanend c_out, chanend fromAcc)
 {
   uchar val;
-
   //Starting up and wait for tilting of the xCore-200 Explorer
   printf( "ProcessImage: Start, size = %dx%d\n", IMHT, IMWD );
   printf( "Waiting for Board Tilt...\n" );
@@ -88,7 +87,82 @@ void distributor(chanend c_in, chanend c_out, chanend fromAcc)
   }
   printf( "\nOne processing round completed...\n" );
 }
+// Circular left shift the bits in an int value that uses 'size' number of bits
+unsigned int circularLeftShift(unsigned int input, int length) {
+    unsigned int result = input << 1 | input >> (32-length);
+    return result;
+}
+// Circular right shift the bits in an int value that uses 'size' number of bits
+unsigned int circularRightShift(unsigned int input, int length) {
+    unsigned int result = input >> 1 | input << (32-length);
+    return result;
+}
+char determineLifeState(unsigned int currentState, char counter) {
+    char resultState = 0;
+    if (currentState == 0 && counter == 3)     resultState = 1; // Dead with 3 neighbours becomes alive
+    else if (currentState == 1 && counter < 2) resultState = 0; // Living with <2 neighbours dies
+    else if (currentState == 1 && counter > 3) resultState = 0; // Living with 3> neighbours dies
+    else if (currentState == 1)                resultState = 1; // Living with 2/3 neighbours lives
+    else                                       resultState = 0; // Dead anything else stays dead
+    return resultState;
+}
+void addToRow(char* original, unsigned int added, int length) {
+    unsigned int addedCopy = added;
+    for (int i = 1; i <= length; i++) {
+        // Take the least significant bit (from the rightmost side) and add to row
+        original[length - i] += addedCopy & 1;
+        // Shift it to the right to delete the least significant bit
+        addedCopy >> 1;
+    }
+}
+void addThreeRows(char* original, unsigned int added, int length) {
+    addToRow(original, circularLeftShift(added, length), length);
+    addToRow(original, added, length);
+    addToRow(original, circularRightShift(added, length), length);
+}
+unsigned int generateNewRow(unsigned int top, unsigned int self, unsigned int bottom, int length) {
+    unsigned int newRow = 0;
+    unsigned int selfCopy = self;
+    // Initialize new counter array for determining tile states
+    char newRowCount[32];
+    for (int i = 0; i < length; i++) newRowCount[i] = 0;
+    // Add right side neighbours' states
+    addToRow(newRowCount, circularLeftShift(selfCopy, length), length);
+    // Add left side neighbours' states
+    addToRow(newRowCount, circularRightShift(selfCopy, length), length);
+    // Add top and top diagonals states
+    addThreeRows(newRowCount, top, length);
+    // Add bottom and bottom diagonals states
+    addThreeRows(newRowCount, bottom, length);
+    // Once all the neighbours have been counted, proceed to determining life states
+    for (int j = 0; j < length; j++) {
+        // Get most significant bit (on the leftmost side)
+        unsigned int currentState =  selfCopy & (1 << (length-1));
+        // Determine whether tile is alive or not
+        char result = determineLifeState(currentState, newRowCount[j]);
+        // If the result is alive, put a 1 on the least significant bit (the shift below will make it more significant)
+        if (result == 1) newRow = newRow | 1;
+        // Store the new value by shifting the result left
+        newRow << 1;
+        // Expose a new value at the most significant place by shifting the original's copy left
+        selfCopy << 1;
+    }
+    return newRow;
+}
 
+void assertEqual(int first, int second, int* testCount) {
+    if (first == second) printf("TEST %n : SUCCESS", testCount);
+    else printf("TEST %n : FAILED", testCount);
+}
+void runTests() {
+    int testCounter = 0;
+    int* tc = &testCounter;
+    assertEqual(testCounter, 0, tc);
+    assertEqual(2, circularLeftShift(1, 32), tc);
+    assertEqual(1, circularLeftShift(4, 3),  tc);
+    assertEqual(1, circularRightShift(2, 4), tc);
+    assertEqual(8, circularRightShift(1, 4), tc);
+}
 /////////////////////////////////////////////////////////////////////////////////////////
 //
 // Write pixel stream from channel c_in to PGM image file
@@ -173,7 +247,9 @@ void orientation( client interface i2c_master_if i2c, chanend toDist) {
 int main(void) {
 
 i2c_master_if i2c[1];               //interface to orientation
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+runTests();   //TESTS
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
 char infname[] = "test.pgm";     //put your input image path here
 char outfname[] = "testout.pgm"; //put your output image path here
 chan c_inIO, c_outIO, c_control;    //extend your channel definitions here
