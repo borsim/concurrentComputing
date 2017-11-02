@@ -8,7 +8,7 @@
 <fDef name="ack_write_request" global="true" interface="i2c_slave_callback_if" noreturn="false" doNotSpecialize="false" numParams="0"/>
 <fDef name="addThreeRows" global="true" noreturn="false" doNotSpecialize="false" numParams="3"/>
 <fDef name="addToRow" global="true" noreturn="false" doNotSpecialize="false" numParams="3"/>
-<fDef name="assertEqual" global="true" noreturn="false" doNotSpecialize="false" numParams="3"/>
+<fDef name="assertEqual" global="true" noreturn="false" doNotSpecialize="false" numParams="2"/>
 <fDef name="circularLeftShift" global="true" noreturn="false" doNotSpecialize="false" numParams="2"/>
 <fDef name="circularRightShift" global="true" noreturn="false" doNotSpecialize="false" numParams="2"/>
 <fDef name="delay_microseconds" global="true" noreturn="false" doNotSpecialize="true" numParams="1"/>
@@ -742,19 +742,14 @@
     </values>
   </arg>
 </fCall>
-<fCall name="printf" global="true" numArgs="2">
+<fCall name="printf" global="true" numArgs="1">
   <arg num="0">
-    <values>
-      <value type="unknown"/>
-    </values>
-  </arg>
-  <arg num="1">
     <values>
       <value type="unknown"/>
     </values>
   </arg>
 </fCall>
-<fCall name="printf" global="true" numArgs="2">
+<fCall name="printf" global="true" numArgs="3">
   <arg num="0">
     <values>
       <value type="unknown"/>
@@ -763,18 +758,6 @@
   <arg num="1">
     <values>
       <value type="unknown"/>
-    </values>
-  </arg>
-</fCall>
-<fCall name="assertEqual" global="true" numArgs="3">
-  <arg num="0">
-    <values>
-      <value type="unknown"/>
-    </values>
-  </arg>
-  <arg num="1">
-    <values>
-      <value type="intval"><intval isSigned="true" val="0"/></value>
     </values>
   </arg>
   <arg num="2">
@@ -783,18 +766,13 @@
     </values>
   </arg>
 </fCall>
-<fCall name="assertEqual" global="true" numArgs="3">
+<fCall name="assertEqual" global="true" numArgs="2">
   <arg num="0">
     <values>
       <value type="intval"><intval isSigned="true" val="2"/></value>
     </values>
   </arg>
   <arg num="1">
-    <values>
-      <value type="unknown"/>
-    </values>
-  </arg>
-  <arg num="2">
     <values>
       <value type="unknown"/>
     </values>
@@ -812,18 +790,13 @@
     </values>
   </arg>
 </fCall>
-<fCall name="assertEqual" global="true" numArgs="3">
+<fCall name="assertEqual" global="true" numArgs="2">
   <arg num="0">
     <values>
       <value type="intval"><intval isSigned="true" val="1"/></value>
     </values>
   </arg>
   <arg num="1">
-    <values>
-      <value type="unknown"/>
-    </values>
-  </arg>
-  <arg num="2">
     <values>
       <value type="unknown"/>
     </values>
@@ -841,18 +814,13 @@
     </values>
   </arg>
 </fCall>
-<fCall name="assertEqual" global="true" numArgs="3">
+<fCall name="assertEqual" global="true" numArgs="2">
   <arg num="0">
     <values>
       <value type="intval"><intval isSigned="true" val="1"/></value>
     </values>
   </arg>
   <arg num="1">
-    <values>
-      <value type="unknown"/>
-    </values>
-  </arg>
-  <arg num="2">
     <values>
       <value type="unknown"/>
     </values>
@@ -870,18 +838,13 @@
     </values>
   </arg>
 </fCall>
-<fCall name="assertEqual" global="true" numArgs="3">
+<fCall name="assertEqual" global="true" numArgs="2">
   <arg num="0">
     <values>
       <value type="intval"><intval isSigned="true" val="8"/></value>
     </values>
   </arg>
   <arg num="1">
-    <values>
-      <value type="unknown"/>
-    </values>
-  </arg>
-  <arg num="2">
     <values>
       <value type="unknown"/>
     </values>

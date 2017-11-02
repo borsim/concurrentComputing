@@ -1,12 +1,19 @@
-19:28:40 **** Incremental Build of configuration Default for project game_of_life ****
+13:46:52 **** Incremental Build of configuration Default for project game_of_life ****
 xmake all 
 Checking build modules
 Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
 Analyzing main.xc
+../src/main.xc:165:9: warning: unused variable `num' [-Wunused-variable]
+    int num = 1 << 1;
+        ^~~
+Propagating analysis
 Creating dependencies for main.xc
 Compiling main.xc
+../src/main.xc:165:9: warning: unused variable `num' [-Wunused-variable]
+    int num = 1 << 1;
+        ^~~
 Creating game_of_life.xe
 Build Complete
 
-19:28:42 Build Finished (took 1s.622ms)
+13:46:54 Build Finished (took 1s.972ms)
 

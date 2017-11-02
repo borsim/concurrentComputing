@@ -87,14 +87,21 @@ void distributor(chanend c_in, chanend c_out, chanend fromAcc)
   }
   printf( "\nOne processing round completed...\n" );
 }
+//0001   0010   length = 4
 // Circular left shift the bits in an int value that uses 'size' number of bits
 unsigned int circularLeftShift(unsigned int input, int length) {
-    unsigned int result = input << 1 | input >> (32-length);
+    unsigned int result = input << 1 | input >> (length-1);
+    // Mask to unneeded values
+    unsigned int mask = 0xFFFFFFFF >> (32-length);
+    result = result & mask;
     return result;
 }
 // Circular right shift the bits in an int value that uses 'size' number of bits
 unsigned int circularRightShift(unsigned int input, int length) {
-    unsigned int result = input >> 1 | input << (32-length);
+    unsigned int result = input >> 1 | input << (length-1);
+    // Mask unneeded values
+    unsigned int mask = 0xFFFFFFFF >> (32-length);
+    result = result & mask;
     return result;
 }
 char determineLifeState(unsigned int currentState, char counter) {
@@ -150,18 +157,16 @@ unsigned int generateNewRow(unsigned int top, unsigned int self, unsigned int bo
     return newRow;
 }
 
-void assertEqual(int first, int second, int* testCount) {
-    if (first == second) printf("TEST %n : SUCCESS", testCount);
-    else printf("TEST %n : FAILED", testCount);
+void assertEqual(int first, int second) {
+    if (first == second) printf("TEST SUCCESSFUL\n");
+    else printf("TEST FAILED. Expected: %d, got: %d\n", first, second);
 }
 void runTests() {
-    int testCounter = 0;
-    int* tc = &testCounter;
-    assertEqual(testCounter, 0, tc);
-    assertEqual(2, circularLeftShift(1, 32), tc);
-    assertEqual(1, circularLeftShift(4, 3),  tc);
-    assertEqual(1, circularRightShift(2, 4), tc);
-    assertEqual(8, circularRightShift(1, 4), tc);
+    int num = 1 << 1;
+    assertEqual(2, circularLeftShift(1, 32));
+    assertEqual(1, circularLeftShift(4, 3));
+    assertEqual(1, circularRightShift(2, 4));
+    assertEqual(8, circularRightShift(1, 4));
 }
 /////////////////////////////////////////////////////////////////////////////////////////
 //

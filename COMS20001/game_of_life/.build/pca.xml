@@ -442,22 +442,15 @@
     </values>
   </arg>
 </fInfo>
-<fInfo name="assertEqual" global="true" specialize="false" noreturn="false" doNotSpecialize="false" numParams="3">
+<fInfo name="assertEqual" global="true" specialize="false" noreturn="false" doNotSpecialize="false" numParams="2">
   <arg num="0" specialize="false">
     <values>
-      <value type="unknown"/>
       <value type="intval"><intval isSigned="true" val="1"/></value>
       <value type="intval"><intval isSigned="true" val="2"/></value>
       <value type="intval"><intval isSigned="true" val="8"/></value>
     </values>
   </arg>
   <arg num="1" specialize="false">
-    <values>
-      <value type="unknown"/>
-      <value type="intval"><intval isSigned="true" val="0"/></value>
-    </values>
-  </arg>
-  <arg num="2" specialize="false">
     <values>
       <value type="unknown"/>
     </values>
