@@ -3139,3 +3139,914 @@ Compiling main.xc
         ^~~
 Creating game_of_life.xe
 Build Complete
+14:58:51 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:17:02 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:93:43: error: parse error before ';' token
+  par (int i = 0; i < PROCESS_THREAD_COUNT; i++) {
+                                          ^
+../src/main.xc:93:48: error: parse error before ')' token
+  par (int i = 0; i < PROCESS_THREAD_COUNT; i++) {
+                                               ^
+../src/main.xc:94:7: error: unknown function identifier `processGame' (possibly missing prototype?)
+      processGame();
+      ^
+../src/main.xc:99:40: error: use of undeclared identifer `numrows'
+void processGame(int numRows, int rows[numrows], chanend topChannel, chanend bottomChannel) {
+                                       ^
+../src/main.xc:178:9: warning: unused variable `num' [-Wunused-variable]
+    int num = 1 << 1;
+        ^~~
+../src/main.xc:73:9: warning: unused variable `val' [-Wunused-variable]
+  uchar val;
+        ^~~
+../src/main.xc:89:13: warning: unused variable `rowsPerThread' [-Wunused-variable]
+  const int rowsPerThread = 4; //TODO make this dynamic and allow for rows % threads != 0
+            ^~~~~~~~~~~~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:18:24 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:31:40: warning: parameter `numRows' used as array bound should be unsigned for maximum performance [-Wunusual-code]
+void processGame(int numRows, int rows[numRows], chanend topChannel, chanend bottomChannel);
+                                       ^~~~~~~
+../src/main.xc:95:43: error: parse error before ';' token
+  par (int i = 0; i < PROCESS_THREAD_COUNT; i++) {
+                                          ^
+../src/main.xc:95:48: error: parse error before ')' token
+  par (int i = 0; i < PROCESS_THREAD_COUNT; i++) {
+                                               ^
+../src/main.xc:96:7: error: too few arguments to function `processGame'
+      processGame();
+      ^
+../src/main.xc:101:40: warning: parameter `numRows' used as array bound should be unsigned for maximum performance [-Wunusual-code]
+void processGame(int numRows, int rows[numRows], chanend topChannel, chanend bottomChannel) {
+                                       ^~~~~~~
+../src/main.xc:180:9: warning: unused variable `num' [-Wunused-variable]
+    int num = 1 << 1;
+        ^~~
+../src/main.xc:75:9: warning: unused variable `val' [-Wunused-variable]
+  uchar val;
+        ^~~
+../src/main.xc:91:13: warning: unused variable `rowsPerThread' [-Wunused-variable]
+  const int rowsPerThread = 4; //TODO make this dynamic and allow for rows % threads != 0
+            ^~~~~~~~~~~~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:25:30 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:31:40: warning: parameter `numRows' used as array bound should be unsigned for maximum performance [-Wunusual-code]
+void processGame(int numRows, int rows[numRows], chanend topChannel, chanend bottomChannel);
+                                       ^~~~~~~
+../src/main.xc:95:20: error: use of undeclared identifer `PROCESS_ROW_COUNT'
+  chan rowChannels[PROCESS_ROW_COUNT];
+                   ^
+../src/main.xc:95:20: error: size of array is not constant or based on a const static parameter
+  chan rowChannels[PROCESS_ROW_COUNT];
+                   ^~~~~~~~~~~~~~~~~
+../src/main.xc:99:43: error: parse error before ';' token
+  par (int i = 0; i < PROCESS_THREAD_COUNT; i++) {
+                                          ^
+../src/main.xc:99:48: error: parse error before ')' token
+  par (int i = 0; i < PROCESS_THREAD_COUNT; i++) {
+                                               ^
+../src/main.xc:102:19: error: invalid lvalue in assignment
+      if (i != 0) topChannel = rowChannels[i-1];
+                  ^~~~~~~~~~
+../src/main.xc:102:30: error: assignment to resource that is not qualified unsafe
+      if (i != 0) topChannel = rowChannels[i-1];
+                  ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+../src/main.xc:103:37: error: parse error before ';' token
+      else topChannel = rowChannels[PROCESS_THREAD_COUNT-1];
+                                    ^
+../src/main.xc:12:32: note: expanded from here
+#define  PROCESS_THREAD_COUNT 4;
+                               ^
+../src/main.xc:103:59: error: parse error before ']' token
+      else topChannel = rowChannels[PROCESS_THREAD_COUNT-1];
+                                                          ^
+../src/main.xc:104:16: error: parse error before ';' token
+      if (i != PROCESS_THREAD_COUNT - 1) bottomChannel = rowChannels[i + 1];
+               ^
+../src/main.xc:12:32: note: expanded from here
+#define  PROCESS_THREAD_COUNT 4;
+                               ^
+../src/main.xc:104:40: error: parse error before ')' token
+      if (i != PROCESS_THREAD_COUNT - 1) bottomChannel = rowChannels[i + 1];
+                                       ^
+../src/main.xc:104:42: error: invalid lvalue in assignment
+      if (i != PROCESS_THREAD_COUNT - 1) bottomChannel = rowChannels[i + 1];
+                                         ^~~~~~~~~~~~~
+../src/main.xc:104:56: error: assignment to resource that is not qualified unsafe
+      if (i != PROCESS_THREAD_COUNT - 1) bottomChannel = rowChannels[i + 1];
+                                         ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+../src/main.xc:105:7: error: parse error before "else"
+      else bottomChannel = rowChannels[0];
+      ^
+../src/main.xc:111:40: warning: parameter `numRows' used as array bound should be unsigned for maximum performance [-Wunusual-code]
+void processGame(int numRows, int rows[numRows], chanend topChannel, chanend bottomChannel) {
+                                       ^~~~~~~
+../src/main.xc:190:9: warning: unused variable `num' [-Wunused-variable]
+    int num = 1 << 1;
+        ^~~
+../src/main.xc:75:9: warning: unused variable `val' [-Wunused-variable]
+  uchar val;
+        ^~~
+../src/main.xc:91:13: warning: unused variable `rowsPerThread' [-Wunused-variable]
+  const int rowsPerThread = 4; //TODO make this dynamic and allow for rows % threads != 0
+            ^~~~~~~~~~~~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:25:51 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:31:40: warning: parameter `numRows' used as array bound should be unsigned for maximum performance [-Wunusual-code]
+void processGame(int numRows, int rows[numRows], chanend topChannel, chanend bottomChannel);
+                                       ^~~~~~~
+../src/main.xc:95:20: error: use of undeclared identifer `PROCESS_ROW_COUNT'
+  chan rowChannels[PROCESS_ROW_COUNT];
+                   ^
+../src/main.xc:95:20: error: size of array is not constant or based on a const static parameter
+  chan rowChannels[PROCESS_ROW_COUNT];
+                   ^~~~~~~~~~~~~~~~~
+../src/main.xc:99:43: error: parse error before ';' token
+  par (int i = 0; i < PROCESS_THREAD_COUNT; i++) {
+                                          ^
+../src/main.xc:99:48: error: parse error before ')' token
+  par (int i = 0; i < PROCESS_THREAD_COUNT; i++) {
+                                               ^
+../src/main.xc:100:15: error: local variable `topChannel' has type chanend
+      chanend topChannel;
+              ^~~~~~~~~~
+../src/main.xc:101:15: error: local variable `bottomChannel' has type chanend
+      chanend bottomChannel;
+              ^~~~~~~~~~~~~
+../src/main.xc:102:19: error: invalid lvalue in assignment
+      if (i != 0) topChannel = rowChannels[i-1];
+                  ^~~~~~~~~~
+../src/main.xc:102:30: error: assignment to resource that is not qualified unsafe
+      if (i != 0) topChannel = rowChannels[i-1];
+                  ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+../src/main.xc:103:37: error: parse error before ';' token
+      else topChannel = rowChannels[PROCESS_THREAD_COUNT-1];
+                                    ^
+../src/main.xc:12:32: note: expanded from here
+#define  PROCESS_THREAD_COUNT 4;
+                               ^
+../src/main.xc:103:59: error: parse error before ']' token
+      else topChannel = rowChannels[PROCESS_THREAD_COUNT-1];
+                                                          ^
+../src/main.xc:104:16: error: parse error before ';' token
+      if (i != PROCESS_THREAD_COUNT - 1) bottomChannel = rowChannels[i + 1];
+               ^
+../src/main.xc:12:32: note: expanded from here
+#define  PROCESS_THREAD_COUNT 4;
+                               ^
+../src/main.xc:104:40: error: parse error before ')' token
+      if (i != PROCESS_THREAD_COUNT - 1) bottomChannel = rowChannels[i + 1];
+                                       ^
+../src/main.xc:104:42: error: invalid lvalue in assignment
+      if (i != PROCESS_THREAD_COUNT - 1) bottomChannel = rowChannels[i + 1];
+                                         ^~~~~~~~~~~~~
+../src/main.xc:104:56: error: assignment to resource that is not qualified unsafe
+      if (i != PROCESS_THREAD_COUNT - 1) bottomChannel = rowChannels[i + 1];
+                                         ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+../src/main.xc:105:7: error: parse error before "else"
+      else bottomChannel = rowChannels[0];
+      ^
+../src/main.xc:111:40: warning: parameter `numRows' used as array bound should be unsigned for maximum performance [-Wunusual-code]
+void processGame(int numRows, int rows[numRows], chanend topChannel, chanend bottomChannel) {
+                                       ^~~~~~~
+../src/main.xc:190:9: warning: unused variable `num' [-Wunused-variable]
+    int num = 1 << 1;
+        ^~~
+../src/main.xc:75:9: warning: unused variable `val' [-Wunused-variable]
+  uchar val;
+        ^~~
+../src/main.xc:91:13: warning: unused variable `rowsPerThread' [-Wunused-variable]
+  const int rowsPerThread = 4; //TODO make this dynamic and allow for rows % threads != 0
+            ^~~~~~~~~~~~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:26:12 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:31:40: warning: parameter `numRows' used as array bound should be unsigned for maximum performance [-Wunusual-code]
+void processGame(int numRows, int rows[numRows], chanend topChannel, chanend bottomChannel);
+                                       ^~~~~~~
+../src/main.xc:95:20: error: use of undeclared identifer `PROCESS_ROW_COUNT'
+  chan rowChannels[PROCESS_ROW_COUNT];
+                   ^
+../src/main.xc:95:20: error: size of array is not constant or based on a const static parameter
+  chan rowChannels[PROCESS_ROW_COUNT];
+                   ^~~~~~~~~~~~~~~~~
+../src/main.xc:99:43: error: parse error before ';' token
+  par (int i = 0; i < PROCESS_THREAD_COUNT; i++) {
+                                          ^
+../src/main.xc:99:48: error: parse error before ')' token
+  par (int i = 0; i < PROCESS_THREAD_COUNT; i++) {
+                                               ^
+../src/main.xc:102:19: error: invalid lvalue in assignment
+      if (i != 0) topChannel = rowChannels[i-1];
+                  ^~~~~~~~~~
+../src/main.xc:102:30: error: assignment to resource that is not qualified unsafe
+      if (i != 0) topChannel = rowChannels[i-1];
+                  ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+../src/main.xc:103:37: error: parse error before ';' token
+      else topChannel = rowChannels[PROCESS_THREAD_COUNT-1];
+                                    ^
+../src/main.xc:12:32: note: expanded from here
+#define  PROCESS_THREAD_COUNT 4;
+                               ^
+../src/main.xc:103:59: error: parse error before ']' token
+      else topChannel = rowChannels[PROCESS_THREAD_COUNT-1];
+                                                          ^
+../src/main.xc:104:16: error: parse error before ';' token
+      if (i != PROCESS_THREAD_COUNT - 1) bottomChannel = rowChannels[i + 1];
+               ^
+../src/main.xc:12:32: note: expanded from here
+#define  PROCESS_THREAD_COUNT 4;
+                               ^
+../src/main.xc:104:40: error: parse error before ')' token
+      if (i != PROCESS_THREAD_COUNT - 1) bottomChannel = rowChannels[i + 1];
+                                       ^
+../src/main.xc:104:42: error: invalid lvalue in assignment
+      if (i != PROCESS_THREAD_COUNT - 1) bottomChannel = rowChannels[i + 1];
+                                         ^~~~~~~~~~~~~
+../src/main.xc:104:56: error: assignment to resource that is not qualified unsafe
+      if (i != PROCESS_THREAD_COUNT - 1) bottomChannel = rowChannels[i + 1];
+                                         ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+../src/main.xc:105:7: error: parse error before "else"
+      else bottomChannel = rowChannels[0];
+      ^
+../src/main.xc:111:40: warning: parameter `numRows' used as array bound should be unsigned for maximum performance [-Wunusual-code]
+void processGame(int numRows, int rows[numRows], chanend topChannel, chanend bottomChannel) {
+                                       ^~~~~~~
+../src/main.xc:190:9: warning: unused variable `num' [-Wunused-variable]
+    int num = 1 << 1;
+        ^~~
+../src/main.xc:75:9: warning: unused variable `val' [-Wunused-variable]
+  uchar val;
+        ^~~
+../src/main.xc:91:13: warning: unused variable `rowsPerThread' [-Wunused-variable]
+  const int rowsPerThread = 4; //TODO make this dynamic and allow for rows % threads != 0
+            ^~~~~~~~~~~~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:26:37 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:31:40: warning: parameter `numRows' used as array bound should be unsigned for maximum performance [-Wunusual-code]
+void processGame(int numRows, int rows[numRows], chanend topChannel, chanend bottomChannel);
+                                       ^~~~~~~
+../src/main.xc:95:20: error: parse error before ';' token
+  chan rowChannels[PROCESS_THREAD_COUNT];
+                   ^
+../src/main.xc:12:32: note: expanded from here
+#define  PROCESS_THREAD_COUNT 4;
+                               ^
+../src/main.xc:95:40: error: parse error before ']' token
+  chan rowChannels[PROCESS_THREAD_COUNT];
+                                       ^
+../src/main.xc:99:43: error: parse error before ';' token
+  par (int i = 0; i < PROCESS_THREAD_COUNT; i++) {
+                                          ^
+../src/main.xc:99:48: error: parse error before ')' token
+  par (int i = 0; i < PROCESS_THREAD_COUNT; i++) {
+                                               ^
+../src/main.xc:102:32: error: use of undeclared identifer `rowChannels'
+      if (i != 0) topChannel = rowChannels[i-1];
+                               ^
+../src/main.xc:102:19: error: invalid lvalue in assignment
+      if (i != 0) topChannel = rowChannels[i-1];
+                  ^~~~~~~~~~
+../src/main.xc:102:30: error: assignment to resource that is not qualified unsafe
+      if (i != 0) topChannel = rowChannels[i-1];
+                  ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+../src/main.xc:103:37: error: parse error before ';' token
+      else topChannel = rowChannels[PROCESS_THREAD_COUNT-1];
+                                    ^
+../src/main.xc:12:32: note: expanded from here
+#define  PROCESS_THREAD_COUNT 4;
+                               ^
+../src/main.xc:103:59: error: parse error before ']' token
+      else topChannel = rowChannels[PROCESS_THREAD_COUNT-1];
+                                                          ^
+../src/main.xc:104:16: error: parse error before ';' token
+      if (i != PROCESS_THREAD_COUNT - 1) bottomChannel = rowChannels[i + 1];
+               ^
+../src/main.xc:12:32: note: expanded from here
+#define  PROCESS_THREAD_COUNT 4;
+                               ^
+../src/main.xc:104:40: error: parse error before ')' token
+      if (i != PROCESS_THREAD_COUNT - 1) bottomChannel = rowChannels[i + 1];
+                                       ^
+../src/main.xc:104:42: error: invalid lvalue in assignment
+      if (i != PROCESS_THREAD_COUNT - 1) bottomChannel = rowChannels[i + 1];
+                                         ^~~~~~~~~~~~~
+../src/main.xc:104:56: error: assignment to resource that is not qualified unsafe
+      if (i != PROCESS_THREAD_COUNT - 1) bottomChannel = rowChannels[i + 1];
+                                         ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+../src/main.xc:105:7: error: parse error before "else"
+      else bottomChannel = rowChannels[0];
+      ^
+../src/main.xc:111:40: warning: parameter `numRows' used as array bound should be unsigned for maximum performance [-Wunusual-code]
+void processGame(int numRows, int rows[numRows], chanend topChannel, chanend bottomChannel) {
+                                       ^~~~~~~
+../src/main.xc:190:9: warning: unused variable `num' [-Wunused-variable]
+    int num = 1 << 1;
+        ^~~
+../src/main.xc:75:9: warning: unused variable `val' [-Wunused-variable]
+  uchar val;
+        ^~~
+../src/main.xc:91:13: warning: unused variable `rowsPerThread' [-Wunused-variable]
+  const int rowsPerThread = 4; //TODO make this dynamic and allow for rows % threads != 0
+            ^~~~~~~~~~~~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:27:14 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:31:40: warning: parameter `numRows' used as array bound should be unsigned for maximum performance [-Wunusual-code]
+void processGame(int numRows, int rows[numRows], chanend topChannel, chanend bottomChannel);
+                                       ^~~~~~~
+../src/main.xc:95:20: error: parse error before ';' token
+  chan rowChannels[PROCESS_THREAD_COUNT];
+                   ^
+../src/main.xc:12:32: note: expanded from here
+#define  PROCESS_THREAD_COUNT 4;
+                               ^
+../src/main.xc:95:40: error: parse error before ']' token
+  chan rowChannels[PROCESS_THREAD_COUNT];
+                                       ^
+../src/main.xc:99:43: error: parse error before ';' token
+  par (int i = 0; i < PROCESS_THREAD_COUNT; i++) {
+                                          ^
+../src/main.xc:99:48: error: parse error before ')' token
+  par (int i = 0; i < PROCESS_THREAD_COUNT; i++) {
+                                               ^
+../src/main.xc:102:32: error: use of undeclared identifer `rowChannels'
+      if (i != 0) topChannel = rowChannels[i-1];
+                               ^
+../src/main.xc:102:19: error: invalid lvalue in assignment
+      if (i != 0) topChannel = rowChannels[i-1];
+                  ^~~~~~~~~~
+../src/main.xc:102:30: error: assignment to resource that is not qualified unsafe
+      if (i != 0) topChannel = rowChannels[i-1];
+                  ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+../src/main.xc:103:37: error: parse error before ';' token
+      else topChannel = rowChannels[PROCESS_THREAD_COUNT-1];
+                                    ^
+../src/main.xc:12:32: note: expanded from here
+#define  PROCESS_THREAD_COUNT 4;
+                               ^
+../src/main.xc:103:59: error: parse error before ']' token
+      else topChannel = rowChannels[PROCESS_THREAD_COUNT-1];
+                                                          ^
+../src/main.xc:104:16: error: parse error before ';' token
+      if (i != PROCESS_THREAD_COUNT - 1) bottomChannel = rowChannels[i + 1];
+               ^
+../src/main.xc:12:32: note: expanded from here
+#define  PROCESS_THREAD_COUNT 4;
+                               ^
+../src/main.xc:104:40: error: parse error before ')' token
+      if (i != PROCESS_THREAD_COUNT - 1) bottomChannel = rowChannels[i + 1];
+                                       ^
+../src/main.xc:104:42: error: invalid lvalue in assignment
+      if (i != PROCESS_THREAD_COUNT - 1) bottomChannel = rowChannels[i + 1];
+                                         ^~~~~~~~~~~~~
+../src/main.xc:104:56: error: assignment to resource that is not qualified unsafe
+      if (i != PROCESS_THREAD_COUNT - 1) bottomChannel = rowChannels[i + 1];
+                                         ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+../src/main.xc:105:7: error: parse error before "else"
+      else bottomChannel = rowChannels[0];
+      ^
+../src/main.xc:111:40: warning: parameter `numRows' used as array bound should be unsigned for maximum performance [-Wunusual-code]
+void processGame(int numRows, int rows[numRows], chanend topChannel, chanend bottomChannel) {
+                                       ^~~~~~~
+../src/main.xc:190:9: warning: unused variable `num' [-Wunused-variable]
+    int num = 1 << 1;
+        ^~~
+../src/main.xc:75:9: warning: unused variable `val' [-Wunused-variable]
+  uchar val;
+        ^~~
+../src/main.xc:91:13: warning: unused variable `rowsPerThread' [-Wunused-variable]
+  const int rowsPerThread = 4; //TODO make this dynamic and allow for rows % threads != 0
+            ^~~~~~~~~~~~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:29:02 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:31:40: warning: parameter `numRows' used as array bound should be unsigned for maximum performance [-Wunusual-code]
+void processGame(int numRows, int rows[numRows], chanend topChannel, chanend bottomChannel);
+                                       ^~~~~~~
+../src/main.xc:99:43: error: parse error before ';' token
+  par (int i = 0; i < PROCESS_THREAD_COUNT; i++) {
+                                          ^
+../src/main.xc:99:48: error: parse error before ')' token
+  par (int i = 0; i < PROCESS_THREAD_COUNT; i++) {
+                                               ^
+../src/main.xc:102:19: error: invalid lvalue in assignment
+      if (i != 0) topChannel = rowChannels[i-1];
+                  ^~~~~~~~~~
+../src/main.xc:102:30: error: assignment to resource that is not qualified unsafe
+      if (i != 0) topChannel = rowChannels[i-1];
+                  ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+../src/main.xc:103:37: error: parse error before ';' token
+      else topChannel = rowChannels[PROCESS_THREAD_COUNT-1];
+                                    ^
+../src/main.xc:12:32: note: expanded from here
+#define  PROCESS_THREAD_COUNT 4;
+                               ^
+../src/main.xc:103:59: error: parse error before ']' token
+      else topChannel = rowChannels[PROCESS_THREAD_COUNT-1];
+                                                          ^
+../src/main.xc:104:16: error: parse error before ';' token
+      if (i != PROCESS_THREAD_COUNT - 1) bottomChannel = rowChannels[i + 1];
+               ^
+../src/main.xc:12:32: note: expanded from here
+#define  PROCESS_THREAD_COUNT 4;
+                               ^
+../src/main.xc:104:40: error: parse error before ')' token
+      if (i != PROCESS_THREAD_COUNT - 1) bottomChannel = rowChannels[i + 1];
+                                       ^
+../src/main.xc:104:42: error: invalid lvalue in assignment
+      if (i != PROCESS_THREAD_COUNT - 1) bottomChannel = rowChannels[i + 1];
+                                         ^~~~~~~~~~~~~
+../src/main.xc:104:56: error: assignment to resource that is not qualified unsafe
+      if (i != PROCESS_THREAD_COUNT - 1) bottomChannel = rowChannels[i + 1];
+                                         ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+../src/main.xc:105:7: error: parse error before "else"
+      else bottomChannel = rowChannels[0];
+      ^
+../src/main.xc:111:40: warning: parameter `numRows' used as array bound should be unsigned for maximum performance [-Wunusual-code]
+void processGame(int numRows, int rows[numRows], chanend topChannel, chanend bottomChannel) {
+                                       ^~~~~~~
+../src/main.xc:190:9: warning: unused variable `num' [-Wunused-variable]
+    int num = 1 << 1;
+        ^~~
+../src/main.xc:75:9: warning: unused variable `val' [-Wunused-variable]
+  uchar val;
+        ^~~
+../src/main.xc:91:13: warning: unused variable `rowsPerThread' [-Wunused-variable]
+  const int rowsPerThread = 4; //TODO make this dynamic and allow for rows % threads != 0
+            ^~~~~~~~~~~~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:30:05 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:31:40: warning: parameter `numRows' used as array bound should be unsigned for maximum performance [-Wunusual-code]
+void processGame(int numRows, int rows[numRows], chanend topChannel, chanend bottomChannel);
+                                       ^~~~~~~
+../src/main.xc:102:19: error: invalid lvalue in assignment
+      if (i != 0) topChannel = rowChannels[i-1];
+                  ^~~~~~~~~~
+../src/main.xc:102:30: error: assignment to resource that is not qualified unsafe
+      if (i != 0) topChannel = rowChannels[i-1];
+                  ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+../src/main.xc:103:12: error: invalid lvalue in assignment
+      else topChannel = rowChannels[PROCESS_THREAD_COUNT-1];
+           ^~~~~~~~~~
+../src/main.xc:103:23: error: assignment to resource that is not qualified unsafe
+      else topChannel = rowChannels[PROCESS_THREAD_COUNT-1];
+           ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:104:42: error: invalid lvalue in assignment
+      if (i != PROCESS_THREAD_COUNT - 1) bottomChannel = rowChannels[i + 1];
+                                         ^~~~~~~~~~~~~
+../src/main.xc:104:56: error: assignment to resource that is not qualified unsafe
+      if (i != PROCESS_THREAD_COUNT - 1) bottomChannel = rowChannels[i + 1];
+                                         ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+../src/main.xc:105:12: error: invalid lvalue in assignment
+      else bottomChannel = rowChannels[0];
+           ^~~~~~~~~~~~~
+../src/main.xc:105:26: error: assignment to resource that is not qualified unsafe
+      else bottomChannel = rowChannels[0];
+           ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../src/main.xc:100:7: error: declaration statement in 'par' statement
+      chan topChannel;
+      ^
+../src/main.xc:101:7: error: declaration statement in 'par' statement
+      chan bottomChannel;
+      ^
+../src/main.xc:75:9: warning: unused variable `val' [-Wunused-variable]
+  uchar val;
+        ^~~
+../src/main.xc:91:13: warning: unused variable `rowsPerThread' [-Wunused-variable]
+  const int rowsPerThread = 4; //TODO make this dynamic and allow for rows % threads != 0
+            ^~~~~~~~~~~~~
+../src/main.xc:111:40: warning: parameter `numRows' used as array bound should be unsigned for maximum performance [-Wunusual-code]
+void processGame(int numRows, int rows[numRows], chanend topChannel, chanend bottomChannel) {
+                                       ^~~~~~~
+../src/main.xc:190:9: warning: unused variable `num' [-Wunused-variable]
+    int num = 1 << 1;
+        ^~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:30:38 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:31:40: warning: parameter `numRows' used as array bound should be unsigned for maximum performance [-Wunusual-code]
+void processGame(int numRows, int rows[numRows], chanend topChannel, chanend bottomChannel);
+                                       ^~~~~~~
+../src/main.xc:102:19: error: invalid lvalue in assignment
+      if (i != 0) topChannel = rowChannels[i-1];
+                  ^~~~~~~~~~
+../src/main.xc:102:30: error: assignment to resource that is not qualified unsafe
+      if (i != 0) topChannel = rowChannels[i-1];
+                  ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+../src/main.xc:103:12: error: invalid lvalue in assignment
+      else topChannel = rowChannels[PROCESS_THREAD_COUNT-1];
+           ^~~~~~~~~~
+../src/main.xc:103:23: error: assignment to resource that is not qualified unsafe
+      else topChannel = rowChannels[PROCESS_THREAD_COUNT-1];
+           ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:104:42: error: invalid lvalue in assignment
+      if (i != PROCESS_THREAD_COUNT - 1) bottomChannel = rowChannels[i + 1];
+                                         ^~~~~~~~~~~~~
+../src/main.xc:104:56: error: assignment to resource that is not qualified unsafe
+      if (i != PROCESS_THREAD_COUNT - 1) bottomChannel = rowChannels[i + 1];
+                                         ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+../src/main.xc:105:12: error: invalid lvalue in assignment
+      else bottomChannel = rowChannels[0];
+           ^~~~~~~~~~~~~
+../src/main.xc:105:26: error: assignment to resource that is not qualified unsafe
+      else bottomChannel = rowChannels[0];
+           ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../src/main.xc:75:9: warning: unused variable `val' [-Wunused-variable]
+  uchar val;
+        ^~~
+../src/main.xc:91:13: warning: unused variable `rowsPerThread' [-Wunused-variable]
+  const int rowsPerThread = 4; //TODO make this dynamic and allow for rows % threads != 0
+            ^~~~~~~~~~~~~
+../src/main.xc:111:40: warning: parameter `numRows' used as array bound should be unsigned for maximum performance [-Wunusual-code]
+void processGame(int numRows, int rows[numRows], chanend topChannel, chanend bottomChannel) {
+                                       ^~~~~~~
+../src/main.xc:190:9: warning: unused variable `num' [-Wunused-variable]
+    int num = 1 << 1;
+        ^~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:31:57 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:31:40: warning: parameter `numRows' used as array bound should be unsigned for maximum performance [-Wunusual-code]
+void processGame(int numRows, int rows[numRows], chanend topChannel, chanend bottomChannel);
+                                       ^~~~~~~
+../src/main.xc:102:20: error: invalid lvalue in assignment
+      if (i != 0) {topChannel = rowChannels[i-1];}
+                   ^~~~~~~~~~
+../src/main.xc:102:31: error: assignment to resource that is not qualified unsafe
+      if (i != 0) {topChannel = rowChannels[i-1];}
+                   ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+../src/main.xc:103:13: error: invalid lvalue in assignment
+      else {topChannel = rowChannels[PROCESS_THREAD_COUNT-1];}
+            ^~~~~~~~~~
+../src/main.xc:103:24: error: assignment to resource that is not qualified unsafe
+      else {topChannel = rowChannels[PROCESS_THREAD_COUNT-1];}
+            ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:104:43: error: invalid lvalue in assignment
+      if (i != PROCESS_THREAD_COUNT - 1) {bottomChannel = rowChannels[i + 1];}
+                                          ^~~~~~~~~~~~~
+../src/main.xc:104:57: error: assignment to resource that is not qualified unsafe
+      if (i != PROCESS_THREAD_COUNT - 1) {bottomChannel = rowChannels[i + 1];}
+                                          ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+../src/main.xc:105:13: error: invalid lvalue in assignment
+      else {bottomChannel = rowChannels[0];}
+            ^~~~~~~~~~~~~
+../src/main.xc:105:27: error: assignment to resource that is not qualified unsafe
+      else {bottomChannel = rowChannels[0];}
+            ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../src/main.xc:75:9: warning: unused variable `val' [-Wunused-variable]
+  uchar val;
+        ^~~
+../src/main.xc:91:13: warning: unused variable `rowsPerThread' [-Wunused-variable]
+  const int rowsPerThread = 4; //TODO make this dynamic and allow for rows % threads != 0
+            ^~~~~~~~~~~~~
+../src/main.xc:111:40: warning: parameter `numRows' used as array bound should be unsigned for maximum performance [-Wunusual-code]
+void processGame(int numRows, int rows[numRows], chanend topChannel, chanend bottomChannel) {
+                                       ^~~~~~~
+../src/main.xc:190:9: warning: unused variable `num' [-Wunused-variable]
+    int num = 1 << 1;
+        ^~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:34:58 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:31:40: warning: parameter `numRows' used as array bound should be unsigned for maximum performance [-Wunusual-code]
+void processGame(int numRows, int rows[numRows], chanend topChannel, chanend bottomChannel);
+                                       ^~~~~~~
+../src/main.xc:75:9: warning: unused variable `val' [-Wunused-variable]
+  uchar val;
+        ^~~
+../src/main.xc:96:8: warning: unused variable `topChannel' [-Wunused-variable]
+  chan topChannel;
+       ^~~~~~~~~~
+../src/main.xc:97:8: warning: unused variable `bottomChannel' [-Wunused-variable]
+  chan bottomChannel;
+       ^~~~~~~~~~~~~
+../src/main.xc:113:40: warning: parameter `numRows' used as array bound should be unsigned for maximum performance [-Wunusual-code]
+void processGame(int numRows, int rows[numRows], chanend topChannel, chanend bottomChannel) {
+                                       ^~~~~~~
+../src/main.xc:192:9: warning: unused variable `num' [-Wunused-variable]
+    int num = 1 << 1;
+        ^~~
+../src/main.xc:101:3: error: use of `testRows' violates parallel usage rules
+  par (int i = 0; i < PROCESS_THREAD_COUNT; i++) {
+  ^~~
+../src/main.xc:108:34: note: violation occurs here
+      processGame(rowsPerThread, testRows, rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                                 ^~~~~~~~
+../src/main.xc:108:34: note: violation occurs here
+      processGame(rowsPerThread, testRows, rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                                 ^~~~~~~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:38:00 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:31:40: warning: parameter `numRows' used as array bound should be unsigned for maximum performance [-Wunusual-code]
+void processGame(int numRows, int rows[numRows], chanend topChannel, chanend bottomChannel);
+                                       ^~~~~~~
+../src/main.xc:97:38: error: use of undeclared identifer `testRows'
+          processGame(rowsPerThread, testRows, rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                                     ^
+../src/main.xc:75:9: warning: unused variable `val' [-Wunused-variable]
+  uchar val;
+        ^~~
+../src/main.xc:103:40: warning: parameter `numRows' used as array bound should be unsigned for maximum performance [-Wunusual-code]
+void processGame(int numRows, int rows[numRows], chanend topChannel, chanend bottomChannel) {
+                                       ^~~~~~~
+../src/main.xc:182:9: warning: unused variable `num' [-Wunused-variable]
+    int num = 1 << 1;
+        ^~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:46:35 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:31:40: warning: parameter `numRows' used as array bound should be unsigned for maximum performance [-Wunusual-code]
+void processGame(int numRows, int rows[numRows], chanend topChannel, chanend bottomChannel);
+                                       ^~~~~~~
+../src/main.xc:96:34: error: unknown function identifier `parsePixelsToInt' (possibly missing prototype?)
+      processGame(rowsPerThread, parsePixelsToInt(), rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                                 ^
+../src/main.xc:75:9: warning: unused variable `val' [-Wunused-variable]
+  uchar val;
+        ^~~
+../src/main.xc:101:1: error: pointer return type must be marked movable, alias or unsafe
+int* parsePixelsToInt() {
+^~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:103:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+../src/main.xc:104:40: warning: parameter `numRows' used as array bound should be unsigned for maximum performance [-Wunusual-code]
+void processGame(int numRows, int rows[numRows], chanend topChannel, chanend bottomChannel) {
+                                       ^~~~~~~
+../src/main.xc:105:17: error: size of array is not constant or based on a const static parameter
+    int rowData[numRows] = rows;
+                ^~~~~~~
+../src/main.xc:105:28: error: invalid array initializer
+    int rowData[numRows] = rows;
+                           ^~~~
+../src/main.xc:105:9: warning: unused variable `rowData' [-Wunused-variable]
+    int rowData[numRows] = rows;
+        ^~~~~~~~~~~~~~~~
+../src/main.xc:186:9: warning: unused variable `num' [-Wunused-variable]
+    int num = 1 << 1;
+        ^~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:54:16 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:32:40: warning: parameter `numRows' used as array bound should be unsigned for maximum performance [-Wunusual-code]
+void processGame(int numRows, int rows[numRows], chanend topChannel, chanend bottomChannel);
+                                       ^~~~~~~
+../src/main.xc:96:19: error: unknown function identifier `parsePixelsToInt' (possibly missing prototype?)
+      processGame(parsePixelsToInt(), rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^
+../src/main.xc:96:39: error: incompatible type for argument 2 of `processGame'
+      processGame(parsePixelsToInt(), rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:96:139: error: too few arguments to function `processGame'
+      processGame(parsePixelsToInt(), rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                                                                                                                                          ^
+../src/main.xc:76:9: warning: unused variable `val' [-Wunused-variable]
+  uchar val;
+        ^~~
+../src/main.xc:101:1: error: pointer return type must be marked movable, alias or unsafe
+int* parsePixelsToInt() {
+^~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:103:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+../src/main.xc:104:6: error: conflicting types for 'processGame'
+void processGame(int rows[ROWS_PER_THREAD], chanend topChannel, chanend bottomChannel) {
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:32:1: note: previous declaration of 'processGame' was here
+void processGame(int numRows, int rows[numRows], chanend topChannel, chanend bottomChannel);
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:105:36: error: invalid array initializer
+    int rowData[ROWS_PER_THREAD] = rows;
+                                   ^~~~
+../src/main.xc:105:9: error: array size missing in 'rowData'
+    int rowData[ROWS_PER_THREAD] = rows;
+        ^~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:105:9: warning: unused variable `rowData' [-Wunused-variable]
+    int rowData[ROWS_PER_THREAD] = rows;
+        ^~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:186:9: warning: unused variable `num' [-Wunused-variable]
+    int num = 1 << 1;
+        ^~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:55:20 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:32:27: error: use of undeclared identifer `numRows'
+void processGame(int rows[numRows], chanend topChannel, chanend bottomChannel);
+                          ^
+../src/main.xc:96:19: error: unknown function identifier `parsePixelsToInt' (possibly missing prototype?)
+      processGame(parsePixelsToInt(), rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^
+../src/main.xc:76:9: warning: unused variable `val' [-Wunused-variable]
+  uchar val;
+        ^~~
+../src/main.xc:101:1: error: pointer return type must be marked movable, alias or unsafe
+int* parsePixelsToInt() {
+^~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:103:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+../src/main.xc:104:6: error: conflicting types for 'processGame'
+void processGame(int rows[ROWS_PER_THREAD], chanend topChannel, chanend bottomChannel) {
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:32:1: note: previous declaration of 'processGame' was here
+void processGame(int rows[numRows], chanend topChannel, chanend bottomChannel);
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:105:36: error: invalid array initializer
+    int rowData[ROWS_PER_THREAD] = rows;
+                                   ^~~~
+../src/main.xc:105:9: error: array size missing in 'rowData'
+    int rowData[ROWS_PER_THREAD] = rows;
+        ^~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:105:9: warning: unused variable `rowData' [-Wunused-variable]
+    int rowData[ROWS_PER_THREAD] = rows;
+        ^~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:186:9: warning: unused variable `num' [-Wunused-variable]
+    int num = 1 << 1;
+        ^~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:56:00 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:96:19: error: unknown function identifier `parsePixelsToInt' (possibly missing prototype?)
+      processGame(parsePixelsToInt(), rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^
+../src/main.xc:76:9: warning: unused variable `val' [-Wunused-variable]
+  uchar val;
+        ^~~
+../src/main.xc:101:1: error: pointer return type must be marked movable, alias or unsafe
+int* parsePixelsToInt() {
+^~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:103:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+../src/main.xc:105:36: error: invalid array initializer
+    int rowData[ROWS_PER_THREAD] = rows;
+                                   ^~~~
+../src/main.xc:105:9: error: array size missing in 'rowData'
+    int rowData[ROWS_PER_THREAD] = rows;
+        ^~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:105:9: warning: unused variable `rowData' [-Wunused-variable]
+    int rowData[ROWS_PER_THREAD] = rows;
+        ^~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:186:9: warning: unused variable `num' [-Wunused-variable]
+    int num = 1 << 1;
+        ^~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:56:48 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:96:19: error: unknown function identifier `parsePixelsToInt' (possibly missing prototype?)
+      processGame(parsePixelsToInt(), rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^
+../src/main.xc:76:9: warning: unused variable `val' [-Wunused-variable]
+  uchar val;
+        ^~~
+../src/main.xc:101:1: error: pointer return type must be marked movable, alias or unsafe
+int* parsePixelsToInt() {
+^~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:103:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+../src/main.xc:105:36: error: invalid array initializer
+    int rowData[ROWS_PER_THREAD] = rows;
+                                   ^~~~
+../src/main.xc:105:9: warning: unused variable `rowData' [-Wunused-variable]
+    int rowData[ROWS_PER_THREAD] = rows;
+        ^~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:186:9: warning: unused variable `num' [-Wunused-variable]
+    int num = 1 << 1;
+        ^~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:57:10 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:96:19: error: unknown function identifier `parsePixelsToInt' (possibly missing prototype?)
+      processGame(parsePixelsToInt(), rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^
+../src/main.xc:76:9: warning: unused variable `val' [-Wunused-variable]
+  uchar val;
+        ^~~
+../src/main.xc:101:1: error: pointer return type must be marked movable, alias or unsafe
+int* parsePixelsToInt() {
+^~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:103:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+../src/main.xc:106:5: error: invalid lvalue in assignment
+    rowData = rows;
+    ^~~~~~~
+../src/main.xc:106:13: error: incompatible types in assignment
+    rowData = rows;
+    ~~~~~~~~^~~~~~
+../src/main.xc:187:9: warning: unused variable `num' [-Wunused-variable]
+    int num = 1 << 1;
+        ^~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:59:46 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:96:19: error: unknown function identifier `parsePixelsToInt' (possibly missing prototype?)
+      processGame(parsePixelsToInt(), rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^
+../src/main.xc:76:9: warning: unused variable `val' [-Wunused-variable]
+  uchar val;
+        ^~~
+../src/main.xc:101:1: error: pointer return type must be marked movable, alias or unsafe
+int* parsePixelsToInt() {
+^~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:103:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+../src/main.xc:189:9: warning: unused variable `num' [-Wunused-variable]
+    int num = 1 << 1;
+        ^~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2

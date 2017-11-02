@@ -9,6 +9,8 @@
 
 #define  IMHT 16                  //image height
 #define  IMWD 16                  //image width
+#define  PROCESS_THREAD_COUNT 8
+#define  ROWS_PER_THREAD 2
 
 typedef unsigned char uchar;      //using uchar as shorthand
 
@@ -26,6 +28,8 @@ port p_sda = XS1_PORT_1F;
 #define FXOS8700EQ_OUT_Z_MSB 0x5
 #define FXOS8700EQ_OUT_Z_LSB 0x6
 
+
+void processGame(int rows[ROWS_PER_THREAD], chanend topChannel, chanend bottomChannel);
 /////////////////////////////////////////////////////////////////////////////////////////
 //
 // Read Image from PGM file from path infname[] to channel c_out
@@ -78,16 +82,36 @@ void distributor(chanend c_in, chanend c_out, chanend fromAcc)
   //Read in and do something with your image values..
   //This just inverts every pixel, but you should
   //change the image according to the "Game of Life"
-  printf( "Processing...\n" );
+  /*printf( "Processing...\n" );
   for( int y = 0; y < IMHT; y++ ) {   //go through all lines
     for( int x = 0; x < IMWD; x++ ) { //go through each pixel per line
       c_in :> val;                    //read the pixel value
       c_out <: (uchar)( val ^ 0xFF ); //send some modified pixel out
     }
+  }*/
+  //TODO: make a pixel -> int conversion
+
+  chan rowChannels[PROCESS_THREAD_COUNT];
+  par (int i = 0; i < PROCESS_THREAD_COUNT; i++) {
+      processGame(parsePixelsToInt(), rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
   }
+  //TODO: make a int -> pixel conversion
   printf( "\nOne processing round completed...\n" );
 }
-//0001   0010   length = 4
+int* parsePixelsToInt() {
+
+}
+void processGame(int rows[ROWS_PER_THREAD], chanend topChannel, chanend bottomChannel) {
+    int rowData[ROWS_PER_THREAD];
+    for (int j = 0; j < ROWS_PER_THREAD; j++) {
+        rowData[j] = rows[j];
+    }
+    while(1) {
+        //TODO: get row data from top
+        //TODO: get row data from bottom
+        // for (all rows with first = top, last = bottom) addNewRow(those things);
+    }
+}
 // Circular left shift the bits in an int value that uses 'size' number of bits
 unsigned int circularLeftShift(unsigned int input, int length) {
     unsigned int result = input << 1 | input >> (length-1);
@@ -162,7 +186,6 @@ void assertEqual(int first, int second) {
     else printf("TEST FAILED. Expected: %d, got: %d\n", first, second);
 }
 void runTests() {
-    int num = 1 << 1;
     assertEqual(2, circularLeftShift(1, 32));
     assertEqual(1, circularLeftShift(4, 3));
     assertEqual(1, circularRightShift(2, 4));
