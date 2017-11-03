@@ -461,3 +461,88 @@ Binding(CTRL+D,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.textEditorScope,,,system)
+
+!ENTRY org.eclipse.cdt.debug.core 4 104 2017-11-03 14:13:57.171
+!MESSAGE The program file specified in the launch configuration does not exist
+!STACK 0
+java.io.FileNotFoundException: /home/bmiki/CS/Concurrent Computing/workspace/COMS20001/game_of_life/bin/game_of_life.xe not found
+	at org.eclipse.cdt.debug.core.CDebugUtils.verifyProgramPath(Unknown Source)
+	at org.eclipse.cdt.debug.core.CDebugUtils.verifyProgramPath(Unknown Source)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.verifyProgramPath(AbstractCLaunchDelegate.java:444)
+	at com.xmos.cdt.launch.core.XCoreRunLaunchDelegate.access$0(Unknown Source)
+	at com.xmos.cdt.launch.core.XCoreRunLaunchDelegate$LaunchDelegateRun.launch(Unknown Source)
+	at com.xmos.cdt.launch.core.XCoreRunLaunchDelegate.launch(Unknown Source)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.cdt.debug.core 4 104 2017-11-03 14:15:13.032
+!MESSAGE The program file specified in the launch configuration does not exist
+!STACK 0
+java.io.FileNotFoundException: /home/bmiki/CS/Concurrent Computing/workspace/COMS20001/game_of_life/bin/game_of_life.xe not found
+	at org.eclipse.cdt.debug.core.CDebugUtils.verifyProgramPath(Unknown Source)
+	at org.eclipse.cdt.debug.core.CDebugUtils.verifyProgramPath(Unknown Source)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.verifyProgramPath(AbstractCLaunchDelegate.java:444)
+	at com.xmos.cdt.launch.core.XCoreRunLaunchDelegate.access$0(Unknown Source)
+	at com.xmos.cdt.launch.core.XCoreRunLaunchDelegate$LaunchDelegateRun.launch(Unknown Source)
+	at com.xmos.cdt.launch.core.XCoreRunLaunchDelegate.launch(Unknown Source)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.cdt.debug.core 4 104 2017-11-03 14:15:22.740
+!MESSAGE The program file specified in the launch configuration does not exist
+!STACK 0
+java.io.FileNotFoundException: /home/bmiki/CS/Concurrent Computing/workspace/COMS20001/game_of_life/bin/game_of_life.xe not found
+	at org.eclipse.cdt.debug.core.CDebugUtils.verifyProgramPath(Unknown Source)
+	at org.eclipse.cdt.debug.core.CDebugUtils.verifyProgramPath(Unknown Source)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.verifyProgramPath(AbstractCLaunchDelegate.java:444)
+	at com.xmos.cdt.launch.core.XCoreRunLaunchDelegate.access$0(Unknown Source)
+	at com.xmos.cdt.launch.core.XCoreRunLaunchDelegate$LaunchDelegateRun.launch(Unknown Source)
+	at com.xmos.cdt.launch.core.XCoreRunLaunchDelegate.launch(Unknown Source)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.jface 2 0 2017-11-03 14:17:28.509
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-11-03 14:17:28.509
+!MESSAGE A conflict occurred for CTRL+D:
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.debug.ui.commands.eof,EOF,
+		Send end of file,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2be89ba5,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.debug.ui.console,,,system)
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.delete.line,Delete Line,
+		Delete a line of text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@408573b1,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+
+!ENTRY org.eclipse.cdt.debug.core 4 104 2017-11-03 14:19:45.399
+!MESSAGE The program file specified in the launch configuration does not exist
+!STACK 0
+java.io.FileNotFoundException: /home/bmiki/CS/Concurrent Computing/workspace/COMS20001/game_of_life/bin/game_of_life.xe not found
+	at org.eclipse.cdt.debug.core.CDebugUtils.verifyProgramPath(Unknown Source)
+	at org.eclipse.cdt.debug.core.CDebugUtils.verifyProgramPath(Unknown Source)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.verifyProgramPath(AbstractCLaunchDelegate.java:444)
+	at com.xmos.cdt.launch.core.XCoreRunLaunchDelegate.access$0(Unknown Source)
+	at com.xmos.cdt.launch.core.XCoreRunLaunchDelegate$LaunchDelegateRun.launch(Unknown Source)
+	at com.xmos.cdt.launch.core.XCoreRunLaunchDelegate.launch(Unknown Source)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)

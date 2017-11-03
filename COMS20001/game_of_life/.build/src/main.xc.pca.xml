@@ -24,6 +24,7 @@
 <fDef name="master_sent_data" global="true" interface="i2c_slave_callback_if" noreturn="false" doNotSpecialize="false" numParams="1"/>
 <fDef name="operation_complete" global="true" interface="i2c_master_async_if" noreturn="false" doNotSpecialize="false" numParams="0"/>
 <fDef name="orientation" global="true" noreturn="true" doNotSpecialize="false" numParams="2"/>
+<fDef name="processGame" global="true" noreturn="true" doNotSpecialize="false" numParams="3"/>
 <fDef name="read" global="true" interface="i2c_master_async_if" noreturn="false" doNotSpecialize="false" numParams="3"/>
 <fDef name="read" global="true" interface="i2c_master_if" noreturn="false" doNotSpecialize="false" numParams="4"/>
 <fDef name="read_reg" global="true" interface="i2c_master_if" noreturn="false" doNotSpecialize="true" numParams="4"/>
@@ -556,14 +557,7 @@
     </values>
   </arg>
 </fCall>
-<fCall name="printf" global="true" numArgs="1">
-  <arg num="0">
-    <values>
-      <value type="unknown"/>
-    </values>
-  </arg>
-</fCall>
-<fCall name="addToRow" global="true" numArgs="3">
+<fCall name="processGame" global="true" numArgs="3" impId="0">
   <arg num="0">
     <values>
       <value type="unknown"/>
@@ -575,8 +569,88 @@
     </values>
   </arg>
   <arg num="2">
-    <passThroughArg param="2" caller="addThreeRows" global="true"/>
     <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="processGame" global="true" numArgs="3" impId="0">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="processGame" global="true" numArgs="3" impId="0">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="processGame" global="true" numArgs="3" impId="0">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="generateNewRow" global="true" numArgs="4">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="intval"><intval isSigned="true" val="16"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="printf" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
     </values>
   </arg>
 </fCall>
@@ -592,40 +666,6 @@
     </values>
   </arg>
 </fCall>
-<fCall name="addToRow" global="true" numArgs="3">
-  <arg num="0">
-    <values>
-      <value type="unknown"/>
-    </values>
-  </arg>
-  <arg num="1">
-    <passThroughArg param="1" caller="addThreeRows" global="true"/>
-    <values>
-    </values>
-  </arg>
-  <arg num="2">
-    <passThroughArg param="2" caller="addThreeRows" global="true"/>
-    <values>
-    </values>
-  </arg>
-</fCall>
-<fCall name="addToRow" global="true" numArgs="3">
-  <arg num="0">
-    <values>
-      <value type="unknown"/>
-    </values>
-  </arg>
-  <arg num="1">
-    <values>
-      <value type="unknown"/>
-    </values>
-  </arg>
-  <arg num="2">
-    <passThroughArg param="2" caller="addThreeRows" global="true"/>
-    <values>
-    </values>
-  </arg>
-</fCall>
 <fCall name="circularRightShift" global="true" numArgs="2">
   <arg num="0">
     <passThroughArg param="1" caller="addThreeRows" global="true"/>
@@ -633,6 +673,57 @@
     </values>
   </arg>
   <arg num="1">
+    <passThroughArg param="2" caller="addThreeRows" global="true"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="addToRow" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <passThroughArg param="2" caller="addThreeRows" global="true"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="addToRow" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <passThroughArg param="1" caller="addThreeRows" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="2">
+    <passThroughArg param="2" caller="addThreeRows" global="true"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="addToRow" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
     <passThroughArg param="2" caller="addThreeRows" global="true"/>
     <values>
     </values>
@@ -862,6 +953,122 @@
     </values>
   </arg>
 </fCall>
+<fCall name="addToRow" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="5"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="16"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="assertEqual" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="assertEqual" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="assertEqual" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="addThreeRows" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="7"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="16"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="assertEqual" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="3"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="assertEqual" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="3"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="generateNewRow" global="true" numArgs="4">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="3"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="3"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="intval"><intval isSigned="true" val="32"/></value>
+    </values>
+  </arg>
+</fCall>
 <fCall name="printf" global="true" numArgs="1">
   <arg num="0">
     <values>
@@ -1020,10 +1227,10 @@
 </fCall>
 <fCall name="runTests" global="true" numArgs="0">
 </fCall>
-<fCall name="i2c_master" global="true" numArgs="5" impId="0">
+<fCall name="i2c_master" global="true" numArgs="5" impId="1">
   <arg num="0">
     <values>
-      <value type="interface"><interfaceInfo index="0" type="dist" func="i2c_master" global="true" impUnit="../src/main.xc" impId="0" param="0"/></value>
+      <value type="interface"><interfaceInfo index="0" type="dist" func="i2c_master" global="true" impUnit="../src/main.xc" impId="1" param="0"/></value>
     </values>
   </arg>
   <arg num="1">
@@ -1047,10 +1254,10 @@
     </values>
   </arg>
 </fCall>
-<fCall name="orientation" global="true" numArgs="2" impId="1">
+<fCall name="orientation" global="true" numArgs="2" impId="2">
   <arg num="0">
     <values>
-      <value type="interface"><interfaceInfo index="0" type="dist" func="i2c_master" global="true" impUnit="../src/main.xc" impId="0" param="0"/></value>
+      <value type="interface"><interfaceInfo index="0" type="dist" func="i2c_master" global="true" impUnit="../src/main.xc" impId="1" param="0"/></value>
     </values>
   </arg>
   <arg num="1">
@@ -1059,19 +1266,7 @@
     </values>
   </arg>
 </fCall>
-<fCall name="DataInStream" global="true" numArgs="2" impId="2">
-  <arg num="0">
-    <values>
-      <value type="unknown"/>
-    </values>
-  </arg>
-  <arg num="1">
-    <values>
-      <value type="unknown"/>
-    </values>
-  </arg>
-</fCall>
-<fCall name="DataOutStream" global="true" numArgs="2" impId="3">
+<fCall name="DataInStream" global="true" numArgs="2" impId="3">
   <arg num="0">
     <values>
       <value type="unknown"/>
@@ -1083,7 +1278,19 @@
     </values>
   </arg>
 </fCall>
-<fCall name="distributor" global="true" numArgs="3" impId="4">
+<fCall name="DataOutStream" global="true" numArgs="2" impId="4">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="distributor" global="true" numArgs="3" impId="5">
   <arg num="0">
     <values>
       <value type="unknown"/>

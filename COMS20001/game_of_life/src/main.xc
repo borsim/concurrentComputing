@@ -9,8 +9,8 @@
 
 #define  IMHT 16                  //image height
 #define  IMWD 16                  //image width
-#define  PROCESS_THREAD_COUNT 8
-#define  ROWS_PER_THREAD 2
+#define  PROCESS_THREAD_COUNT 4
+#define  ROWS_PER_THREAD 4
 
 typedef unsigned char uchar;      //using uchar as shorthand
 
@@ -29,7 +29,9 @@ port p_sda = XS1_PORT_1F;
 #define FXOS8700EQ_OUT_Z_LSB 0x6
 
 
-void processGame(int rows[ROWS_PER_THREAD], chanend topChannel, chanend bottomChannel);
+void processGame(chanend fromDistributor, chanend topChannel, chanend bottomChannel);
+unsigned int parseRowToInt(int rowNumber);
+unsigned int generateNewRow(unsigned int top, unsigned int self, unsigned int bottom, int length);
 /////////////////////////////////////////////////////////////////////////////////////////
 //
 // Read Image from PGM file from path infname[] to channel c_out
@@ -79,37 +81,44 @@ void distributor(chanend c_in, chanend c_out, chanend fromAcc)
   printf( "Waiting for Board Tilt...\n" );
   fromAcc :> int value;
 
-  //Read in and do something with your image values..
-  //This just inverts every pixel, but you should
-  //change the image according to the "Game of Life"
-  /*printf( "Processing...\n" );
-  for( int y = 0; y < IMHT; y++ ) {   //go through all lines
-    for( int x = 0; x < IMWD; x++ ) { //go through each pixel per line
-      c_in :> val;                    //read the pixel value
-      c_out <: (uchar)( val ^ 0xFF ); //send some modified pixel out
-    }
-  }*/
-  //TODO: make a pixel -> int conversion
+  printf( "Processing...\n" );
 
   chan rowChannels[PROCESS_THREAD_COUNT];
+  chan distributorChannels[PROCESS_THREAD_COUNT];
   par (int i = 0; i < PROCESS_THREAD_COUNT; i++) {
-      processGame(parsePixelsToInt(), rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
   }
+  for (int j = 0; j < PROCESS_THREAD_COUNT; j++) {
+      for (int k = 0; k < ROWS_PER_THREAD; k++) {
+          unsigned int currentRow = 0;
+          for( int x = 0; x < IMWD; x++ ) {                    // Go through each pixel per line
+                c_in :> val;                                   // Read the pixel value
+                if (val == 0xFF) currentRow = currentRow | 1;  // Put pixel on the end of the int
+                currentRow = currentRow << 1;                  // Shift int to the left
+          }
+          distributorChannels[j] <: currentRow;
+      }
+  }
+  //c_out <: (uchar)( val ^ 0xFF ); //send some modified pixel out
   //TODO: make a int -> pixel conversion
-  printf( "\nOne processing round completed...\n" );
 }
-int* parsePixelsToInt() {
-
-}
-void processGame(int rows[ROWS_PER_THREAD], chanend topChannel, chanend bottomChannel) {
-    int rowData[ROWS_PER_THREAD];
-    for (int j = 0; j < ROWS_PER_THREAD; j++) {
-        rowData[j] = rows[j];
+void processGame(chanend fromDistributor, chanend topChannel, chanend bottomChannel) {
+    unsigned int oldRowData[ROWS_PER_THREAD + 2];
+    unsigned int newRowData[ROWS_PER_THREAD + 2];
+    for (int j = 1; j <= ROWS_PER_THREAD; j++) {
+        fromDistributor :> oldRowData[j];
     }
     while(1) {
+        // topChannel :> rowData[0];
+        // bottomChannel :> rowData[ROWS_PER_THREAD + 1];
         //TODO: get row data from top
         //TODO: get row data from bottom
-        // for (all rows with first = top, last = bottom) addNewRow(those things);
+        for (int k = 1; k <= ROWS_PER_THREAD; k++) {
+            newRowData[k] = generateNewRow(oldRowData[k-1],oldRowData[k],oldRowData[k+1],IMWD);
+        }
+        for (int l = 1; l <= ROWS_PER_THREAD; l++) {
+            oldRowData[l] = newRowData[l];
+        }
     }
 }
 // Circular left shift the bits in an int value that uses 'size' number of bits
@@ -139,17 +148,19 @@ char determineLifeState(unsigned int currentState, char counter) {
 }
 void addToRow(char* original, unsigned int added, int length) {
     unsigned int addedCopy = added;
-    for (int i = 1; i <= length; i++) {
+    for (int i = 0; i < length; i++) {
         // Take the least significant bit (from the rightmost side) and add to row
-        original[length - i] += addedCopy & 1;
+        original[i] += addedCopy & 1;
         // Shift it to the right to delete the least significant bit
-        addedCopy >> 1;
+        addedCopy = addedCopy >> 1;
     }
 }
 void addThreeRows(char* original, unsigned int added, int length) {
-    addToRow(original, circularLeftShift(added, length), length);
+    unsigned int leftShifted = circularLeftShift(added, length);
+    unsigned int rightShifted = circularRightShift(added, length);
+    addToRow(original, leftShifted, length);
     addToRow(original, added, length);
-    addToRow(original, circularRightShift(added, length), length);
+    addToRow(original, rightShifted, length);
 }
 unsigned int generateNewRow(unsigned int top, unsigned int self, unsigned int bottom, int length) {
     unsigned int newRow = 0;
@@ -166,17 +177,20 @@ unsigned int generateNewRow(unsigned int top, unsigned int self, unsigned int bo
     // Add bottom and bottom diagonals states
     addThreeRows(newRowCount, bottom, length);
     // Once all the neighbours have been counted, proceed to determining life states
+
     for (int j = 0; j < length; j++) {
         // Get most significant bit (on the leftmost side)
-        unsigned int currentState =  selfCopy & (1 << (length-1));
+        unsigned int currentState = (selfCopy & (1 << (length-1))) >> (length-1);
+        //printf("%d", currentState);
         // Determine whether tile is alive or not
+        //printf("%d", newRowCount[j]);
         char result = determineLifeState(currentState, newRowCount[j]);
         // If the result is alive, put a 1 on the least significant bit (the shift below will make it more significant)
         if (result == 1) newRow = newRow | 1;
         // Store the new value by shifting the result left
-        newRow << 1;
+        newRow = newRow << 1;
         // Expose a new value at the most significant place by shifting the original's copy left
-        selfCopy << 1;
+        selfCopy = selfCopy << 1;
     }
     return newRow;
 }
@@ -190,6 +204,14 @@ void runTests() {
     assertEqual(1, circularLeftShift(4, 3));
     assertEqual(1, circularRightShift(2, 4));
     assertEqual(8, circularRightShift(1, 4));
+    char testCount[IMWD] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+    addToRow(testCount, 5, 16);
+    assertEqual(0, testCount[1]);
+    assertEqual(1, testCount[0]);
+    assertEqual(1, testCount[2]);
+    addThreeRows(testCount, 7, 16);
+    assertEqual(3, testCount[1]);
+    assertEqual(3, generateNewRow(3,3,0,32));
 }
 /////////////////////////////////////////////////////////////////////////////////////////
 //

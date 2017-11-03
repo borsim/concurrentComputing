@@ -4050,3 +4050,1252 @@ int* parsePixelsToInt() {
         ^~~
 xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
 xmake: *** [analyze] Error 2
+14:13:55 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:76:9: warning: unused variable `val' [-Wunused-variable]
+  uchar val;
+        ^~~
+../src/main.xc:104:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+../src/main.xc:97:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:97:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:97:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:97:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:97:19: warning: `distributorChannels' not used in two parallel statements (byte range 16..20) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:97:19: warning: `distributorChannels' not used in two parallel statements (byte range 20..24) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:97:19: warning: `distributorChannels' not used in two parallel statements (byte range 24..28) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:97:19: warning: `distributorChannels' not used in two parallel statements (byte range 28..32) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+../src/main.xc:76:9: warning: unused variable `val' [-Wunused-variable]
+  uchar val;
+        ^~~
+../src/main.xc:104:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+../src/main.xc:97:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:97:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:97:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:97:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:97:19: warning: `distributorChannels' not used in two parallel statements (byte range 16..20) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:97:19: warning: `distributorChannels' not used in two parallel statements (byte range 20..24) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:97:19: warning: `distributorChannels' not used in two parallel statements (byte range 24..28) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:97:19: warning: `distributorChannels' not used in two parallel statements (byte range 28..32) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Creating game_of_life.xe
+Constraint check for tile[0]:
+  Cores available:            8,   used:         11 .  FAILED
+  Timers available:          10,   used:         11 .  FAILED
+  Chanends available:        32,   used:         38 .  FAILED
+  Memory available:       262144,   used:      55308 .  OKAY
+    (Stack: 5572, Code: 46728, Data: 3008)
+Error: Constraints check FAILED for tile[0].
+xmake[1]: *** [bin//game_of_life.xe] Error 1
+xmake: *** [bin//game_of_life.xe] Error 2
+14:15:11 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Creating game_of_life.xe
+Constraint check for tile[0]:
+  Cores available:            8,   used:         11 .  FAILED
+  Timers available:          10,   used:         11 .  FAILED
+  Chanends available:        32,   used:         38 .  FAILED
+  Memory available:       262144,   used:      55308 .  OKAY
+    (Stack: 5572, Code: 46728, Data: 3008)
+Error: Constraints check FAILED for tile[0].
+xmake[1]: *** [bin//game_of_life.xe] Error 1
+xmake: *** [bin//game_of_life.xe] Error 2
+14:15:21 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Creating game_of_life.xe
+Constraint check for tile[0]:
+  Cores available:            8,   used:         11 .  FAILED
+  Timers available:          10,   used:         11 .  FAILED
+  Chanends available:        32,   used:         38 .  FAILED
+  Memory available:       262144,   used:      55308 .  OKAY
+    (Stack: 5572, Code: 46728, Data: 3008)
+Error: Constraints check FAILED for tile[0].
+xmake[1]: *** [bin//game_of_life.xe] Error 1
+xmake: *** [bin//game_of_life.xe] Error 2
+14:16:38 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Creating game_of_life.xe
+Constraint check for tile[0]:
+  Cores available:            8,   used:         11 .  FAILED
+  Timers available:          10,   used:         11 .  FAILED
+  Chanends available:        32,   used:         38 .  FAILED
+  Memory available:       262144,   used:      55308 .  OKAY
+    (Stack: 5572, Code: 46728, Data: 3008)
+Error: Constraints check FAILED for tile[0].
+xmake[1]: *** [bin//game_of_life.xe] Error 1
+xmake: *** [bin//game_of_life.xe] Error 2
+14:19:43 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:76:9: warning: unused variable `val' [-Wunused-variable]
+  uchar val;
+        ^~~
+../src/main.xc:109:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+../src/main.xc:97:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:97:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:97:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:97:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:97:19: warning: `distributorChannels' not used in two parallel statements (byte range 16..20) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:97:19: warning: `distributorChannels' not used in two parallel statements (byte range 20..24) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:97:19: warning: `distributorChannels' not used in two parallel statements (byte range 24..28) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:97:19: warning: `distributorChannels' not used in two parallel statements (byte range 28..32) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Creating dependencies for main.xc
+Compiling main.xc
+../src/main.xc:76:9: warning: unused variable `val' [-Wunused-variable]
+  uchar val;
+        ^~~
+../src/main.xc:109:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+../src/main.xc:97:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:97:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:97:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:97:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:97:19: warning: `distributorChannels' not used in two parallel statements (byte range 16..20) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:97:19: warning: `distributorChannels' not used in two parallel statements (byte range 20..24) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:97:19: warning: `distributorChannels' not used in two parallel statements (byte range 24..28) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:97:19: warning: `distributorChannels' not used in two parallel statements (byte range 28..32) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Creating game_of_life.xe
+Constraint check for tile[0]:
+  Cores available:            8,   used:         11 .  FAILED
+  Timers available:          10,   used:         11 .  FAILED
+  Chanends available:        32,   used:         38 .  FAILED
+  Memory available:       262144,   used:      55436 .  OKAY
+    (Stack: 5644, Code: 46784, Data: 3008)
+Error: Constraints check FAILED for tile[0].
+xmake[1]: *** [bin//game_of_life.xe] Error 1
+xmake: *** [bin//game_of_life.xe] Error 2
+14:20:52 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Creating game_of_life.xe
+Constraint check for tile[0]:
+  Cores available:            8,   used:         11 .  FAILED
+  Timers available:          10,   used:         11 .  FAILED
+  Chanends available:        32,   used:         38 .  FAILED
+  Memory available:       262144,   used:      55436 .  OKAY
+    (Stack: 5644, Code: 46784, Data: 3008)
+Error: Constraints check FAILED for tile[0].
+xmake[1]: *** [bin//game_of_life.xe] Error 1
+xmake: *** [bin//game_of_life.xe] Error 2
+14:22:12 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:76:9: warning: unused variable `val' [-Wunused-variable]
+  uchar val;
+        ^~~
+../src/main.xc:109:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+../src/main.xc:97:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:97:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:97:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:97:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+../src/main.xc:76:9: warning: unused variable `val' [-Wunused-variable]
+  uchar val;
+        ^~~
+../src/main.xc:109:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+../src/main.xc:97:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:97:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:97:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:97:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Creating game_of_life.xe
+Build Complete
+14:25:20 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:77:9: warning: unused variable `val' [-Wunused-variable]
+  uchar val;
+        ^~~
+../src/main.xc:110:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+../src/main.xc:98:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:98:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:98:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:98:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+../src/main.xc:77:9: warning: unused variable `val' [-Wunused-variable]
+  uchar val;
+        ^~~
+../src/main.xc:110:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+../src/main.xc:98:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:98:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:98:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:98:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Creating game_of_life.xe
+Build Complete
+14:41:09 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:108:28: error: use of undeclared identifer `rowData'
+        fromDistributor :> rowData[j];
+                           ^
+../src/main.xc:116:29: error: unknown function identifier `generateNewRow' (possibly missing prototype?)
+            newRowData[k] = generateNewRow(oldRowData[k-1],oldRowData[k],oldRowData[k+1],IMWD);
+                            ^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+14:41:22 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:116:29: error: unknown function identifier `generateNewRow' (possibly missing prototype?)
+            newRowData[k] = generateNewRow(oldRowData[k-1],oldRowData[k],oldRowData[k+1],IMWD);
+                            ^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+14:41:42 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Creating game_of_life.xe
+Build Complete
+14:45:03 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Creating game_of_life.xe
+Build Complete
+14:45:22 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+Propagating analysis
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Creating dependencies for main.xc
+Compiling main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Creating game_of_life.xe
+Build Complete
+14:45:31 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+Propagating analysis
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Creating dependencies for main.xc
+Compiling main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Creating game_of_life.xe
+Build Complete
+14:47:51 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+Propagating analysis
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Creating dependencies for main.xc
+Compiling main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Creating game_of_life.xe
+Build Complete
+14:48:29 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Creating game_of_life.xe
+Build Complete
+14:53:56 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Creating game_of_life.xe
+Build Complete
+14:54:48 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Creating game_of_life.xe
+Build Complete
+14:55:04 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Creating game_of_life.xe
+Build Complete
+14:57:26 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:209:35: error: too many arguments to function `addThreeRows'
+    addThreeRows(testCount, 7, 0, 3);
+                                  ^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+14:58:28 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Creating game_of_life.xe
+Build Complete
+14:59:16 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Creating game_of_life.xe
+Build Complete
+15:01:22 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Creating game_of_life.xe
+Build Complete
+15:02:33 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Creating game_of_life.xe
+Build Complete
+15:03:04 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Creating dependencies for main.xc
+Compiling main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Creating game_of_life.xe
+Build Complete
+15:08:34 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Creating game_of_life.xe
+Build Complete
+15:09:08 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Creating game_of_life.xe
+Build Complete
+15:11:16 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Creating dependencies for main.xc
+Compiling main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Creating game_of_life.xe
+Build Complete
+15:11:40 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Creating dependencies for main.xc
+Compiling main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Creating game_of_life.xe
+Build Complete
+15:17:48 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Creating game_of_life.xe
+Build Complete
+15:18:57 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Creating game_of_life.xe
+Build Complete
+15:20:56 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Creating game_of_life.xe
+Build Complete
+15:21:47 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Creating game_of_life.xe
+Build Complete
+15:24:00 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Creating dependencies for main.xc
+Compiling main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Creating game_of_life.xe
+Build Complete
+15:25:58 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Creating game_of_life.xe
+Build Complete
+15:26:47 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Creating game_of_life.xe
+Build Complete
+15:28:37 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Creating dependencies for main.xc
+Compiling main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Creating game_of_life.xe
+Build Complete
+15:31:44 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 0..4) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 4..8) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 8..12) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:89:19: warning: `distributorChannels' not used in two parallel statements (byte range 12..16) [-Wunusual-code]
+      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+                  ^~~~~~~~~~~~~~~~~~~~~~
+Creating game_of_life.xe
+Build Complete
