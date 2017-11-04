@@ -78,29 +78,33 @@ void distributor(chanend c_in, chanend c_out, chanend fromAcc)
   uchar val;
   //Starting up and wait for tilting of the xCore-200 Explorer
   printf( "ProcessImage: Start, size = %dx%d\n", IMHT, IMWD );
-  printf( "Waiting for Board Tilt...\n" );
-  fromAcc :> int value;
+  //printf( "Waiting for Board Tilt...\n" );
+  //fromAcc :> int value;
 
   printf( "Processing...\n" );
 
   chan rowChannels[PROCESS_THREAD_COUNT];
   chan distributorChannels[PROCESS_THREAD_COUNT];
-  par (int i = 0; i < PROCESS_THREAD_COUNT; i++) {
-      processGame(i, distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
-  }
-  for (int j = 0; j < PROCESS_THREAD_COUNT; j++) {
-      for (int k = 0; k < ROWS_PER_THREAD; k++) {
-          unsigned int currentRow = 0;
-          for( int x = 0; x < IMWD; x++ ) {                    // Go through each pixel per line
-                c_in :> val;                                   // Read the pixel value
-                if (val == 0xFF) currentRow = currentRow | 1;  // Put pixel on the end of the int
-                currentRow = currentRow << 1;                  // Shift int to the left
+  par {
+      par (int i = 0; i < PROCESS_THREAD_COUNT; i++) {
+            processGame(i, distributorChannels[i], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT],rowChannels[(i+1)%PROCESS_THREAD_COUNT]);
+      }
+      for (int j = 0; j < PROCESS_THREAD_COUNT; j++) {
+          for (int k = 0; k < ROWS_PER_THREAD; k++) {
+              unsigned int currentRow = 0;
+              for( int x = 0; x < IMWD; x++ ) {                    // Go through each pixel per line
+                  c_in :> val;                                   // Read the pixel value
+                  if (val == 0xFF) currentRow = currentRow | 1;  // Put pixel on the end of the int
+                  currentRow = currentRow << 1;                  // Shift int to the left
+              }
+              distributorChannels[j] <: currentRow;
           }
-          distributorChannels[j] <: currentRow;
       }
   }
+  //TODO we're not going to get feedback from here
+  // NOTE: This won't work. Worker tasks all need to finish in the par() block for this to happen
   // Start waiting for feedback from workers
-  for (int j = 0; j < PROCESS_THREAD_COUNT; j++) {
+    for (int j = 0; j < PROCESS_THREAD_COUNT; j++) {
         for (int k = 0; k < ROWS_PER_THREAD; k++) {
             unsigned int currentRow = 0;
             distributorChannels[j] :> currentRow;
@@ -121,29 +125,40 @@ void processGame(char workerID, chanend fromDistributor, chanend topChannel, cha
         fromDistributor :> oldRowData[j];
     }
     while(1) {
+    //{
+        printf("one");
         if (workerID % 2 == 0) {
-          // Even-numbered channels send data downwards then upwards to odd-numbered channels
-          // This means that odd-numbered channels receive first from the bottom, then the top
-          topChannel    <: oldRowData[1];
-          bottomChannel <: oldRowData[ROWS_PER_THREAD];
-          // Then they receive from the bottom first then top
-          bottomChannel :> oldRowData[ROWS_PER_THREAD + 1];
-          topChannel    :> oldRowData[0];
-        } else {
-            // Odd-numbered channels receive data from the bottom, then the top
+            // Even-numbered channels send data downwards then upwards to odd-numbered channels
+            // This means that odd-numbered channels receive first from the bottom, then the top
+            printf("EVEN REPORTNG FOR DUTY");
+            //topChannel    <: oldRowData[1];
+            printf("SENT ONE");
+            bottomChannel <: oldRowData[ROWS_PER_THREAD];
+            printf("SENT TWO");
+            // Then they receive from the bottom first then top
             bottomChannel :> oldRowData[ROWS_PER_THREAD + 1];
             topChannel    :> oldRowData[0];
+        } else {
+            // Odd-numbered channels receive data from the bottom, then the top
+            printf("ODD READY TO RECEIVE");
+            bottomChannel :> oldRowData[ROWS_PER_THREAD + 1];
+            printf("RECEIVED ONE");
+            topChannel    :> oldRowData[0];
+            printf("RECEIVED TWO");
             // Then they take their round transmitting towards the top, then the bottom
             topChannel    <: oldRowData[1];
             bottomChannel <: oldRowData[ROWS_PER_THREAD];
         }
+        printf("two");
         for (int k = 1; k <= ROWS_PER_THREAD; k++) {
             newRowData[k] = generateNewRow(oldRowData[k-1],oldRowData[k],oldRowData[k+1],IMWD);
         }
+        printf("three");
         for (int l = 1; l <= ROWS_PER_THREAD; l++) {
             oldRowData[l] = newRowData[l];
+            printf("New row %d", newRowData[l]);
         }
-        printf("Worker %c has finished a round of processing", workerID);
+        printf("four");
     }
     // When we do limited iterations this will give the result data back to the distributor
     for (int j = 1; j <= ROWS_PER_THREAD; j++) {
