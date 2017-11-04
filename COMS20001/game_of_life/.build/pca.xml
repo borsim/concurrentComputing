@@ -794,10 +794,13 @@
    </specialization>
  </specializations>
 </fInfo>
-<fInfo name="processGame" global="true" specialize="false" noreturn="false" doNotSpecialize="false" numParams="3">
+<fInfo name="processGame" global="true" specialize="false" noreturn="false" doNotSpecialize="false" numParams="4">
   <arg num="0" specialize="false">
     <values>
-      <value type="unknown"/>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+      <value type="intval"><intval isSigned="true" val="2"/></value>
+      <value type="intval"><intval isSigned="true" val="3"/></value>
     </values>
   </arg>
   <arg num="1" specialize="false">
@@ -806,6 +809,11 @@
     </values>
   </arg>
   <arg num="2" specialize="false">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="3" specialize="false">
     <values>
       <value type="unknown"/>
     </values>

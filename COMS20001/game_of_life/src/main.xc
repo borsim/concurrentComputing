@@ -29,7 +29,7 @@ port p_sda = XS1_PORT_1F;
 #define FXOS8700EQ_OUT_Z_LSB 0x6
 
 
-void processGame(chanend fromDistributor, chanend topChannel, chanend bottomChannel);
+void processGame(char workerID, chanend fromDistributor, chanend topChannel, chanend bottomChannel);
 unsigned int parseRowToInt(int rowNumber);
 unsigned int generateNewRow(unsigned int top, unsigned int self, unsigned int bottom, int length);
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -86,7 +86,7 @@ void distributor(chanend c_in, chanend c_out, chanend fromAcc)
   chan rowChannels[PROCESS_THREAD_COUNT];
   chan distributorChannels[PROCESS_THREAD_COUNT];
   par (int i = 0; i < PROCESS_THREAD_COUNT; i++) {
-      processGame(distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
+      processGame(i, distributorChannels[i], rowChannels[(i+1)%PROCESS_THREAD_COUNT], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT]);
   }
   for (int j = 0; j < PROCESS_THREAD_COUNT; j++) {
       for (int k = 0; k < ROWS_PER_THREAD; k++) {
@@ -114,23 +114,36 @@ void distributor(chanend c_in, chanend c_out, chanend fromAcc)
         }
     }
 }
-void processGame(chanend fromDistributor, chanend topChannel, chanend bottomChannel) {
+void processGame(char workerID, chanend fromDistributor, chanend topChannel, chanend bottomChannel) {
     unsigned int oldRowData[ROWS_PER_THREAD + 2];
     unsigned int newRowData[ROWS_PER_THREAD + 2];
     for (int j = 1; j <= ROWS_PER_THREAD; j++) {
         fromDistributor :> oldRowData[j];
     }
     while(1) {
-        // topChannel :> rowData[0];
-        // bottomChannel :> rowData[ROWS_PER_THREAD + 1];
-        //TODO: get row data from top
-        //TODO: get row data from bottom
+        if (workerID % 2 == 0) {
+          // Even-numbered channels send data downwards then upwards to odd-numbered channels
+          // This means that odd-numbered channels receive first from the bottom, then the top
+          topChannel    <: oldRowData[1];
+          bottomChannel <: oldRowData[ROWS_PER_THREAD];
+          // Then they receive from the bottom first then top
+          bottomChannel :> oldRowData[ROWS_PER_THREAD + 1];
+          topChannel    :> oldRowData[0];
+        } else {
+            // Odd-numbered channels receive data from the bottom, then the top
+            bottomChannel :> oldRowData[ROWS_PER_THREAD + 1];
+            topChannel    :> oldRowData[0];
+            // Then they take their round transmitting towards the top, then the bottom
+            topChannel    <: oldRowData[1];
+            bottomChannel <: oldRowData[ROWS_PER_THREAD];
+        }
         for (int k = 1; k <= ROWS_PER_THREAD; k++) {
             newRowData[k] = generateNewRow(oldRowData[k-1],oldRowData[k],oldRowData[k+1],IMWD);
         }
         for (int l = 1; l <= ROWS_PER_THREAD; l++) {
             oldRowData[l] = newRowData[l];
         }
+        printf("Worker %c has finished a round of processing", workerID);
     }
     // When we do limited iterations this will give the result data back to the distributor
     for (int j = 1; j <= ROWS_PER_THREAD; j++) {

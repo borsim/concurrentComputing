@@ -24,7 +24,7 @@
 <fDef name="master_sent_data" global="true" interface="i2c_slave_callback_if" noreturn="false" doNotSpecialize="false" numParams="1"/>
 <fDef name="operation_complete" global="true" interface="i2c_master_async_if" noreturn="false" doNotSpecialize="false" numParams="0"/>
 <fDef name="orientation" global="true" noreturn="true" doNotSpecialize="false" numParams="2"/>
-<fDef name="processGame" global="true" noreturn="false" doNotSpecialize="false" numParams="3"/>
+<fDef name="processGame" global="true" noreturn="false" doNotSpecialize="false" numParams="4"/>
 <fDef name="read" global="true" interface="i2c_master_async_if" noreturn="false" doNotSpecialize="false" numParams="3"/>
 <fDef name="read" global="true" interface="i2c_master_if" noreturn="false" doNotSpecialize="false" numParams="4"/>
 <fDef name="read_reg" global="true" interface="i2c_master_if" noreturn="false" doNotSpecialize="true" numParams="4"/>
@@ -557,10 +557,10 @@
     </values>
   </arg>
 </fCall>
-<fCall name="processGame" global="true" numArgs="3" impId="0">
+<fCall name="processGame" global="true" numArgs="4" impId="0">
   <arg num="0">
     <values>
-      <value type="unknown"/>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
     </values>
   </arg>
   <arg num="1">
@@ -569,15 +569,20 @@
     </values>
   </arg>
   <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="3">
     <values>
       <value type="unknown"/>
     </values>
   </arg>
 </fCall>
-<fCall name="processGame" global="true" numArgs="3" impId="0">
+<fCall name="processGame" global="true" numArgs="4" impId="0">
   <arg num="0">
     <values>
-      <value type="unknown"/>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
     </values>
   </arg>
   <arg num="1">
@@ -586,15 +591,20 @@
     </values>
   </arg>
   <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="3">
     <values>
       <value type="unknown"/>
     </values>
   </arg>
 </fCall>
-<fCall name="processGame" global="true" numArgs="3" impId="0">
+<fCall name="processGame" global="true" numArgs="4" impId="0">
   <arg num="0">
     <values>
-      <value type="unknown"/>
+      <value type="intval"><intval isSigned="true" val="2"/></value>
     </values>
   </arg>
   <arg num="1">
@@ -603,15 +613,20 @@
     </values>
   </arg>
   <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="3">
     <values>
       <value type="unknown"/>
     </values>
   </arg>
 </fCall>
-<fCall name="processGame" global="true" numArgs="3" impId="0">
+<fCall name="processGame" global="true" numArgs="4" impId="0">
   <arg num="0">
     <values>
-      <value type="unknown"/>
+      <value type="intval"><intval isSigned="true" val="3"/></value>
     </values>
   </arg>
   <arg num="1">
@@ -620,6 +635,11 @@
     </values>
   </arg>
   <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="3">
     <values>
       <value type="unknown"/>
     </values>
@@ -644,6 +664,18 @@
   <arg num="3">
     <values>
       <value type="intval"><intval isSigned="true" val="16"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="printf" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
     </values>
   </arg>
 </fCall>
@@ -815,18 +847,6 @@
   </arg>
 </fCall>
 <fCall name="determineLifeState" global="true" numArgs="2">
-  <arg num="0">
-    <values>
-      <value type="unknown"/>
-    </values>
-  </arg>
-  <arg num="1">
-    <values>
-      <value type="unknown"/>
-    </values>
-  </arg>
-</fCall>
-<fCall name="printf" global="true" numArgs="2">
   <arg num="0">
     <values>
       <value type="unknown"/>
