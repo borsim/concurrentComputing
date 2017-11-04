@@ -427,8 +427,8 @@
   </arg>
   <arg num="2" specialize="false">
     <values>
+      <value type="intval"><intval isSigned="true" val="8"/></value>
       <value type="intval"><intval isSigned="true" val="16"/></value>
-      <value type="intval"><intval isSigned="true" val="32"/></value>
     </values>
   </arg>
 </fInfo>
@@ -449,8 +449,8 @@
   </arg>
   <arg num="2" specialize="false">
     <values>
+      <value type="intval"><intval isSigned="true" val="8"/></value>
       <value type="intval"><intval isSigned="true" val="16"/></value>
-      <value type="intval"><intval isSigned="true" val="32"/></value>
     </values>
   </arg>
 </fInfo>
@@ -484,6 +484,7 @@
   <arg num="1" specialize="false">
     <values>
       <value type="intval"><intval isSigned="true" val="3"/></value>
+      <value type="intval"><intval isSigned="true" val="8"/></value>
       <value type="intval"><intval isSigned="true" val="16"/></value>
       <value type="intval"><intval isSigned="true" val="32"/></value>
     </values>
@@ -503,8 +504,8 @@
   <arg num="1" specialize="false">
     <values>
       <value type="intval"><intval isSigned="true" val="4"/></value>
+      <value type="intval"><intval isSigned="true" val="8"/></value>
       <value type="intval"><intval isSigned="true" val="16"/></value>
-      <value type="intval"><intval isSigned="true" val="32"/></value>
     </values>
   </arg>
 </fInfo>
@@ -576,8 +577,8 @@
   </arg>
   <arg num="3" specialize="false">
     <values>
+      <value type="intval"><intval isSigned="true" val="8"/></value>
       <value type="intval"><intval isSigned="true" val="16"/></value>
-      <value type="intval"><intval isSigned="true" val="32"/></value>
     </values>
   </arg>
 </fInfo>
@@ -793,7 +794,7 @@
    </specialization>
  </specializations>
 </fInfo>
-<fInfo name="processGame" global="true" specialize="false" noreturn="true" doNotSpecialize="false" numParams="3">
+<fInfo name="processGame" global="true" specialize="false" noreturn="false" doNotSpecialize="false" numParams="3">
   <arg num="0" specialize="false">
     <values>
       <value type="unknown"/>

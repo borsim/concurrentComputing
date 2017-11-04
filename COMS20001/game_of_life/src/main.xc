@@ -99,8 +99,20 @@ void distributor(chanend c_in, chanend c_out, chanend fromAcc)
           distributorChannels[j] <: currentRow;
       }
   }
-  //c_out <: (uchar)( val ^ 0xFF ); //send some modified pixel out
-  //TODO: make a int -> pixel conversion
+  // Start waiting for feedback from workers
+  for (int j = 0; j < PROCESS_THREAD_COUNT; j++) {
+        for (int k = 0; k < ROWS_PER_THREAD; k++) {
+            unsigned int currentRow = 0;
+            distributorChannels[j] :> currentRow;
+            for( int x = 0; x < IMWD; x++ ) {
+                char pixelVal = 0;
+                char bitVal = (currentRow & (1 << (IMWD-1))) >> (IMWD-1); // Check pixel at the start (most significant part) of the int
+                if (bitVal == 1) val = 0xFF;                            // Convert bit value to pixel value
+                currentRow = currentRow << 1;                           // Shift int to the left
+                c_out :> pixelVal;                                      // Print pixel to outstream
+            }
+        }
+    }
 }
 void processGame(chanend fromDistributor, chanend topChannel, chanend bottomChannel) {
     unsigned int oldRowData[ROWS_PER_THREAD + 2];
@@ -119,6 +131,10 @@ void processGame(chanend fromDistributor, chanend topChannel, chanend bottomChan
         for (int l = 1; l <= ROWS_PER_THREAD; l++) {
             oldRowData[l] = newRowData[l];
         }
+    }
+    // When we do limited iterations this will give the result data back to the distributor
+    for (int j = 1; j <= ROWS_PER_THREAD; j++) {
+            fromDistributor <: oldRowData[j];
     }
 }
 // Circular left shift the bits in an int value that uses 'size' number of bits
@@ -181,14 +197,12 @@ unsigned int generateNewRow(unsigned int top, unsigned int self, unsigned int bo
     for (int j = 0; j < length; j++) {
         // Get most significant bit (on the leftmost side)
         unsigned int currentState = (selfCopy & (1 << (length-1))) >> (length-1);
-        //printf("%d", currentState);
         // Determine whether tile is alive or not
-        //printf("%d", newRowCount[j]);
-        char result = determineLifeState(currentState, newRowCount[j]);
+        char result = determineLifeState(currentState, newRowCount[length-j-1]);
         // If the result is alive, put a 1 on the least significant bit (the shift below will make it more significant)
         if (result == 1) newRow = newRow | 1;
         // Store the new value by shifting the result left
-        newRow = newRow << 1;
+        if (j != length-1) newRow = newRow << 1;
         // Expose a new value at the most significant place by shifting the original's copy left
         selfCopy = selfCopy << 1;
     }
@@ -211,7 +225,7 @@ void runTests() {
     assertEqual(1, testCount[2]);
     addThreeRows(testCount, 7, 16);
     assertEqual(3, testCount[1]);
-    assertEqual(3, generateNewRow(3,3,0,32));
+    assertEqual(3, generateNewRow(3,3,0,8));
 }
 /////////////////////////////////////////////////////////////////////////////////////////
 //
