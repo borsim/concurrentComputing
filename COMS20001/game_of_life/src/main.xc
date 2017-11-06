@@ -87,7 +87,7 @@ void distributor(chanend c_in, chanend c_out, chanend fromAcc)
   chan distributorChannels[PROCESS_THREAD_COUNT];
   par {
       par (int i = 0; i < PROCESS_THREAD_COUNT; i++) {
-            processGame(i, distributorChannels[i], rowChannels[(i+PROCESS_THREAD_COUNT-1)%PROCESS_THREAD_COUNT],rowChannels[(i+1)%PROCESS_THREAD_COUNT]);
+            processGame(i, distributorChannels[i], rowChannels[i],rowChannels[(i+1)%PROCESS_THREAD_COUNT]);
       }
       for (int j = 0; j < PROCESS_THREAD_COUNT; j++) {
           for (int k = 0; k < ROWS_PER_THREAD; k++) {
@@ -125,40 +125,29 @@ void processGame(char workerID, chanend fromDistributor, chanend topChannel, cha
         fromDistributor :> oldRowData[j];
     }
     while(1) {
-    //{
-        printf("one");
         if (workerID % 2 == 0) {
             // Even-numbered channels send data downwards then upwards to odd-numbered channels
             // This means that odd-numbered channels receive first from the bottom, then the top
-            printf("EVEN REPORTNG FOR DUTY");
-            //topChannel    <: oldRowData[1];
-            printf("SENT ONE");
+            topChannel    <: oldRowData[1];
             bottomChannel <: oldRowData[ROWS_PER_THREAD];
-            printf("SENT TWO");
             // Then they receive from the bottom first then top
             bottomChannel :> oldRowData[ROWS_PER_THREAD + 1];
             topChannel    :> oldRowData[0];
         } else {
             // Odd-numbered channels receive data from the bottom, then the top
-            printf("ODD READY TO RECEIVE");
             bottomChannel :> oldRowData[ROWS_PER_THREAD + 1];
-            printf("RECEIVED ONE");
             topChannel    :> oldRowData[0];
-            printf("RECEIVED TWO");
             // Then they take their round transmitting towards the top, then the bottom
             topChannel    <: oldRowData[1];
             bottomChannel <: oldRowData[ROWS_PER_THREAD];
         }
-        printf("two");
         for (int k = 1; k <= ROWS_PER_THREAD; k++) {
             newRowData[k] = generateNewRow(oldRowData[k-1],oldRowData[k],oldRowData[k+1],IMWD);
         }
-        printf("three");
         for (int l = 1; l <= ROWS_PER_THREAD; l++) {
             oldRowData[l] = newRowData[l];
-            printf("New row %d", newRowData[l]);
+            printf("New row %d\n", newRowData[l]);
         }
-        printf("four");
     }
     // When we do limited iterations this will give the result data back to the distributor
     for (int j = 1; j <= ROWS_PER_THREAD; j++) {
