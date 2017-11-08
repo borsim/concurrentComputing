@@ -1,5 +1,5 @@
 <preCompilationAnalysis>
-<fInfo name="high_pulse" global="false" unit="/home/bmiki/CS/Concurrent Computing/workspace/COMS20001/lib_i2c/src/i2c_master.xc" specialize="false" noreturn="false" doNotSpecialize="false" numParams="3">
+<fInfo name="high_pulse" global="false" unit="C:/Users/Rudy/Documents/GitHub/concurrentComputing/COMS20001/lib_i2c/src/i2c_master.xc" specialize="false" noreturn="false" doNotSpecialize="false" numParams="3">
   <arg num="0" specialize="false">
     <values>
       <value type="unknown"/>
@@ -16,7 +16,7 @@
     </values>
   </arg>
 </fInfo>
-<fInfo name="high_pulse_sample" global="false" unit="/home/bmiki/CS/Concurrent Computing/workspace/COMS20001/lib_i2c/src/i2c_master.xc" specialize="false" noreturn="false" doNotSpecialize="false" numParams="4">
+<fInfo name="high_pulse_sample" global="false" unit="C:/Users/Rudy/Documents/GitHub/concurrentComputing/COMS20001/lib_i2c/src/i2c_master.xc" specialize="false" noreturn="false" doNotSpecialize="false" numParams="4">
   <arg num="0" specialize="false">
     <values>
       <value type="unknown"/>
@@ -39,7 +39,7 @@
     </values>
   </arg>
 </fInfo>
-<fInfo name="release_clock_and_wait" global="false" unit="/home/bmiki/CS/Concurrent Computing/workspace/COMS20001/lib_i2c/src/i2c_master.xc" specialize="false" noreturn="false" doNotSpecialize="false" numParams="3">
+<fInfo name="release_clock_and_wait" global="false" unit="C:/Users/Rudy/Documents/GitHub/concurrentComputing/COMS20001/lib_i2c/src/i2c_master.xc" specialize="false" noreturn="false" doNotSpecialize="false" numParams="3">
   <arg num="0" specialize="false">
     <values>
       <value type="unknown"/>
@@ -56,7 +56,7 @@
     </values>
   </arg>
 </fInfo>
-<fInfo name="start_bit" global="false" unit="/home/bmiki/CS/Concurrent Computing/workspace/COMS20001/lib_i2c/src/i2c_master.xc" specialize="false" noreturn="false" doNotSpecialize="false" numParams="3">
+<fInfo name="start_bit" global="false" unit="C:/Users/Rudy/Documents/GitHub/concurrentComputing/COMS20001/lib_i2c/src/i2c_master.xc" specialize="false" noreturn="false" doNotSpecialize="false" numParams="3">
   <arg num="0" specialize="false">
     <values>
       <value type="unknown"/>
@@ -73,7 +73,7 @@
     </values>
   </arg>
 </fInfo>
-<fInfo name="stop_bit" global="false" unit="/home/bmiki/CS/Concurrent Computing/workspace/COMS20001/lib_i2c/src/i2c_master.xc" specialize="false" noreturn="false" doNotSpecialize="false" numParams="4">
+<fInfo name="stop_bit" global="false" unit="C:/Users/Rudy/Documents/GitHub/concurrentComputing/COMS20001/lib_i2c/src/i2c_master.xc" specialize="false" noreturn="false" doNotSpecialize="false" numParams="4">
   <arg num="0" specialize="false">
     <values>
       <value type="unknown"/>
@@ -95,7 +95,7 @@
     </values>
   </arg>
 </fInfo>
-<fInfo name="tx8" global="false" unit="/home/bmiki/CS/Concurrent Computing/workspace/COMS20001/lib_i2c/src/i2c_master.xc" specialize="false" noreturn="false" doNotSpecialize="false" numParams="5">
+<fInfo name="tx8" global="false" unit="C:/Users/Rudy/Documents/GitHub/concurrentComputing/COMS20001/lib_i2c/src/i2c_master.xc" specialize="false" noreturn="false" doNotSpecialize="false" numParams="5">
   <arg num="0" specialize="false">
     <values>
       <value type="unknown"/>
@@ -122,7 +122,7 @@
     </values>
   </arg>
 </fInfo>
-<fInfo name="adjust_fall" global="false" unit="/home/bmiki/CS/Concurrent Computing/workspace/COMS20001/lib_i2c/src/i2c_master_async.xc" specialize="false" noreturn="false" doNotSpecialize="true" numParams="3">
+<fInfo name="adjust_fall" global="false" unit="C:/Users/Rudy/Documents/GitHub/concurrentComputing/COMS20001/lib_i2c/src/i2c_master_async.xc" specialize="false" noreturn="false" doNotSpecialize="true" numParams="3">
   <arg num="0" specialize="false">
     <values>
       <value type="unknown"/>
@@ -139,7 +139,7 @@
     </values>
   </arg>
 </fInfo>
-<fInfo name="adjust_for_slip" global="false" unit="/home/bmiki/CS/Concurrent Computing/workspace/COMS20001/lib_i2c/src/i2c_master_async.xc" specialize="false" noreturn="false" doNotSpecialize="true" numParams="3">
+<fInfo name="adjust_for_slip" global="false" unit="C:/Users/Rudy/Documents/GitHub/concurrentComputing/COMS20001/lib_i2c/src/i2c_master_async.xc" specialize="false" noreturn="false" doNotSpecialize="true" numParams="3">
   <arg num="0" specialize="false">
     <values>
       <value type="unknown"/>
@@ -157,7 +157,7 @@
     </values>
   </arg>
 </fInfo>
-<fInfo name="high_pulse_drive" global="false" unit="/home/bmiki/CS/Concurrent Computing/workspace/COMS20001/lib_i2c/src/i2c_master_single_port.xc" specialize="false" noreturn="false" doNotSpecialize="false" numParams="7">
+<fInfo name="high_pulse_drive" global="false" unit="C:/Users/Rudy/Documents/GitHub/concurrentComputing/COMS20001/lib_i2c/src/i2c_master_single_port.xc" specialize="false" noreturn="false" doNotSpecialize="false" numParams="7">
   <arg num="0" specialize="false">
     <values>
     </values>
@@ -192,7 +192,7 @@
     </values>
   </arg>
 </fInfo>
-<fInfo name="high_pulse_sample" global="false" unit="/home/bmiki/CS/Concurrent Computing/workspace/COMS20001/lib_i2c/src/i2c_master_single_port.xc" specialize="true" noreturn="false" doNotSpecialize="false" numParams="7">
+<fInfo name="high_pulse_sample" global="false" unit="C:/Users/Rudy/Documents/GitHub/concurrentComputing/COMS20001/lib_i2c/src/i2c_master_single_port.xc" specialize="true" noreturn="false" doNotSpecialize="false" numParams="7">
   <arg num="0" specialize="false">
     <values>
     </values>
@@ -238,7 +238,7 @@
    </specialization>
  </specializations>
 </fInfo>
-<fInfo name="start_bit" global="false" unit="/home/bmiki/CS/Concurrent Computing/workspace/COMS20001/lib_i2c/src/i2c_master_single_port.xc" specialize="false" noreturn="false" doNotSpecialize="false" numParams="5">
+<fInfo name="start_bit" global="false" unit="C:/Users/Rudy/Documents/GitHub/concurrentComputing/COMS20001/lib_i2c/src/i2c_master_single_port.xc" specialize="false" noreturn="false" doNotSpecialize="false" numParams="5">
   <arg num="0" specialize="false">
     <values>
     </values>
@@ -263,7 +263,7 @@
     </values>
   </arg>
 </fInfo>
-<fInfo name="stop_bit" global="false" unit="/home/bmiki/CS/Concurrent Computing/workspace/COMS20001/lib_i2c/src/i2c_master_single_port.xc" specialize="false" noreturn="false" doNotSpecialize="false" numParams="6">
+<fInfo name="stop_bit" global="false" unit="C:/Users/Rudy/Documents/GitHub/concurrentComputing/COMS20001/lib_i2c/src/i2c_master_single_port.xc" specialize="false" noreturn="false" doNotSpecialize="false" numParams="6">
   <arg num="0" specialize="false">
     <values>
     </values>
@@ -293,7 +293,7 @@
     </values>
   </arg>
 </fInfo>
-<fInfo name="tx8" global="false" unit="/home/bmiki/CS/Concurrent Computing/workspace/COMS20001/lib_i2c/src/i2c_master_single_port.xc" specialize="false" noreturn="false" doNotSpecialize="false" numParams="7">
+<fInfo name="tx8" global="false" unit="C:/Users/Rudy/Documents/GitHub/concurrentComputing/COMS20001/lib_i2c/src/i2c_master_single_port.xc" specialize="false" noreturn="false" doNotSpecialize="false" numParams="7">
   <arg num="0" specialize="false">
     <values>
     </values>
@@ -328,13 +328,13 @@
     </values>
   </arg>
 </fInfo>
-<fInfo name="wait_half" global="false" unit="/home/bmiki/CS/Concurrent Computing/workspace/COMS20001/lib_i2c/src/i2c_master_single_port.xc" specialize="false" noreturn="false" doNotSpecialize="true" numParams="1">
+<fInfo name="wait_half" global="false" unit="C:/Users/Rudy/Documents/GitHub/concurrentComputing/COMS20001/lib_i2c/src/i2c_master_single_port.xc" specialize="false" noreturn="false" doNotSpecialize="true" numParams="1">
   <arg num="0" specialize="false">
     <values>
     </values>
   </arg>
 </fInfo>
-<fInfo name="wait_quarter" global="false" unit="/home/bmiki/CS/Concurrent Computing/workspace/COMS20001/lib_i2c/src/i2c_master_single_port.xc" specialize="false" noreturn="false" doNotSpecialize="true" numParams="1">
+<fInfo name="wait_quarter" global="false" unit="C:/Users/Rudy/Documents/GitHub/concurrentComputing/COMS20001/lib_i2c/src/i2c_master_single_port.xc" specialize="false" noreturn="false" doNotSpecialize="true" numParams="1">
   <arg num="0" specialize="false">
     <values>
       <value type="unknown"/>
@@ -422,13 +422,19 @@
       <value type="unknown"/>
       <value type="intval"><intval isSigned="true" val="0"/></value>
       <value type="intval"><intval isSigned="true" val="3"/></value>
-      <value type="intval"><intval isSigned="true" val="7"/></value>
+      <value type="intval"><intval isSigned="true" val="14"/></value>
+      <value type="intval"><intval isSigned="true" val="24"/></value>
+      <value type="intval"><intval isSigned="true" val="36"/></value>
+      <value type="intval"><intval isSigned="true" val="32769"/></value>
+      <value type="intval"><intval isSigned="true" val="-2147483647"/></value>
     </values>
   </arg>
   <arg num="2" specialize="false">
     <values>
+      <value type="intval"><intval isSigned="true" val="6"/></value>
       <value type="intval"><intval isSigned="true" val="8"/></value>
       <value type="intval"><intval isSigned="true" val="16"/></value>
+      <value type="intval"><intval isSigned="true" val="32"/></value>
     </values>
   </arg>
 </fInfo>
@@ -444,29 +450,88 @@
       <value type="intval"><intval isSigned="true" val="0"/></value>
       <value type="intval"><intval isSigned="true" val="3"/></value>
       <value type="intval"><intval isSigned="true" val="5"/></value>
-      <value type="intval"><intval isSigned="true" val="7"/></value>
+      <value type="intval"><intval isSigned="true" val="14"/></value>
+      <value type="intval"><intval isSigned="true" val="24"/></value>
+      <value type="intval"><intval isSigned="true" val="36"/></value>
+      <value type="intval"><intval isSigned="true" val="32769"/></value>
+      <value type="intval"><intval isSigned="true" val="-2147483647"/></value>
     </values>
   </arg>
   <arg num="2" specialize="false">
     <values>
+      <value type="intval"><intval isSigned="true" val="6"/></value>
       <value type="intval"><intval isSigned="true" val="8"/></value>
       <value type="intval"><intval isSigned="true" val="16"/></value>
+      <value type="intval"><intval isSigned="true" val="32"/></value>
     </values>
   </arg>
 </fInfo>
-<fInfo name="assertEqual" global="true" specialize="false" noreturn="false" doNotSpecialize="false" numParams="2">
+<fInfo name="assertEqual" global="true" specialize="false" noreturn="false" doNotSpecialize="false" numParams="3">
   <arg num="0" specialize="false">
     <values>
       <value type="intval"><intval isSigned="true" val="0"/></value>
       <value type="intval"><intval isSigned="true" val="1"/></value>
       <value type="intval"><intval isSigned="true" val="2"/></value>
       <value type="intval"><intval isSigned="true" val="3"/></value>
+      <value type="intval"><intval isSigned="true" val="4"/></value>
       <value type="intval"><intval isSigned="true" val="8"/></value>
+      <value type="intval"><intval isSigned="true" val="12"/></value>
+      <value type="intval"><intval isSigned="true" val="24"/></value>
+      <value type="intval"><intval isSigned="true" val="36"/></value>
+      <value type="intval"><intval isSigned="true" val="-1073741824"/></value>
     </values>
   </arg>
   <arg num="1" specialize="false">
     <values>
       <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2" specialize="false">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+      <value type="intval"><intval isSigned="true" val="2"/></value>
+      <value type="intval"><intval isSigned="true" val="3"/></value>
+      <value type="intval"><intval isSigned="true" val="4"/></value>
+      <value type="intval"><intval isSigned="true" val="6"/></value>
+      <value type="intval"><intval isSigned="true" val="7"/></value>
+      <value type="intval"><intval isSigned="true" val="8"/></value>
+      <value type="intval"><intval isSigned="true" val="9"/></value>
+      <value type="intval"><intval isSigned="true" val="11"/></value>
+      <value type="intval"><intval isSigned="true" val="12"/></value>
+      <value type="intval"><intval isSigned="true" val="13"/></value>
+      <value type="intval"><intval isSigned="true" val="14"/></value>
+      <value type="intval"><intval isSigned="true" val="15"/></value>
+      <value type="intval"><intval isSigned="true" val="16"/></value>
+      <value type="intval"><intval isSigned="true" val="17"/></value>
+      <value type="intval"><intval isSigned="true" val="18"/></value>
+      <value type="intval"><intval isSigned="true" val="19"/></value>
+      <value type="intval"><intval isSigned="true" val="20"/></value>
+      <value type="intval"><intval isSigned="true" val="21"/></value>
+      <value type="intval"><intval isSigned="true" val="22"/></value>
+      <value type="intval"><intval isSigned="true" val="23"/></value>
+      <value type="intval"><intval isSigned="true" val="24"/></value>
+      <value type="intval"><intval isSigned="true" val="25"/></value>
+      <value type="intval"><intval isSigned="true" val="26"/></value>
+      <value type="intval"><intval isSigned="true" val="27"/></value>
+      <value type="intval"><intval isSigned="true" val="28"/></value>
+      <value type="intval"><intval isSigned="true" val="29"/></value>
+      <value type="intval"><intval isSigned="true" val="30"/></value>
+      <value type="intval"><intval isSigned="true" val="31"/></value>
+      <value type="intval"><intval isSigned="true" val="32"/></value>
+      <value type="intval"><intval isSigned="true" val="33"/></value>
+      <value type="intval"><intval isSigned="true" val="34"/></value>
+      <value type="intval"><intval isSigned="true" val="35"/></value>
+      <value type="intval"><intval isSigned="true" val="36"/></value>
+      <value type="intval"><intval isSigned="true" val="37"/></value>
+      <value type="intval"><intval isSigned="true" val="38"/></value>
+      <value type="intval"><intval isSigned="true" val="39"/></value>
+      <value type="intval"><intval isSigned="true" val="40"/></value>
+      <value type="intval"><intval isSigned="true" val="41"/></value>
+      <value type="intval"><intval isSigned="true" val="42"/></value>
+      <value type="intval"><intval isSigned="true" val="43"/></value>
+      <value type="intval"><intval isSigned="true" val="44"/></value>
+      <value type="intval"><intval isSigned="true" val="45"/></value>
+      <value type="intval"><intval isSigned="true" val="46"/></value>
     </values>
   </arg>
 </fInfo>
@@ -478,12 +543,19 @@
       <value type="intval"><intval isSigned="true" val="1"/></value>
       <value type="intval"><intval isSigned="true" val="3"/></value>
       <value type="intval"><intval isSigned="true" val="4"/></value>
-      <value type="intval"><intval isSigned="true" val="7"/></value>
+      <value type="intval"><intval isSigned="true" val="9"/></value>
+      <value type="intval"><intval isSigned="true" val="14"/></value>
+      <value type="intval"><intval isSigned="true" val="24"/></value>
+      <value type="intval"><intval isSigned="true" val="36"/></value>
+      <value type="intval"><intval isSigned="true" val="32769"/></value>
+      <value type="intval"><intval isSigned="true" val="-2147483647"/></value>
     </values>
   </arg>
   <arg num="1" specialize="false">
     <values>
       <value type="intval"><intval isSigned="true" val="3"/></value>
+      <value type="intval"><intval isSigned="true" val="4"/></value>
+      <value type="intval"><intval isSigned="true" val="6"/></value>
       <value type="intval"><intval isSigned="true" val="8"/></value>
       <value type="intval"><intval isSigned="true" val="16"/></value>
       <value type="intval"><intval isSigned="true" val="32"/></value>
@@ -498,14 +570,21 @@
       <value type="intval"><intval isSigned="true" val="1"/></value>
       <value type="intval"><intval isSigned="true" val="2"/></value>
       <value type="intval"><intval isSigned="true" val="3"/></value>
-      <value type="intval"><intval isSigned="true" val="7"/></value>
+      <value type="intval"><intval isSigned="true" val="9"/></value>
+      <value type="intval"><intval isSigned="true" val="14"/></value>
+      <value type="intval"><intval isSigned="true" val="24"/></value>
+      <value type="intval"><intval isSigned="true" val="36"/></value>
+      <value type="intval"><intval isSigned="true" val="32769"/></value>
+      <value type="intval"><intval isSigned="true" val="-2147483647"/></value>
     </values>
   </arg>
   <arg num="1" specialize="false">
     <values>
       <value type="intval"><intval isSigned="true" val="4"/></value>
+      <value type="intval"><intval isSigned="true" val="6"/></value>
       <value type="intval"><intval isSigned="true" val="8"/></value>
       <value type="intval"><intval isSigned="true" val="16"/></value>
+      <value type="intval"><intval isSigned="true" val="32"/></value>
     </values>
   </arg>
 </fInfo>
@@ -531,11 +610,20 @@
   <arg num="0" specialize="false">
     <values>
       <value type="unknown"/>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
     </values>
   </arg>
   <arg num="1" specialize="false">
     <values>
       <value type="unknown"/>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+      <value type="intval"><intval isSigned="true" val="2"/></value>
+      <value type="intval"><intval isSigned="true" val="3"/></value>
+      <value type="intval"><intval isSigned="true" val="4"/></value>
+      <value type="intval"><intval isSigned="true" val="8"/></value>
+      <value type="intval"><intval isSigned="true" val="9"/></value>
     </values>
   </arg>
 </fInfo>
@@ -560,23 +648,36 @@
   <arg num="0" specialize="false">
     <values>
       <value type="unknown"/>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
       <value type="intval"><intval isSigned="true" val="3"/></value>
+      <value type="intval"><intval isSigned="true" val="14"/></value>
+      <value type="intval"><intval isSigned="true" val="24"/></value>
+      <value type="intval"><intval isSigned="true" val="36"/></value>
     </values>
   </arg>
   <arg num="1" specialize="false">
     <values>
       <value type="unknown"/>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
       <value type="intval"><intval isSigned="true" val="3"/></value>
+      <value type="intval"><intval isSigned="true" val="14"/></value>
+      <value type="intval"><intval isSigned="true" val="24"/></value>
+      <value type="intval"><intval isSigned="true" val="36"/></value>
     </values>
   </arg>
   <arg num="2" specialize="false">
     <values>
       <value type="unknown"/>
       <value type="intval"><intval isSigned="true" val="0"/></value>
+      <value type="intval"><intval isSigned="true" val="3"/></value>
+      <value type="intval"><intval isSigned="true" val="14"/></value>
+      <value type="intval"><intval isSigned="true" val="24"/></value>
+      <value type="intval"><intval isSigned="true" val="36"/></value>
     </values>
   </arg>
   <arg num="3" specialize="false">
     <values>
+      <value type="intval"><intval isSigned="true" val="6"/></value>
       <value type="intval"><intval isSigned="true" val="8"/></value>
       <value type="intval"><intval isSigned="true" val="16"/></value>
     </values>
@@ -601,7 +702,7 @@
 <fInfo name="i2c_master" global="true" specialize="true" noreturn="false" doNotSpecialize="false" numParams="5">
   <arg num="0" specialize="false">
     <values>
-      <value type="interface"><interfaceInfo index="0" type="dist" func="i2c_master" global="true" impUnit="/home/bmiki/CS/Concurrent Computing/workspace/COMS20001/lib_i2c/src/i2c_master_async.xc" impId="0" param="0"/></value>
+      <value type="interface"><interfaceInfo index="0" type="dist" func="i2c_master" global="true" impUnit="C:/Users/Rudy/Documents/GitHub/concurrentComputing/COMS20001/lib_i2c/src/i2c_master_async.xc" impId="0" param="0"/></value>
       <value type="interface"><interfaceInfo index="0" type="dist" func="_Si2c_master_0" global="true" impUnit="../src/main.xc" impId="1" param="0"/></value>
     </values>
   </arg>
@@ -673,7 +774,7 @@
   </arg>
   <arg num="2" specialize="true">
     <values>
-      <value type="interface"><interfaceInfo index="0" type="dist" func="i2c_master" global="true" impUnit="/home/bmiki/CS/Concurrent Computing/workspace/COMS20001/lib_i2c/src/i2c_master_async.xc" impId="0" param="0"/></value>
+      <value type="interface"><interfaceInfo index="0" type="dist" func="i2c_master" global="true" impUnit="C:/Users/Rudy/Documents/GitHub/concurrentComputing/COMS20001/lib_i2c/src/i2c_master_async.xc" impId="0" param="0"/></value>
     </values>
   </arg>
   <arg num="3" specialize="false">
@@ -684,7 +785,7 @@
    <specialization id="0">
     <arg num="0"><values><value type="interface"/></values></arg>
     <arg num="1"><values><value type="unknown"/></values></arg>
-    <arg num="2"><values><value type="interface"><interfaceInfo index="0" type="dist" func="i2c_master" global="true" impUnit="/home/bmiki/CS/Concurrent Computing/workspace/COMS20001/lib_i2c/src/i2c_master_async.xc" impId="0" param="0"/></value></values></arg>
+    <arg num="2"><values><value type="interface"><interfaceInfo index="0" type="dist" func="i2c_master" global="true" impUnit="C:/Users/Rudy/Documents/GitHub/concurrentComputing/COMS20001/lib_i2c/src/i2c_master_async.xc" impId="0" param="0"/></value></values></arg>
     <arg num="3"><values><value type="unknown"/></values></arg>
    </specialization>
  </specializations>
@@ -1099,9 +1200,9 @@
     </values>
   </arg>
 </fInfo>
-<fCall name="i2c_master" global="true" callerUnit="/home/bmiki/CS/Concurrent Computing/workspace/COMS20001/lib_i2c/src/i2c_master_async.xc" numArgs="5" impId="0" specializationId="0">
+<fCall name="i2c_master" global="true" callerUnit="C:/Users/Rudy/Documents/GitHub/concurrentComputing/COMS20001/lib_i2c/src/i2c_master_async.xc" numArgs="5" impId="0" specializationId="0">
 </fCall>
-<fCall name="i2c_master_async_aux" global="true" callerUnit="/home/bmiki/CS/Concurrent Computing/workspace/COMS20001/lib_i2c/src/i2c_master_async.xc" numArgs="4" impId="1" specializationId="0">
+<fCall name="i2c_master_async_aux" global="true" callerUnit="C:/Users/Rudy/Documents/GitHub/concurrentComputing/COMS20001/lib_i2c/src/i2c_master_async.xc" numArgs="4" impId="1" specializationId="0">
 </fCall>
 <fCall name="i2c_master" global="true" callerUnit="../src/main.xc" numArgs="5" impId="1" specializationId="0">
 </fCall>

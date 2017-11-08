@@ -8,7 +8,7 @@
 <fDef name="ack_write_request" global="true" interface="i2c_slave_callback_if" noreturn="false" doNotSpecialize="false" numParams="0"/>
 <fDef name="addThreeRows" global="true" noreturn="false" doNotSpecialize="false" numParams="3"/>
 <fDef name="addToRow" global="true" noreturn="false" doNotSpecialize="false" numParams="3"/>
-<fDef name="assertEqual" global="true" noreturn="false" doNotSpecialize="false" numParams="2"/>
+<fDef name="assertEqual" global="true" noreturn="false" doNotSpecialize="false" numParams="3"/>
 <fDef name="circularLeftShift" global="true" noreturn="false" doNotSpecialize="false" numParams="2"/>
 <fDef name="circularRightShift" global="true" noreturn="false" doNotSpecialize="false" numParams="2"/>
 <fDef name="delay_microseconds" global="true" noreturn="false" doNotSpecialize="true" numParams="1"/>
@@ -851,14 +851,7 @@
     </values>
   </arg>
 </fCall>
-<fCall name="printf" global="true" numArgs="1">
-  <arg num="0">
-    <values>
-      <value type="unknown"/>
-    </values>
-  </arg>
-</fCall>
-<fCall name="printf" global="true" numArgs="3">
+<fCall name="printf" global="true" numArgs="4">
   <arg num="0">
     <values>
       <value type="unknown"/>
@@ -874,8 +867,13 @@
       <value type="unknown"/>
     </values>
   </arg>
+  <arg num="3">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
 </fCall>
-<fCall name="assertEqual" global="true" numArgs="2">
+<fCall name="assertEqual" global="true" numArgs="3">
   <arg num="0">
     <values>
       <value type="intval"><intval isSigned="true" val="2"/></value>
@@ -884,6 +882,11 @@
   <arg num="1">
     <values>
       <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
     </values>
   </arg>
 </fCall>
@@ -899,7 +902,7 @@
     </values>
   </arg>
 </fCall>
-<fCall name="assertEqual" global="true" numArgs="2">
+<fCall name="assertEqual" global="true" numArgs="3">
   <arg num="0">
     <values>
       <value type="intval"><intval isSigned="true" val="1"/></value>
@@ -908,6 +911,11 @@
   <arg num="1">
     <values>
       <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="2"/></value>
     </values>
   </arg>
 </fCall>
@@ -923,7 +931,65 @@
     </values>
   </arg>
 </fCall>
-<fCall name="assertEqual" global="true" numArgs="2">
+<fCall name="assertEqual" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="3"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="3"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="circularLeftShift" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="9"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="4"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="assertEqual" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="3"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="4"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="circularLeftShift" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="2147483649"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="32"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="assertEqual" global="true" numArgs="3">
   <arg num="0">
     <values>
       <value type="intval"><intval isSigned="true" val="1"/></value>
@@ -932,6 +998,11 @@
   <arg num="1">
     <values>
       <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="6"/></value>
     </values>
   </arg>
 </fCall>
@@ -947,7 +1018,7 @@
     </values>
   </arg>
 </fCall>
-<fCall name="assertEqual" global="true" numArgs="2">
+<fCall name="assertEqual" global="true" numArgs="3">
   <arg num="0">
     <values>
       <value type="intval"><intval isSigned="true" val="8"/></value>
@@ -956,6 +1027,11 @@
   <arg num="1">
     <values>
       <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="7"/></value>
     </values>
   </arg>
 </fCall>
@@ -968,6 +1044,368 @@
   <arg num="1">
     <values>
       <value type="intval"><intval isSigned="true" val="4"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="assertEqual" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="12"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="8"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="circularRightShift" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="9"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="4"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="assertEqual" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="3221225472"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="9"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="circularRightShift" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="2147483649"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="32"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="printf" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="assertEqual" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="11"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="determineLifeState" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="assertEqual" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="12"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="determineLifeState" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="assertEqual" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="13"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="determineLifeState" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="2"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="assertEqual" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="14"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="determineLifeState" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="3"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="assertEqual" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="15"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="determineLifeState" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="4"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="assertEqual" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="16"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="determineLifeState" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="8"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="assertEqual" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="17"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="determineLifeState" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="9"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="assertEqual" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="18"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="determineLifeState" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="3"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="assertEqual" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="19"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="determineLifeState" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="4"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="assertEqual" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="20"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="determineLifeState" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="2"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="printf" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
     </values>
   </arg>
 </fCall>
@@ -988,7 +1426,24 @@
     </values>
   </arg>
 </fCall>
-<fCall name="assertEqual" global="true" numArgs="2">
+<fCall name="assertEqual" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="21"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="assertEqual" global="true" numArgs="3">
   <arg num="0">
     <values>
       <value type="intval"><intval isSigned="true" val="0"/></value>
@@ -999,8 +1454,13 @@
       <value type="unknown"/>
     </values>
   </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="22"/></value>
+    </values>
+  </arg>
 </fCall>
-<fCall name="assertEqual" global="true" numArgs="2">
+<fCall name="assertEqual" global="true" numArgs="3">
   <arg num="0">
     <values>
       <value type="intval"><intval isSigned="true" val="1"/></value>
@@ -1011,14 +1471,65 @@
       <value type="unknown"/>
     </values>
   </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="23"/></value>
+    </values>
+  </arg>
 </fCall>
-<fCall name="assertEqual" global="true" numArgs="2">
+<fCall name="addToRow" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="2147483649"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="32"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="assertEqual" global="true" numArgs="3">
   <arg num="0">
     <values>
       <value type="intval"><intval isSigned="true" val="1"/></value>
     </values>
   </arg>
   <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="24"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="assertEqual" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="25"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="printf" global="true" numArgs="1">
+  <arg num="0">
     <values>
       <value type="unknown"/>
     </values>
@@ -1032,7 +1543,7 @@
   </arg>
   <arg num="1">
     <values>
-      <value type="intval"><intval isSigned="true" val="7"/></value>
+      <value type="intval"><intval isSigned="true" val="32769"/></value>
     </values>
   </arg>
   <arg num="2">
@@ -1041,19 +1552,206 @@
     </values>
   </arg>
 </fCall>
-<fCall name="assertEqual" global="true" numArgs="2">
+<fCall name="assertEqual" global="true" numArgs="3">
   <arg num="0">
     <values>
-      <value type="intval"><intval isSigned="true" val="3"/></value>
+      <value type="intval"><intval isSigned="true" val="2"/></value>
     </values>
   </arg>
   <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="26"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="assertEqual" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="2"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="27"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="assertEqual" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="28"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="assertEqual" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="29"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="addThreeRows" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="2147483649"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="32"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="assertEqual" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="2"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="30"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="assertEqual" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="2"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="31"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="assertEqual" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="32"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="assertEqual" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="33"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="printf" global="true" numArgs="1">
+  <arg num="0">
     <values>
       <value type="unknown"/>
     </values>
   </arg>
 </fCall>
-<fCall name="assertEqual" global="true" numArgs="2">
+<fCall name="assertEqual" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="34"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="generateNewRow" global="true" numArgs="4">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="3"/></value>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="intval"><intval isSigned="true" val="8"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="assertEqual" global="true" numArgs="3">
   <arg num="0">
     <values>
       <value type="intval"><intval isSigned="true" val="3"/></value>
@@ -1062,6 +1760,11 @@
   <arg num="1">
     <values>
       <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="35"/></value>
     </values>
   </arg>
 </fCall>
@@ -1084,6 +1787,481 @@
   <arg num="3">
     <values>
       <value type="intval"><intval isSigned="true" val="8"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="assertEqual" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="3"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="36"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="generateNewRow" global="true" numArgs="4">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="3"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="3"/></value>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="intval"><intval isSigned="true" val="8"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="assertEqual" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="37"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="generateNewRow" global="true" numArgs="4">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="3"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="intval"><intval isSigned="true" val="8"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="assertEqual" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="38"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="generateNewRow" global="true" numArgs="4">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="24"/></value>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="intval"><intval isSigned="true" val="8"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="assertEqual" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="24"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="38"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="generateNewRow" global="true" numArgs="4">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="24"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="36"/></value>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="intval"><intval isSigned="true" val="8"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="assertEqual" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="36"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="39"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="generateNewRow" global="true" numArgs="4">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="24"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="36"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="24"/></value>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="intval"><intval isSigned="true" val="8"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="assertEqual" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="24"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="40"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="generateNewRow" global="true" numArgs="4">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="36"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="24"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="intval"><intval isSigned="true" val="8"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="assertEqual" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="41"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="generateNewRow" global="true" numArgs="4">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="24"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="intval"><intval isSigned="true" val="8"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="assertEqual" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="42"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="generateNewRow" global="true" numArgs="4">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="intval"><intval isSigned="true" val="6"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="assertEqual" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="4"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="43"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="generateNewRow" global="true" numArgs="4">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="14"/></value>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="intval"><intval isSigned="true" val="6"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="assertEqual" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="4"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="44"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="generateNewRow" global="true" numArgs="4">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="14"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="intval"><intval isSigned="true" val="6"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="assertEqual" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="4"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="45"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="generateNewRow" global="true" numArgs="4">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="14"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="intval"><intval isSigned="true" val="6"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="assertEqual" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="46"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="generateNewRow" global="true" numArgs="4">
+  <arg num="0">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="intval"><intval isSigned="true" val="6"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="printf" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
     </values>
   </arg>
 </fCall>

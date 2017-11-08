@@ -126,8 +126,8 @@ void processGame(char workerID, chanend fromDistributor, chanend topChannel, cha
     }
     while(1) {
         if (workerID % 2 == 0) {
-            // Even-numbered channels send data downwards then upwards to odd-numbered channels
-            // This means that odd-numbered channels receive first from the bottom, then the top
+            // Even-numbered channels send data upwards then downwards to odd-numbered channels
+            // This means that odd-numbered channels receive first from the bottom then the top
             topChannel    <: oldRowData[1];
             bottomChannel <: oldRowData[ROWS_PER_THREAD];
             // Then they receive from the bottom first then top
@@ -226,23 +226,119 @@ unsigned int generateNewRow(unsigned int top, unsigned int self, unsigned int bo
     return newRow;
 }
 
-void assertEqual(int first, int second) {
-    if (first == second) printf("TEST SUCCESSFUL\n");
-    else printf("TEST FAILED. Expected: %d, got: %d\n", first, second);
+int assertEqual(int first, int second, int testNum) {
+    if (first == second) {
+        //printf("TEST %d SUCCESSFUL\n", testNum);
+        return 1;
+    }
+    else {
+        printf("TEST %d FAILED. Expected: %d, got: %d\n", testNum, first, second);
+        return 0;
+    }
 }
 void runTests() {
-    assertEqual(2, circularLeftShift(1, 32));
-    assertEqual(1, circularLeftShift(4, 3));
-    assertEqual(1, circularRightShift(2, 4));
-    assertEqual(8, circularRightShift(1, 4));
-    char testCount[IMWD] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+    //BIT SHIFTING
+    int bitTestTotal = 0;
+
+    //Two commented out tests fail, they are ints which are larger than 32 bit
+    //This ultimately is a flaw in the int type, not our code
+    //So not sure how big a problem this is, as length is set by IMWD
+    bitTestTotal += assertEqual(2, circularLeftShift(1, 32), 1);
+    bitTestTotal += assertEqual(1, circularLeftShift(4, 3), 2);
+    bitTestTotal += assertEqual(3, circularLeftShift(9, 4), 3);
+    bitTestTotal += assertEqual(3, circularLeftShift(2147483649, 32), 4);
+    //bitTesTtotal += assertEqual(3, circularLeftShift(4294967297, 33), 5);
+    bitTestTotal += assertEqual(1, circularRightShift(2, 4), 6);
+    bitTestTotal += assertEqual(8, circularRightShift(1, 4), 7);
+    bitTestTotal += assertEqual(12, circularRightShift(9, 4), 8);
+    bitTestTotal += assertEqual(3221225472, circularRightShift(2147483649, 32), 9);
+    //tesTtotal += assertEqual(6442450944, circularRightShift(4294967297, 33), 10);
+
+    if (bitTestTotal == 8) printf("All bit shifting tests pass.\n");
+
+
+    //DETERMINE LIVE STATE
+    int lifeTestTotal = 0;
+
+    lifeTestTotal += assertEqual(0 ,determineLifeState(1,0) , 11);
+    lifeTestTotal += assertEqual(0 ,determineLifeState(1,1) , 12);
+    lifeTestTotal += assertEqual(1 ,determineLifeState(1,2) , 13);
+    lifeTestTotal += assertEqual(1 ,determineLifeState(1,3) , 14);
+    lifeTestTotal += assertEqual(0 ,determineLifeState(1,4) , 15);
+    lifeTestTotal += assertEqual(0 ,determineLifeState(1,8) , 16);
+    lifeTestTotal += assertEqual(0 ,determineLifeState(1,9) , 17);
+    lifeTestTotal += assertEqual(1 ,determineLifeState(0,3) , 18);
+    lifeTestTotal += assertEqual(0 ,determineLifeState(0,4) , 19);
+    lifeTestTotal += assertEqual(0 ,determineLifeState(0,2) , 20);
+
+    if (lifeTestTotal == 10) printf("All life state tests pass.\n");
+
+
+
+    //ADD TO ROW
+    int addTestTotal = 0;
+    char testCount[16] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
     addToRow(testCount, 5, 16);
-    assertEqual(0, testCount[1]);
-    assertEqual(1, testCount[0]);
-    assertEqual(1, testCount[2]);
-    addThreeRows(testCount, 7, 16);
-    assertEqual(3, testCount[1]);
-    assertEqual(3, generateNewRow(3,3,0,8));
+
+    addTestTotal += assertEqual(1 ,testCount[0] , 21);
+    addTestTotal += assertEqual(0 ,testCount[1] , 22);
+    addTestTotal += assertEqual(1 ,testCount[2] , 23);
+
+    char testCount2[32] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+    addToRow(testCount2, 2147483649, 32);
+
+    addTestTotal += assertEqual(1 ,testCount2[0] , 24);
+    addTestTotal += assertEqual(1 ,testCount2[31] , 25);
+
+    if (addTestTotal == 5) printf("All add to row tests pass.\n");
+
+
+    //ADD THREE ROWS
+    int add3TestTotal = 0;
+    char test3Count[16] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+    addThreeRows(test3Count, 32769, 16);
+
+    add3TestTotal += assertEqual(2, test3Count[0], 26);
+    add3TestTotal += assertEqual(2, test3Count[15], 27);
+    add3TestTotal += assertEqual(1, test3Count[14], 28);
+    add3TestTotal += assertEqual(1, test3Count[1], 29);
+
+    char test3Count2[32] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+        addThreeRows(test3Count2, 2147483649, 32);
+
+        add3TestTotal += assertEqual(2, test3Count2[0], 30);
+        add3TestTotal += assertEqual(2, test3Count2[31], 31);
+        add3TestTotal += assertEqual(1, test3Count2[30], 32);
+        add3TestTotal += assertEqual(1, test3Count2[1], 33);
+
+    if (add3TestTotal == 8) printf("All add three rows tests pass.\n");
+
+
+    //GENERATE ROW
+    int genTestTotal = 0;
+
+
+    //square
+    genTestTotal += assertEqual(0, generateNewRow(0,0,3,8), 34);
+    genTestTotal += assertEqual(3, generateNewRow(3,3,0,8), 35);
+    genTestTotal += assertEqual(3, generateNewRow(0,3,3,8), 36);
+    genTestTotal += assertEqual(0, generateNewRow(3,0,0,8), 37);
+
+    //beehive
+    genTestTotal += assertEqual(0, generateNewRow(0,0,24,8), 38);
+    genTestTotal += assertEqual(24, generateNewRow(0,24,36,8), 38);
+    genTestTotal += assertEqual(36, generateNewRow(24,36,24,8), 39);
+    genTestTotal += assertEqual(24, generateNewRow(36,24,0,8), 40);
+    genTestTotal += assertEqual(0, generateNewRow(24,0,0,8), 41);
+
+    //blinker
+    genTestTotal += assertEqual(0, generateNewRow(0,0,0,6), 42);
+    genTestTotal += assertEqual(4, generateNewRow(0,0,14,6), 43);
+    genTestTotal += assertEqual(4, generateNewRow(0,14,0,6), 44);
+    genTestTotal += assertEqual(4, generateNewRow(14,0,0,6), 45);
+    genTestTotal += assertEqual(0, generateNewRow(0,0,0,6), 46);
+
+    if (genTestTotal == 14) printf("All generate row tests pass.\n");
 }
 /////////////////////////////////////////////////////////////////////////////////////////
 //
