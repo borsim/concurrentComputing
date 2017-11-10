@@ -14,8 +14,8 @@
 
 typedef unsigned char uchar;      //using uchar as shorthand
 
-port p_scl = XS1_PORT_1E;         //interface ports to orientation
-port p_sda = XS1_PORT_1F;
+on tile[0]: port p_scl = XS1_PORT_1E;         //interface ports to orientation
+on tile[0]: port p_sda = XS1_PORT_1F;
 
 #define FXOS8700EQ_I2C_ADDR 0x1E  //register addresses for orientation
 #define FXOS8700EQ_XYZ_DATA_CFG_REG 0x0E
@@ -66,6 +66,16 @@ void DataInStream(char infname[], chanend c_out)
   return;
 }
 
+void stateManager(chanend fromAcc, chanend toDistributor) {
+    unsigned char state = 0;
+    unsigned char previousState = 0;
+    while (1) {
+        fromAcc :> state;
+        if (state == 0 && previousState == 2) state = 3; // Give one-time unpause
+        previousState = state;
+        toDistributor <: state;
+    }
+}
 /////////////////////////////////////////////////////////////////////////////////////////
 //
 // Start your implementation by changing this function to implement the game of life
@@ -73,50 +83,70 @@ void DataInStream(char infname[], chanend c_out)
 // Currently the function just inverts the image
 //
 /////////////////////////////////////////////////////////////////////////////////////////
-void distributor(chanend c_in, chanend c_out, chanend fromAcc)
+void distributor(chanend c_in, chanend c_out, chanend fromStateManager)
 {
   uchar val;
   //Starting up and wait for tilting of the xCore-200 Explorer
   printf( "ProcessImage: Start, size = %dx%d\n", IMHT, IMWD );
-  //printf( "Waiting for Board Tilt...\n" );
-  //fromAcc :> int value;
+  printf( "Waiting for Board Tilt...\n" );
+  fromStateManager :> char value;
 
   printf( "Processing...\n" );
 
   chan rowChannels[PROCESS_THREAD_COUNT];
   chan distributorChannels[PROCESS_THREAD_COUNT];
+  unsigned char state = 0;
   par {
+      // Worker threads
       par (int i = 0; i < PROCESS_THREAD_COUNT; i++) {
             processGame(i, distributorChannels[i], rowChannels[i],rowChannels[(i+1)%PROCESS_THREAD_COUNT]);
       }
-      for (int j = 0; j < PROCESS_THREAD_COUNT; j++) {
-          for (int k = 0; k < ROWS_PER_THREAD; k++) {
-              unsigned int currentRow = 0;
-              for( int x = 0; x < IMWD; x++ ) {                    // Go through each pixel per line
-                  c_in :> val;                                   // Read the pixel value
-                  if (val == 0xFF) currentRow = currentRow | 1;  // Put pixel on the end of the int
-                  currentRow = currentRow << 1;                  // Shift int to the left
+      // Distributor state handling
+      {
+          for (int j = 0; j < PROCESS_THREAD_COUNT; j++) {
+                    for (int k = 0; k < ROWS_PER_THREAD; k++) {
+                        unsigned int currentRow = 0;
+                        for( int x = 0; x < IMWD; x++ ) {                    // Go through each pixel per line
+                            c_in :> val;                                   // Read the pixel value
+                            if (val == 0xFF) currentRow = currentRow | 1;  // Put pixel on the end of the int
+                            currentRow = currentRow << 1;                  // Shift int to the left
+                        }
+                        distributorChannels[j] <: currentRow;
+                    }
+                }
+          while (1) {
+              fromStateManager :> state;
+              switch (state) {
+                  case 1:
+                      // Data workers -> output thread
+                      for (int j = 0; j < PROCESS_THREAD_COUNT; j++) {
+                          for (int k = 0; k < ROWS_PER_THREAD; k++) {
+                              unsigned int currentRow = 0;
+                              distributorChannels[j] :> currentRow;
+                              for( int x = 0; x < IMWD; x++ ) {
+                                  char pixelVal = 0;
+                                  char bitVal = (currentRow & (1 << (IMWD-1))) >> (IMWD-1); // Check pixel at the start (most significant part) of the int
+                                  if (bitVal == 1) val = 0xFF;                            // Convert bit value to pixel value
+                                  currentRow = currentRow << 1;                           // Shift int to the left
+                                  c_out :> pixelVal;                                      // Print pixel to outstream
+                              }
+                          }
+                      }
+                      break;
+                  case 2:
+                      for (int m = 0; m < PROCESS_THREAD_COUNT; m++) {
+                          distributorChannels[m] <: state;
+                      }
+                      break;
+                  case 3:
+                      for (int n = 0; n < PROCESS_THREAD_COUNT; n++) {
+                          distributorChannels[n] <: state;
+                      }
+                      break;
               }
-              distributorChannels[j] <: currentRow;
           }
       }
   }
-  //TODO we're not going to get feedback from here
-  // NOTE: This won't work. Worker tasks all need to finish in the par() block for this to happen
-  // Start waiting for feedback from workers
-    for (int j = 0; j < PROCESS_THREAD_COUNT; j++) {
-        for (int k = 0; k < ROWS_PER_THREAD; k++) {
-            unsigned int currentRow = 0;
-            distributorChannels[j] :> currentRow;
-            for( int x = 0; x < IMWD; x++ ) {
-                char pixelVal = 0;
-                char bitVal = (currentRow & (1 << (IMWD-1))) >> (IMWD-1); // Check pixel at the start (most significant part) of the int
-                if (bitVal == 1) val = 0xFF;                            // Convert bit value to pixel value
-                currentRow = currentRow << 1;                           // Shift int to the left
-                c_out :> pixelVal;                                      // Print pixel to outstream
-            }
-        }
-    }
 }
 void processGame(char workerID, chanend fromDistributor, chanend topChannel, chanend bottomChannel) {
     unsigned int oldRowData[ROWS_PER_THREAD + 2];
@@ -146,12 +176,28 @@ void processGame(char workerID, chanend fromDistributor, chanend topChannel, cha
         }
         for (int l = 1; l <= ROWS_PER_THREAD; l++) {
             oldRowData[l] = newRowData[l];
-            printf("New row %d\n", newRowData[l]);
         }
-    }
-    // When we do limited iterations this will give the result data back to the distributor
-    for (int j = 1; j <= ROWS_PER_THREAD; j++) {
-            fromDistributor <: oldRowData[j];
+        // Give commands to worker process on how to proceed further
+        unsigned char nextCommand = 0;
+        fromDistributor :> nextCommand;
+        switch (nextCommand) {
+            case 1:
+                for (int j = 1; j <= ROWS_PER_THREAD; j++) {
+                    fromDistributor <: oldRowData[j];
+                }
+                break;
+            case 2:
+                unsigned char delayed = 0;
+                while (delayed != 3) {
+                    fromDistributor :> delayed;
+                }
+                break;
+        }
+        // Listen to the distributor async channel
+        // 0 -> continue as normal
+        // 1 -> do a data output
+        // 2 -> stop until...
+        // 3 -> this is received; start processing again
     }
 }
 // Circular left shift the bits in an int value that uses 'size' number of bits
@@ -378,10 +424,10 @@ void DataOutStream(char outfname[], chanend c_in)
 // Initialise and  read orientation, send first tilt event to channel
 //
 /////////////////////////////////////////////////////////////////////////////////////////
-void orientation( client interface i2c_master_if i2c, chanend toDist) {
+void orientation( client interface i2c_master_if i2c, chanend toStateManager) {
   i2c_regop_res_t result;
   char status_data = 0;
-  int tilted = 0;
+  unsigned char tilted = 0;
 
   // Configure FXOS8700EQ
   result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
@@ -405,13 +451,17 @@ void orientation( client interface i2c_master_if i2c, chanend toDist) {
 
     //get new x-axis tilt value
     int x = read_acceleration(i2c, FXOS8700EQ_OUT_X_MSB);
-
     //send signal to distributor after first tilt
     if (!tilted) {
-      if (x>30) {
-        tilted = 1 - tilted;
-        toDist <: 1;
-      }
+        if (x>30) {
+            tilted = 2;
+            toStateManager <: tilted;
+        }
+    } else {
+        if (x<30) {
+            tilted = 0;
+            toStateManager <: tilted;
+        }
     }
   }
 }
@@ -425,18 +475,20 @@ int main(void) {
 
 i2c_master_if i2c[1];               //interface to orientation
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-runTests();   //TESTS
+//runTests();   //TESTS
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-char infname[] = "test.pgm";     //put your input image path here
-char outfname[] = "testout.pgm"; //put your output image path here
-chan c_inIO, c_outIO, c_control;    //extend your channel definitions here
-
+//char infname[] = "test.pgm";     //put your input image path here
+//char outfname[] = "testout.pgm"; //put your output image path here*/
+chan c_inIO, c_outIO;   //extend your channel definitions here
+chan stateToOrientation, stateToDistributor;
+// TODO put these things on proper tiles
 par {
-    i2c_master(i2c, 1, p_scl, p_sda, 10);   //server thread providing orientation data
-    orientation(i2c[0],c_control);        //client thread reading orientation data
-    DataInStream(infname, c_inIO);          //thread to read in a PGM image
-    DataOutStream(outfname, c_outIO);       //thread to write out a PGM image
-    distributor(c_inIO, c_outIO, c_control);//thread to coordinate work on image
+    on tile[0]: i2c_master(i2c, 1, p_scl, p_sda, 10);                    //server thread providing orientation data
+    on tile[1]: orientation(i2c[0], stateToOrientation);                 //client thread reading orientation data
+    on tile[0]: DataInStream("test.pgm", c_inIO);                           //thread to read in a PGM image
+    on tile[0]: DataOutStream("testout.pgm", c_outIO);                        //thread to write out a PGM image
+    on tile[1]: stateManager(stateToOrientation, stateToDistributor);
+    on tile[1]: distributor(c_inIO, c_outIO, stateToDistributor);        //thread to coordinate work on image
   }
 
   return 0;
