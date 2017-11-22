@@ -74,20 +74,18 @@ void stateManager(chanend fromAcc, chanend toDistributor) {
     int pressedButton = 0;
 
         buttons when pinseq(13)  :> pressedButton;
-        printf("Button value 0 is: %d\n", pressedButton);
-
 
     while (1) {
         buttons when pinsneq(13)  :> pressedButton;
         fromAcc :> state;
         if (state == 0 && previousState == 2) state = 3; // Give one-time unpause
-        if (pressedButton == 14 && previousState != 1) {
+        if (pressedButton == 14 && state != 2 && previousState != 1) {
             state = 1;
             pressedButton = 0;
         }
         previousState = state;
         toDistributor <: state;
-        printf("Current state: %c\n", state);
+        printf("Current state: %d\n", state);
     }
 }
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -157,7 +155,7 @@ void distributor(chanend c_in, chanend c_out, chanend fromStateManager)
                           for (int k = 0; k < ROWS_PER_THREAD; k++) {
                               unsigned int currentRow = 0;
                               distributorChannels[j] :> currentRow;
-                              printf("Row received \n");
+                              //printf("Row received \n");
                               for( int x = 0; x < IMWD; x++ ) {
                                   char pixelVal = 0;
                                   char bitVal = (currentRow & (1 << (IMWD-1))) >> (IMWD-1); // Check pixel at the start (most significant part) of the int
