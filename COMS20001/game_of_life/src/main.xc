@@ -14,6 +14,8 @@
 
 typedef unsigned char uchar;      //using uchar as shorthand
 
+on tile[0] : in port buttons = XS1_PORT_4E; //port to access xCore-200 buttons
+on tile[0] : out port leds = XS1_PORT_4F;   //port to access xCore-200 LEDs
 on tile[0]: port p_scl = XS1_PORT_1E;         //interface ports to orientation
 on tile[0]: port p_sda = XS1_PORT_1F;
 
@@ -69,11 +71,25 @@ void DataInStream(char infname[], chanend c_out)
 void stateManager(chanend fromAcc, chanend toDistributor) {
     unsigned char state = 0;
     unsigned char previousState = 0;
+    int pressedButton = 0;
+
+     while (pressedButton != 13) {
+        buttons when pinseq(15)  :> pressedButton;
+        buttons when pinsneq(15) :> pressedButton;
+    }
+
     while (1) {
+        buttons when pinseq(15)  :> pressedButton;
+        buttons when pinsneq(15) :> pressedButton;
         fromAcc :> state;
         if (state == 0 && previousState == 2) state = 3; // Give one-time unpause
+        if (pressedButton == 14 && previousState != 1) {
+            state = 1;
+            pressedButton = 0;
+        }
         previousState = state;
         toDistributor <: state;
+        printf("Current state: %c\n", state);
     }
 }
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -96,6 +112,8 @@ void distributor(chanend c_in, chanend c_out, chanend fromStateManager)
   chan rowChannels[PROCESS_THREAD_COUNT];
   chan distributorChannels[PROCESS_THREAD_COUNT];
   unsigned char state = 0;
+  int ledPattern = 0;
+  int led1On = 0;
   par {
       // Worker threads
       par (int i = 0; i < PROCESS_THREAD_COUNT; i++) {
@@ -103,7 +121,9 @@ void distributor(chanend c_in, chanend c_out, chanend fromStateManager)
       }
       // Distributor state handling
       {
-          for (int j = 0; j < PROCESS_THREAD_COUNT; j++) {
+          {
+              leds <: 4;
+              for (int j = 0; j < PROCESS_THREAD_COUNT; j++) {
                     for (int k = 0; k < ROWS_PER_THREAD; k++) {
                         unsigned int currentRow = 0;
                         for( int x = 0; x < IMWD; x++ ) {                    // Go through each pixel per line
@@ -113,32 +133,54 @@ void distributor(chanend c_in, chanend c_out, chanend fromStateManager)
                         }
                         distributorChannels[j] <: currentRow;
                     }
-                }
+               }
+              leds <: 0;
+          }
           while (1) {
               fromStateManager :> state;
               switch (state) {
+                  case 0:
+                      if (led1On == 1) led1On = 0;
+                      else led1On = 1;
+                      ledPattern = led1On;
+                      leds <: ledPattern;
+                      for (int n = 0; n < PROCESS_THREAD_COUNT; n++) {
+                          distributorChannels[n] <: state;
+                      }
+                      break;
                   case 1:
+                      ledPattern = 2;
+                      leds <: ledPattern;
+                      for (int n = 0; n < PROCESS_THREAD_COUNT; n++) {
+                          distributorChannels[n] <: state;
+                      }
                       // Data workers -> output thread
                       for (int j = 0; j < PROCESS_THREAD_COUNT; j++) {
                           for (int k = 0; k < ROWS_PER_THREAD; k++) {
                               unsigned int currentRow = 0;
                               distributorChannels[j] :> currentRow;
+                              printf("Row received \n");
                               for( int x = 0; x < IMWD; x++ ) {
                                   char pixelVal = 0;
                                   char bitVal = (currentRow & (1 << (IMWD-1))) >> (IMWD-1); // Check pixel at the start (most significant part) of the int
-                                  if (bitVal == 1) val = 0xFF;                            // Convert bit value to pixel value
+                                  if (bitVal == 1) pixelVal = 0xFF;                            // Convert bit value to pixel value
                                   currentRow = currentRow << 1;                           // Shift int to the left
-                                  c_out :> pixelVal;                                      // Print pixel to outstream
+                                  c_out <: pixelVal;                                      // Print pixel to outstream
                               }
                           }
                       }
                       break;
                   case 2:
+                      ledPattern = 8;
+                      leds <: ledPattern;
                       for (int m = 0; m < PROCESS_THREAD_COUNT; m++) {
                           distributorChannels[m] <: state;
                       }
                       break;
                   case 3:
+                      led1On = 1;
+                      ledPattern = led1On;
+                      leds <: ledPattern;
                       for (int n = 0; n < PROCESS_THREAD_COUNT; n++) {
                           distributorChannels[n] <: state;
                       }
@@ -193,7 +235,7 @@ void processGame(char workerID, chanend fromDistributor, chanend topChannel, cha
                 }
                 break;
         }
-        // Listen to the distributor async channel
+        // Listen to the distributor channel
         // 0 -> continue as normal
         // 1 -> do a data output
         // 2 -> stop until...
@@ -440,18 +482,17 @@ void orientation( client interface i2c_master_if i2c, chanend toStateManager) {
   if (result != I2C_REGOP_SUCCESS) {
     printf("I2C write reg failed\n");
   }
-
   //Probe the orientation x-axis forever
   while (1) {
 
     //check until new orientation data is available
     do {
       status_data = i2c.read_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_DR_STATUS, result);
+      toStateManager <: tilted;
     } while (!status_data & 0x08);
 
     //get new x-axis tilt value
     int x = read_acceleration(i2c, FXOS8700EQ_OUT_X_MSB);
-    //send signal to distributor after first tilt
     if (!tilted) {
         if (x>30) {
             tilted = 2;
@@ -484,11 +525,11 @@ chan stateToOrientation, stateToDistributor;
 // TODO put these things on proper tiles
 par {
     on tile[0]: i2c_master(i2c, 1, p_scl, p_sda, 10);                    //server thread providing orientation data
-    on tile[1]: orientation(i2c[0], stateToOrientation);                 //client thread reading orientation data
-    on tile[0]: DataInStream("test.pgm", c_inIO);                           //thread to read in a PGM image
-    on tile[0]: DataOutStream("testout.pgm", c_outIO);                        //thread to write out a PGM image
-    on tile[1]: stateManager(stateToOrientation, stateToDistributor);
-    on tile[1]: distributor(c_inIO, c_outIO, stateToDistributor);        //thread to coordinate work on image
+    on tile[0]: orientation(i2c[0], stateToOrientation);                 //client thread reading orientation data
+    on tile[1]: DataInStream("test.pgm", c_inIO);                           //thread to read in a PGM image
+    on tile[1]: DataOutStream("testout.pgm", c_outIO);                        //thread to write out a PGM image
+    on tile[0]: stateManager(stateToOrientation, stateToDistributor);
+    on tile[0]: distributor(c_inIO, c_outIO, stateToDistributor);        //thread to coordinate work on image
   }
 
   return 0;
