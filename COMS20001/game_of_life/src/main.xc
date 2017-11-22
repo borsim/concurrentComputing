@@ -7,11 +7,19 @@
 #include "pgmIO.h"
 #include "i2c.h"
 
+
+
 #define  IMHT 16                  //image height
 #define  IMWD 16                  //image width
 #define  PROCESS_THREAD_COUNT 4
 #define  ROWS_PER_THREAD 4
+#define  NUM_INTS_PER_ROW 4
 
+struct carry {
+    unsigned int value;
+    unsigned int carryOut;
+};
+typedef struct carry carry;
 typedef unsigned char uchar;      //using uchar as shorthand
 
 on tile[0] : in port buttons = XS1_PORT_4E; //port to access xCore-200 buttons
@@ -30,10 +38,14 @@ on tile[0]: port p_sda = XS1_PORT_1F;
 #define FXOS8700EQ_OUT_Z_MSB 0x5
 #define FXOS8700EQ_OUT_Z_LSB 0x6
 
-
 void processGame(char workerID, chanend fromDistributor, chanend topChannel, chanend bottomChannel);
 unsigned int parseRowToInt(int rowNumber);
 unsigned int generateNewRow(unsigned int top, unsigned int self, unsigned int bottom, int length);
+carry carryLeftShift(unsigned int input, unsigned int carryIn, int length);
+carry carryRightShift(unsigned int input, unsigned int carryIn, int length);
+void leftShiftLargeRow(int totalLength, unsigned int row[NUM_INTS_PER_ROW]);
+void addToLargeRow(char* original, unsigned int added[NUM_INTS_PER_ROW], int totalLength);
+void addThreeLargeRows(char* original, unsigned int added[NUM_INTS_PER_ROW], int totalLength);
 /////////////////////////////////////////////////////////////////////////////////////////
 //
 // Read Image from PGM file from path infname[] to channel c_out
@@ -241,10 +253,39 @@ void processGame(char workerID, chanend fromDistributor, chanend topChannel, cha
 // Circular left shift the bits in an int value that uses 'size' number of bits
 unsigned int circularLeftShift(unsigned int input, int length) {
     unsigned int result = input << 1 | input >> (length-1);
-    // Mask to unneeded values
+    // Mask unneeded values
     unsigned int mask = 0xFFFFFFFF >> (32-length);
     result = result & mask;
     return result;
+}
+carry carryLeftShift(unsigned int input, unsigned int carryIn, int length) {
+    unsigned int outResult = input >> (length-1);
+    unsigned int result = input << 1 | carryIn;
+    // Mask unneeded values
+    unsigned int mask = 0xFFFFFFFF >> (32-length);
+    result = result & mask;
+    carry resultCarry;
+    resultCarry.value = result;
+    resultCarry.carryOut = outResult;
+    return resultCarry;
+}
+void leftShiftLargeRow(int totalLength, unsigned int row[NUM_INTS_PER_ROW]) {
+    int currentLength = 0;
+    int i = NUM_INTS_PER_ROW-1;
+    carry currentCarry;
+    unsigned int lastLength = totalLength % 32;
+    if (lastLength == 0) lastLength = 32;
+    unsigned int lastInt = row[0];
+    unsigned int carryIn = lastInt >> (lastLength - 1);
+    while (totalLength > 0) {
+        if (totalLength >= 32) currentLength = 32;
+        else currentLength = totalLength;
+        totalLength -= currentLength;
+        currentCarry = carryLeftShift(row[i], carryIn, currentLength);
+        row[i] = currentCarry.value;
+        carryIn = currentCarry.carryOut;
+        i -= 1;
+    }
 }
 // Circular right shift the bits in an int value that uses 'size' number of bits
 unsigned int circularRightShift(unsigned int input, int length) {
@@ -253,6 +294,33 @@ unsigned int circularRightShift(unsigned int input, int length) {
     unsigned int mask = 0xFFFFFFFF >> (32-length);
     result = result & mask;
     return result;
+}
+carry carryRightShift(unsigned int input, unsigned int carryIn, int length) {
+    unsigned int outResult = input & 1;
+    unsigned int result = input >> 1 | (carryIn << (length-1));
+    // Mask unneeded values
+    unsigned int mask = 0xFFFFFFFF >> (32-length);
+    result = result & mask;
+    carry resultCarry;
+    resultCarry.value = result;
+    resultCarry.carryOut = outResult;
+    return resultCarry;
+}
+void rightShiftLargeRow(int totalLength, unsigned int row[NUM_INTS_PER_ROW]) {
+    int currentLength = 0;
+    int i = 0;
+    carry currentCarry;
+    unsigned int lastInt = row[NUM_INTS_PER_ROW - 1];
+    unsigned int carryIn = lastInt & 1;
+    while (totalLength > 0) {
+        if (totalLength % 32 == 0) currentLength = 32;
+        else currentLength = totalLength % 32;
+        totalLength -= currentLength;
+        currentCarry = carryRightShift(row[i], carryIn, currentLength);
+        row[i] = currentCarry.value;
+        carryIn = currentCarry.carryOut;
+        i += 1;
+    }
 }
 char determineLifeState(unsigned int currentState, char counter) {
     char resultState = 0;
@@ -272,12 +340,64 @@ void addToRow(char* original, unsigned int added, int length) {
         addedCopy = addedCopy >> 1;
     }
 }
+void addToLargeRow(char* original, unsigned int added[NUM_INTS_PER_ROW], int totalLength) {
+    int indexInOriginal = 0;
+    unsigned int currentLength;
+    for (int i = 0; i < NUM_INTS_PER_ROW; i++) {
+        if (totalLength >= 32) currentLength = 32;
+        else currentLength = totalLength;
+        totalLength -= currentLength;
+        unsigned int addedCopy = added[i];
+        for (int j = 0; j < currentLength; j++) {
+            indexInOriginal = i * 32 + j;
+            original[indexInOriginal] += addedCopy & 1;
+            addedCopy = addedCopy >> 1;
+        }
+    }
+}
+void addThreeLargeRows(char* original, unsigned int added[NUM_INTS_PER_ROW], int totalLength) {
+    unsigned int leftShifted[NUM_INTS_PER_ROW];
+    unsigned int rightShifted[NUM_INTS_PER_ROW];
+    for (int i = 0; i < NUM_INTS_PER_ROW; i++) {
+        leftShifted[i] = added[i];
+        rightShifted[i] = added[i];
+    }
+    leftShiftLargeRow (totalLength, leftShifted );
+    rightShiftLargeRow(totalLength, rightShifted);
+    addToLargeRow(original, leftShifted,  totalLength);
+    addToLargeRow(original, added,        totalLength);
+    addToLargeRow(original, rightShifted, totalLength);
+}
 void addThreeRows(char* original, unsigned int added, int length) {
     unsigned int leftShifted = circularLeftShift(added, length);
     unsigned int rightShifted = circularRightShift(added, length);
     addToRow(original, leftShifted, length);
     addToRow(original, added, length);
     addToRow(original, rightShifted, length);
+}
+void generateNewLargeRow(unsigned int top[NUM_INTS_PER_ROW], unsigned int self[NUM_INTS_PER_ROW], unsigned int bottom[NUM_INTS_PER_ROW], unsigned int result[NUM_INTS_PER_ROW], int totalLength) {
+        unsigned int selfCopyLeft[NUM_INTS_PER_ROW];
+        unsigned int selfCopyRight[NUM_INTS_PER_ROW];
+        for (int x = 0; x < NUM_INTS_PER_ROW; x++) {
+            selfCopyLeft[x] = self[x];
+            selfCopyRight[x] = self[x];
+        }
+        leftShiftLargeRow(totalLength, selfCopyLeft);
+        rightShiftLargeRow(totalLength, selfCopyRight);
+        char newRowCount[IMWD];
+        for (int i = 0; i < totalLength; i++) newRowCount[i] = 0;
+        addToLargeRow(newRowCount, selfCopyLeft, totalLength);
+        addToLargeRow(newRowCount, selfCopyRight, totalLength);
+        addThreeLargeRows(newRowCount, top, totalLength);
+        addThreeLargeRows(newRowCount, bottom, totalLength);
+        //TODO Store the resulting life states properly (not done yet, this is just the copied code)
+        for (int j = 0; j < totalLength; j++) {
+            /*unsigned int currentState = (selfCopy & (1 << (length-1))) >> (length-1);
+            char result = determineLifeState(currentState, newRowCount[length-j-1]);
+            if (result == 1) newRow = newRow | 1;
+            if (j != length-1) newRow = newRow << 1;
+            selfCopy = selfCopy << 1;*/
+        }
 }
 unsigned int generateNewRow(unsigned int top, unsigned int self, unsigned int bottom, int length) {
     unsigned int newRow = 0;
@@ -518,7 +638,6 @@ i2c_master_if i2c[1];               //interface to orientation
 //char outfname[] = "testout.pgm"; //put your output image path here*/
 chan c_inIO, c_outIO;   //extend your channel definitions here
 chan stateToOrientation, stateToDistributor;
-// TODO put these things on proper tiles
 par {
     on tile[0]: i2c_master(i2c, 1, p_scl, p_sda, 10);                    //server thread providing orientation data
     on tile[0]: orientation(i2c[0], stateToOrientation);                 //client thread reading orientation data
