@@ -73,14 +73,12 @@ void stateManager(chanend fromAcc, chanend toDistributor) {
     unsigned char previousState = 0;
     int pressedButton = 0;
 
-     while (pressedButton != 13) {
-        buttons when pinseq(15)  :> pressedButton;
-        buttons when pinsneq(15) :> pressedButton;
-    }
+        buttons when pinseq(13)  :> pressedButton;
+        printf("Button value 0 is: %d\n", pressedButton);
+
 
     while (1) {
-        buttons when pinseq(15)  :> pressedButton;
-        buttons when pinsneq(15) :> pressedButton;
+        buttons when pinsneq(13)  :> pressedButton;
         fromAcc :> state;
         if (state == 0 && previousState == 2) state = 3; // Give one-time unpause
         if (pressedButton == 14 && previousState != 1) {
