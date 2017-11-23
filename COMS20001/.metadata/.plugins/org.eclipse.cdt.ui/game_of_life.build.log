@@ -1,4 +1,4 @@
-16:14:24 **** Incremental Build of configuration Default for project game_of_life ****
+21:20:52 **** Incremental Build of configuration Default for project game_of_life ****
 xmake all 
 Checking build modules
 Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
@@ -6,15 +6,7 @@ Analyzing main.xc
 Creating dependencies for main.xc
 Compiling main.xc
 Creating game_of_life.xe
-Constraint check for tile[0]:
-  Cores available:            8,   used:          6 .  OKAY
-  Timers available:          10,   used:          6 .  OKAY
-  Chanends available:        32,   used:         20 .  OKAY
-  Memory available:       262144,   used:      306184 .  FAILED
-    (Stack: 276348, Code: 28240, Data: 1596)
-Error: Constraints check FAILED for tile[0].
-xmake[1]: *** [bin//game_of_life.xe] Error 1
-xmake: *** [bin//game_of_life.xe] Error 2
+Build Complete
 
-16:14:25 Build Finished (took 1s.880ms)
+21:20:54 Build Finished (took 2s.17ms)
 

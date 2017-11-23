@@ -13,7 +13,7 @@
 #define  IMWD 128                  //image width
 #define  PROCESS_THREAD_COUNT 4
 #define  ROWS_PER_THREAD 128
-#define  NUM_INTS_PER_ROW 128
+#define  NUM_INTS_PER_ROW 16
 
 struct carry {
     unsigned int value;
@@ -260,8 +260,7 @@ void distributor(chanend c_in, chanend c_out, chanend fromStateManager)
     }
 }*/
 void processLargeGame(char workerID, chanend fromDistributor, chanend topChannel, chanend bottomChannel) {
-    unsigned int oldRowData[NUM_INTS_PER_ROW];
-    unsigned int oldOldRowData[NUM_INTS_PER_ROW];
+    unsigned int oldRowData[ROWS_PER_THREAD + 2][NUM_INTS_PER_ROW];
     unsigned int newRowData[ROWS_PER_THREAD + 2][NUM_INTS_PER_ROW];
     for (int j = 1; j <= ROWS_PER_THREAD; j++) {
         for (int i = 0; i < NUM_INTS_PER_ROW; i++) {
@@ -271,26 +270,25 @@ void processLargeGame(char workerID, chanend fromDistributor, chanend topChannel
     while(1) {
         if (workerID % 2 == 0) {
             for (int h = 0; h < NUM_INTS_PER_ROW; h++) {
-                topChannel    <: newRowData[1][h];
-                bottomChannel <: newRowData[ROWS_PER_THREAD][h];
-                bottomChannel :> newRowData[ROWS_PER_THREAD + 1][h];
-                topChannel    :> newRowData[0][h];
+                topChannel    <: oldRowData[1][h];
+                bottomChannel <: oldRowData[ROWS_PER_THREAD][h];
+                bottomChannel :> oldRowData[ROWS_PER_THREAD + 1][h];
+                topChannel    :> oldRowData[0][h];
             }
         } else {
             for (int g = 0; g < NUM_INTS_PER_ROW; g++) {
-                bottomChannel :> newRowData[ROWS_PER_THREAD + 1][g];
-                topChannel    :> newRowData[0][g];
-                topChannel    <: newRowData[1][g];
-                bottomChannel <: newRowData[ROWS_PER_THREAD][g];
+                bottomChannel :> oldRowData[ROWS_PER_THREAD + 1][g];
+                topChannel    :> oldRowData[0][g];
+                topChannel    <: oldRowData[1][g];
+                bottomChannel <: oldRowData[ROWS_PER_THREAD][g];
             }
         }
         for (int k = 1; k <= ROWS_PER_THREAD; k++) {
-            for (int t = 0; t < NUM_INTS_PER_ROW; t++) {
-                oldRowData[t] = newRowData[k][t];
-            }
-            generateNewLargeRow(oldOldRowData,newRowData[k],newRowData[k+1], newRowData[k],IMWD);
-            for (int r = 0; r < NUM_INTS_PER_ROW; r++) {
-                oldRowData[r] = newRowData[k][r];
+            generateNewLargeRow(oldRowData[k-1], oldRowData[k], oldRowData[k+1], newRowData[k],IMWD);
+        }
+        for (int y = 0; y < ROWS_PER_THREAD; y++) {
+            for (int z = 0; z < NUM_INTS_PER_ROW; z++) {
+                oldRowData[y][z] = newRowData[y][z];
             }
         }
         unsigned char nextCommand = 0;
@@ -432,21 +430,18 @@ void addThreeRows(char* original, unsigned int added, int length) {
     addToRow(original, rightShifted, length);
 }
 void generateNewLargeRow(unsigned int top[NUM_INTS_PER_ROW], unsigned int self[NUM_INTS_PER_ROW], unsigned int bottom[NUM_INTS_PER_ROW], unsigned int result[NUM_INTS_PER_ROW], int totalLength) {
-        /*unsigned int selfCopyLeft[NUM_INTS_PER_ROW];
+        unsigned int selfCopyLeft[NUM_INTS_PER_ROW];
         unsigned int selfCopyRight[NUM_INTS_PER_ROW];
         for (int x = 0; x < NUM_INTS_PER_ROW; x++) {
             selfCopyLeft[x] = self[x];
             selfCopyRight[x] = self[x];
         }
         leftShiftLargeRow(totalLength, selfCopyLeft);
-        rightShiftLargeRow(totalLength, selfCopyRight);*/
+        rightShiftLargeRow(totalLength, selfCopyRight);
         char newRowCount[IMWD];
         for (int i = 0; i < totalLength; i++) newRowCount[i] = 0;
-        leftShiftLargeRow(totalLength, self);
-        addToLargeRow(newRowCount, self, totalLength);
-        rightShiftLargeRow(totalLength, self);
-        rightShiftLargeRow(totalLength, self);
-        addToLargeRow(newRowCount, self, totalLength);
+        addToLargeRow(newRowCount, selfCopyLeft, totalLength);
+        addToLargeRow(newRowCount, selfCopyRight, totalLength);
         addThreeLargeRows(newRowCount, top, totalLength);
         addThreeLargeRows(newRowCount, bottom, totalLength);
         unsigned int currentLength = 0;

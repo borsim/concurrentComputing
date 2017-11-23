@@ -316,3 +316,62 @@ Constraint check for tile[0]:
 Error: Constraints check FAILED for tile[0].
 xmake[1]: *** [bin//game_of_life.xe] Error 1
 xmake: *** [bin//game_of_life.xe] Error 2
+21:19:49 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:274:44: error: index of array exceeds its upper bound
+                bottomChannel <: oldRowData[ROWS_PER_THREAD][h];
+                                           ^~~~~~~~~~~~~~~~~
+../src/main.xc:275:61: error: index of array exceeds its upper bound
+                bottomChannel :> oldRowData[ROWS_PER_THREAD + 1][h];
+                                           ~~~~~~~~~~~~~~~~~^~~~
+../src/main.xc:280:61: error: index of array exceeds its upper bound
+                bottomChannel :> oldRowData[ROWS_PER_THREAD + 1][g];
+                                           ~~~~~~~~~~~~~~~~~^~~~
+../src/main.xc:283:44: error: index of array exceeds its upper bound
+                bottomChannel <: oldRowData[ROWS_PER_THREAD][g];
+                                           ^~~~~~~~~~~~~~~~~
+../src/main.xc:287:65: error: use of undeclared identifer `oldwRowData'
+            generateNewLargeRow(oldRowData[k-1], oldRowData[k], oldwRowData[k+1], newRowData[k],IMWD);
+                                                                ^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+21:20:25 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:287:65: error: use of undeclared identifer `oldwRowData'
+            generateNewLargeRow(oldRowData[k-1], oldRowData[k], oldwRowData[k+1], newRowData[k],IMWD);
+                                                                ^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+21:20:38 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Constraint check for tile[0]:
+  Cores available:            8,   used:          7 .  OKAY
+  Timers available:          10,   used:          7 .  OKAY
+  Chanends available:        32,   used:         22 .  OKAY
+  Memory available:       262144,   used:      573768 .  FAILED
+    (Stack: 543484, Code: 28676, Data: 1608)
+Error: Constraints check FAILED for tile[0].
+xmake[1]: *** [bin//game_of_life.xe] Error 1
+xmake: *** [bin//game_of_life.xe] Error 2
+21:20:52 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
