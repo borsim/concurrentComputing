@@ -9,11 +9,11 @@
 
 
 
-#define  IMHT 16                  //image height
-#define  IMWD 16                  //image width
+#define  IMHT 128                  //image height
+#define  IMWD 128                  //image width
 #define  PROCESS_THREAD_COUNT 4
-#define  ROWS_PER_THREAD 4
-#define  NUM_INTS_PER_ROW 4
+#define  ROWS_PER_THREAD 128
+#define  NUM_INTS_PER_ROW 128
 
 struct carry {
     unsigned int value;
@@ -46,6 +46,8 @@ carry carryRightShift(unsigned int input, unsigned int carryIn, int length);
 void leftShiftLargeRow(int totalLength, unsigned int row[NUM_INTS_PER_ROW]);
 void addToLargeRow(char* original, unsigned int added[NUM_INTS_PER_ROW], int totalLength);
 void addThreeLargeRows(char* original, unsigned int added[NUM_INTS_PER_ROW], int totalLength);
+void processLargeGame(char workerID, chanend fromDistributor, chanend topChannel, chanend bottomChannel);
+void generateNewLargeRow(unsigned int top[NUM_INTS_PER_ROW], unsigned int self[NUM_INTS_PER_ROW], unsigned int bottom[NUM_INTS_PER_ROW], unsigned int result[NUM_INTS_PER_ROW], int totalLength);
 /////////////////////////////////////////////////////////////////////////////////////////
 //
 // Read Image from PGM file from path infname[] to channel c_out
@@ -125,7 +127,7 @@ void distributor(chanend c_in, chanend c_out, chanend fromStateManager)
   par {
       // Worker threads
       par (int i = 0; i < PROCESS_THREAD_COUNT; i++) {
-            processGame(i, distributorChannels[i], rowChannels[i],rowChannels[(i+1)%PROCESS_THREAD_COUNT]);
+            processLargeGame(i, distributorChannels[i], rowChannels[i],rowChannels[(i+1)%PROCESS_THREAD_COUNT]);
       }
       // Distributor state handling
       {
@@ -133,13 +135,17 @@ void distributor(chanend c_in, chanend c_out, chanend fromStateManager)
               leds <: 4;
               for (int j = 0; j < PROCESS_THREAD_COUNT; j++) {
                     for (int k = 0; k < ROWS_PER_THREAD; k++) {
-                        unsigned int currentRow = 0;
-                        for( int x = 0; x < IMWD; x++ ) {                    // Go through each pixel per line
-                            c_in :> val;                                   // Read the pixel value
-                            if (val == 0xFF) currentRow = currentRow | 1;  // Put pixel on the end of the int
-                            currentRow = currentRow << 1;                  // Shift int to the left
+                        for (int l = 0; l < NUM_INTS_PER_ROW; l++) {
+                            unsigned int currentRow = 0;
+                            int maxIntSize = 32;
+                            if (IMWD < 32) maxIntSize = IMWD;
+                            for( int x = 0; x < maxIntSize; x++ ) {                    // Go through each pixel per line
+                                c_in :> val;                                   // Read the pixel value
+                                if (val == 0xFF) currentRow = currentRow | 1;  // Put pixel on the end of the int
+                                currentRow = currentRow << 1;                  // Shift int to the left
+                            }
+                            distributorChannels[j] <: currentRow;
                         }
-                        distributorChannels[j] <: currentRow;
                     }
                }
               leds <: 0;
@@ -165,15 +171,18 @@ void distributor(chanend c_in, chanend c_out, chanend fromStateManager)
                       // Data workers -> output thread
                       for (int j = 0; j < PROCESS_THREAD_COUNT; j++) {
                           for (int k = 0; k < ROWS_PER_THREAD; k++) {
-                              unsigned int currentRow = 0;
-                              distributorChannels[j] :> currentRow;
-                              //printf("Row received \n");
-                              for( int x = 0; x < IMWD; x++ ) {
-                                  char pixelVal = 0;
-                                  char bitVal = (currentRow & (1 << (IMWD-1))) >> (IMWD-1); // Check pixel at the start (most significant part) of the int
-                                  if (bitVal == 1) pixelVal = 0xFF;                            // Convert bit value to pixel value
-                                  currentRow = currentRow << 1;                           // Shift int to the left
-                                  c_out <: pixelVal;                                      // Print pixel to outstream
+                              for (int l = 0; l < NUM_INTS_PER_ROW; l++) {
+                                  unsigned int currentRowPart = 0;
+                                  distributorChannels[j] :> currentRowPart;
+                                  int maxIntSize = 32;
+                                  if (IMWD < 32) maxIntSize = IMWD;
+                                  for( int x = 0; x < maxIntSize; x++ ) {
+                                      char pixelVal = 0;
+                                      char bitVal = (currentRowPart & (1 << (maxIntSize-1))) >> (maxIntSize-1); // Check pixel at the start (most significant part) of the int
+                                      if (bitVal == 1) pixelVal = 0xFF;                                         // Convert bit value to pixel value
+                                      currentRowPart = currentRowPart << 1;                                     // Shift int to the left
+                                      c_out <: pixelVal;                                                        // Print pixel to outstream
+                                  }
                               }
                           }
                       }
@@ -198,7 +207,7 @@ void distributor(chanend c_in, chanend c_out, chanend fromStateManager)
       }
   }
 }
-void processGame(char workerID, chanend fromDistributor, chanend topChannel, chanend bottomChannel) {
+/*void processGame(char workerID, chanend fromDistributor, chanend topChannel, chanend bottomChannel) {
     unsigned int oldRowData[ROWS_PER_THREAD + 2];
     unsigned int newRowData[ROWS_PER_THREAD + 2];
     for (int j = 1; j <= ROWS_PER_THREAD; j++) {
@@ -248,6 +257,59 @@ void processGame(char workerID, chanend fromDistributor, chanend topChannel, cha
         // 1 -> do a data output
         // 2 -> stop until...
         // 3 -> this is received; start processing again
+    }
+}*/
+void processLargeGame(char workerID, chanend fromDistributor, chanend topChannel, chanend bottomChannel) {
+    unsigned int oldRowData[NUM_INTS_PER_ROW];
+    unsigned int oldOldRowData[NUM_INTS_PER_ROW];
+    unsigned int newRowData[ROWS_PER_THREAD + 2][NUM_INTS_PER_ROW];
+    for (int j = 1; j <= ROWS_PER_THREAD; j++) {
+        for (int i = 0; i < NUM_INTS_PER_ROW; i++) {
+            fromDistributor :> newRowData[j][i];
+        }
+    }
+    while(1) {
+        if (workerID % 2 == 0) {
+            for (int h = 0; h < NUM_INTS_PER_ROW; h++) {
+                topChannel    <: newRowData[1][h];
+                bottomChannel <: newRowData[ROWS_PER_THREAD][h];
+                bottomChannel :> newRowData[ROWS_PER_THREAD + 1][h];
+                topChannel    :> newRowData[0][h];
+            }
+        } else {
+            for (int g = 0; g < NUM_INTS_PER_ROW; g++) {
+                bottomChannel :> newRowData[ROWS_PER_THREAD + 1][g];
+                topChannel    :> newRowData[0][g];
+                topChannel    <: newRowData[1][g];
+                bottomChannel <: newRowData[ROWS_PER_THREAD][g];
+            }
+        }
+        for (int k = 1; k <= ROWS_PER_THREAD; k++) {
+            for (int t = 0; t < NUM_INTS_PER_ROW; t++) {
+                oldRowData[t] = newRowData[k][t];
+            }
+            generateNewLargeRow(oldOldRowData,newRowData[k],newRowData[k+1], newRowData[k],IMWD);
+            for (int r = 0; r < NUM_INTS_PER_ROW; r++) {
+                oldRowData[r] = newRowData[k][r];
+            }
+        }
+        unsigned char nextCommand = 0;
+        fromDistributor :> nextCommand;
+        switch (nextCommand) {
+            case 1:
+                for (int j = 1; j <= ROWS_PER_THREAD; j++) {
+                    for (int d = 0; d < NUM_INTS_PER_ROW; d++) {
+                        fromDistributor <: newRowData[j][d];
+                    }
+                }
+                break;
+            case 2:
+                unsigned char delayed = 0;
+                while (delayed != 3) {
+                    fromDistributor :> delayed;
+                }
+                break;
+        }
     }
 }
 // Circular left shift the bits in an int value that uses 'size' number of bits
@@ -356,17 +418,11 @@ void addToLargeRow(char* original, unsigned int added[NUM_INTS_PER_ROW], int tot
     }
 }
 void addThreeLargeRows(char* original, unsigned int added[NUM_INTS_PER_ROW], int totalLength) {
-    unsigned int leftShifted[NUM_INTS_PER_ROW];
-    unsigned int rightShifted[NUM_INTS_PER_ROW];
-    for (int i = 0; i < NUM_INTS_PER_ROW; i++) {
-        leftShifted[i] = added[i];
-        rightShifted[i] = added[i];
-    }
-    leftShiftLargeRow (totalLength, leftShifted );
-    rightShiftLargeRow(totalLength, rightShifted);
-    addToLargeRow(original, leftShifted,  totalLength);
     addToLargeRow(original, added,        totalLength);
-    addToLargeRow(original, rightShifted, totalLength);
+    leftShiftLargeRow(totalLength, added);
+    addToLargeRow(original, added,        totalLength);
+    leftShiftLargeRow(totalLength, added);
+    rightShiftLargeRow(totalLength, added);
 }
 void addThreeRows(char* original, unsigned int added, int length) {
     unsigned int leftShifted = circularLeftShift(added, length);
@@ -376,27 +432,34 @@ void addThreeRows(char* original, unsigned int added, int length) {
     addToRow(original, rightShifted, length);
 }
 void generateNewLargeRow(unsigned int top[NUM_INTS_PER_ROW], unsigned int self[NUM_INTS_PER_ROW], unsigned int bottom[NUM_INTS_PER_ROW], unsigned int result[NUM_INTS_PER_ROW], int totalLength) {
-        unsigned int selfCopyLeft[NUM_INTS_PER_ROW];
+        /*unsigned int selfCopyLeft[NUM_INTS_PER_ROW];
         unsigned int selfCopyRight[NUM_INTS_PER_ROW];
         for (int x = 0; x < NUM_INTS_PER_ROW; x++) {
             selfCopyLeft[x] = self[x];
             selfCopyRight[x] = self[x];
         }
         leftShiftLargeRow(totalLength, selfCopyLeft);
-        rightShiftLargeRow(totalLength, selfCopyRight);
+        rightShiftLargeRow(totalLength, selfCopyRight);*/
         char newRowCount[IMWD];
         for (int i = 0; i < totalLength; i++) newRowCount[i] = 0;
-        addToLargeRow(newRowCount, selfCopyLeft, totalLength);
-        addToLargeRow(newRowCount, selfCopyRight, totalLength);
+        leftShiftLargeRow(totalLength, self);
+        addToLargeRow(newRowCount, self, totalLength);
+        rightShiftLargeRow(totalLength, self);
+        rightShiftLargeRow(totalLength, self);
+        addToLargeRow(newRowCount, self, totalLength);
         addThreeLargeRows(newRowCount, top, totalLength);
         addThreeLargeRows(newRowCount, bottom, totalLength);
-        //TODO Store the resulting life states properly (not done yet, this is just the copied code)
-        for (int j = 0; j < totalLength; j++) {
-            /*unsigned int currentState = (selfCopy & (1 << (length-1))) >> (length-1);
-            char result = determineLifeState(currentState, newRowCount[length-j-1]);
-            if (result == 1) newRow = newRow | 1;
-            if (j != length-1) newRow = newRow << 1;
-            selfCopy = selfCopy << 1;*/
+        unsigned int currentLength = 0;
+        char pretendNewRow[32];
+        for (int i = 0; i < NUM_INTS_PER_ROW; i++) {
+            if (totalLength % 32 == 0) currentLength = 32;
+            else currentLength = totalLength % 32;
+            totalLength -= currentLength;
+            for (int j = 0; j < 32; j++) {
+                pretendNewRow[j] = newRowCount[i * 32 + j];
+            }
+            unsigned int newRowResult = generateNewRow(top[i], self[i], bottom[i], currentLength);
+            result[i] = newRowResult;
         }
 }
 unsigned int generateNewRow(unsigned int top, unsigned int self, unsigned int bottom, int length) {
@@ -430,7 +493,7 @@ unsigned int generateNewRow(unsigned int top, unsigned int self, unsigned int bo
     return newRow;
 }
 
-int assertEqual(int first, int second, int testNum) {
+/*int assertEqual(int first, int second, int testNum) {
     if (first == second) {
         //printf("TEST %d SUCCESSFUL\n", testNum);
         return 1;
@@ -439,8 +502,8 @@ int assertEqual(int first, int second, int testNum) {
         printf("TEST %d FAILED. Expected: %d, got: %d\n", testNum, first, second);
         return 0;
     }
-}
-void runTests() {
+}*/
+/*void runTests() {
     //BIT SHIFTING
     int bitTestTotal = 0;
 
@@ -543,7 +606,7 @@ void runTests() {
     genTestTotal += assertEqual(0, generateNewRow(0,0,0,6), 46);
 
     if (genTestTotal == 14) printf("All generate row tests pass.\n");
-}
+}*/
 /////////////////////////////////////////////////////////////////////////////////////////
 //
 // Write pixel stream from channel c_in to PGM image file
@@ -641,7 +704,7 @@ chan stateToOrientation, stateToDistributor;
 par {
     on tile[0]: i2c_master(i2c, 1, p_scl, p_sda, 10);                    //server thread providing orientation data
     on tile[0]: orientation(i2c[0], stateToOrientation);                 //client thread reading orientation data
-    on tile[1]: DataInStream("test.pgm", c_inIO);                           //thread to read in a PGM image
+    on tile[1]: DataInStream("512x512.pgm", c_inIO);                           //thread to read in a PGM image
     on tile[1]: DataOutStream("testout.pgm", c_outIO);                        //thread to write out a PGM image
     on tile[0]: stateManager(stateToOrientation, stateToDistributor);
     on tile[0]: distributor(c_inIO, c_outIO, stateToDistributor);        //thread to coordinate work on image
