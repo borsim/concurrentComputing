@@ -7,14 +7,15 @@
 #include "pgmIO.h"
 #include "i2c.h"
 
+#define IN_FILE_NAME "128x128.pgm"
+#define OUT_FILE_NAME "testout.pgm"
 
-
-#define  IMHT 512                  //image height
-#define  IMWD 512                  //image width
+#define  IMHT 128                  //image height
+#define  IMWD 128                  //image width
 #define  PROCESS_THREAD_COUNT 4
-#define  ROWS_PER_THREAD 128
-#define  NUM_INTS_PER_ROW 16
-#define  MAX_ITERATIONS 10          // 0 to make it run indefinitely
+#define  ROWS_PER_THREAD 32
+#define  NUM_INTS_PER_ROW 4
+#define  MAX_ITERATIONS 0          // 0 to make it run indefinitely
 
 struct carry {
     unsigned int value;
@@ -115,6 +116,10 @@ void stateManager(chanend fromAcc, chanend toDistributor) {
 /////////////////////////////////////////////////////////////////////////////////////////
 void distributor(chanend c_in, chanend c_out, chanend fromStateManager)
 {
+  timer t;
+  unsigned int time = 0;
+  unsigned int newTime = 0;
+  unsigned int overflows = 0;
   unsigned int numRoundsProcessed = 0;
   uchar val;
   //Starting up and wait for tilting of the xCore-200 Explorer
@@ -157,6 +162,16 @@ void distributor(chanend c_in, chanend c_out, chanend fromStateManager)
           }
           while (1) {
               fromStateManager :> state;
+              t :> newTime;
+              if (time > newTime) overflows++;
+              time = newTime;
+
+//              select{
+//                  case t when timerafter (time + 100000) :> newTime :
+//                      time = newTime;
+//                      break;
+//              }
+
               switch (state) {
                   case 0:
                       if (led1On == 1) led1On = 0;
@@ -213,7 +228,13 @@ void distributor(chanend c_in, chanend c_out, chanend fromStateManager)
                       }
                       printf("Number of processing rounds completed: %d \n", numRoundsProcessed);
                       printf("Number of live cells: %d \n", numLiveCells);
-                      //TODO printf("Processing time elapsed since read-in: %d seconds. \n", processingTimeElapsed);
+                      unsigned int stime = overflows * ( INT_MAX / 100000000) + newTime / 100000000;
+                      unsigned int mstime = (overflows * ( INT_MAX % 100000000) + newTime % 100000000)/ 100000;
+                      if (mstime > 1000) {
+                          stime += mstime / 1000;
+                          mstime = mstime % 1000;
+                      }
+                      printf("Processing time elapsed since read-in: %d seconds %d milliseconds. \n", stime, mstime);
                       for (int m = 0; m < PROCESS_THREAD_COUNT; m++) {
                           distributorChannels[m] <: state;
                       }
@@ -744,8 +765,8 @@ chan stateToOrientation, stateToDistributor;
 par {
     on tile[0]: i2c_master(i2c, 1, p_scl, p_sda, 10);                    //server thread providing orientation data
     on tile[0]: orientation(i2c[0], stateToOrientation);                 //client thread reading orientation data
-    on tile[1]: DataInStream("512x512.pgm", c_inIO);                           //thread to read in a PGM image
-    on tile[1]: DataOutStream("testout.pgm", c_outIO);                        //thread to write out a PGM image
+    on tile[1]: DataInStream(IN_FILE_NAME, c_inIO);                           //thread to read in a PGM image
+    on tile[1]: DataOutStream(OUT_FILE_NAME, c_outIO);                        //thread to write out a PGM image
     on tile[0]: stateManager(stateToOrientation, stateToDistributor);
     on tile[0]: distributor(c_inIO, c_outIO, stateToDistributor);        //thread to coordinate work on image
   }
