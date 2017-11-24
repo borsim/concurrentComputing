@@ -111,6 +111,7 @@ void stateManager(chanend fromAcc, chanend toDistributor) {
 /////////////////////////////////////////////////////////////////////////////////////////
 void distributor(chanend c_in, chanend c_out, chanend fromStateManager)
 {
+  unsigned int numRoundsProcessed = 0;
   uchar val;
   //Starting up and wait for tilting of the xCore-200 Explorer
   printf( "ProcessImage: Start, size = %dx%d\n", IMHT, IMWD );
@@ -188,8 +189,27 @@ void distributor(chanend c_in, chanend c_out, chanend fromStateManager)
                       }
                       break;
                   case 2:
+                      unsigned int numLiveCells = 0;
                       ledPattern = 8;
                       leds <: ledPattern;
+                      for (int j = 0; j < PROCESS_THREAD_COUNT; j++) {
+                          for (int k = 0; k < ROWS_PER_THREAD; k++) {
+                              for (int l = 0; l < NUM_INTS_PER_ROW; l++) {
+                                  unsigned int currentRowPart = 0;
+                                  distributorChannels[j] :> currentRowPart;
+                                  int maxIntSize = 32;
+                                  if (IMWD < 32) maxIntSize = IMWD;
+                                  for( int x = 0; x < maxIntSize; x++ ) {
+                                      char bitVal = (currentRowPart & (1 << (maxIntSize-1))) >> (maxIntSize-1); // Check cell at the start (most significant part) of the int
+                                      if (bitVal == 1) numLiveCells += 1;
+                                      currentRowPart = currentRowPart << 1;                                     // Shift int to the left
+                                  }
+                              }
+                          }
+                      }
+                      printf("Number of processing rounds completed: %d \n", numRoundsProcessed);
+                      printf("Number of live cells: %d \n", numLiveCells);
+                      //TODO printf("Processing time elapsed since read-in: %d seconds. \n", processingTimeElapsed);
                       for (int m = 0; m < PROCESS_THREAD_COUNT; m++) {
                           distributorChannels[m] <: state;
                       }
@@ -203,6 +223,7 @@ void distributor(chanend c_in, chanend c_out, chanend fromStateManager)
                       }
                       break;
               }
+              numRoundsProcessed += 1;
           }
       }
   }
@@ -302,6 +323,11 @@ void processLargeGame(char workerID, chanend fromDistributor, chanend topChannel
                 }
                 break;
             case 2:
+                for (int j = 1; j <= ROWS_PER_THREAD; j++) {
+                    for (int d = 0; d < NUM_INTS_PER_ROW; d++) {
+                        fromDistributor <: newRowData[j][d];
+                    }
+                }
                 unsigned char delayed = 0;
                 while (delayed != 3) {
                     fromDistributor :> delayed;
