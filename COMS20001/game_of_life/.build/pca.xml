@@ -436,12 +436,10 @@
   </arg>
   <arg num="1" specialize="false">
     <values>
-      <value type="unknown"/>
     </values>
   </arg>
   <arg num="2" specialize="false">
     <values>
-      <value type="unknown"/>
     </values>
   </arg>
 </fInfo>
@@ -475,7 +473,6 @@
   </arg>
   <arg num="2" specialize="false">
     <values>
-      <value type="unknown"/>
     </values>
   </arg>
 </fInfo>
@@ -521,7 +518,6 @@
   </arg>
   <arg num="1" specialize="false">
     <values>
-      <value type="unknown"/>
     </values>
   </arg>
 </fInfo>
@@ -533,7 +529,6 @@
   </arg>
   <arg num="1" specialize="false">
     <values>
-      <value type="unknown"/>
     </values>
   </arg>
 </fInfo>
@@ -607,7 +602,7 @@
   </arg>
   <arg num="4" specialize="true">
     <values>
-      <value type="intval"><intval isSigned="true" val="128"/></value>
+      <value type="intval"><intval isSigned="true" val="64"/></value>
     </values>
   </arg>
  <specializations>
@@ -616,29 +611,25 @@
     <arg num="1"><values><value type="unknown"/></values></arg>
     <arg num="2"><values><value type="unknown"/></values></arg>
     <arg num="3"><values><value type="unknown"/></values></arg>
-    <arg num="4"><values><value type="intval"><intval isSigned="true" val="128"/></value></values></arg>
+    <arg num="4"><values><value type="intval"><intval isSigned="true" val="64"/></value></values></arg>
    </specialization>
  </specializations>
 </fInfo>
 <fInfo name="generateNewRow" global="true" specialize="false" noreturn="false" doNotSpecialize="false" numParams="4">
   <arg num="0" specialize="false">
     <values>
-      <value type="unknown"/>
     </values>
   </arg>
   <arg num="1" specialize="false">
     <values>
-      <value type="unknown"/>
     </values>
   </arg>
   <arg num="2" specialize="false">
     <values>
-      <value type="unknown"/>
     </values>
   </arg>
   <arg num="3" specialize="false">
     <values>
-      <value type="unknown"/>
     </values>
   </arg>
 </fInfo>

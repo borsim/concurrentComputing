@@ -9,11 +9,12 @@
 
 
 
-#define  IMHT 128                  //image height
-#define  IMWD 128                  //image width
+#define  IMHT 512                  //image height
+#define  IMWD 512                  //image width
 #define  PROCESS_THREAD_COUNT 4
 #define  ROWS_PER_THREAD 128
 #define  NUM_INTS_PER_ROW 16
+#define  MAX_ITERATIONS 10          // 0 to make it run indefinitely
 
 struct carry {
     unsigned int value;
@@ -85,6 +86,7 @@ void DataInStream(char infname[], chanend c_out)
 void stateManager(chanend fromAcc, chanend toDistributor) {
     unsigned char state = 0;
     unsigned char previousState = 0;
+    unsigned int numRoundsProcessed = 0;
     int pressedButton = 0;
 
         buttons when pinseq(13)  :> pressedButton;
@@ -97,9 +99,11 @@ void stateManager(chanend fromAcc, chanend toDistributor) {
             state = 1;
             pressedButton = 0;
         }
+        numRoundsProcessed += 1;
+        if (numRoundsProcessed == MAX_ITERATIONS) state = 1;
         previousState = state;
         toDistributor <: state;
-        printf("Current state: %d\n", state);
+        //printf("Current state: %d\n", state);
     }
 }
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -285,7 +289,7 @@ void processLargeGame(char workerID, chanend fromDistributor, chanend topChannel
     unsigned int newRowData[ROWS_PER_THREAD + 2][NUM_INTS_PER_ROW];
     for (int j = 1; j <= ROWS_PER_THREAD; j++) {
         for (int i = 0; i < NUM_INTS_PER_ROW; i++) {
-            fromDistributor :> newRowData[j][i];
+            fromDistributor :> oldRowData[j][NUM_INTS_PER_ROW - i - 1];
         }
     }
     while(1) {
@@ -442,11 +446,17 @@ void addToLargeRow(char* original, unsigned int added[NUM_INTS_PER_ROW], int tot
     }
 }
 void addThreeLargeRows(char* original, unsigned int added[NUM_INTS_PER_ROW], int totalLength) {
+    unsigned int selfCopyLeft[NUM_INTS_PER_ROW];
+    unsigned int selfCopyRight[NUM_INTS_PER_ROW];
+    for (int x = 0; x < NUM_INTS_PER_ROW; x++) {
+        selfCopyLeft[x] = added[x];
+        selfCopyRight[x] = added[x];
+    }
+    leftShiftLargeRow(totalLength, selfCopyLeft);
+    rightShiftLargeRow(totalLength, selfCopyRight);
+    addToLargeRow(original, selfCopyLeft, totalLength);
+    addToLargeRow(original, selfCopyRight,totalLength);
     addToLargeRow(original, added,        totalLength);
-    leftShiftLargeRow(totalLength, added);
-    addToLargeRow(original, added,        totalLength);
-    leftShiftLargeRow(totalLength, added);
-    rightShiftLargeRow(totalLength, added);
 }
 void addThreeRows(char* original, unsigned int added, int length) {
     unsigned int leftShifted = circularLeftShift(added, length);
@@ -470,17 +480,26 @@ void generateNewLargeRow(unsigned int top[NUM_INTS_PER_ROW], unsigned int self[N
         addToLargeRow(newRowCount, selfCopyRight, totalLength);
         addThreeLargeRows(newRowCount, top, totalLength);
         addThreeLargeRows(newRowCount, bottom, totalLength);
+
         unsigned int currentLength = 0;
         char pretendNewRow[32];
         for (int i = 0; i < NUM_INTS_PER_ROW; i++) {
-            if (totalLength % 32 == 0) currentLength = 32;
+            if (totalLength >= 32) currentLength = 32;
             else currentLength = totalLength % 32;
             totalLength -= currentLength;
             for (int j = 0; j < 32; j++) {
                 pretendNewRow[j] = newRowCount[i * 32 + j];
             }
-            unsigned int newRowResult = generateNewRow(top[i], self[i], bottom[i], currentLength);
-            result[i] = newRowResult;
+            unsigned int selfCopy = self[NUM_INTS_PER_ROW - i - 1];
+            unsigned int newRow = 0;
+            for (int p = 0; p < currentLength; p++) {
+                unsigned int currentState = (selfCopy & (1 << (currentLength-1))) >> (currentLength-1);
+                char result = determineLifeState(currentState, pretendNewRow[currentLength-p-1]);
+                if (result == 1) newRow = newRow | 1;
+                if (p != currentLength-1) newRow = newRow << 1;
+                selfCopy = selfCopy << 1;
+            }
+            result[NUM_INTS_PER_ROW - i - 1] = newRow;
         }
 }
 unsigned int generateNewRow(unsigned int top, unsigned int self, unsigned int bottom, int length) {
