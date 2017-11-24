@@ -1,4 +1,4 @@
-15:29:00 **** Incremental Build of configuration Default for project game_of_life ****
+16:33:35 **** Incremental Build of configuration Default for project game_of_life ****
 xmake all 
 Checking build modules
 Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
@@ -8,5 +8,5 @@ Compiling main.xc
 Creating game_of_life.xe
 Build Complete
 
-15:29:02 Build Finished (took 2s.430ms)
+16:33:37 Build Finished (took 2s.20ms)
 

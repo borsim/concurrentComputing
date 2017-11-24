@@ -7,14 +7,14 @@
 #include "pgmIO.h"
 #include "i2c.h"
 
-#define IN_FILE_NAME "128x128.pgm"
+#define IN_FILE_NAME "64x64.pgm"
 #define OUT_FILE_NAME "testout.pgm"
 
-#define  IMHT 128                  //image height
-#define  IMWD 128                  //image width
+#define  IMHT 64                  //image height
+#define  IMWD 64                  //image width
 #define  PROCESS_THREAD_COUNT 4
-#define  ROWS_PER_THREAD 32
-#define  NUM_INTS_PER_ROW 4
+#define  ROWS_PER_THREAD 16
+#define  NUM_INTS_PER_ROW 2
 #define  MAX_ITERATIONS 0          // 0 to make it run indefinitely
 
 struct carry {
@@ -121,6 +121,7 @@ void distributor(chanend c_in, chanend c_out, chanend fromStateManager)
   unsigned int newTime = 0;
   unsigned int overflows = 0;
   unsigned int numRoundsProcessed = 0;
+  int statusPrinted = 0;
   uchar val;
   //Starting up and wait for tilting of the xCore-200 Explorer
   printf( "ProcessImage: Start, size = %dx%d\n", IMHT, IMWD );
@@ -165,13 +166,6 @@ void distributor(chanend c_in, chanend c_out, chanend fromStateManager)
               t :> newTime;
               if (time > newTime) overflows++;
               time = newTime;
-
-//              select{
-//                  case t when timerafter (time + 100000) :> newTime :
-//                      time = newTime;
-//                      break;
-//              }
-
               switch (state) {
                   case 0:
                       if (led1On == 1) led1On = 0;
@@ -211,32 +205,35 @@ void distributor(chanend c_in, chanend c_out, chanend fromStateManager)
                       unsigned int numLiveCells = 0;
                       ledPattern = 8;
                       leds <: ledPattern;
-                      for (int j = 0; j < PROCESS_THREAD_COUNT; j++) {
-                          for (int k = 0; k < ROWS_PER_THREAD; k++) {
-                              for (int l = 0; l < NUM_INTS_PER_ROW; l++) {
-                                  unsigned int currentRowPart = 0;
-                                  distributorChannels[j] :> currentRowPart;
-                                  int maxIntSize = 32;
-                                  if (IMWD < 32) maxIntSize = IMWD;
-                                  for( int x = 0; x < maxIntSize; x++ ) {
-                                      char bitVal = (currentRowPart & (1 << (maxIntSize-1))) >> (maxIntSize-1); // Check cell at the start (most significant part) of the int
-                                      if (bitVal == 1) numLiveCells += 1;
-                                      currentRowPart = currentRowPart << 1;                                     // Shift int to the left
+                      for (int m = 0; m < PROCESS_THREAD_COUNT; m++) {
+                          distributorChannels[m] <: state;
+                      }
+                      if (statusPrinted == 0) {
+                          for (int j = 0; j < PROCESS_THREAD_COUNT; j++) {
+                              for (int k = 0; k < ROWS_PER_THREAD; k++) {
+                                  for (int l = 0; l < NUM_INTS_PER_ROW; l++) {
+                                      unsigned int currentRowPart = 0;
+                                      distributorChannels[j] :> currentRowPart;
+                                      int maxIntSize = 32;
+                                      if (IMWD < 32) maxIntSize = IMWD;
+                                      for( int x = 0; x < maxIntSize; x++ ) {
+                                          char bitVal = (currentRowPart & (1 << (maxIntSize-1))) >> (maxIntSize-1); // Check cell at the start (most significant part) of the int
+                                          if (bitVal == 1) numLiveCells += 1;
+                                          currentRowPart = currentRowPart << 1;                                     // Shift int to the left
+                                      }
                                   }
                               }
                           }
-                      }
-                      printf("Number of processing rounds completed: %d \n", numRoundsProcessed);
-                      printf("Number of live cells: %d \n", numLiveCells);
-                      unsigned int stime = overflows * ( INT_MAX / 100000000) + newTime / 100000000;
-                      unsigned int mstime = (overflows * ( INT_MAX % 100000000) + newTime % 100000000)/ 100000;
-                      if (mstime > 1000) {
-                          stime += mstime / 1000;
-                          mstime = mstime % 1000;
-                      }
-                      printf("Processing time elapsed since read-in: %d seconds %d milliseconds. \n", stime, mstime);
-                      for (int m = 0; m < PROCESS_THREAD_COUNT; m++) {
-                          distributorChannels[m] <: state;
+                          statusPrinted = 1;
+                          printf("Number of processing rounds completed: %d \n", numRoundsProcessed);
+                          printf("Number of live cells: %d \n", numLiveCells);
+                          unsigned int stime = overflows * ( INT_MAX / 100000000) + newTime / 100000000;
+                          unsigned int mstime = (overflows * ( INT_MAX % 100000000) + newTime % 100000000)/ 100000;
+                          if (mstime > 1000) {
+                              stime += mstime / 1000;
+                              mstime = mstime % 1000;
+                          }
+                          printf("Processing time elapsed since read-in: %d seconds %d milliseconds. \n", stime, mstime);
                       }
                       break;
                   case 3:
@@ -246,6 +243,7 @@ void distributor(chanend c_in, chanend c_out, chanend fromStateManager)
                       for (int n = 0; n < PROCESS_THREAD_COUNT; n++) {
                           distributorChannels[n] <: state;
                       }
+                      statusPrinted = 0;
                       break;
               }
               numRoundsProcessed += 1;
