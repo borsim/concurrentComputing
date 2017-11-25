@@ -119,13 +119,14 @@ void distributor(chanend c_in, chanend c_out, chanend fromStateManager)
   timer t;
   unsigned int time = 0;
   unsigned int newTime = 0;
+  unsigned int initTime = 0;
   unsigned int overflows = 0;
   unsigned int numRoundsProcessed = 0;
   int statusPrinted = 0;
   uchar val;
   //Starting up and wait for tilting of the xCore-200 Explorer
   printf( "ProcessImage: Start, size = %dx%d\n", IMHT, IMWD );
-  printf( "Waiting for Board Tilt...\n" );
+  printf( "Waiting for Button Press...\n" );
   fromStateManager :> char value;
 
   printf( "Processing...\n" );
@@ -164,6 +165,11 @@ void distributor(chanend c_in, chanend c_out, chanend fromStateManager)
           while (1) {
               fromStateManager :> state;
               t :> newTime;
+              if (numRoundsProcessed == 0) {
+                  initTime = newTime;
+                  printf("\nSET HERE\n");
+              }
+              //printf("initTime %u, newTime %u .\n", initTime, newTime);
               if (time > newTime) overflows++;
               time = newTime;
               switch (state) {
@@ -227,13 +233,13 @@ void distributor(chanend c_in, chanend c_out, chanend fromStateManager)
                           statusPrinted = 1;
                           printf("Number of processing rounds completed: %d \n", numRoundsProcessed);
                           printf("Number of live cells: %d \n", numLiveCells);
-                          unsigned int stime = overflows * ( INT_MAX / 100000000) + newTime / 100000000;
-                          unsigned int mstime = (overflows * ( INT_MAX % 100000000) + newTime % 100000000)/ 100000;
+                          unsigned int stime = overflows * ( UINT_MAX / 100000000) + newTime / 100000000 - initTime / 100000000;
+                          unsigned int mstime = (overflows * ( UINT_MAX % 100000000) + (newTime % 100000000) - initTime / 100000000)/ 100000;
                           if (mstime > 1000) {
                               stime += mstime / 1000;
                               mstime = mstime % 1000;
                           }
-                          printf("Processing time elapsed since read-in: %d seconds %d milliseconds. \n", stime, mstime);
+                          printf("Processing time elapsed since read-in: %u seconds %u milliseconds. \n", stime, mstime);
                       }
                       break;
                   case 3:
