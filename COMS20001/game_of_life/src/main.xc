@@ -10,12 +10,12 @@
 #define IN_FILE_NAME "64x64.pgm"
 #define OUT_FILE_NAME "testout.pgm"
 
-#define  IMHT 64                  //image height
+#define  IMHT 64                   //image height
 #define  IMWD 64                  //image width
 #define  PROCESS_THREAD_COUNT 4
 #define  ROWS_PER_THREAD 16
 #define  NUM_INTS_PER_ROW 2
-#define  MAX_ITERATIONS 0          // 0 to make it run indefinitely
+#define  MAX_ITERATIONS 2          // 0 to make it run indefinitely
 
 struct carry {
     unsigned int value;
@@ -139,7 +139,8 @@ void distributor(chanend c_in, chanend c_out, chanend fromStateManager)
   par {
       // Worker threads
       par (int i = 0; i < PROCESS_THREAD_COUNT; i++) {
-            processLargeGame(i, distributorChannels[i], rowChannels[i],rowChannels[(i+1)%PROCESS_THREAD_COUNT]);
+          if (IMWD <= 32) processGame(i, distributorChannels[i], rowChannels[i],rowChannels[(i+1)%PROCESS_THREAD_COUNT]);
+          else  processLargeGame(i, distributorChannels[i], rowChannels[i],rowChannels[(i+1)%PROCESS_THREAD_COUNT]);
       }
       // Distributor state handling
       {
@@ -257,7 +258,7 @@ void distributor(chanend c_in, chanend c_out, chanend fromStateManager)
       }
   }
 }
-/*void processGame(char workerID, chanend fromDistributor, chanend topChannel, chanend bottomChannel) {
+void processGame(char workerID, chanend fromDistributor, chanend topChannel, chanend bottomChannel) {
     unsigned int oldRowData[ROWS_PER_THREAD + 2];
     unsigned int newRowData[ROWS_PER_THREAD + 2];
     for (int j = 1; j <= ROWS_PER_THREAD; j++) {
@@ -308,7 +309,7 @@ void distributor(chanend c_in, chanend c_out, chanend fromStateManager)
         // 2 -> stop until...
         // 3 -> this is received; start processing again
     }
-}*/
+}
 void processLargeGame(char workerID, chanend fromDistributor, chanend topChannel, chanend bottomChannel) {
     unsigned int oldOldRowData[NUM_INTS_PER_ROW];
     unsigned int oldRowData[NUM_INTS_PER_ROW];
