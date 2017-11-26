@@ -1,12 +1,8 @@
-16:33:35 **** Incremental Build of configuration Default for project game_of_life ****
-xmake all 
-Checking build modules
-Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
-Analyzing main.xc
-Creating dependencies for main.xc
-Compiling main.xc
-Creating game_of_life.xe
-Build Complete
+19:44:09 **** Clean-only build of configuration Default for project game_of_life ****
+xmake clean 
+Cleaning /home/bmiki/CS/Concurrent Computing/workspace/COMS20001/game_of_life
+rm -rf './bin/'
+rm -rf '.build'
 
-16:33:37 Build Finished (took 2s.20ms)
+19:44:09 Build Finished (took 261ms)
 

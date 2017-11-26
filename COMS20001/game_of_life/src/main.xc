@@ -310,37 +310,46 @@ void distributor(chanend c_in, chanend c_out, chanend fromStateManager)
     }
 }*/
 void processLargeGame(char workerID, chanend fromDistributor, chanend topChannel, chanend bottomChannel) {
-    unsigned int oldRowData[ROWS_PER_THREAD + 2][NUM_INTS_PER_ROW];
+    unsigned int oldOldRowData[NUM_INTS_PER_ROW];
+    unsigned int oldRowData[NUM_INTS_PER_ROW];
     unsigned int newRowData[ROWS_PER_THREAD + 2][NUM_INTS_PER_ROW];
     for (int j = 1; j <= ROWS_PER_THREAD; j++) {
         for (int i = 0; i < NUM_INTS_PER_ROW; i++) {
-            fromDistributor :> oldRowData[j][NUM_INTS_PER_ROW - i - 1];
+            fromDistributor :> newRowData[j][NUM_INTS_PER_ROW - i - 1];
         }
     }
     while(1) {
         if (workerID % 2 == 0) {
             for (int h = 0; h < NUM_INTS_PER_ROW; h++) {
-                topChannel    <: oldRowData[1][h];
-                bottomChannel <: oldRowData[ROWS_PER_THREAD][h];
-                bottomChannel :> oldRowData[ROWS_PER_THREAD + 1][h];
-                topChannel    :> oldRowData[0][h];
+                topChannel    <: newRowData[1][h];
+                bottomChannel <: newRowData[ROWS_PER_THREAD][h];
+                bottomChannel :> newRowData[ROWS_PER_THREAD + 1][h];
+                topChannel    :> newRowData[0][h];
             }
         } else {
             for (int g = 0; g < NUM_INTS_PER_ROW; g++) {
-                bottomChannel :> oldRowData[ROWS_PER_THREAD + 1][g];
-                topChannel    :> oldRowData[0][g];
-                topChannel    <: oldRowData[1][g];
-                bottomChannel <: oldRowData[ROWS_PER_THREAD][g];
+                bottomChannel :> newRowData[ROWS_PER_THREAD + 1][g];
+                topChannel    :> newRowData[0][g];
+                topChannel    <: newRowData[1][g];
+                bottomChannel <: newRowData[ROWS_PER_THREAD][g];
             }
         }
-        for (int k = 1; k <= ROWS_PER_THREAD; k++) {
-            generateNewLargeRow(oldRowData[k-1], oldRowData[k], oldRowData[k+1], newRowData[k],IMWD);
+        for (int u = 0; u < NUM_INTS_PER_ROW; u++) {
+                oldOldRowData[u] = newRowData[0][u]; // Copy the contents of the 0th line to make the next loop have no exceptions
+                oldRowData[u] = newRowData[1][u];    // Copy the contents of the first line to be modified to a new variable
         }
-        for (int y = 0; y < ROWS_PER_THREAD; y++) {
+        for (int k = 1; k <= ROWS_PER_THREAD; k++) {
+            generateNewLargeRow(oldOldRowData, oldRowData, newRowData[k+1], newRowData[k],IMWD);
+            for (int v = 0; v < NUM_INTS_PER_ROW; v++) {
+                    oldOldRowData[v] = oldRowData[v];     // Push old row data one behind
+                    oldRowData[v] = newRowData[k + 1][v]; // Get new "oldRowData" that will become the current row once the loop goes back
+            }
+        }
+        /*for (int y = 0; y < ROWS_PER_THREAD; y++) {
             for (int z = 0; z < NUM_INTS_PER_ROW; z++) {
                 oldRowData[y][z] = newRowData[y][z];
             }
-        }
+        }*/
         unsigned char nextCommand = 0;
         fromDistributor :> nextCommand;
         switch (nextCommand) {
