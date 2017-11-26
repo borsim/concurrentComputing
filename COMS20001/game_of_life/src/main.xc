@@ -395,11 +395,11 @@ carry carryLeftShift(unsigned int input, unsigned int carryIn, int length) {
 }
 void leftShiftLargeRow(int totalLength, unsigned int row[NUM_INTS_PER_ROW]) {
     int currentLength = 0;
-    int i = NUM_INTS_PER_ROW-1;
+    int i = 0;
     carry currentCarry;
     unsigned int lastLength = totalLength % 32;
     if (lastLength == 0) lastLength = 32;
-    unsigned int lastInt = row[0];
+    unsigned int lastInt = row[NUM_INTS_PER_ROW - 1];
     unsigned int carryIn = lastInt >> (lastLength - 1);
     while (totalLength > 0) {
         if (totalLength >= 32) currentLength = 32;
@@ -408,7 +408,7 @@ void leftShiftLargeRow(int totalLength, unsigned int row[NUM_INTS_PER_ROW]) {
         currentCarry = carryLeftShift(row[i], carryIn, currentLength);
         row[i] = currentCarry.value;
         carryIn = currentCarry.carryOut;
-        i -= 1;
+        i += 1;
     }
 }
 // Circular right shift the bits in an int value that uses 'size' number of bits
@@ -432,10 +432,10 @@ carry carryRightShift(unsigned int input, unsigned int carryIn, int length) {
 }
 void rightShiftLargeRow(int totalLength, unsigned int row[NUM_INTS_PER_ROW]) {
     int currentLength = 0;
-    int i = 0;
+    int i = NUM_INTS_PER_ROW - 1;
     carry currentCarry;
-    unsigned int lastInt = row[NUM_INTS_PER_ROW - 1];
-    unsigned int carryIn = lastInt & 1;
+    unsigned int firstInt = row[0];
+    unsigned int carryIn = firstInt & 1;
     while (totalLength > 0) {
         if (totalLength % 32 == 0) currentLength = 32;
         else currentLength = totalLength % 32;
@@ -443,7 +443,7 @@ void rightShiftLargeRow(int totalLength, unsigned int row[NUM_INTS_PER_ROW]) {
         currentCarry = carryRightShift(row[i], carryIn, currentLength);
         row[i] = currentCarry.value;
         carryIn = currentCarry.carryOut;
-        i += 1;
+        i -= 1;
     }
 }
 char determineLifeState(unsigned int currentState, char counter) {
