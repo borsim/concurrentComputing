@@ -3,3 +3,378 @@ xmake clean
 Cleaning /home/bmiki/CS/Concurrent Computing/workspace/COMS20001/game_of_life
 rm -rf './bin/'
 rm -rf '.build'
+15:02:08 **** Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing pgmIO.c
+Analyzing debug_printf.c
+Analyzing main.xc
+Analyzing i2c_master_async.xc
+/home/bmiki/CS/Concurrent Computing/workspace/COMS20001/lib_i2c/src/i2c_master_async.xc:126:26: warning: argument 1 of `i2c_master_async_aux' slices interface preventing analysis of its parallel usage [-Wunusual-code]
+    i2c_master_async_aux(i, n, i2c_dist[0], max_transaction_size);
+                         ^
+Analyzing i2c_master_ext.xc
+Analyzing i2c_master_single_port.xc
+Analyzing i2c_master.xc
+Analyzing i2c_slave.xc
+Analyzing xassert.xc
+Propagating analysis
+Creating dependencies for xassert.xc
+Creating dependencies for i2c_slave.xc
+Creating dependencies for i2c_master.xc
+Creating dependencies for i2c_master_single_port.xc
+Creating dependencies for i2c_master_ext.xc
+Creating dependencies for i2c_master_async.xc
+Creating dependencies for main.xc
+Creating dependencies for debug_printf.c
+Creating dependencies for pgmIO.c
+Compiling pgmIO.c
+Compiling debug_printf.c
+Compiling main.xc
+Compiling i2c_master_async.xc
+/home/bmiki/CS/Concurrent Computing/workspace/COMS20001/lib_i2c/src/i2c_master_async.xc:126:26: warning: argument 1 of `i2c_master_async_aux' slices interface preventing analysis of its parallel usage [-Wunusual-code]
+    i2c_master_async_aux(i, n, i2c_dist[0], max_transaction_size);
+                         ^
+Compiling i2c_master_ext.xc
+Compiling i2c_master_single_port.xc
+Compiling i2c_master.xc
+Compiling i2c_slave.xc
+Compiling xassert.xc
+Creating game_of_life.xe
+Build Complete
+15:02:39 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:11:51 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:119:3: error: unknown function identifier `runTests' (possibly missing prototype?)
+  runTests();
+  ^
+../src/main.xc:693:40: error: incompatible type for argument 2 of `addToLargeRow'
+    addToLargeRow(genLargeTestCounter, genLargeTest, 64);
+                                       ^~~~~~~~~~~~
+../src/main.xc:693:40: error: source array smaller than destination for argument 2 of `addToLargeRow'
+    addToLargeRow(genLargeTestCounter, genLargeTest, 64);
+                                       ^~~~~~~~~~~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:12:44 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:119:3: error: unknown function identifier `runTests' (possibly missing prototype?)
+  runTests();
+  ^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:13:16 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:14:36 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:16:15 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:16:58 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:17:41 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:697:23: error: incompatible type for argument 1 of `leftShiftLargeRow'
+    leftShiftLargeRow(genLargeTest, 128);
+                      ^~~~~~~~~~~~
+../src/main.xc:697:37: error: incompatible type for argument 2 of `leftShiftLargeRow'
+    leftShiftLargeRow(genLargeTest, 128);
+                                    ^~~
+../src/main.xc:697:37: error: source array smaller than destination for argument 2 of `leftShiftLargeRow'
+    leftShiftLargeRow(genLargeTest, 128);
+                                    ^~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:18:26 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:19:09 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:20:13 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:20:45 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:22:03 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:22:42 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:27:00 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:34:52 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:38:40 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:42:34 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:43:10 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:48:35 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:54:39 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:57:53 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+16:05:59 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+16:12:03 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+16:12:34 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+16:15:01 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:694:40: error: incompatible type for argument 2 of `addToLargeRow'
+    addToLargeRow(genLargeTestCounter, genLargeTest, 128);
+                                       ^~~~~~~~~~~~
+../src/main.xc:694:40: error: source array smaller than destination for argument 2 of `addToLargeRow'
+    addToLargeRow(genLargeTestCounter, genLargeTest, 128);
+                                       ^~~~~~~~~~~~
+../src/main.xc:697:28: error: incompatible type for argument 2 of `leftShiftLargeRow'
+    leftShiftLargeRow(128, genLargeTest);
+                           ^~~~~~~~~~~~
+../src/main.xc:697:28: error: source array smaller than destination for argument 2 of `leftShiftLargeRow'
+    leftShiftLargeRow(128, genLargeTest);
+                           ^~~~~~~~~~~~
+../src/main.xc:698:40: error: incompatible type for argument 2 of `addToLargeRow'
+    addToLargeRow(genLargeTestCounter, genLargeTest, 128);
+                                       ^~~~~~~~~~~~
+../src/main.xc:698:40: error: source array smaller than destination for argument 2 of `addToLargeRow'
+    addToLargeRow(genLargeTestCounter, genLargeTest, 128);
+                                       ^~~~~~~~~~~~
+../src/main.xc:701:29: error: incompatible type for argument 2 of `rightShiftLargeRow'
+    rightShiftLargeRow(128, genLargeTest);
+                            ^~~~~~~~~~~~
+../src/main.xc:701:29: error: source array smaller than destination for argument 2 of `rightShiftLargeRow'
+    rightShiftLargeRow(128, genLargeTest);
+                            ^~~~~~~~~~~~
+../src/main.xc:702:29: error: incompatible type for argument 2 of `rightShiftLargeRow'
+    rightShiftLargeRow(128, genLargeTest);
+                            ^~~~~~~~~~~~
+../src/main.xc:702:29: error: source array smaller than destination for argument 2 of `rightShiftLargeRow'
+    rightShiftLargeRow(128, genLargeTest);
+                            ^~~~~~~~~~~~
+../src/main.xc:703:40: error: incompatible type for argument 2 of `addToLargeRow'
+    addToLargeRow(genLargeTestCounter, genLargeTest, 128);
+                                       ^~~~~~~~~~~~
+../src/main.xc:703:40: error: source array smaller than destination for argument 2 of `addToLargeRow'
+    addToLargeRow(genLargeTestCounter, genLargeTest, 128);
+                                       ^~~~~~~~~~~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+16:15:20 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+16:24:20 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+16:56:01 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+16:59:08 **** Clean-only build of configuration Default for project game_of_life ****
+xmake clean 
+Cleaning /home/bmiki/CS/Concurrent Computing/workspace/COMS20001/game_of_life
+rm -rf './bin/'
+rm -rf '.build'
+16:59:08 **** Clean-only build of configuration Default for project lib_i2c ****
+xmake -f .makefile clean 
+** Module only - only builds as part of application **
+16:59:08 **** Clean-only build of configuration Default for project lib_logging ****
+xmake -f .makefile clean 
+** Module only - only builds as part of application **
+16:59:09 **** Clean-only build of configuration Default for project lib_xassert ****
+xmake -f .makefile clean 
+** Module only - only builds as part of application **

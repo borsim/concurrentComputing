@@ -7,15 +7,15 @@
 #include "pgmIO.h"
 #include "i2c.h"
 
-#define IN_FILE_NAME "64x64.pgm"
+#define IN_FILE_NAME "test.pgm"
 #define OUT_FILE_NAME "testout.pgm"
 
-#define  IMHT 64                  //image height
-#define  IMWD 64                  //image width
+#define  IMHT 16                  //image height
+#define  IMWD 16                  //image width
 #define  PROCESS_THREAD_COUNT 4
-#define  ROWS_PER_THREAD 16
-#define  NUM_INTS_PER_ROW 2
-#define  MAX_ITERATIONS 0          // 0 to make it run indefinitely
+#define  ROWS_PER_THREAD 4
+#define  NUM_INTS_PER_ROW 1
+#define  MAX_ITERATIONS 2          // 0 to make it run indefinitely
 
 struct carry {
     unsigned int value;
@@ -40,6 +40,7 @@ on tile[0]: port p_sda = XS1_PORT_1F;
 #define FXOS8700EQ_OUT_Z_MSB 0x5
 #define FXOS8700EQ_OUT_Z_LSB 0x6
 
+void runTests();
 void processGame(char workerID, chanend fromDistributor, chanend topChannel, chanend bottomChannel);
 unsigned int parseRowToInt(int rowNumber);
 unsigned int generateNewRow(unsigned int top, unsigned int self, unsigned int bottom, int length);
@@ -116,6 +117,7 @@ void stateManager(chanend fromAcc, chanend toDistributor) {
 /////////////////////////////////////////////////////////////////////////////////////////
 void distributor(chanend c_in, chanend c_out, chanend fromStateManager)
 {
+  //runTests();
   timer t;
   unsigned int time = 0;
   unsigned int newTime = 0;
@@ -139,7 +141,8 @@ void distributor(chanend c_in, chanend c_out, chanend fromStateManager)
   par {
       // Worker threads
       par (int i = 0; i < PROCESS_THREAD_COUNT; i++) {
-            processLargeGame(i, distributorChannels[i], rowChannels[i],rowChannels[(i+1)%PROCESS_THREAD_COUNT]);
+          if (IMWD < 32) processGame(i, distributorChannels[i], rowChannels[i],rowChannels[(i+1)%PROCESS_THREAD_COUNT]);
+          else processLargeGame(i, distributorChannels[i], rowChannels[i],rowChannels[(i+1)%PROCESS_THREAD_COUNT]);
       }
       // Distributor state handling
       {
@@ -154,7 +157,7 @@ void distributor(chanend c_in, chanend c_out, chanend fromStateManager)
                             for( int x = 0; x < maxIntSize; x++ ) {                    // Go through each pixel per line
                                 c_in :> val;                                   // Read the pixel value
                                 if (val == 0xFF) currentRow = currentRow | 1;  // Put pixel on the end of the int
-                                currentRow = currentRow << 1;                  // Shift int to the left
+                                if (x != maxIntSize - 1) currentRow = currentRow << 1;                  // Shift int to the left
                             }
                             distributorChannels[j] <: currentRow;
                         }
@@ -257,7 +260,7 @@ void distributor(chanend c_in, chanend c_out, chanend fromStateManager)
       }
   }
 }
-/*void processGame(char workerID, chanend fromDistributor, chanend topChannel, chanend bottomChannel) {
+void processGame(char workerID, chanend fromDistributor, chanend topChannel, chanend bottomChannel) {
     unsigned int oldRowData[ROWS_PER_THREAD + 2];
     unsigned int newRowData[ROWS_PER_THREAD + 2];
     for (int j = 1; j <= ROWS_PER_THREAD; j++) {
@@ -308,7 +311,7 @@ void distributor(chanend c_in, chanend c_out, chanend fromStateManager)
         // 2 -> stop until...
         // 3 -> this is received; start processing again
     }
-}*/
+}
 void processLargeGame(char workerID, chanend fromDistributor, chanend topChannel, chanend bottomChannel) {
     unsigned int oldOldRowData[NUM_INTS_PER_ROW];
     unsigned int oldRowData[NUM_INTS_PER_ROW];
@@ -517,7 +520,7 @@ void generateNewLargeRow(unsigned int top[NUM_INTS_PER_ROW], unsigned int self[N
 
         unsigned int currentLength = 0;
         char pretendNewRow[32];
-        for (int i = 0; i < NUM_INTS_PER_ROW; i++) {
+        for (int i = NUM_INTS_PER_ROW - 1; i >= 0; i--) {
             if (totalLength >= 32) currentLength = 32;
             else currentLength = totalLength % 32;
             totalLength -= currentLength;
@@ -567,7 +570,7 @@ unsigned int generateNewRow(unsigned int top, unsigned int self, unsigned int bo
     return newRow;
 }
 
-/*int assertEqual(int first, int second, int testNum) {
+int assertEqual(int first, int second, int testNum) {
     if (first == second) {
         //printf("TEST %d SUCCESSFUL\n", testNum);
         return 1;
@@ -576,8 +579,8 @@ unsigned int generateNewRow(unsigned int top, unsigned int self, unsigned int bo
         printf("TEST %d FAILED. Expected: %d, got: %d\n", testNum, first, second);
         return 0;
     }
-}*/
-/*void runTests() {
+}
+void runTests() {
     //BIT SHIFTING
     int bitTestTotal = 0;
 
@@ -680,7 +683,34 @@ unsigned int generateNewRow(unsigned int top, unsigned int self, unsigned int bo
     genTestTotal += assertEqual(0, generateNewRow(0,0,0,6), 46);
 
     if (genTestTotal == 14) printf("All generate row tests pass.\n");
-}*/
+
+
+
+    // Generate large row tests for 128x128
+    /*unsigned int genLargeTest0 = 1;
+    unsigned int genLargeTest1 = 1;
+    unsigned int genLargeTest[4] = {genLargeTest0, genLargeTest1, 0, UINT_MAX};
+    char genLargeTestCounter[128];
+    for (int i = 0; i < 128; i++) genLargeTestCounter[i] = 0;
+    addToLargeRow(genLargeTestCounter, genLargeTest, 128);
+    for (int j = 0; j < 128; j++) printf("%d ", genLargeTestCounter[j]);
+    printf("\n");
+    leftShiftLargeRow(128, genLargeTest);
+    addToLargeRow(genLargeTestCounter, genLargeTest, 128);
+    for (int j = 0; j < 128; j++) printf("%d ", genLargeTestCounter[j]);
+    printf("\n");
+    rightShiftLargeRow(128, genLargeTest);
+    rightShiftLargeRow(128, genLargeTest);
+    addToLargeRow(genLargeTestCounter, genLargeTest, 128);
+    for (int j = 0; j < 128; j++) printf("%d ", genLargeTestCounter[j]);
+    printf("\n");
+    assertEqual(2, genLargeTestCounter[0], 47);
+    assertEqual(1, genLargeTestCounter[1], 48);
+    assertEqual(3, genLargeTestCounter[127], 49);
+    assertEqual(1, genLargeTestCounter[31], 50);
+    assertEqual(1, genLargeTestCounter[32], 51);
+    assertEqual(1, genLargeTestCounter[33], 52);*/
+}
 /////////////////////////////////////////////////////////////////////////////////////////
 //
 // Write pixel stream from channel c_in to PGM image file

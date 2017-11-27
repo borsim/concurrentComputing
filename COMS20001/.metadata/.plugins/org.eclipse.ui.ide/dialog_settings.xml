@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<section name="CleanDialogSettings">
+		<item value="565" key="DIALOG_WIDTH"/>
+		<item value="true" key="BUILD_ALL"/>
+		<item value="false" key="TOGGLE_SELECTED"/>
+		<item value="457" key="DIALOG_HEIGHT"/>
+		<item value="712" key="DIALOG_X_ORIGIN"/>
+		<item value="262" key="DIALOG_Y_ORIGIN"/>
+		<item value="false" key="BUILD_NOW"/>
+	</section>
 	<section name="ExternalProjectImportWizard">
 		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/home/bmiki/CS/Concurrent Computing/workspace/COMS20001"/>
 			<item value="/home/bmiki/CS/Concurrent Computing/workspace/COMS20001/game_of_life"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
