@@ -117,7 +117,7 @@ void stateManager(chanend fromAcc, chanend toDistributor) {
 /////////////////////////////////////////////////////////////////////////////////////////
 void distributor(chanend c_in, chanend c_out, chanend fromStateManager)
 {
-  runTests();
+  //runTests();
   timer t;
   unsigned int time = 0;
   unsigned int newTime = 0;
