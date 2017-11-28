@@ -1,4 +1,3 @@
-// COMS20001 - Cellular Automaton Farm - Initial Code Skeleton
 // (using the XMOS i2c accelerometer demo code)
 
 #include <platform.h>
@@ -7,15 +6,15 @@
 #include "pgmIO.h"
 #include "i2c.h"
 
-#define IN_FILE_NAME "1024x1024.pgm"
 #define OUT_FILE_NAME "testout.pgm"
 
-#define  IMHT 1024                  //image height
-#define  IMWD 1024                  //image width
+#define IN_FILE_NAME "256x256.pgm"
+#define  IMHT 256                  //image height
+#define  IMWD 256                  //image width
+#define  ROWS_PER_THREAD 64
+#define  NUM_INTS_PER_ROW 8
+#define  MAX_ITERATIONS 300          // 0 to make it run indefinitely
 #define  PROCESS_THREAD_COUNT 4
-#define  ROWS_PER_THREAD 256
-#define  NUM_INTS_PER_ROW 32
-#define  MAX_ITERATIONS 0          // 0 to make it run indefinitely
 
 struct carry {
     unsigned int value;
@@ -184,6 +183,7 @@ void distributor(chanend c_in, chanend c_out, chanend fromStateManager)
                       for (int n = 0; n < PROCESS_THREAD_COUNT; n++) {
                           distributorChannels[n] <: state;
                       }
+                      numRoundsProcessed += 1;
                       break;
                   case 1:
                       ledPattern = 2;
@@ -209,6 +209,7 @@ void distributor(chanend c_in, chanend c_out, chanend fromStateManager)
                               }
                           }
                       }
+                      numRoundsProcessed += 1;
                       break;
                   case 2:
                       unsigned int numLiveCells = 0;
@@ -252,10 +253,10 @@ void distributor(chanend c_in, chanend c_out, chanend fromStateManager)
                       for (int n = 0; n < PROCESS_THREAD_COUNT; n++) {
                           distributorChannels[n] <: state;
                       }
+                      numRoundsProcessed += 1;
                       statusPrinted = 0;
                       break;
               }
-              numRoundsProcessed += 1;
           }
       }
   }
@@ -348,25 +349,20 @@ void processLargeGame(char workerID, chanend fromDistributor, chanend topChannel
                     oldRowData[v] = newRowData[k + 1][v]; // Get new "oldRowData" that will become the current row once the loop goes back
             }
         }
-        /*for (int y = 0; y < ROWS_PER_THREAD; y++) {
-            for (int z = 0; z < NUM_INTS_PER_ROW; z++) {
-                oldRowData[y][z] = newRowData[y][z];
-            }
-        }*/
         unsigned char nextCommand = 0;
         fromDistributor :> nextCommand;
         switch (nextCommand) {
             case 1:
                 for (int j = 1; j <= ROWS_PER_THREAD; j++) {
                     for (int d = 0; d < NUM_INTS_PER_ROW; d++) {
-                        fromDistributor <: newRowData[j][d];
+                        fromDistributor <: newRowData[j][NUM_INTS_PER_ROW - d - 1];
                     }
                 }
                 break;
             case 2:
                 for (int j = 1; j <= ROWS_PER_THREAD; j++) {
                     for (int d = 0; d < NUM_INTS_PER_ROW; d++) {
-                        fromDistributor <: newRowData[j][d];
+                        fromDistributor <: newRowData[j][NUM_INTS_PER_ROW - d - 1];
                     }
                 }
                 unsigned char delayed = 0;
@@ -520,23 +516,24 @@ void generateNewLargeRow(unsigned int top[NUM_INTS_PER_ROW], unsigned int self[N
 
         unsigned int currentLength = 0;
         char pretendNewRow[32];
-        for (int i = NUM_INTS_PER_ROW - 1; i >= 0; i--) {
+        for (int i = 0; i < NUM_INTS_PER_ROW; i++) {
+        //for (int i = NUM_INTS_PER_ROW - 1; i >= 0; i--) {
             if (totalLength >= 32) currentLength = 32;
             else currentLength = totalLength % 32;
             totalLength -= currentLength;
             for (int j = 0; j < 32; j++) {
                 pretendNewRow[j] = newRowCount[i * 32 + j];
             }
-            unsigned int selfCopy = self[NUM_INTS_PER_ROW - i - 1];
+            unsigned int selfCopy = self[i];
             unsigned int newRow = 0;
             for (int p = 0; p < currentLength; p++) {
                 unsigned int currentState = (selfCopy & (1 << (currentLength-1))) >> (currentLength-1);
-                char result = determineLifeState(currentState, pretendNewRow[currentLength-p-1]);
+                char result = determineLifeState(currentState, pretendNewRow[currentLength - p -1]);
                 if (result == 1) newRow = newRow | 1;
                 if (p != currentLength-1) newRow = newRow << 1;
                 selfCopy = selfCopy << 1;
             }
-            result[NUM_INTS_PER_ROW - i - 1] = newRow;
+            result[i] = newRow;
         }
 }
 unsigned int generateNewRow(unsigned int top, unsigned int self, unsigned int bottom, int length) {
@@ -740,7 +737,7 @@ void DataOutStream(char outfname[], chanend c_in)
       c_in :> line[ x ];
     }
     _writeoutline( line, IMWD );
-    printf( "DataOutStream: Line written...\n" );
+    //printf( "DataOutStream: Line written...\n" );
   }
 
   //Close the PGM image

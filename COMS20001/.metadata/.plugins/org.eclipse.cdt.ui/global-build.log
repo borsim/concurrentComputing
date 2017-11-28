@@ -661,3 +661,1384 @@ Creating dependencies for main.xc
 Compiling main.xc
 Creating game_of_life.xe
 Build Complete
+12:55:43 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+12:56:13 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+12:57:15 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+12:57:43 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+12:58:31 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+12:59:36 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+13:01:16 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+13:01:58 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+13:06:55 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+13:10:03 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+13:10:40 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+13:11:25 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+13:12:28 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+13:14:02 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+13:22:24 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+13:23:28 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+13:24:25 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+13:25:38 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+13:26:41 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+13:32:26 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+13:39:35 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+13:42:33 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+13:43:15 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+13:43:29 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+13:45:44 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+13:46:28 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+13:47:37 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+13:48:52 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+13:50:38 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+13:52:14 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+13:54:38 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+13:58:19 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+13:59:25 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+14:01:28 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:526:48: error: use of undeclared identifer `i'
+                pretendNewRow[j] = newRowCount[i * 32 + j];
+                                               ^
+../src/main.xc:539:1: error: parse error before '}' token
+}
+^
+../src/main.xc:542:29: error: use of undeclared identifer `self'
+    unsigned int selfCopy = self;
+                            ^
+../src/main.xc:545:5: error: parse error before "for"
+    for (int i = 0; i < length; i++) newRowCount[i] = 0;
+    ^
+../src/main.xc:545:21: warning: type defaults to `int' in declaration of `i' [-Wimplicit-int]
+    for (int i = 0; i < length; i++) newRowCount[i] = 0;
+                    ^
+../src/main.xc:545:21: warning: data definition has no type or storage class [-Wunusual-code]
+    for (int i = 0; i < length; i++) newRowCount[i] = 0;
+                    ^
+../src/main.xc:545:23: error: parse error before '<' token
+    for (int i = 0; i < length; i++) newRowCount[i] = 0;
+                      ^
+../src/main.xc:545:25: warning: type defaults to `int' in declaration of `length' [-Wimplicit-int]
+    for (int i = 0; i < length; i++) newRowCount[i] = 0;
+                        ^~~~~~
+../src/main.xc:545:25: warning: data definition has no type or storage class [-Wunusual-code]
+    for (int i = 0; i < length; i++) newRowCount[i] = 0;
+                        ^~~~~~
+../src/main.xc:545:33: warning: type defaults to `int' in declaration of `i' [-Wimplicit-int]
+    for (int i = 0; i < length; i++) newRowCount[i] = 0;
+                                ^
+../src/main.xc:545:33: warning: data definition has no type or storage class [-Wunusual-code]
+    for (int i = 0; i < length; i++) newRowCount[i] = 0;
+                                ^
+../src/main.xc:545:34: error: parse error before '++' token
+    for (int i = 0; i < length; i++) newRowCount[i] = 0;
+                                 ^
+../src/main.xc:545:50: error: size of array is not constant
+    for (int i = 0; i < length; i++) newRowCount[i] = 0;
+                                                 ^
+../src/main.xc:545:38: warning: data definition has no type or storage class [-Wunusual-code]
+    for (int i = 0; i < length; i++) newRowCount[i] = 0;
+                                     ^~~~~~~~~~~~~~
+../src/main.xc:545:38: error: conflicting types for 'newRowCount'
+    for (int i = 0; i < length; i++) newRowCount[i] = 0;
+                                     ^~~~~~~~~~~~~~
+../src/main.xc:544:10: note: previous declaration of 'newRowCount' was here
+    char newRowCount[32];
+         ^~~~~~~~~~~~~~~
+../src/main.xc:545:55: error: invalid array initializer
+    for (int i = 0; i < length; i++) newRowCount[i] = 0;
+                                                      ^
+../src/main.xc:547:14: error: parse error before "newRowCount"
+    addToRow(newRowCount, circularLeftShift(selfCopy, length), length);
+             ^
+../src/main.xc:547:64: warning: type defaults to `int' in declaration of `length' [-Wimplicit-int]
+    addToRow(newRowCount, circularLeftShift(selfCopy, length), length);
+                                                               ^~~~~~
+../src/main.xc:547:64: warning: data definition has no type or storage class [-Wunusual-code]
+    addToRow(newRowCount, circularLeftShift(selfCopy, length), length);
+                                                               ^~~~~~
+../src/main.xc:547:70: error: parse error before ')' token
+    addToRow(newRowCount, circularLeftShift(selfCopy, length), length);
+                                                                     ^
+../src/main.xc:547:5: warning: return type defaults to `int' [-Wreturn-type]
+    addToRow(newRowCount, circularLeftShift(selfCopy, length), length);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:547:5: error: conflicting types for 'addToRow'
+    addToRow(newRowCount, circularLeftShift(selfCopy, length), length);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:458:6: note: previous definition of 'addToRow' was here
+void addToRow(char* original, unsigned int added, int length) {
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:549:14: error: parse error before "newRowCount"
+    addToRow(newRowCount, circularRightShift(selfCopy, length), length);
+             ^
+../src/main.xc:549:65: warning: type defaults to `int' in declaration of `length' [-Wimplicit-int]
+    addToRow(newRowCount, circularRightShift(selfCopy, length), length);
+                                                                ^~~~~~
+../src/main.xc:549:65: warning: data definition has no type or storage class [-Wunusual-code]
+    addToRow(newRowCount, circularRightShift(selfCopy, length), length);
+                                                                ^~~~~~
+../src/main.xc:549:71: error: parse error before ')' token
+    addToRow(newRowCount, circularRightShift(selfCopy, length), length);
+                                                                      ^
+../src/main.xc:549:5: warning: return type defaults to `int' [-Wreturn-type]
+    addToRow(newRowCount, circularRightShift(selfCopy, length), length);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:551:18: error: parse error before "newRowCount"
+    addThreeRows(newRowCount, top, length);
+                 ^
+../src/main.xc:551:5: warning: return type defaults to `int' [-Wreturn-type]
+    addThreeRows(newRowCount, top, length);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:551:5: error: conflicting types for 'addThreeRows'
+    addThreeRows(newRowCount, top, length);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:495:6: note: previous definition of 'addThreeRows' was here
+void addThreeRows(char* original, unsigned int added, int length) {
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:553:18: error: parse error before "newRowCount"
+    addThreeRows(newRowCount, bottom, length);
+                 ^
+../src/main.xc:553:5: warning: return type defaults to `int' [-Wreturn-type]
+    addThreeRows(newRowCount, bottom, length);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:556:21: warning: type defaults to `int' in declaration of `j' [-Wimplicit-int]
+    for (int j = 0; j < length; j++) {
+                    ^
+../src/main.xc:556:21: warning: data definition has no type or storage class [-Wunusual-code]
+    for (int j = 0; j < length; j++) {
+                    ^
+../src/main.xc:556:23: error: parse error before '<' token
+    for (int j = 0; j < length; j++) {
+                      ^
+../src/main.xc:556:25: warning: type defaults to `int' in declaration of `length' [-Wimplicit-int]
+    for (int j = 0; j < length; j++) {
+                        ^~~~~~
+../src/main.xc:556:25: warning: data definition has no type or storage class [-Wunusual-code]
+    for (int j = 0; j < length; j++) {
+                        ^~~~~~
+../src/main.xc:556:33: warning: type defaults to `int' in declaration of `j' [-Wimplicit-int]
+    for (int j = 0; j < length; j++) {
+                                ^
+../src/main.xc:556:33: warning: data definition has no type or storage class [-Wunusual-code]
+    for (int j = 0; j < length; j++) {
+                                ^
+../src/main.xc:556:34: error: parse error before '++' token
+    for (int j = 0; j < length; j++) {
+                                 ^
+../src/main.xc:558:22: error: parse error before "currentState"
+        unsigned int currentState = (selfCopy & (1 << (length-1))) >> (length-1);
+                     ^
+../src/main.xc:740:20: error: parse error before "line"
+    _writeoutline( line, IMWD );
+                   ^
+../src/main.xc:740:5: warning: return type defaults to `int' [-Wreturn-type]
+    _writeoutline( line, IMWD );
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:740:5: error: conflicting types for '_writeoutline'
+    _writeoutline( line, IMWD );
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/pgmIO.h:16:1: note: previous declaration of '_writeoutline' was here
+int _writeoutline(unsigned char line[], int width);
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:746:11: error: parse error before string constant
+  printf( "DataOutStream: Done...\n" );
+          ^
+../src/main.xc:746:3: warning: return type defaults to `int' [-Wreturn-type]
+  printf( "DataOutStream: Done...\n" );
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:746:3: error: conflicting types for 'printf'
+  printf( "DataOutStream: Done...\n" );
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:748:1: error: parse error before '}' token
+}
+^
+../src/main.xc:761:12: error: use of undeclared identifer `i2c'
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+           ^
+../src/main.xc:761:3: warning: type defaults to `int' in declaration of `result' [-Wimplicit-int]
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+  ^~~~~~
+../src/main.xc:761:3: warning: data definition has no type or storage class [-Wunusual-code]
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+  ^~~~~~
+../src/main.xc:761:16: error: trying to call interface function from something that is not an interface
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+           ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:762:3: error: parse error before "if"
+  if (result != I2C_REGOP_SUCCESS) {
+  ^
+../src/main.xc:764:3: error: parse error before '}' token
+  }
+  ^
+../src/main.xc:768:3: error: parse error before "if"
+  if (result != I2C_REGOP_SUCCESS) {
+  ^
+../src/main.xc:770:3: error: parse error before '}' token
+  }
+  ^
+../src/main.xc:777:7: warning: type defaults to `int' in declaration of `toStateManager' [-Wimplicit-int]
+      toStateManager <: tilted;
+      ^~~~~~~~~~~~~~
+../src/main.xc:777:7: warning: data definition has no type or storage class [-Wunusual-code]
+      toStateManager <: tilted;
+      ^~~~~~~~~~~~~~
+../src/main.xc:777:23: error: parse error before '<:' token
+      toStateManager <: tilted;
+                      ^
+../src/main.xc:777:25: warning: type defaults to `int' in declaration of `tilted' [-Wimplicit-int]
+      toStateManager <: tilted;
+                        ^~~~~~
+../src/main.xc:777:25: warning: data definition has no type or storage class [-Wunusual-code]
+      toStateManager <: tilted;
+                        ^~~~~~
+../src/main.xc:777:25: error: conflicting types for 'tilted'
+      toStateManager <: tilted;
+                        ^~~~~~
+../src/main.xc:758:17: note: previous definition of 'tilted' was here
+  unsigned char tilted = 0;
+                ^~~~~~
+../src/main.xc:781:13: error: initializer element is not constant
+    int x = read_acceleration(i2c, FXOS8700EQ_OUT_X_MSB);
+            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:782:5: error: parse error before "if"
+    if (!tilted) {
+    ^
+../src/main.xc:785:13: warning: type defaults to `int' in declaration of `toStateManager' [-Wimplicit-int]
+            toStateManager <: tilted;
+            ^~~~~~~~~~~~~~
+../src/main.xc:785:13: warning: data definition has no type or storage class [-Wunusual-code]
+            toStateManager <: tilted;
+            ^~~~~~~~~~~~~~
+../src/main.xc:785:29: error: parse error before '<:' token
+            toStateManager <: tilted;
+                            ^
+../src/main.xc:785:31: warning: type defaults to `int' in declaration of `tilted' [-Wimplicit-int]
+            toStateManager <: tilted;
+                              ^~~~~~
+../src/main.xc:785:31: warning: data definition has no type or storage class [-Wunusual-code]
+            toStateManager <: tilted;
+                              ^~~~~~
+../src/main.xc:790:13: warning: type defaults to `int' in declaration of `toStateManager' [-Wimplicit-int]
+            toStateManager <: tilted;
+            ^~~~~~~~~~~~~~
+../src/main.xc:790:13: warning: data definition has no type or storage class [-Wunusual-code]
+            toStateManager <: tilted;
+            ^~~~~~~~~~~~~~
+../src/main.xc:790:29: error: parse error before '<:' token
+            toStateManager <: tilted;
+                            ^
+../src/main.xc:790:31: warning: type defaults to `int' in declaration of `tilted' [-Wimplicit-int]
+            toStateManager <: tilted;
+                              ^~~~~~
+../src/main.xc:790:31: warning: data definition has no type or storage class [-Wunusual-code]
+            toStateManager <: tilted;
+                              ^~~~~~
+../src/main.xc:809:6: error: global variable `c_inIO' has type chan
+chan c_inIO, c_outIO;   //extend your channel definitions here
+     ^~~~~~
+../src/main.xc:809:14: error: global variable `c_outIO' has type chan
+chan c_inIO, c_outIO;   //extend your channel definitions here
+             ^~~~~~~
+../src/main.xc:810:6: error: global variable `stateToOrientation' has type chan
+chan stateToOrientation, stateToDistributor;
+     ^~~~~~~~~~~~~~~~~~
+../src/main.xc:810:26: error: global variable `stateToDistributor' has type chan
+chan stateToOrientation, stateToDistributor;
+                         ^~~~~~~~~~~~~~~~~~
+../src/main.xc:811:1: error: parse error before "par"
+par {
+^
+../src/main.xc:813:29: error: parse error before "i2c"
+    on tile[0]: orientation(i2c[0], stateToOrientation);                 //client thread reading orientation data
+                            ^
+../src/main.xc:813:17: warning: return type defaults to `int' [-Wreturn-type]
+    on tile[0]: orientation(i2c[0], stateToOrientation);                 //client thread reading orientation data
+                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:814:30: error: parse error before string constant
+    on tile[1]: DataInStream(IN_FILE_NAME, c_inIO);                           //thread to read in a PGM image
+                             ^
+../src/main.xc:11:22: note: expanded from here
+#define IN_FILE_NAME "64x64.pgm"
+                     ^
+../src/main.xc:814:17: warning: return type defaults to `int' [-Wreturn-type]
+    on tile[1]: DataInStream(IN_FILE_NAME, c_inIO);                           //thread to read in a PGM image
+                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:814:17: error: conflicting types for 'DataInStream'
+    on tile[1]: DataInStream(IN_FILE_NAME, c_inIO);                           //thread to read in a PGM image
+                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:58:6: note: previous definition of 'DataInStream' was here
+void DataInStream(char infname[], chanend c_out)
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:815:31: error: parse error before string constant
+    on tile[1]: DataOutStream(OUT_FILE_NAME, c_outIO);                        //thread to write out a PGM image
+                              ^
+../src/main.xc:9:23: note: expanded from here
+#define OUT_FILE_NAME "testout.pgm"
+                      ^
+../src/main.xc:815:17: warning: return type defaults to `int' [-Wreturn-type]
+    on tile[1]: DataOutStream(OUT_FILE_NAME, c_outIO);                        //thread to write out a PGM image
+                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:816:30: error: parse error before "stateToOrientation"
+    on tile[0]: stateManager(stateToOrientation, stateToDistributor);
+                             ^
+../src/main.xc:816:17: warning: return type defaults to `int' [-Wreturn-type]
+    on tile[0]: stateManager(stateToOrientation, stateToDistributor);
+                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:816:17: error: conflicting types for 'stateManager'
+    on tile[0]: stateManager(stateToOrientation, stateToDistributor);
+                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:87:6: note: previous definition of 'stateManager' was here
+void stateManager(chanend fromAcc, chanend toDistributor) {
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:817:29: error: parse error before "c_inIO"
+    on tile[0]: distributor(c_inIO, c_outIO, stateToDistributor);        //thread to coordinate work on image
+                            ^
+../src/main.xc:817:17: warning: return type defaults to `int' [-Wreturn-type]
+    on tile[0]: distributor(c_inIO, c_outIO, stateToDistributor);        //thread to coordinate work on image
+                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:817:17: error: conflicting types for 'distributor'
+    on tile[0]: distributor(c_inIO, c_outIO, stateToDistributor);        //thread to coordinate work on image
+                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:117:6: note: previous definition of 'distributor' was here
+void distributor(chanend c_in, chanend c_out, chanend fromStateManager)
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:821:1: error: parse error before '}' token
+}
+^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+14:02:02 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+14:03:31 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+14:05:03 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:526:62: error: parse error before ']' token
+                pretendNewRow[31-j] = newRowCount[(i * 32 + j];
+                                                             ^
+../src/main.xc:528:61: error: use of undeclared identifer `i'
+            unsigned int selfCopy = self[NUM_INTS_PER_ROW - i - 1];
+                                                            ^
+../src/main.xc:539:1: error: parse error before '}' token
+}
+^
+../src/main.xc:542:29: error: use of undeclared identifer `self'
+    unsigned int selfCopy = self;
+                            ^
+../src/main.xc:545:5: error: parse error before "for"
+    for (int i = 0; i < length; i++) newRowCount[i] = 0;
+    ^
+../src/main.xc:545:21: warning: type defaults to `int' in declaration of `i' [-Wimplicit-int]
+    for (int i = 0; i < length; i++) newRowCount[i] = 0;
+                    ^
+../src/main.xc:545:21: warning: data definition has no type or storage class [-Wunusual-code]
+    for (int i = 0; i < length; i++) newRowCount[i] = 0;
+                    ^
+../src/main.xc:545:23: error: parse error before '<' token
+    for (int i = 0; i < length; i++) newRowCount[i] = 0;
+                      ^
+../src/main.xc:545:25: warning: type defaults to `int' in declaration of `length' [-Wimplicit-int]
+    for (int i = 0; i < length; i++) newRowCount[i] = 0;
+                        ^~~~~~
+../src/main.xc:545:25: warning: data definition has no type or storage class [-Wunusual-code]
+    for (int i = 0; i < length; i++) newRowCount[i] = 0;
+                        ^~~~~~
+../src/main.xc:545:33: warning: type defaults to `int' in declaration of `i' [-Wimplicit-int]
+    for (int i = 0; i < length; i++) newRowCount[i] = 0;
+                                ^
+../src/main.xc:545:33: warning: data definition has no type or storage class [-Wunusual-code]
+    for (int i = 0; i < length; i++) newRowCount[i] = 0;
+                                ^
+../src/main.xc:545:34: error: parse error before '++' token
+    for (int i = 0; i < length; i++) newRowCount[i] = 0;
+                                 ^
+../src/main.xc:545:50: error: size of array is not constant
+    for (int i = 0; i < length; i++) newRowCount[i] = 0;
+                                                 ^
+../src/main.xc:545:38: warning: data definition has no type or storage class [-Wunusual-code]
+    for (int i = 0; i < length; i++) newRowCount[i] = 0;
+                                     ^~~~~~~~~~~~~~
+../src/main.xc:545:38: error: conflicting types for 'newRowCount'
+    for (int i = 0; i < length; i++) newRowCount[i] = 0;
+                                     ^~~~~~~~~~~~~~
+../src/main.xc:544:10: note: previous declaration of 'newRowCount' was here
+    char newRowCount[32];
+         ^~~~~~~~~~~~~~~
+../src/main.xc:545:55: error: invalid array initializer
+    for (int i = 0; i < length; i++) newRowCount[i] = 0;
+                                                      ^
+../src/main.xc:547:14: error: parse error before "newRowCount"
+    addToRow(newRowCount, circularLeftShift(selfCopy, length), length);
+             ^
+../src/main.xc:547:64: warning: type defaults to `int' in declaration of `length' [-Wimplicit-int]
+    addToRow(newRowCount, circularLeftShift(selfCopy, length), length);
+                                                               ^~~~~~
+../src/main.xc:547:64: warning: data definition has no type or storage class [-Wunusual-code]
+    addToRow(newRowCount, circularLeftShift(selfCopy, length), length);
+                                                               ^~~~~~
+../src/main.xc:547:70: error: parse error before ')' token
+    addToRow(newRowCount, circularLeftShift(selfCopy, length), length);
+                                                                     ^
+../src/main.xc:547:5: warning: return type defaults to `int' [-Wreturn-type]
+    addToRow(newRowCount, circularLeftShift(selfCopy, length), length);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:547:5: error: conflicting types for 'addToRow'
+    addToRow(newRowCount, circularLeftShift(selfCopy, length), length);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:458:6: note: previous definition of 'addToRow' was here
+void addToRow(char* original, unsigned int added, int length) {
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:549:14: error: parse error before "newRowCount"
+    addToRow(newRowCount, circularRightShift(selfCopy, length), length);
+             ^
+../src/main.xc:549:65: warning: type defaults to `int' in declaration of `length' [-Wimplicit-int]
+    addToRow(newRowCount, circularRightShift(selfCopy, length), length);
+                                                                ^~~~~~
+../src/main.xc:549:65: warning: data definition has no type or storage class [-Wunusual-code]
+    addToRow(newRowCount, circularRightShift(selfCopy, length), length);
+                                                                ^~~~~~
+../src/main.xc:549:71: error: parse error before ')' token
+    addToRow(newRowCount, circularRightShift(selfCopy, length), length);
+                                                                      ^
+../src/main.xc:549:5: warning: return type defaults to `int' [-Wreturn-type]
+    addToRow(newRowCount, circularRightShift(selfCopy, length), length);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:551:18: error: parse error before "newRowCount"
+    addThreeRows(newRowCount, top, length);
+                 ^
+../src/main.xc:551:5: warning: return type defaults to `int' [-Wreturn-type]
+    addThreeRows(newRowCount, top, length);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:551:5: error: conflicting types for 'addThreeRows'
+    addThreeRows(newRowCount, top, length);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:495:6: note: previous definition of 'addThreeRows' was here
+void addThreeRows(char* original, unsigned int added, int length) {
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:553:18: error: parse error before "newRowCount"
+    addThreeRows(newRowCount, bottom, length);
+                 ^
+../src/main.xc:553:5: warning: return type defaults to `int' [-Wreturn-type]
+    addThreeRows(newRowCount, bottom, length);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:556:21: warning: type defaults to `int' in declaration of `j' [-Wimplicit-int]
+    for (int j = 0; j < length; j++) {
+                    ^
+../src/main.xc:556:21: warning: data definition has no type or storage class [-Wunusual-code]
+    for (int j = 0; j < length; j++) {
+                    ^
+../src/main.xc:556:23: error: parse error before '<' token
+    for (int j = 0; j < length; j++) {
+                      ^
+../src/main.xc:556:25: warning: type defaults to `int' in declaration of `length' [-Wimplicit-int]
+    for (int j = 0; j < length; j++) {
+                        ^~~~~~
+../src/main.xc:556:25: warning: data definition has no type or storage class [-Wunusual-code]
+    for (int j = 0; j < length; j++) {
+                        ^~~~~~
+../src/main.xc:556:33: warning: type defaults to `int' in declaration of `j' [-Wimplicit-int]
+    for (int j = 0; j < length; j++) {
+                                ^
+../src/main.xc:556:33: warning: data definition has no type or storage class [-Wunusual-code]
+    for (int j = 0; j < length; j++) {
+                                ^
+../src/main.xc:556:34: error: parse error before '++' token
+    for (int j = 0; j < length; j++) {
+                                 ^
+../src/main.xc:558:22: error: parse error before "currentState"
+        unsigned int currentState = (selfCopy & (1 << (length-1))) >> (length-1);
+                     ^
+../src/main.xc:740:20: error: parse error before "line"
+    _writeoutline( line, IMWD );
+                   ^
+../src/main.xc:740:5: warning: return type defaults to `int' [-Wreturn-type]
+    _writeoutline( line, IMWD );
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:740:5: error: conflicting types for '_writeoutline'
+    _writeoutline( line, IMWD );
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/pgmIO.h:16:1: note: previous declaration of '_writeoutline' was here
+int _writeoutline(unsigned char line[], int width);
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:746:11: error: parse error before string constant
+  printf( "DataOutStream: Done...\n" );
+          ^
+../src/main.xc:746:3: warning: return type defaults to `int' [-Wreturn-type]
+  printf( "DataOutStream: Done...\n" );
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:746:3: error: conflicting types for 'printf'
+  printf( "DataOutStream: Done...\n" );
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:748:1: error: parse error before '}' token
+}
+^
+../src/main.xc:761:12: error: use of undeclared identifer `i2c'
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+           ^
+../src/main.xc:761:3: warning: type defaults to `int' in declaration of `result' [-Wimplicit-int]
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+  ^~~~~~
+../src/main.xc:761:3: warning: data definition has no type or storage class [-Wunusual-code]
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+  ^~~~~~
+../src/main.xc:761:16: error: trying to call interface function from something that is not an interface
+  result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_XYZ_DATA_CFG_REG, 0x01);
+           ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:762:3: error: parse error before "if"
+  if (result != I2C_REGOP_SUCCESS) {
+  ^
+../src/main.xc:764:3: error: parse error before '}' token
+  }
+  ^
+../src/main.xc:768:3: error: parse error before "if"
+  if (result != I2C_REGOP_SUCCESS) {
+  ^
+../src/main.xc:770:3: error: parse error before '}' token
+  }
+  ^
+../src/main.xc:777:7: warning: type defaults to `int' in declaration of `toStateManager' [-Wimplicit-int]
+      toStateManager <: tilted;
+      ^~~~~~~~~~~~~~
+../src/main.xc:777:7: warning: data definition has no type or storage class [-Wunusual-code]
+      toStateManager <: tilted;
+      ^~~~~~~~~~~~~~
+../src/main.xc:777:23: error: parse error before '<:' token
+      toStateManager <: tilted;
+                      ^
+../src/main.xc:777:25: warning: type defaults to `int' in declaration of `tilted' [-Wimplicit-int]
+      toStateManager <: tilted;
+                        ^~~~~~
+../src/main.xc:777:25: warning: data definition has no type or storage class [-Wunusual-code]
+      toStateManager <: tilted;
+                        ^~~~~~
+../src/main.xc:777:25: error: conflicting types for 'tilted'
+      toStateManager <: tilted;
+                        ^~~~~~
+../src/main.xc:758:17: note: previous definition of 'tilted' was here
+  unsigned char tilted = 0;
+                ^~~~~~
+../src/main.xc:781:13: error: initializer element is not constant
+    int x = read_acceleration(i2c, FXOS8700EQ_OUT_X_MSB);
+            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:782:5: error: parse error before "if"
+    if (!tilted) {
+    ^
+../src/main.xc:785:13: warning: type defaults to `int' in declaration of `toStateManager' [-Wimplicit-int]
+            toStateManager <: tilted;
+            ^~~~~~~~~~~~~~
+../src/main.xc:785:13: warning: data definition has no type or storage class [-Wunusual-code]
+            toStateManager <: tilted;
+            ^~~~~~~~~~~~~~
+../src/main.xc:785:29: error: parse error before '<:' token
+            toStateManager <: tilted;
+                            ^
+../src/main.xc:785:31: warning: type defaults to `int' in declaration of `tilted' [-Wimplicit-int]
+            toStateManager <: tilted;
+                              ^~~~~~
+../src/main.xc:785:31: warning: data definition has no type or storage class [-Wunusual-code]
+            toStateManager <: tilted;
+                              ^~~~~~
+../src/main.xc:790:13: warning: type defaults to `int' in declaration of `toStateManager' [-Wimplicit-int]
+            toStateManager <: tilted;
+            ^~~~~~~~~~~~~~
+../src/main.xc:790:13: warning: data definition has no type or storage class [-Wunusual-code]
+            toStateManager <: tilted;
+            ^~~~~~~~~~~~~~
+../src/main.xc:790:29: error: parse error before '<:' token
+            toStateManager <: tilted;
+                            ^
+../src/main.xc:790:31: warning: type defaults to `int' in declaration of `tilted' [-Wimplicit-int]
+            toStateManager <: tilted;
+                              ^~~~~~
+../src/main.xc:790:31: warning: data definition has no type or storage class [-Wunusual-code]
+            toStateManager <: tilted;
+                              ^~~~~~
+../src/main.xc:809:6: error: global variable `c_inIO' has type chan
+chan c_inIO, c_outIO;   //extend your channel definitions here
+     ^~~~~~
+../src/main.xc:809:14: error: global variable `c_outIO' has type chan
+chan c_inIO, c_outIO;   //extend your channel definitions here
+             ^~~~~~~
+../src/main.xc:810:6: error: global variable `stateToOrientation' has type chan
+chan stateToOrientation, stateToDistributor;
+     ^~~~~~~~~~~~~~~~~~
+../src/main.xc:810:26: error: global variable `stateToDistributor' has type chan
+chan stateToOrientation, stateToDistributor;
+                         ^~~~~~~~~~~~~~~~~~
+../src/main.xc:811:1: error: parse error before "par"
+par {
+^
+../src/main.xc:813:29: error: parse error before "i2c"
+    on tile[0]: orientation(i2c[0], stateToOrientation);                 //client thread reading orientation data
+                            ^
+../src/main.xc:813:17: warning: return type defaults to `int' [-Wreturn-type]
+    on tile[0]: orientation(i2c[0], stateToOrientation);                 //client thread reading orientation data
+                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:814:30: error: parse error before string constant
+    on tile[1]: DataInStream(IN_FILE_NAME, c_inIO);                           //thread to read in a PGM image
+                             ^
+../src/main.xc:11:22: note: expanded from here
+#define IN_FILE_NAME "64x64.pgm"
+                     ^
+../src/main.xc:814:17: warning: return type defaults to `int' [-Wreturn-type]
+    on tile[1]: DataInStream(IN_FILE_NAME, c_inIO);                           //thread to read in a PGM image
+                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:814:17: error: conflicting types for 'DataInStream'
+    on tile[1]: DataInStream(IN_FILE_NAME, c_inIO);                           //thread to read in a PGM image
+                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:58:6: note: previous definition of 'DataInStream' was here
+void DataInStream(char infname[], chanend c_out)
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:815:31: error: parse error before string constant
+    on tile[1]: DataOutStream(OUT_FILE_NAME, c_outIO);                        //thread to write out a PGM image
+                              ^
+../src/main.xc:9:23: note: expanded from here
+#define OUT_FILE_NAME "testout.pgm"
+                      ^
+../src/main.xc:815:17: warning: return type defaults to `int' [-Wreturn-type]
+    on tile[1]: DataOutStream(OUT_FILE_NAME, c_outIO);                        //thread to write out a PGM image
+                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:816:30: error: parse error before "stateToOrientation"
+    on tile[0]: stateManager(stateToOrientation, stateToDistributor);
+                             ^
+../src/main.xc:816:17: warning: return type defaults to `int' [-Wreturn-type]
+    on tile[0]: stateManager(stateToOrientation, stateToDistributor);
+                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:816:17: error: conflicting types for 'stateManager'
+    on tile[0]: stateManager(stateToOrientation, stateToDistributor);
+                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:87:6: note: previous definition of 'stateManager' was here
+void stateManager(chanend fromAcc, chanend toDistributor) {
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:817:29: error: parse error before "c_inIO"
+    on tile[0]: distributor(c_inIO, c_outIO, stateToDistributor);        //thread to coordinate work on image
+                            ^
+../src/main.xc:817:17: warning: return type defaults to `int' [-Wreturn-type]
+    on tile[0]: distributor(c_inIO, c_outIO, stateToDistributor);        //thread to coordinate work on image
+                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:817:17: error: conflicting types for 'distributor'
+    on tile[0]: distributor(c_inIO, c_outIO, stateToDistributor);        //thread to coordinate work on image
+                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:117:6: note: previous definition of 'distributor' was here
+void distributor(chanend c_in, chanend c_out, chanend fromStateManager)
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.xc:821:1: error: parse error before '}' token
+}
+^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+14:05:20 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+14:06:31 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+14:09:34 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+14:30:07 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+14:32:07 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+14:33:47 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+14:35:03 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+14:36:14 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+14:37:06 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+14:37:47 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+14:38:21 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+14:40:45 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:195:61: error: use of undeclared identifer `numLiveCells'
+                      printf("Number of live cells: %d \n", numLiveCells);
+                                                            ^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+14:41:33 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+14:41:48 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+14:42:21 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+14:43:37 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+14:44:57 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+14:47:27 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+14:56:19 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:33:49 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:35:07 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Constraint check for tile[0]:
+  Cores available:            8,   used:          7 .  OKAY
+  Timers available:          10,   used:          7 .  OKAY
+  Chanends available:        32,   used:         22 .  OKAY
+  Memory available:       262144,   used:      458664 .  FAILED
+    (Stack: 425556, Code: 31352, Data: 1756)
+Error: Constraints check FAILED for tile[0].
+xmake[1]: *** [bin//game_of_life.xe] Error 1
+xmake: *** [bin//game_of_life.xe] Error 2
+15:36:23 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Constraint check for tile[0]:
+  Cores available:            8,   used:          7 .  OKAY
+  Timers available:          10,   used:          7 .  OKAY
+  Chanends available:        32,   used:         22 .  OKAY
+  Memory available:       262144,   used:      346824 .  FAILED
+    (Stack: 313716, Code: 31352, Data: 1756)
+Error: Constraints check FAILED for tile[0].
+xmake[1]: *** [bin//game_of_life.xe] Error 1
+xmake: *** [bin//game_of_life.xe] Error 2
+15:37:05 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:37:39 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Constraint check for tile[0]:
+  Cores available:            8,   used:          7 .  OKAY
+  Timers available:          10,   used:          7 .  OKAY
+  Chanends available:        32,   used:         22 .  OKAY
+  Memory available:       262144,   used:      267584 .  FAILED
+    (Stack: 234484, Code: 31344, Data: 1756)
+Error: Constraints check FAILED for tile[0].
+xmake[1]: *** [bin//game_of_life.xe] Error 1
+xmake: *** [bin//game_of_life.xe] Error 2
+15:38:03 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Constraint check for tile[0]:
+  Cores available:            8,   used:          7 .  OKAY
+  Timers available:          10,   used:          7 .  OKAY
+  Chanends available:        32,   used:         22 .  OKAY
+  Memory available:       262144,   used:      264008 .  FAILED
+    (Stack: 230900, Code: 31348, Data: 1760)
+Error: Constraints check FAILED for tile[0].
+xmake[1]: *** [bin//game_of_life.xe] Error 1
+xmake: *** [bin//game_of_life.xe] Error 2
+15:38:18 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:41:10 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:41:38 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+15:42:21 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:43:44 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:48:33 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:49:32 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:52:19 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:55:15 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:59:19 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+16:00:32 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+16:02:22 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:322:46: error: use of undeclared identifer `NUM_INTA_PER_ROW'
+            fromDistributor :> newRowData[j][NUM_INTA_PER_ROW - i - 1];
+                                             ^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+16:02:36 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+16:04:21 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+16:04:39 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+16:06:03 **** Incremental Build of configuration Default for project game_of_life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+16:10:16 **** Clean-only build of configuration Default for project game_of_life ****
+xmake clean 
+Cleaning /home/bmiki/CS/Concurrent Computing/workspace/COMS20001/game_of_life
+rm -rf './bin/'
+rm -rf '.build'
+16:10:16 **** Clean-only build of configuration Default for project lib_i2c ****
+xmake -f .makefile clean 
+** Module only - only builds as part of application **
+16:10:16 **** Clean-only build of configuration Default for project lib_logging ****
+xmake -f .makefile clean 
+** Module only - only builds as part of application **
+16:10:17 **** Clean-only build of configuration Default for project lib_xassert ****
+xmake -f .makefile clean 
+** Module only - only builds as part of application **
