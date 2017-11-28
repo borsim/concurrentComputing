@@ -7,15 +7,15 @@
 #include "pgmIO.h"
 #include "i2c.h"
 
-#define IN_FILE_NAME "test.pgm"
+#define IN_FILE_NAME "1024x1024.pgm"
 #define OUT_FILE_NAME "testout.pgm"
 
-#define  IMHT 16                  //image height
-#define  IMWD 16                  //image width
+#define  IMHT 1024                  //image height
+#define  IMWD 1024                  //image width
 #define  PROCESS_THREAD_COUNT 4
-#define  ROWS_PER_THREAD 4
-#define  NUM_INTS_PER_ROW 1
-#define  MAX_ITERATIONS 2          // 0 to make it run indefinitely
+#define  ROWS_PER_THREAD 256
+#define  NUM_INTS_PER_ROW 32
+#define  MAX_ITERATIONS 0          // 0 to make it run indefinitely
 
 struct carry {
     unsigned int value;
@@ -74,9 +74,9 @@ void DataInStream(char infname[], chanend c_out)
     _readinline( line, IMWD );
     for( int x = 0; x < IMWD; x++ ) {
       c_out <: line[ x ];
-      printf( "-%4.1d ", line[ x ] ); //show image values
+      //printf( "-%4.1d ", line[ x ] ); //show image values
     }
-    printf( "\n" );
+    //printf( "\n" );
   }
 
   //Close PGM image file
@@ -101,8 +101,8 @@ void stateManager(chanend fromAcc, chanend toDistributor) {
             state = 1;
             pressedButton = 0;
         }
-        numRoundsProcessed += 1;
         if (numRoundsProcessed == MAX_ITERATIONS) state = 1;
+        if (state != 2) numRoundsProcessed += 1;
         previousState = state;
         toDistributor <: state;
         //printf("Current state: %d\n", state);
@@ -117,7 +117,7 @@ void stateManager(chanend fromAcc, chanend toDistributor) {
 /////////////////////////////////////////////////////////////////////////////////////////
 void distributor(chanend c_in, chanend c_out, chanend fromStateManager)
 {
-  //runTests();
+  runTests();
   timer t;
   unsigned int time = 0;
   unsigned int newTime = 0;
@@ -170,7 +170,7 @@ void distributor(chanend c_in, chanend c_out, chanend fromStateManager)
               t :> newTime;
               if (numRoundsProcessed == 0) {
                   initTime = newTime;
-                  printf("\nSET HERE\n");
+                  //printf("\nSET HERE\n");
               }
               //printf("initTime %u, newTime %u .\n", initTime, newTime);
               if (time > newTime) overflows++;
@@ -682,7 +682,12 @@ void runTests() {
     genTestTotal += assertEqual(4, generateNewRow(14,0,0,6), 45);
     genTestTotal += assertEqual(0, generateNewRow(0,0,0,6), 46);
 
-    if (genTestTotal == 14) printf("All generate row tests pass.\n");
+    //ship
+    genTestTotal += assertEqual(0, generateNewRow(0, 0,  0,  8),  47);
+    genTestTotal += assertEqual(4, generateNewRow(0, 0,  14, 6),  48);
+    genTestTotal += assertEqual(4, generateNewRow(0, 14, 0,  6),  49);
+
+    if (genTestTotal == 17) printf("All generate row tests pass.\n");
 
 
 
