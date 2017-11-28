@@ -8,11 +8,11 @@
 
 #define OUT_FILE_NAME "testout.pgm"
 
-#define IN_FILE_NAME "256x256.pgm"
-#define  IMHT 256                  //image height
-#define  IMWD 256                  //image width
-#define  ROWS_PER_THREAD 64
-#define  NUM_INTS_PER_ROW 8
+#define IN_FILE_NAME "1024x1024.pgm"
+#define  IMHT 1024                  //image height
+#define  IMWD 1024                  //image width
+#define  ROWS_PER_THREAD 256
+#define  NUM_INTS_PER_ROW 32
 #define  MAX_ITERATIONS 300          // 0 to make it run indefinitely
 #define  PROCESS_THREAD_COUNT 4
 

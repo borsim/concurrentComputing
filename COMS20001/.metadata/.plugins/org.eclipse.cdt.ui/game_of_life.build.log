@@ -1,8 +1,8 @@
-16:10:16 **** Clean-only build of configuration Default for project game_of_life ****
+18:08:57 **** Clean-only build of configuration Default for project game_of_life ****
 xmake clean 
 Cleaning /home/bmiki/CS/Concurrent Computing/workspace/COMS20001/game_of_life
 rm -rf './bin/'
 rm -rf '.build'
 
-16:10:16 Build Finished (took 265ms)
+18:08:58 Build Finished (took 285ms)
 
