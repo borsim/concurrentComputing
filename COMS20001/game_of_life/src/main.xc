@@ -141,7 +141,7 @@ void distributor(chanend c_in, chanend c_out, chanend fromStateManager)
   par {
       // Worker threads
       par (int i = 0; i < PROCESS_THREAD_COUNT; i++) {
-          if (IMWD < 32) processGame(i, distributorChannels[i], rowChannels[i],rowChannels[(i+1)%PROCESS_THREAD_COUNT]);
+          if (IMWD <= 32) processGame(i, distributorChannels[i], rowChannels[i],rowChannels[(i+1)%PROCESS_THREAD_COUNT]);
           else processLargeGame(i, distributorChannels[i], rowChannels[i],rowChannels[(i+1)%PROCESS_THREAD_COUNT]);
       }
       // Distributor state handling
